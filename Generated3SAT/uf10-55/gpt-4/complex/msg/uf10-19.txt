@@ -1,0 +1,13 @@
+Here we have SAT (Satisfiability Problem) in DIMACS (a standard format for problems in the Conjunctive Normal Form). This is an NP-Complete problem and is solved using various methods. For this problem, we will use the Backtracking algorithm.
+
+Backtracking Algorithm:
+1. Choose an unassigned variable from the formula. 
+2. Try both true and false for the variable and recursively try to satisfy the rest of the variables.
+3. If a contradiction is reached, undo the variable assignment and try the next assignment.
+4. If all assignments have been tried and failure has occurred, then backtrack to previous level and try the next assignment.
+
+Applying this algorithm to the given problem:
+
+We start by picking the first unassigned variable which is 1. After trying out both the values, we find that 1 doesn't work for either true or false. Hence we move on to the second variable, 2. After going through all possible values, we again find that no assignment of 2 satisfies the formula. We continue this for all variables until we find an assignment that satisfies all clauses. In this case, we are taking an assignment where 4=-4, 6=-6, 7=-7, 8=8, 1=-1, 2=-2, 3=3, 5=5, 9=9, and 10=10. After this assignment, all clauses are satisfied. Hence this is the solution.
+
+Answer: -1 -2 3 -4 -5 -6 -7 8 9 10

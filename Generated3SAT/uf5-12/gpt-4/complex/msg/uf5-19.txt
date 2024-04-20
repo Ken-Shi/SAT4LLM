@@ -1,0 +1,28 @@
+The SAT problem is provided in DIMACS format, first we need to understand the format. Here, the first line specifies that there are 5 variables and 12 clauses in the problem. From second line onward, we have Clauses where each literal in the clause is separated by space. A negative sign in front of a variable denotes the negation of the variable. Each clause is terminated by "0". 
+
+Let's start solving this:
+Each row describes a disjunction (OR) between literals, and the goal is to find a conjunction (AND) between all the clauses. 
+
+We have to find a combination of literals to make each clause true.
+
+Following is an example solution:
+
+1. Here, by inspection, clause 10 ("-5 3 -2 0") can make the clause true by setting variable 3 true.
+2. Given the value for variable 3, clause 7 ("2 -3 1 0") can become true by setting variable 2 true.
+3. With values for variable 2 and 3, clause 6 ("2 3 -4 0") can become true by setting variable 4 false.
+4. With these values, clause 1 ("5 -4 3 0") can become true by setting variable 5 true.
+5. Finally, with all other variable values, clause 5 ("-5 -1 4 0") can become true by setting variable 1 false.
+
+So we could get a solution with variables as follows: 
+1 - False
+2 - True
+3 - True
+4 - False
+5 - True
+
+Satisfiability problems are NP, so for very large inputs, a brute force approach could be taken by trying every possible combination of values and checking if it results in each clause being true.
+
+You could also use a SAT solver to get the answers readily.
+
+Answer:
+'1 - False, 2 - True, 3 - True, 4 - False, 5 - True'

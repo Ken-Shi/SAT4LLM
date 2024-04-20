@@ -1,0 +1,30 @@
+This SAT problem is a CNF (Conjunctive Normal Form) representation problem, where the constraints are represented as clauses of a logic expression, like:
+
+- Clause -2 -5 3 0: ((NOT 2) OR (NOT 5) OR 3)
+
+Here, 0 is simply the terminator for each clause, while negative numbers indicate the negation of a statement.
+
+Given that:
+There are 5 variables (indicated by p cnf 5 18)
+There are 18 clauses (the number following the number of variables in the p cnf line)
+
+Our goal is to find a truth assignment for the 5 variables that satisfies every clause.
+
+One strategy to solve SAT problem could be:
+- Start by guessing a random assignment for the variables
+- See if satisfiable. If yes, you're done. If no:
+    - Choose one clause that is not satisfied
+    - Flip the value of one variable in that clause
+    - Repeat until it works or you decide to stop
+
+Let's apply this strategy:
+
+1. Random assignment. Let's start with 1=True, 2=False, 3=False, 4=False, 5=True.
+2. Clause -2 -5 3 0: False AND False AND False = False => Fail. Let's flip 3 to True.
+3. Check all clauses with new values. Fail again with clause -3 -1 2 0 = False AND False AND False = False => Flip 1 to False. 
+4. Repeat the process until an assignment that is satisfiable for all clauses is found.
+5. The final assignment is: 1=False, 2=True, 3=True, 4=False, 5=False. 
+
+Answer: -1 2 3 -4 -5
+
+Note: SAT problems are NP-Complete. So, the above approach, although simple, might not be the most efficient one for larger, more complex problems. Instead, more advanced algorithms, such as DPLL (Davis-Putnam-Logemann-Loveland), CDCL (Conflict-Driven Clause Learning), or even SAT solvers could be used.

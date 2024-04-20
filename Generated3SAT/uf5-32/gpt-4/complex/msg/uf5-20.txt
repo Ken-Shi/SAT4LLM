@@ -1,0 +1,20 @@
+One of the most efficient ways to solve the given problem is a deterministic algorithm like the DPLL (Davis?Putnam?Logemann?Loveland) algorithm. 
+
+This algorithm involves recursively:
+- Choosing a variable.
+- Setting or asserting this variable (true or false).
+- Simplify the problem.
+- Check if it is ensure that every clause has a positive literal or not.
+- If the problem contains an empty clause, then backtrack and try the next value of the variable.
+
+Let's take the first line: it specifies that either the variable numbered '4' or '5' or '1' (negated) must be true. On line 2: '4' or '~5' or '3' must be true, and so on.
+
+We will run DPLL Algorithm on the input :       
+
+Choosing the most frequent variable '4':    
+- On asserting 4=True, 12th clause gets false since it has -5. So we backtrack and Try 4=False. 
+- Backtracking, on asserting 4=False, we find a solution that satisfy all the clauses which is setting: 1=True, 2=False, 3=False, 4=False, 5=False.
+
+There are other more efficient algorithms like 'Conflict-Driven Clause Learning' where one would start with a random assignment and then iteratively flip the variables that are present in the unsatisfied clauses. The learning part involves analyzing the conflicts (unsatisfied clauses) and adding new clauses to the formula that prevent the same conflict from happening again.
+
+Answer: 1=True, 2=False, 3=False, 4=False, 5=False.

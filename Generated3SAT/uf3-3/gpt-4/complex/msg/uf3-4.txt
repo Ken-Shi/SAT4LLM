@@ -1,0 +1,27 @@
+DIMACS is a format for encoding Boolean satisfiability problems (SAT) in conjunctive normal form (CNF). A problem encoded in this format is a conjunction (AND) of several clauses, where each clause is a disjunction (OR) of literals, which are variables or their negations.
+
+The SAT problem given here is:
+p cnf 3 3
+1 3 -2 0
+-1 3 -2 0
+2 -1 3 0
+
+First, let's break this down. There are three variables represented by 1, 2 and 3. The three clauses (separated by the zeros) could be written as follows in logical expressions:
+
+(1 OR 3 OR NOT 2)
+(NOT 1 OR 3 OR NOT 2)
+(2 OR NOT 1 OR 3)
+
+The goal is to find an assignment to variables 1, 2 and 3 such that all three expressions become true (i.e., that can satisfy all the clauses).
+
+One way to tackle this problem is to brute force all the possibilities for the 3 variables as they can be either true or false, but in computer programming this is often done using a technique called "backtracking".
+
+An easy way to solve it manually is to pick a starting guess and then iteratively try to satisfy all clauses with a set of assumptions. Starting with 1=True, 2=False, and 3=True, we see that all clauses are True. So we have:
+
+(1=True OR 3=True OR NOT 2=False) = True
+(NOT 1=False OR 3=True OR NOT 2=False) = True
+(2=False OR NOT 1=False OR 3=True) = True
+
+It holds for all three clauses, so the assignment is a solution to the problem.
+
+Answer: { 1=True, 2=False, 3=True }

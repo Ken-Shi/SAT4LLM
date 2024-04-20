@@ -1,0 +1,20 @@
+The SAT problem is represented in Conjunctive Normal Form (CNF), which is a conjunction (AND) of one or more clauses, where a clause is a disjunction (OR) of literals. In our problem we have 3 literals which are the variables 1, 2, and 3 and we have 6 clauses defined as follows:
+
+- Clause 1: -1 OR 2 OR 3 
+- Clause 2: 2 OR 3 OR -1
+- Clause 3: 3 OR -1 OR 2
+- Clause 4: 2 OR 1 OR 3
+- Clause 5: 3 OR 1 OR 2
+- Clause 6: -1 OR 3 OR 2
+
+Let's solve our SAT problem now. We can satisfy all of the conditions by looking at the negations of the literals. All clauses except for clauses 4 and 5 contain "-1". Therefore, we have to set our variable 1 to False in order to fulfill these conditions.
+
+Now let's look at the rest of the literals in the clauses:
+
+- Clauses 1, 2, 3, and 6: They contain "2 OR 3". Here, we have the freedom to choose either 2 or 3 to be True. We will set 2 to True.
+
+- Clauses 4 and 5: They contain "2 AND 3". Again, we have the freedom to choose either 2 or 3 to be True. We already set 2 to true, so this condition is also satisfied.
+
+This leaves us with literal 3. We were free to decide this literal in each clause. It can therefore be set to either True or False.
+
+Answer: 1=F, 2=T, 3=T/F

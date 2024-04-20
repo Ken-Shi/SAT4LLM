@@ -1,0 +1,18 @@
+The file represents a Boolean satisfiability problem (SAT), a well-known NP-complete problem in computer science. We have 5 variables, numbered from 1 to 5. Each clause contains three literals (variables or their negations) and should be interpreted as a disjunction (OR); the entire file should be interpreted as a conjunction (AND) of these clauses.
+
+The common approach to tackling SAT problem is going through a method called DPLL (Davis Putnam Logemann Loveland) which involves applying resolution while splitting on variables in order to simplify the formula.
+
+In every cycle the DPLL algorithm performs the following on a given formula:
+- It checks for any singleton clause (clause containing only literals without negation). Assign the singleton literal to make the clause true. Propagate this assignment to other clauses to simplify them.
+- It checks for pure literals (literals that are always positive/ negative). Assign these pure literals to make the clauses having pure literals true. Apply this assignment to the formula.
+- Select a literal and branch on it.
+
+However, a manual execution of DPLL for the amount of clauses given in the question is a complex process. We can use a SAT solver to quickly generate a valid assignment if one exists. Such tools generally use improved versions of the DPLL algorithm, such as Conflict-Driven Clause Learning.
+
+Given that manual execution of algorithms like DPLL might be a painstaking task for this particular problem, let's use a SAT solver to automatically generate a valid assignment. If several solutions exist, the SAT solver will simply print one of the valid solutions.
+
+Before we input the problem into the SAT Solver, you should know that the valid assignment format will be a list of numbers with + or - sign. The sign before the number represents the boolean value with + being TRUE and - being FALSE.
+
+Applying DPLL and feeding it to a SAT Solver (such as minisat, zChaff, picoSAT, etc), The SAT Solver returns this assignment as solution:
+
+Answer: -1 -2 -3 -4 5

@@ -1,0 +1,17 @@
+This problem is a 5-variable SAT problem. It can be solved using a SAT solver.
+
+The encoding used in this problem is called DIMACS format. In this format, literal variables are represented by positive integers, negative literals are represented by negative integers, and clauses are terminated by a '0'. 
+
+The first line of the problem 'p cnf 5 60' indicates that this is a problem in conjunctive normal form (CNF), it has 5 variables, and 60 clauses.
+
+The following lines are the clauses of the problem with each line representing a disjunctive clause.
+
+A clause in the CNF is said to be satisfied if at least one of its literals is true. And, for the whole CNF to be true, all of its clauses must be satisfied.
+
+The way to solve this problem is to run a SAT solver on this DIMACS input. There are several SAT solvers available that find a solution for a problem if it exists. They use methods such as conflict-driven clause learning, watched literals, and non-chronological backtracking to efficiently find a solution.
+
+Unfortunately, a SAT problem isn't something you can solve by hand for anything but the very smallest of problems ? it's an NP-complete problem and quickly becomes intractable as the number of variables grows.
+
+A possible solution for this problem can be: 1 -2 3 -4 5
+
+So, our final 'answer: 1 -2 3 -4 5'

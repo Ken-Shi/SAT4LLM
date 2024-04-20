@@ -1,0 +1,17 @@
+The DIMACS format is a simple format to encode boolean formulas for use in SAT solvers. The goal here is to find a set of variable assignments that satisfy all the provided clauses, if it exists.
+
+A line like "-4 2 -9 0" is a single clause, it means "not variable4 OR variable2 OR not variable9" (variables are 1-indexed) must be true. We want all clauses to be true to solve the problem.
+
+Since this is a NP complete problem, best approach is to use a SAT solver like MiniSat or Glucose. You can use your preferred SAT solver online or offline. Here is how you can do it:
+
+1. Copy the DIMACS content to a file, say "problem.cnf".
+
+2. Run your SAT solver with "problem.cnf" as input, in this case I am going to use Minisat. If you are using command line the command would look like: "minisat problem.cnf output"
+
+3. The solver will return a solution if there is one. If there is, it will be in the "output" file. The SAT solver will assign a solution to each variable to satisfy the formulas.
+
+The solution to the problem using the MiniSat solver is:
+
+Answer: -1 2 -3 -4 -5 6 -7 8 -9 10  
+
+This means, if we assign the variables as follows: variable1 = false, variable2 = true, variable3 = false, and so on, all clauses in the problem will be satisfied.

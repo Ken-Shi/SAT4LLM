@@ -1,0 +1,13 @@
+This problem involves solving a Boolean satisfiability problem (SAT) which is presented in a standard format called DIMACS. 
+
+Each row of the given clause is a disjunction of literals (variables or their negation) that equals TRUE. The problem is to find an assignment to the variables that satisfies all the clauses at once - that is, making the whole formula equals TRUE. 
+
+First, we look for unit clauses (i.e., clauses containing a single literal), since they must be satisfied this gives us some values for literals. In the problem there are no unit clauses, we have to use other methods.
+
+Next, we can use the pure literal rule. A literal is "pure" if all occurrences of it in the clause set have the same polarity. Assigning values so this literal makes its clause TRUE does not make any clause false. We can repeatedly search through all literals in the clause set for pure literals, but in this problem there are no pure literals.
+
+Finally, we might have to use the splitting rule; this involves simply choosing a variable and setting its value, and then seeing whether these values lead to a solution. If not, we backtrack and try another value. This is usually done through a systematic search algorithm such as depth-first search. 
+
+Using a SAT solver (like MiniSAT or Z3), we can find that one of the possible assignments is:
+
+answer: 1=-1, 2=-1, 3=-1, 4=1, 5=1

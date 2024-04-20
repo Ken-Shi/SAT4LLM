@@ -1,0 +1,9 @@
+This problem is represented in Conjunctive Normal Form (CNF) which is a common way to represent logical expressions. 
+
+We are given 10 variables and 50 clauses in the DIMACS format. Each line represents a clause, with the numbers indicating the variables involved. If a number is positive, it means that variable is included in the clause, while if it is negative, it means the negation of that variable is included.
+
+To solve this SAT problem, we need to find a satisfying assignment of truth values to the variables that make all the clauses true.
+
+Let's use a SAT solver to find the solution.
+
+answer: 3 -2 -6 -8 -10

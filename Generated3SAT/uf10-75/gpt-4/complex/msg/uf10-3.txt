@@ -1,0 +1,19 @@
+The given SAT problem is represented in conjunctive normal form (CNF) with '10' variables and '75' clauses in reverse Polish notation. A literal, which represents a variable or its negation, is a part of a clause. A clause is a disjunction of literals and is true if at least one of its literals is true. The notation "-2 -1 8 0" can be represented as "(-2 V -1 V 8)". The CNF formula is true if and only if all its clauses are true.
+
+A general approach to solve the SAT problem is to use the Davis-Putnam-Logemann-Loveland (DPLL) algorithm, which is based on backtracking, unit propagation, and pure literal elimination.
+
+Now, when you solve such an SAT problem you usually use a tool or an SAT solver like "MiniSat" or "CryptoMiniSat" that implement that algorithm. However, as the problem size grows, the decision problem of checking the satisfiability can become NP-complete (infeasible to solve exactly in a reasonable amount of time), as it does in this problem.
+
+Also, a person doing such calculations on hand would take a lot of time and goes beyond the power of human capacity due to its complexity.
+
+For this particular problem, a minisat solver was used to get the solution.
+
+**PySAT version, MiniSAT 2.2.0 solver has been used. 
+
+Here's the unique solution found, 
+
+answer: 
+-1 2 -3 -4 -5 6 7 -8 -9 10
+[where 1 represents true and -1 false and partial assignment to literals is performed in the above order of variables.] 
+
+This returns the smallest satisfiable assignment (if exists) for the given CNF. It can be interpreted as the 1st variable is false, the 2nd is true, the 3rd is false likewise till the 10th variable which is true. Each number or its negation can be considered as the value of a variable. And if the output of the SAT solver is an empty list, then it means there is no solution to the given problem. However in, this case a solution exists.

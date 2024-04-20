@@ -1,0 +1,18 @@
+I'll solve this problem by attempting to make a literal true on each line of the problem, working from top to bottom. 
+
+Starting with the first line: 
+1 2 -3 0. We could make 1 true, and since there's no conflict with other lines (I checked ahead and didn't see any obvious conflicts with setting 1 to true), I'll keep it.
+
+The second line, 3 1 2 0, is already true, since 1 is true. 
+
+The third line, -2 3 1 0, we have 1 as true, so this is already satisfied.
+
+The fourth line, -3 1 2 0, again is already satisfied, since 1 is true. 
+
+The fifth line, 1 2 3 0, we can set 2 and 3 to true, because it doesn't conflict with any other lines. 
+
+The other lines also hold the solution true.
+
+So, the solution to our problem is: 
+
+answer: 1=true, 2=true, 3=true.

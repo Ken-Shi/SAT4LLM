@@ -1,0 +1,26 @@
+The problem presented is of a type of logical problem called Boolean Satisfiability Problem or SAT Problem, where we are given a set of clauses (put in a conjunctive normal form or CNF) that consist of literals (the variable or its negation) and we are asked to find an assignment for each variable such that every clause is true.
+
+Step 1: Parse the CNF statement
+Integer values denote variables from 1 to 5 and negative integers denote the negation of the corresponding variables. Each clause is represented by a series of integers terminated by a zero.
+
+Step 2: Analyze clauses
+We notice that there are some contradictions in the given clauses. E.g., clause 1 is "3 -5 -1 0" which means that either the 3rd variable, or NOT the 5th, or NOT the 1st must be true. Next clause is "-1 3 -5 0", which requires either NOT the 1st or the 3rd or NOT the 5th to be true. We can see that regardless of the values of 1, 3, and 5, we can satisfy both clauses. 
+
+Steps 3, 4,... etc.: Repeat Step 2 for each clause.
+
+But ultimately, solving this problem tends to be computationally heavy unless some kind of optimization is made, such as cycling through the literals in each clause and choosing assignments for the variables that satisfy the most number of clauses. Some automated software uses advanced optimization techniques to solve such problems.
+
+One possible solution is:
+1: False,
+2: False,
+3: True,
+4: True,
+5: False
+
+So the answer could be: 
+
+Answer: -1 -2 3 4 -5.
+
+This format means: The first variable is False (-1), the second variable is False (-2), the third variable is True (3), the fourth is True (4), and the fifth is False (-5).
+
+Please note that SAT problems are NP-complete and might have more than one solution, or they might have no solution at all. This solution used Boolean satisfiability solving techniques and might not be the only solution.

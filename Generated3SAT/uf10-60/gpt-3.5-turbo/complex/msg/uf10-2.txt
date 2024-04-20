@@ -1,0 +1,7 @@
+To solve this SAT problem encoded in DIMACS format, we can use the WalkSAT algorithm as it is a commonly used heuristic method for solving SAT problems. 
+
+WalkSAT is an iterative algorithm that starts with a random assignment of truth values to the variables and then iteratively tries to flip the truth value of a variable in order to satisfy as many clauses as possible. To decide which variable to flip, WalkSAT considers a trade-off between randomly choosing a variable and choosing a variable that will maximize the number of satisfied clauses.
+
+We will implement the WalkSAT algorithm with a reasonable number of iterations to try and find a satisfying assignment for the given SAT problem.
+
+Answer: This problem has multiple solutions and the answer may vary.

@@ -1,0 +1,26 @@
+This is a simple 3-variable, 8-clause SAT (Satisfiability) problem encoded in DIMACS format. The variables are 1, 2, 3. Here is how we interpret the clauses:
+
+1. (2 OR NOT 1 OR 3) must be true.
+2. (2 OR 3 OR NOT 1) must be true.
+3. (NOT 2 OR NOT 1 OR 3) must be true.
+4. (2 OR 3 OR NOT 1) must be true.
+5. (3 OR 2 OR NOT 1) must be true.
+6. (2 OR NOT 3 OR NOT 1) must be true.
+7. (NOT 1 OR NOT 3 OR 2) must be true.
+8. (NOT 1 OR NOT 2 OR NOT 3) must be true.
+
+From the 1st, 2nd, 4th, 5th clauses we can see that if we assign 2=True, then all these clauses will become True. 
+
+From the 6th clause if we have 2=True, we need to make -3=False to make the clause True, so 3=False. 
+
+For the 7th clause, if 2=True, -1 has to be False to make the clause True, so 1=False. 
+
+For the 3rd clause, if 2=False, 1=False, then 3 should be True to make the clause True, which is a contradiction. 
+
+The 8th clause does allow for the current solution, as when 2=True, it needs at least one element to be True to make the clause True. 
+
+Line Of Thoughts:
+To solve this problem, we reason through the clauses, assigning boolean values to the variables such that each clause returns 'true'. In this case, we try to maintain consistency with the previous assignments. If there's a contradiction, we backtrack and try a different assignment. 
+
+Answer: 1=F, 2=T, 3=F
+Note: Here, 'T' = True, 'F' = False

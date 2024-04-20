@@ -1,0 +1,10 @@
+To solve this problem, we can use a SAT solver to determine if there exists a satisfying assignment for the given formula. 
+
+Here is the line of thoughts:
+- The first line "p cnf 3 8" indicates that there are 3 variables and 8 clauses in the formula.
+- The clauses are provided in DIMACS format where each line represents a clause and ends with a '0'.
+- We will input the given formula into a SAT solver to check if there exists a satisfying assignment.
+
+Now, let's input the given formula into a SAT solver and check for a satisfying assignment.
+
+Answer: unsatisfiable

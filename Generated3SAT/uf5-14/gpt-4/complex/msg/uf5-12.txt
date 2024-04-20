@@ -1,0 +1,19 @@
+The given problem is in DIMACS format, which is a standard way to structure problems to pass to SAT solvers. 
+
+Below are the steps performed to solve the given SAT problem:
+
+1. Set up a truth table with columns for each variable (1 through 5) and an additional column for each clause. Every clause corresponds to a row of 5 boolean values, where '1' implies the variable is positively present in the clause, '-1' implies the variable is negatively present in the clause, and '0' implies the variable is not present in the clause.
+
+2. Ignore the '0' at end of each clause as it is used to indicate the end of clause.
+
+3. Begin assigning boolean values to the variables in each clause and check if it satisfies the clause or not. If any clause is unsatisfied with the current configuration, change the values accordingly.
+
+4. For example, the first clause (-2 3 1) can be satisfied if the second variable is False, third variable is True and first variable is True. Keep assigning values in this way unless and until all clauses are satisfied.
+
+5. If there is a situation where no assignment of variables can satisfy all clauses, then the given formula is unsatisfiable.
+
+6. In our case, let's try to assign truth values: Assuming 1=True, 2=False, 3=True, 4=True, 5=True. This set of truth assignment satisfies all the clauses, hence the given Boolean formula is satisfiable and the solution to the problem is: [1, -2, 3, 4, 5].
+
+So, the SAT problem is satisfiable with the assignment:
+
+answer: 1=True, 2=False, 3=True, 4=True, 5=True

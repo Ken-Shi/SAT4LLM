@@ -1,0 +1,18 @@
+Solution Method:
+
+The given problem is in DIMACS format which is a standard file format for specifying problems in CNF (Conjunctive Normal Form). It is used for problems that are typically solved by SAT solvers.
+Each row in the given problem encodes a clause in the corresponding CNF expression. 
+
+Our goal is to solve the problem by finding a valid assignment of truth values (true or false) to the variables 1, 2 and 3 such that the entire CNF expression is true.
+
+We can solve the problem step by step as follows:
+
+1. Look at the first clause (2 3 -1 0), this clause is true if at least one of literals '2', '3', or 'not 1' (-1) is true.
+2. With the same reasoning, we can interpret the rest of the clauses.
+3. A literal is either a variable or its negation, literal '2' is true when variable '2' is true, and literal '-2' is true when variable '2' is false.
+
+Through quick observation we can see that literal '2' appears in all clauses, which means that we must make literal '2' true so all the clauses are true. 
+
+To do that, we set variable '2' = true, '1' = false and '3' = true. This assignment of values make every clause true (since at least one literal in every clause is true) and therefore makes the entire CNF expression true.
+
+Answer: 1=false, 2=true, 3=true.

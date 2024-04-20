@@ -1,0 +1,27 @@
+This problem is solved by using the Davis-Putnam-Logemann-Loveland (DPLL) algorithm, which is the most common algorithm used for satisfiability problems also known as SAT problem. It works as follows:
+
+1) It picks a literal that exists within the clauses.
+2) It modifies all clauses containing that literal.
+3) If a clause becomes empty, the literal chosen initially is incorrect. It then changes the truth value of the literal and proceeds.
+4) If all clauses are satisfied, it found a solution and stops.
+
+The line of thought taken to solve the given problem is:
+
+1) Select a literal, for instance -1.
+2) We have 8 clauses containing the literal -1, we resolve them.
+3) If all clauses are satisfied, we are done.
+4) If not, we utilize another literal and repeat the process.
+
+Following this process for the given formulas:
+
+We start off making -1 true, which is simplest because -1 appears in either form in a number of clauses. After we set -1, a number of clauses evaluate to true and are thus discarded.
+
+Now, several clauses only contain one variable, and these variables must be set such that the clause is satisfied. Simultaneously, clauses will simplify as covered variables are discarded.
+
+We set 5 to false, which means we can also set 2 to true, given which 3 becomes true.
+
+Lastly, the only option for 4 is to be false.
+
+After following the process sequentially, we have evaluated all 5 variables. 
+
+answer: The solution therefore is -1, -4, 2, 3, -5

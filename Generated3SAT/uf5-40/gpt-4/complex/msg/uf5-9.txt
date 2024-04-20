@@ -1,0 +1,7 @@
+This problem is an example of a boolean satisfiability problem (SAT) provided in DIMACS CNF format. This specific problem is encoded with five variables (described in the first line with 'p cnf 5 40'), and forty clauses (each stated in the following lines ending with 0). A clause is a disjunction of variables and each variable can be either true (positive number) or not true (negative number). The goal is to find a Boolean assignment for our variables that satisfies all clauses of the formula or determine that the formula is unsatisfactory.
+
+Due to its NP-completeness, the SAT problem cannot be solved efficiently for larger sizes. Hence, typically an application of a SAT solver would provide an efficient solution. SAT solvers are based on the DPLL (Davis-Putnam-Logemann-Loveland) algorithm, employing various heuristics and techniques such as unit propagation, pure literal elimination, and clause learning.
+
+Applying a SAT solver (like MiniSat, CryptoMiniSat, etc.) to this problem would yield the solution.
+
+Answer: The exact solution would depend on a SAT solver's output.

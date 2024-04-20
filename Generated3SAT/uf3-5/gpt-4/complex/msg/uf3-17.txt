@@ -1,0 +1,23 @@
+The given problem is a representation of a Boolean satisfiability problem (SAT problem). The input to the problem is a Boolean formula with clauses separated by line breaks. Each clause contains literals separated by spaces and ends with a '0'. A literal is either a variable or the negation of a variable. 
+
+Each line represents a clause. A clause is a disjunction (OR) of literals. The problem as a whole represents the conjunction (AND) of all the clauses, hence the task is to assign truth values (true/false) to the variables such that the entire expression is true.
+
+Following is the logical presentation of the input:
+
+1: (1 OR NOT 2 OR NOT 3)
+2: (NOT 2 OR 1 OR 3)
+3: (NOT 2 OR NOT 3 OR 1)
+4: (3 OR NOT 2 OR 1)
+5: (NOT 3 OR NOT 2 OR 1)
+
+Let's try to solve the problem.
+
+Start by setting variable 1 to true (since it appears un-negated most frequently). This immediately satisfies clauses 1, 2, 3, 4, and 5. 
+
+Now, we have to make sure that other variables doesn't set this solution as false. In each clause there is "-2", so let's set 2 to false. By doing this, we don't violate any conditions for the clauses.
+
+And finally, to satisfy the rest of literals/clauses, we should set 3 to false.
+
+So, a solution that satisfies all clauses is: 1=true, 2=false, 3=false.
+
+Answer: 1 -2 -3

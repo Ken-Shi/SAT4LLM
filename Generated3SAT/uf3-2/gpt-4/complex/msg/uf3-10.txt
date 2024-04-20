@@ -1,0 +1,16 @@
+The provided problem is an instance of the Boolean satisfiability problem (also called SAT), a notable problem in computer science. Each line after the first line is a clause of the problem, and each number corresponds to a variable in the problem. Negated variables are represented by negative numbers. The number 0 at the end of each line is a placeholder indicating the end of a clause. 
+
+Given formula consists of following two clauses:
+1. not(var2) or var1 or var3: It means that at least one of these elements should be true.
+2. var3 or var1 or not(var2): This is exactly same as clause 1.
+
+This formula seems to be satisfiable, as clause 1 and clause 2 are the same and thus it enough to make this clause true.
+
+It is easy to satisfy above clauses:
+1. suppose variable 3 is set to True rest anyone variable1 or 2 can be any value.
+or
+2. suppose variable 1 is set to True rest anyone variable2 or 3 can be any value.
+
+So, it's quite easy to find a solution to satisfy this set of clauses.
+
+Answer: An example of a solution is {1=True, 2= False, 3=True} For this assignment, both the clauses become true, which means, the expression is satisfiable.

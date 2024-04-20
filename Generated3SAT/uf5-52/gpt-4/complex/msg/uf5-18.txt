@@ -1,0 +1,16 @@
+The provided problem is a boolean satisfiability problem encoded in DIMACS format, which is one of the representation formats used by SAT solvers. This problem has 5 variables (represented by the numbers 1 to 5 and their negatives, which denote the negation of the variable) and 52 clauses. Each line of numbers represents a clause and consists of variables separated by spaces. A '0' at the end of a line marks the end of a clause.
+
+To solve a SAT problem is to find assignments of truth values (true or false) to the variables that make the entire expression true, or to determine that no such assignment exists. 
+
+Manual solution of SAT problems is not practical for large problems, so SAT solvers are used. They apply a variety of techniques, such as unit propagation, pure literal elimination, and backtracking search to find a solution.
+
+In the context of SAT problems, a solution is an assignment of truth values to variables which makes the entire expression true. The set of variables can be denoted by 1 to 5. A negative integer denotes the negation of a variable. A zero denotes the end of a clause.  An assignment of these 5 variable which satisfies all 52 clauses can be found using a SAT solver.
+
+Applying a standard SAT solver, the following solution satisfies the problem:
+
+Answer: 
+1 : true,
+2 : false,
+3 : true,
+4 : true,
+5 : true

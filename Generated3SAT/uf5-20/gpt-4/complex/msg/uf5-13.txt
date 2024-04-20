@@ -1,0 +1,23 @@
+The given problem is a SAT problem encoded in the DIMACS format. It is one of the well-known NP-Complete problems. SAT, or more formally known as propositional logic satisfiability, is the problem of determining if there exists an interpretation that satisfies a given Boolean formula.
+
+A SAT solver (software or algorithm) is typically used to solve these problems. Such a solver applies a combination of algorithms, including DPLL (named after inventors Davis, Putnam, Logemann, and Loveland) which uses a process of recursively trying to satisfy clauses by trying out variable assignments.
+
+In the given problem we have 20 clauses and 5 variables. It could be solved manually, but a software SAT solver is much more efficient especially as the problem scales.
+
+By using a SAT solver, it will iterate through all the clauses and try to find a combination of boolean values for each variable such that all the clauses (lines with 3 integers and a 0) are satisfied. 
+
+In the DIMACS format:
+- Each row represents a clause of the problem.
+- Positive integers represent the literal in the clause
+- Negative integers represent the negation of the literals
+- Zero indicates the end of the clause
+
+For example,
+3 -5 -2 0, represents the clause (3 or -5 or -2)
+-3 -1 -2 0, represents the clause (-3 or -1 or -2), and so on.
+
+So taking these constraints into account, a feasible solution for this problem through a SAT solver could be:
+ 
+Answer: 1 = true, 2 = false, 3 = true, 4 = true, 5 = true
+
+Entrust interpretation of this solution to the original problem should be carried out with a clear understanding of the problem's specifics.

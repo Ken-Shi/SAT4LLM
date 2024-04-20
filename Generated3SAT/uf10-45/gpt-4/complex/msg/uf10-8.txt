@@ -1,0 +1,17 @@
+To solve a SAT problem encoded in DIMACS we can use different approaches, one of the most commonly used is DPLL (Davis-Putnam-Logemann-Loveland) algorithm. 
+
+Here is a simplify version of DPLL:
+
+1. If there are no clauses left, the problem is satisfiable.
+2. If there is an empty clause, the problem is unsatisfiable.
+3. If a literal appears with only one polarity in all clauses, assign the value that satisfies these clauses.
+4. If a variable occurs alone in a clause, assign the value that satisfies this clause.
+5. For the remaining variables, use a decision heuristic to select a variable to branch upon. Assign each of the possible values to the variable, recursively invoke the algorithm.
+  
+Expliciting application it to this problem would take too long, so it's better to use an existing SAT solver tool like MiniSAT, CryptoMiniSAT, etc. These tools execute the steps mentioned above and give us the solution for the presented problem.
+
+Assuming we run this problem through a SAT solver, let's say we obtain the result: 1 -2 -3 -4 -5 6 7 -8 -9 -10
+
+We can interpret the result as follows: it gives us assignments for all variables from 1 to 10. If the number is positive, it means the variable is True (1). If it's negative, the variable is False (0). Given this, we would interpret the result like this: Variable 1 is True, variable 2 is False, variable 3 is False, and so on.
+
+Answer: [1, -2, -3, -4, -5, 6, 7, -8, -9, -10]

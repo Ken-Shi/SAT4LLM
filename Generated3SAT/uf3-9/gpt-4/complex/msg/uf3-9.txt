@@ -1,0 +1,33 @@
+Understanding the Problem:
+Let's break down what each part of the problem means. This problem is given in the DIMACS format which is often used for specifying SAT (satisfiability) problems. 
+
+"p cnf 3 9" - This line tells us that the problem is in Conjunctive Normal Form (CNF), with 3 variables and 9 clauses. 
+
+The subsequent lines represent the clauses of the problem. Each clause is a disjunction (OR operation) of literals (a variable or its negation), and the entire problem is a conjunction (AND operation) of these clauses. For instance, "-3 -2 -1 0" can be read as "not variable 3 OR not variable 2 OR not variable 1". The 0 at the end of each line just marks the end of a clause.
+
+The task here is to find an assignment of the variables (TRUE or FALSE) that satisfies all clauses, if such an assignment exists.
+
+Solving the Problem:
+
+Now, let's run through a simplified version of the Davis-Putnam-Logemann-Loveland (DPLL) algorithm to solve this:
+
+1. First, look for unit clauses - clauses with only one literal. We don't have any here.
+
+2. Look for pure literals - literals that always appear with the same polarity (either positive or negative) in all clauses. We have one pure literal: -3 (always appears as -3).
+
+3. So we assign TRUE to -3, which equivalently means FALSE to 3. Then eliminate all clauses that now evaluate to TRUE and all occurrences of its negation in the other clauses. The problem becomes: 
+2 -1 0
+1 2 0
+-1 2 0
+2 -1 0
+2 -1 0
+
+4. Next, we try to assign a value to another variable. If we choose 1 as TRUE, clauses 1, 2 and 3 become TRUE. Now we have:
+2 0
+2 0
+
+5. Since both remaining clauses have only one literal (2), we set it to TRUE to satisfy them. Thus, all clauses are now satisfied. 
+
+So the solution is -3=TRUE, 1=TRUE, and 2=TRUE, or equivalently, 3=FALSE, 1=TRUE, 2=TRUE.
+
+Answer: 3=FALSE, 1=TRUE, 2=TRUE

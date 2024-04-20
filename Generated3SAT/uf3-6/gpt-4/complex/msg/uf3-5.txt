@@ -1,0 +1,48 @@
+The given problem is a Boolean satisfiability problem. It is expressed in conjunctive normal form, which means it is a conjunction of disjunctions (clauses). We need to assign a boolean value (true or false, represented as 1 or 0 respectively) to each variable (represented as a positive or negative integer) in a way that the entire problem is true (satisfiable).
+
+Here are the steps to solve this problem:
+
+1. Simplify the problem: Some clauses might not be necessary. A clause is unnecessary if it's a subset of another clause, and removing larger clauses may not change the solution.
+
+Given clauses:
+
+      (1)  (1 -2 -3)
+      (2) (-2 -3 1)
+      (3) (1 -3 -2)
+      (4) (-3 -2 1)
+      (5) (-3 1 -2)
+      (6) (-3 -1 -2) 
+
+   Looking at the clauses, we notice that:
+
+      (1) = (3), (2) = (4), (5) = (-1 -2 3)
+
+   So, after simplification, we simplify the clauses to:
+
+      (1)  1 -2 -3
+      (2) -2 -3 1
+      (3) -3 1 -2
+      (4) -3 -1 -2 
+
+2. Next, we look for "unit clauses". These are clauses with only one literal. We can set this literal true and remove all clauses containing this literal and all occurrences of its negation. There are no unit clauses.
+
+3. Next, we look for "pure literals". These are literals that appear in only one polarity (sign). Assigning them to true causes all clauses they appear in to be true. Again, there is no pure literal in this problem.
+
+4. At this point, we have to make educated guess. Let's set the first variable, 1, to true (i.e. 1=>1). Modify all clauses, if 1 exists, remove the clause, if -1 exists, remove -1 from the clause.
+
+      (1) -2 -3  become false, unsatisfied 
+      (2) -3 -2  become  -3 -2
+      (3) -3 -2  become  -3 -2
+
+Set the second (2) variable to true( -2 => 0) to resolve the contradiction occured at clause (1)
+
+     (1) -3 become -3
+     (2) -3 become -3
+   
+Set the third (3) variable to true (-3 => 0) due to contradiction at clause (1) and clause(2):
+
+All clauses are satisfied and also no contradiction appears. Satisficable solution is found.
+
+The assignment that makes this possible is 1 = true, 2 = true, 3 = false
+
+Answer: 1 2 -3

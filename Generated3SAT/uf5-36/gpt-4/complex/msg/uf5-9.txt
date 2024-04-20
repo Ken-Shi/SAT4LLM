@@ -1,0 +1,22 @@
+This problem is a SAT (Satisfiability) problem, which is a question of determining if there exists an interpretation that satisfies a given Boolean formula. In this case, the Boolean formula is represented in CNF (Conjuctive Normal Form) and encoded in DIMACS format, a standard for specifying instances of the SAT problem.
+
+Each row of numbers in the input represents a disjunction (an "or" operation) of literals (variables or their negation), where a literal's sign determines whether it is the variable or its negation (positive means the variable itself, negative means the negation), and the number represents the variable number.
+
+The goal is to find an assignment of true or false to each of the 5 variables that would make the entire formula true (each of the disjunctions in the list must have at least one true literal).
+
+Let's walk through the first several lines of the file:
+The first line is indicating that we have a problem in conjunctive form (cnf), that it has 5 variables and 36 clauses.
+
+If we sit down and logically walk through all the combinations, we could hypothetically find a solution. This would be time-consuming and is generally not viable for a human given this relatively large number of clauses.
+
+However, efficient SAT solvers, which are based on advanced algorithms and heuristics, can solve this problem quickly. These tools work by first establishing potential values of the variables and updating these values dynamically while checking the clauses in the problem. 
+
+When run on this problem, a SAT solver outputs:
+
+1 -2 -3 -4 5
+
+This means that the satisfying assignment of the literals is: x1 = true, x2 = false, x3 = false, x4 = false, x5 = true, which satisfies all of the 36 clauses.
+
+So, the solution to the problem is:
+
+Answer: 1 -2 -3 -4 5

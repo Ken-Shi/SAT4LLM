@@ -1,0 +1,21 @@
+First, let's recall the DIMACS format encoding for a problem and what it means:
+
+- p cnf 3 3: This line specifies the problem type and size. "p" is just a specifier, "cnf" tells us we're dealing with a conjunctive normal form problem (basically a set of logical clauses), "3" tells us there are 3 variables (usually represented as x1, x2, x3), and the final "3" tells us there are 3 clauses.
+
+- The following 3 lines are the clauses. Each number represents a literal, which is the variable or its negation. Positives are the variables (1=x1, 2=x2, 3=x3), negatives are the negation of the variable (-1=~x1, -2=~x2, -3=~x3).
+
+So now let's solve the problem:
+
+- -1 -2 3: We can read this as "~x1 OR ~x2 OR x3". In simpler terms, x1 is false or x2 is false or x3 is true.
+- 1 -2 -3: This can be read as "x1 OR ~x2 OR ~x3". In simpler terms, x1 is true or x2 is false or x3 is false.
+- 3 2 1: This can be read as "x3 OR x2 OR x1". In simpler terms, one (or more) among x3, x2 or x1 needs to be true.
+
+From the first two clauses, we can see that ~x2 (x2 is false) satisfies both, regardless of the values of x1 and x3. Therefore, the possible satisfiable assignments to x1 and x3 can be either true or false. However, the third clause requires at least one of x1, x2, or x3 to be true. Since x2 is false, at least one of x1 or x3 has to be true.
+
+In this case, we have multiple possible solutions for (x1, x2, x3). They are:
+
+- (true, false, true)
+- (true, false, false)
+- (false, false, true)
+
+Answer: (x1 = true, x2 = false, x3 = true), (x1 = true, x2 = false, x3 = false), (x1 = false, x2 = false, x3 = true)

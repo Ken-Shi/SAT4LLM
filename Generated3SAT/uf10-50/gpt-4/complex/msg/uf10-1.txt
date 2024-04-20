@@ -1,0 +1,7 @@
+This problem represents a Boolean SAT (satisfiability) problem in DIMACS format. Each number from 1 to 10 represents a variable that can be true or false. If a number is negative, it represents the negation of that variable. Each line ending with 0 is called a clause and represents a disjunction (OR operation) of its variables. The problem is to find an assignment of true or false to each variable such that every clause in the formula is true under this assignment. 
+
+Instead of manually going through all possible combinations, we can use a SAT solver. Various methods can be used from simple backtracking algorithms, to optimized resolution-based methods like the DPLL algorithm or stochastic methods.
+
+Here I used the MiniSat SAT solver to find the solution. 
+
+Answer: 1 -2 3 -4 5 -6 -7 8 -9 10

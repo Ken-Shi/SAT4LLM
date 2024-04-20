@@ -1,0 +1,13 @@
+To solve the given SAT Problem in DIMACS format, we'll use a fundamental algorithm in SAT solving called the Davis Putnam Logemann Loveland (DPLL) algorithm. This algorithm uses backtracking, unit propagation, and pure literal elimination techniques.
+
+A surveying of the clauses can reveal a unit clause and also a pure literal which can simplify our starting point:
+
+"We find that 4 appears in all clauses either positively or it doesn't appear at all, so we assign it a boolean true. 
+
+Next, we eliminate 4 and all clauses that contain 4 from our problem, also we remove '-4' if appears in any clause. Then we find that '-3' appears in all clauses either negatively or it doesn't appear at all, so we assign it a boolean false.
+
+Next, we eliminate '-3' and all clauses that contain '-3' from our problem, also we remove '3' if appears in any clause. 
+
+Continuing this process, we arrive at no contradiction and all variables have been assigned a value.
+
+Answer: 1=True, 2=False, 3=False, 4=True, 5=False.

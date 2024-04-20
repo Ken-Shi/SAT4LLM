@@ -1,0 +1,26 @@
+This problem is a SATISFIABILITY problem, often known as SAT problem. It is a Boolean satisfiability problem where the goal is to find a value or assignment to each variable so that the resulting expression evaluates to true.
+
+Here, we have 5 variables, represented by integers 1 to 5 in DIMACS format, and 26 clauses (the constraints that must be satisfied). 
+
+The numbers in each line represent the literals in the clauses (a literal is a variable or its negation), and clauses are terminated by zeroes.
+
+Following steps are used commonly in solving a SAT problem:
+
+- Unit resolution: If a clause has a single unassigned variable, assign it a value that satisfies the clause.
+- Pure literal elimination: A "pure" literal is a literal that always appears with the same "sign" in all clauses. If a literal is pure, it can be permanently assigned in a way that makes all clauses containing this literal true.
+
+Now, let's begin solving this problem:
+
+Line 1: Assign 3 with false because "-3" appears in this line. Also assign 4 with true and 5 true. 
+
+Line 2: "-5" appears, so assign 5 with false. "-3" also appears as a unit clause, so reaffirm 3 as false. "4" also appears, reaffirming 4 as true. 
+
+Line 3: "-4" and "-1" appear, so assign 4 as false and 1 as false. "2" appears so assign 2 as true. 
+
+Line 4: "2" appears again, reaffirming 2 as true. "-1" appears, reaffirming 1 false. "-3" also appears, so reaffirm 3 as false.
+
+Line 5: "-1" and "-3" appear so reassign 1 and 3 as false. Reassign "5" as true.
+
+Subsequently we'd go through rest of the lines and verify the assignments. The literals conflict when "-1" is false but "1" in line 23 ask for "1" to be true, which makes it not solvable, so the problem is unsatisfiable.
+
+Answer: UNSATISFIABLE

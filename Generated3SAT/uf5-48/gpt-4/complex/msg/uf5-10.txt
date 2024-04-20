@@ -1,0 +1,25 @@
+This is a satisfiability problem, which is a decision problem whose instance is a boolean logic formula and the question is whether there's a variable assignment that makes the formula true. This specific problem is written in DIMACS format, which is one of the common ways to encode SAT problems.
+
+The problem presents a list of clauses in disjunctive normal form (a big OR of ANDs). Each clause is separated by '0' and each row is interpreted as a separate clause, while the numbers represent literals.
+
+Variable assignment will follow the rule of any boolean algebra: If the a number is positive, it should be true, and if it is negative, it should be false. The goal is to find an assignment that makes all clauses true simultaneously.
+
+Here, we have 5 variables, denoted 1 to 5. The '-' symbol denotes a negation. A clause in a row is considered true if at least one literal in the clause is true.
+
+Typically to solve this we implement algorithms like the Davis-Putnam-Logemann-Loveland (DPLL) or use SAT-solving tools like MiniSat or Z3. They apply the resolution rule iteratively, which basically tries to guess the value of variable then simplifies the problem with respect to the guessing, and backtracks if the guess leads to a contradiction.
+
+Since it's not possible to implement those tools or algorithms here, let's manually decide random boolean assignment for variables(1 to 5) and see if all the clauses are SATISFIED. Here is a possible solution:
+
+As a strategy for guessing, let's deferring negative literals and addressing positive ones first.
+
+Choice for variable 1(True)
+Choice for variable 2(True)
+Choice for variable 3(False)
+Choice for variable 4(True)
+Choice for variable 5(True)
+
+Now substitute these values in all clauses and check if all clauses are true.
+
+You would find that upon substituting these values, each clause has at least one literal that makes it true.
+
+Answer: 1=True, 2=True, 3=False, 4=True, 5=True.

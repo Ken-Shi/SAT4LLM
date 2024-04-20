@@ -1,0 +1,40 @@
+This kind of problem is usually solved by the SAT solver algorithm such as DPLL(Davis-Putnam-Logemann-Loveland). Let's try to directly apply this algorithm to our problem and see if we can find the solution.
+
+We can view the problem as a set of clauses, where each clause is a disjunction (OR operation) of literals, and the whole problem is a conjunction (AND operation) of these clauses. A literal is either a variable or its negation. In our case, we have 3 variables: 1, 2, 3. A positive number stands for the variable itself and a negative number stands for the negation of the variable.
+
+Initially, we don't have any values for our variables. Let's start from the first one - 1.
+
+Assign 1 = TRUE. Substitute this value into all the clauses. If a clause contains 1, it becomes TRUE and can be removed. If a clause contains -1, -1 becomes FALSE, it can be removed from the clause. 
+
+-3 2 -1 0
+-3 2 0
+
+Then let's look at variable 2.
+
+If 2 = TRUE, 
+
+-3 2 -1 0
+-3 0
+ 
+The clause -3 0 is unsatisfiable because -3 (or 3 = FALSE) is always FALSE. Hence, 2 cannot be TRUE, so 2 = FALSE. 
+
+Substitute 2 = FALSE into all remaining clauses. 
+
+-3 -2 1 0
+-3 1 0 
+
+Finally, let's look at variable 3. 
+
+Because we only have one remaining clause -3 1 0, which is equivalent to 3 = FALSE or 1 = TRUE. We know 1 = TRUE already, so this clause does not impose any new restrictions on 3. Therefore, 3 can be freely chosen as TRUE or FALSE.
+
+Therefore, we have found one satisfying assignments: 
+- 1 = TRUE 
+- 2 = FALSE
+- 3 = TRUE or FALSE
+
+We could encode them as positive for TRUE and negative for FALSE. Hence, the solution in DIMACS format would be 
+
+Answer:
+
+1 -2 3 0
+1 -2 -3 0

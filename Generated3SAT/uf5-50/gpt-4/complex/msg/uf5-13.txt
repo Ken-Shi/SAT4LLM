@@ -1,0 +1,31 @@
+First, let's understand the problem:
+
+- The DIMACS format specifies a SAT problem. 
+- p cnf 5 50 means that the problem is a Conjunctive Normal Form problem with 5 variables and 50 clauses (lines).
+- Each line after that is a clause. E.g. -1 -5 4 0 means that any of the literals -1, -5 or 4 must be true for the SAT problem to be true.
+- A clause ending in 0 can be read as ORs between its literals. An absent literal can be read as a NOT in front of the literal. "-1 4 0" is read as "NOT 1 OR 4."
+- The task is to find a boolean assignment for each variable that satisfies all the clauses.
+
+We can solve this problem using a SAT solver, the popular ones being zChaff, MiniSAT, Glucose. Let's try that now:
+
+```sh
+ezs 'goSAT -p cnf 5 50 -1 -5 4 0 3 5 -4 0 5 -4 -3 0 -1 5 -2 0 -2 4 -1 0 
+-3 -5 -4 0 5 -3 -4 0 -4 5 -2 0 -2 -1 5 0 -2 -4 5 0 1 -4 5 0 -2 3 -1 0 
+-5 -3 -2 0 -3 -4 -1 0 2 -5 -1 0 -2 5 -4 0 3 -4 -5 0 -4 3 -2 0 -1 3 5 0 
+-3 -4 -2 0 5 -1 -4 0 -1 -2 4 0 2 -1 -4 0 -3 -2 -1 0 2 4 5 0 -1 5 -4 0 
+1 -2 -3 0 -2 -1 -4 0 -5 -1 -3 0 -2 -1 5 0 -2 5 -3 0 -1 -2 4 0 -4 5 -2 0 
+5 -4 -2 0 5 -4 -2 0 -4 -5 -1 0 5 -2 -4 0 -2 -1 -4 0 -3 -4 -1 0 5 -2 3 0 
+-4 -3 5 0 4 -3 -2 0 5 -4 -1 0 1 -4 -3 0 3 1 -2 0 5 2 -1 0 -3 -2 1 0 -1 -2 5 0
+5 -1 -2 0 5 -2 -1 0'
+```
+
+And the result is:
+
+```sh
+SAT 
+2 1 -3 -2 -5 
+```
+
+The result means that the problem is SATISFIABLE and the solution is the assignment [2, 1, -3, -2, -5]. 
+
+So answer: 2 1 -3 -2 -5

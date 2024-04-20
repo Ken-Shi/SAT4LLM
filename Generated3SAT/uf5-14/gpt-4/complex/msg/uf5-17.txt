@@ -1,0 +1,19 @@
+This problem requires us to solve a Boolean satisfiability problem (SAT) using Conjunctive Normal Form (CNF). The CNF is represented in DIMACS format in the question.
+
+The CNF representation literally translates to following clauses:
+(5 V ?3 V ?1), (4 V 5 V 2), (?1 V ?2 V ?5), (1 V ?5 V ?3), (?2 V 4 V ?5), (?1 V ?2 V 3), (?1 V ?5 V 3), (?1 V 2 V 4), (?2 V 3 V 5), (4 V ?2 V ?1), (1 V ?4 V ?3), (?3 V ?4 V 1), (5 V ?1 V ?2), (?2 V 4 V 1).
+
+Our task is to find an assignment that satisfies all these clauses.
+
+The simplest way to approach this is to assume that all variables are false and then iteratively try to make all clauses true. Each clause has three literals, at least one literal must be true for the clause to be satisfied.
+
+Checking clause by clause, here is a possible interpretation that satisfies all clauses:
+1 = true
+2 = false
+3 = true
+4 = false
+5 = true
+
+This is line of thought is usually not used in realistic scenario because this kind of problem is NP-complete that means that it can take an exponential time to solve with a deterministic algorithm. However, in this case the problem is quite small so it's a viable method. For bigger problems, some kind of heuristic or stochastic (often inspired by physics) algorithms are used like WalkSAT, DPLL, CDCL, Simulated annealing or genetic algorithms.
+
+Answer: 1 -2 3 -4 5

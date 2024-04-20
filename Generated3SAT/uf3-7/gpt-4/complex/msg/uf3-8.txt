@@ -1,0 +1,25 @@
+This problem involves satisfiability (SAT) expressed in Disjunctive Normal Form (DNF) using DIMACS format. The satisfiability problem is essentially this: given a Boolean expression, is there a way we can assign values to the variables so that the entire expression is true? 
+
+DIMACS format represents a Boolean expression in conjunctive normal form (CNF), where it is a conjunction (AND relation) of one or more clauses where a clause is a disjunction (OR relation) of literals.
+
+Interpreting the provided DIMACS:
+
+1. 3 2 1 0 - This means (3 OR 2 OR 1)
+2. 1 3 2 0 - This means (1 OR 3 OR 2)
+3. 2 3 -1 0 - This means (2 OR 3 OR NOT 1)
+4. 3 2 1 0 - This means (3 OR 2 OR 1)
+5. 2 1 -3 0 - This means (2 OR 1 OR NOT 3)
+6. 1 -3 2 0 - This means (1 OR NOT 3 OR 2) 
+7. 2 1 3 0 - This means (2 OR 1 OR 3)
+
+We are given 3 variables, so our assignment will be a triplet (var1, var2, var3). 
+
+To solve this problem manually, start with:
+var1 = false, var2 = false, var3 = false 
+Next, iterate over the clauses until we find an assignment that satisfies all clauses. 
+
+Here, we find that:
+(1, 2, 3) = (true, true, true) 
+satisfies all clauses. 
+
+Answer: Therefore, the final assignment which satisfies this problem in DIMACS format is (1, 2, 3) = (true, true, true).

@@ -1,0 +1,18 @@
+This problem is a SAT (satisfiability) problem represented in DIMACS format. A SAT problem involves determining if the given Boolean formula can be made true by assigning appropriate True/False values to variables. The DIMACS format is a standardized way of writing clauses in Conjunctive Normal Form (CNF). Each line represents one clause, and it is a disjunction (OR). All the clauses are connected by the logical operator conjunction (AND).
+
+Here, we have five different variables (1,2,3,4,5) which can be posited or negated and 32 possible combination clauses. 
+
+A solution to the SAT problem is achieved by finding the value for the variables such that all the clauses are satisfied. Let's start by trying to identify patterns or rules from the given clauses.
+
+Having a look over at the provided solutions, the first notable observation is that clause 5 (-5 1 -4 0) is negated form of clause 2 (1 5 4 0). This indicates that at least one variable in these two solutions has the inverse value, which makes it impossible for all variables to be true or all to be false. Similar patterns are found throughout the clauses.
+
+After testing several assignments and eventually using a SAT Solver, an example solution is found:
+
+answer: 
+1 = true
+2 = true
+3 = false
+4 = true
+5 = true
+
+In this assignment, each of the clauses in the SAT problem evaluates to true, therefore satisfying the problem.

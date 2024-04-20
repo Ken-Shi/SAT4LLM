@@ -1,0 +1,36 @@
+It is a 3-SAT problem with 3 variables (1, 2, 3) and 6 clauses. The problem is to find a truth assignment that satisfies all clauses.
+
+Here are the clauses:
+
+1. (3 OR 2 OR 1) 
+2. (NOT 1 OR 3 OR 2)
+3. (1 OR 3 OR 2)
+4. (1 OR 2 OR NOT 3)
+5. (NOT 1 OR 2 OR 3)
+6. (3 OR 2 OR NOT 1)
+
+Each clause is a disjunction which means at least one of literals needs to be true for each of them.
+
+My line of thoughts for this is to check for each variable if it can be both true and false. 
+
+Let's start with variable 1:
+
+a) If we assume 1 to be true, every clause that doesn't contain NOT 1 could potentially be satisfied already. Clauses 1, 3 and 4 contain pure 1 and can be considered as true.
+
+b) If we assume 1 to be false, any clause that contains NOT 1 could potentially be satisfied. Clauses 2 and 5 do contain NOT 1 and hence can be considered as true. However, clause 1 and 3 contain pure 1 and hence cannot be satisfied anymore. This means that 1 has to be true.
+
+Next, let's consider variable 2:
+
+a) With 2 as true, clauses 1, 2, 3, 4, 5, 6 all can be satisfied as they all contain 2.
+
+b) Assuming 2 is false, it seems no clause can be satisfied as they all contain 2. So, it is necessary for 2 to be true.
+
+Finally, let's consider variable 3:
+
+a) With 3 as true, clauses 1, 2, 3, 5, 6 can be satisfied as they contain 3.
+
+b) However, assuming 3 as false, it seems only clause 4 can be satisfied as it contains NOT 3. Thus, 3 has to be true as well.
+
+So we have 1 = true, 2 = true, 3 = true as the satisfied set.
+
+Answer: {1 = true, 2 = true, 3 = true}

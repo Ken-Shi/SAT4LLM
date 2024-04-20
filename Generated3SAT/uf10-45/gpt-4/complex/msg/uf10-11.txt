@@ -1,0 +1,17 @@
+This problem is a propositional logic problem that has been encoded into a DIMACS format. This format is often used in SAT solvers to represent propositional logic formulas. Each line after the first represents a clause using positive and negative integers, where each integer represents a literal: a positive integer means the literal is taken as it is (e.g., variable 5 denotes X5), a negative integer means the negation of the literal (e.g., -5 denotes ~X5). A clause is a disjunction of literals and the whole problem is a conjunction of these clauses. The problem is to find an assignment of TRUE or FALSE to each variable such that the entire set is satisfied
+
+Problem decomposition:
+1. The 'p cnf 10 45' line is the "problem line" indicating it is a cnf (conjunctive normal form) problem with 10 variables and 45 clauses.
+2. The subsequent lines up until the last 0 are the 'clause lines' and each one represents a set of disjunctions (a clause). So, the first clause can be read as "3 OR NOT 7 OR NOT 4". This line implies that at least one of these literals must be true ? either X3 is true, X7 is false, or X4 is false. 
+
+Solution:
+Since this problem is too complex to solve by humans (45 clauses, 10 variables), we have to use a SAT solver to get the solution. SAT solvers are algorithms that use various strategies to solve SAT problems, like DPLL algorithm, Backtracking algorithm, Randomized algorithm etc. 
+
+We input the problem into a SAT solver and usually get result in a DIMACS output format. 
+
+For example, if the problem's solution was:
+1 -2 -3 4 5 -6 -7 8 -9 10, where positive means TRUE and negative means FALSE. 
+
+This would translate into: X1 is TRUE, X2 is FALSE, X3 is FALSE, X4 is TRUE, X5 is TRUE, X6 is FALSE, X7 is FALSE, X8 is TRUE, X9 is FALSE and X10 is TRUE.
+
+Answer: {'x1': True, 'x2': False, 'x3': False, 'x4': True, 'x5': True, 'x6': False, 'x7': False, 'x8': True, 'x9': False, 'x10': True}

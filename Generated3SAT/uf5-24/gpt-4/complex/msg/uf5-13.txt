@@ -1,0 +1,20 @@
+To solve this SAT problem, you will iterate over the clauses and try to make each one true by assigning a truth value to the literals (which are the absolute values of the numbers in the clauses). For each clause, if it contains a positive value, you will try to assign it a truth value of true, and if it contains a negative value, you will try to assign it a truth value of false.
+
+However, while iteratively solving for these clauses, contradictions can arise. So, a way will have to be found to resolve these contradictions as well.
+
+In this problem, there are five literals (1, 2, 3, 4, 5). So, start with the first clause -3 4 5 0, which means NOT 3 OR 4 OR 5. For this clause to be true, either 3 can be FALSE, or 4 can be TRUE, or 5 can be TRUE.
+
+Follow this logic to all the clauses iteratively, trying to assign the most consistent truth values to the literals. If a contradiction emerges, backtrack and try a different truth assignment.
+
+It is important to note that many SAT problems cannot be solved efficiently using this method as the complexity is exponential with respect to the number of literals.
+
+This kind of problem is usually solved using specialized software, called SAT Solvers which use more complex algorithms, taking advantage of various aspects of the problem and more efficient methods of propagation and backtracking.
+
+A human would need to guess and check various combinations to get the solution. In a mixture of both, one can provide solution to this problem.
+
+Answer: The following is one possible valid assignment of TRUE and FALSE to the literals that satisfy all the clauses mentioned. 
+1 = FALSE
+2 = TRUE
+3 = FALSE
+4 = TRUE
+5 = TRUE

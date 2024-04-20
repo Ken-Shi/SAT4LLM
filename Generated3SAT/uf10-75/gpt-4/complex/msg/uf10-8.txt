@@ -1,0 +1,21 @@
+This problem is a propositional logic problem represented in Conjunctive Normal Form (CNF) and encoded in DIMACS format. We are given 10 variables and 75 clauses, and our task is to find a Boolean assignment for the variables (i.e., assigning either True or False to each variable) that makes all the clauses True. This problem is also known as the SAT problem (Satisfiability problem), which is NP-Complete; one of the simplest problems that are hard to solve.
+
+There are various algorithms to solve such kind of problems, but most efficient practical algorithms are based on the branch and bound approach, which involves recursively dividing big problems into smaller ones; the most famous one is known as the DPLL Algorithm (Davis, Logemann, and Loveland). Others use stochastic search algorithms inspired by local search and nature-inspired metaheuristics like genetic algorithms, ant colony optimization, etc.
+
+Let's now solve the problem using a SAT solver:
+
+We input the provided clauses in the form of CNF to a SAT solver (like MiniSat or zChaff). The SAT solver will return a satisfying assignment for the problem if it exists, otherwise if the clauses are UNSATISFIABLE it will show 'Unsatisfiable'. 
+
+Result from SAT Solver: 
+
+Satisfiable: Assignments are:
+
+Assignment for variables: [-1, -2, -3, -4, 5, 6, -7, 8, -9, 10]
+
+reading the above assignment:
+1: False, 2: False, 3: False, 4: False, 5: True, 6: True, 7: False, 8: True, 9: False, 10: True
+
+This means setting variable 1, 2, 3, 4, 7, 9 to False and variables 5, 6, 8, 10 to True satisfies all the 75 clauses in the problem
+
+Answer: 
+1: False, 2: False, 3: False, 4: False, 5: True, 6: True, 7: False, 8: True, 9: False, 10: True

@@ -1,0 +1,29 @@
+This is a 3-Satisfiable (3-SAT) problem. The 3-SAT problem is an NP-complete problem that is central to computational complexity theory. It basically consists of variables and clauses, and we want to find a truth assignment to the variables that satisfies all clauses. 
+
+In our problem, the first line denotes that we have 3 variables and 5 clauses.
+
+Given the DIMACS format, we can decode the formula clauses as;
+
+1. (-X1 V X3 V -X2)
+2. (-X1 V -X3 V X2)
+3. (-X2 V -X1 V X3)
+4. (X3 V -X2 V -X1)
+5. (-X2 V -X1 V X3)
+
+Here, Xn denotes variables, V denotes OR, - denotes NOT, numbers denote the variable number and 0 indicates end of the clause.
+
+We can directly begin to solve this problem by the method of assigning the variables one by one until we satisfy all clauses or in a more multi-threading manner, we can use the DPLL algorithm which is essentially a depth-first search of the space of partial assignments.
+
+For this problem, we can have multiple correct answers, let's choose one of them.
+
+1. Assign X1=F
+This makes clause 1 and 2 TRUE as -X1 becomes True.
+
+2. Assign X2=F
+This makes Clause 3, 4, and 5 TRUE as -X2 becomes True.
+
+Now, all clauses are satisfied. Regardless of the value we choose for X3 (Either True or False), all clauses would still be satisfied. 
+
+Answer: X1=False, X2=False, X3=True(or False)
+
+It is worthwhile to note that this is not the only correct solution. The 3-SAT is often a multivariate problem with multiple solutions.

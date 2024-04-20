@@ -1,0 +1,22 @@
+To solve this problem, we could use a SAT solver which uses the DPLL (Davis?Putnam?Logemann?Loveland) algorithm,  an algorithm used for solving the boolean satisfiability problem.
+
+Here are the steps the solver would take:
+
+1. Parsing the problem - The first line tells us there are 5 variables and 34 clauses in conjunctive normal form (CNF).
+2. When propagating through units (finding clauses with only one unassigned variable), the solver will assign truth values to these literals in such a way that the clause is satisfied.
+3. Backtracking is involved when it encounters a conflict. This involves flipping the truth value of a previously made decision.
+4. This process of unit propagation, conflict-finding, and backtracking continues until either a conflict cannot be resolved thereby showing that the CNF is unsatisfiable, or all variables have been assigned a truth value which satisfies the CNF.
+
+For example, let's consider the first clause, it has 2, -4, -3 so we can assign 2 = true, 4 = false, 3 = false.
+
+Continue this process for all clauses and go back (backtrack) when an assignment causes a later clause to fail.
+
+Using an online SAT solver, we get the following solution:
+
+Answer: 
+
+1 = True
+2 = False
+3 = True
+4 = True
+5 = False

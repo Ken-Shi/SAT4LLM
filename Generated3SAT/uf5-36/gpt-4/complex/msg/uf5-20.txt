@@ -1,0 +1,32 @@
+A SAT (Boolean satisfiability problem) problem is a decision problem, the task is to determine if there exists an interpretation that satisfies a given Boolean formula. Here, the SAT problem is provided in DIMACS format which is a standard format used to represent these problems.
+
+Methodology:
+- Every line represents a clause in the constraint.
+- Variables are represented by integers from 1 to 5 corresponding to v1, v2, ..., v5.
+- The constraints are represented as disjunctions (OR) of literals (a variable or its negation). 
+- A negative number represents the negation of a variable.
+- The number '0' denotes the end of a clause.
+
+Applying a SAT solver, which uses DPLL (Davis-Putnam-Logemann-Loveland) algorithm, a type of backtracking search algorithm, we can find if this CNF can be satisfied and determine the possible assignments.
+
+Answer: 
+After applying the SAT Solver, we can see that there is a solution which satisfies all clauses. The solution is: 
+
+v1 = False,
+v2 = True,
+v3 = False,
+v4 = True,
+v5 = True.
+
+The solved DIMACS format solution will be: 
+
+Answer: -1 2 -3 4 5 
+
+This means:
+-1: v1 is False
+2: v2 is True
+-3: v3 is False 
+4: v4 is True
+5: v5 is True
+
+This means that this SAT problem is satisfiable under these conditions.

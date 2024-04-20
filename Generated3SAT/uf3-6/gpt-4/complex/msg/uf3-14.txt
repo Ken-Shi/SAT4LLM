@@ -1,0 +1,28 @@
+Let's break this type of problem down first. This is a Boolean satisfiability problem. This means given a formula, we are searching for an assignment of truth values to variables that make the formula true.
+
+The '3' indicates that there are three variables and the '6' indicates that there are six clauses. The variables are positive and negative versions of '1', '2', and '3'. Each line after represents a clause of disjunction (OR), with '0' mark the end of each clause. A negative sign before a variable represents the logical negation. 
+
+The following pseudo algorithm can iteratively solve the problem:
+
+  Start: set each variable to either true or false randomly
+  Repeat for a number of times:
+    If the current assignment satisfies the formula, stop and return the assignment
+      For each variable, v:
+        Flip the value of v
+        If the number of unsatisfied clauses reduces, keep the flipped value
+      If no flip improves the solution, stop and say that the algorithm has converged.
+
+The DIMACS assignment can be translated to logical expressions as follows: 
+1. (-3 ? 1 ? 2)
+2. (1 ? 2 ? -3)
+3. (-3 ? 1 ? 2)
+4. (1 ? -3 ? 2)
+5. (1 ? -2 ? -3)
+6. (1 ? -3 ? 2)
+
+Now, through the pseudo algorithm or through manual substitution and checking, we can determine the variable answers for satisfaction.
+Given that the clauses are mostly repeated, it seems apparent that the assignments could be: 1=True, 2=True, 3=False.
+
+This makes every clause true, and since the final statement is a conjunction (AND) of all these clauses, the whole statement holds true as well.
+
+Answer: 1=True, 2=True, 3=False.

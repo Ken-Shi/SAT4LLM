@@ -1,0 +1,26 @@
+In this SAT problem, there are 3 variables (also known as literals) and 3 clauses. This is specified in the line `p cnf 3 3` where `3 3` indicates the number of variables and clauses respectively.
+
+The given clauses are:
+
+Clause 1: 3 1 2 0 
+Clause 2: 3 1 2 0 
+Clause 3: -2 -1 3 0 
+
+In the DIMACS format, each clause is ended by a '0'. Positive numbers represent the literal (variable) as it is, whereas a negative number represents the negation of the literal.
+
+Let's name the variables as a, b and c. Therefore, we can rewrite the clauses as follows;
+Clause 1: c OR a OR b
+Clause 2: c OR a OR b
+Clause 3: NOT b OR NOT a OR c
+
+The third clause indicates that if both a and b are true, c has to be true. Since clause 1 and clause 2 are identical, they do not hence add any restriction to the possible values of a, b and c. In short, the problem simplifies to, if both a and b are true, c has to be true. 
+
+There are brackets missing in the simplified clauses, the proper format should be as follows:
+
+Clause 1: (c OR a OR b)
+Clause 2: (c OR a OR b)
+Clause 3: (c OR ( NOT a AND NOT b))
+  
+Given the input clauses, there are several solutions. The clauses are satisfied for any truth values of a, b, c except for the case when a, b are true and c is false.
+
+Answer: One of the possible solution would be (c=true, a=true, b=true), another could be (c=true, a=false, b=true), or (c=false, a=false, b=false).  Generally any truth value(s) which doesn't result in (a=true, b=true, c=false) can be an answer.

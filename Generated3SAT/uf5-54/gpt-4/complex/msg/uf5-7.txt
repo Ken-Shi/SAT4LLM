@@ -1,0 +1,11 @@
+This problem involves a type of propositional logic called Boolean satisfiability (SAT). Each clause given here (every line before the 0 at the end) represents a disjunction (an 'or' statement), and the overall problem is to find a conjunction (an 'and' statement) of these disjunctions that is true.
+
+One common way to solve SAT problems is through a method called the Davis-Putnam-Logemann-Loveland (DPLL) algorithm, which use backtracking and variable assignment based on the frequency and centrality of that variable in the clauses.
+
+The DIMACS format given here represents a formula of Boolean variables x1 pro x5. A positive integer n represents the variable xn, a negative integer -n represents the negation of the variable xn. Each clause is a set of integers terminated by a 0.
+
+Let's start our DPLL algorithm with the most recurring variable which is 5 and assign it as true, and if a contradiction occurs then we will assign it as false and try again. Firstly, assigning 5 as true, then accordingly variables, 3, 4 and 2 must also be true, and with 1 true (clause 6), all clauses become true except clauses 9 and 22 which are contradictory, so let's try to assign 5 as false. 
+
+Assigning 5 as false makes 3 false (clause 8), which in turn makes 2, 4 true (clauses 21, 17) and 1 false (clause 9). And now all clauses seem satisfiable.
+
+Answer: The solution for this Boolean formula is x1=false, x2=true, x3=false, x4=true, x5=false (1=-1, 2=1, 3=-1, 4=1, 5=-1), making the problem confinable.

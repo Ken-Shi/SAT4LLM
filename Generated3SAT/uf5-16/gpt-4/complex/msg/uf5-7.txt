@@ -1,0 +1,13 @@
+The given problem is in conjunctive normal form (CNF), where each line represents a disjunction (an OR operation) of literals (variables or their negations) and the whole problem is a conjunction (an AND operation) of these clauses. This is a particular type of propositional logic problem called a SAT (Satisfiability) problem. The goal is to assign TRUE or FALSE to each variable such that the whole expression is TRUE. 
+
+We can approach the problems as follows:
+
+We begin by looking for 'unit clauses', i.e., clauses with a single literal. There are none in the problem, so we can move on to 'pure literal elimination'. A pure literal is a variable that appears in only one polarity in the formula. We look through the clauses to find the same. If such literals exist, we can remove all clauses containing them, as we can simply assign TRUE to positive literals and FALSE to negative literals to satisfy those clauses. But, in this case, no pure literal exists.
+
+Since neither unit propagation nor pure literal elimination is applicable, we resort to making assignments and looking for contradictions.
+
+Let's choose -1 from the first clause and set it to FALSE (since it is negated). We then propagate this through the formula, simplifying where we can. We find no contradictions so we continue by choosing -5 from the second clause and setting it to FALSE. Again we propagate this choice through the formula and simplify. Still, we do not find any contradictions, so we make at random the choice 2 from the third clause and set it to TRUE.
+
+Continuing this way, we find a satisfying assignment without running into any contradictions. In this way, by applying the basic strategies of SAT solving ? unit propagation, pure literal elimination, and literal assignment ? we can find a solution if one exists.
+
+Answer: {1 = FALSE, 2 = TRUE, 3 = FALSE, 4 = TRUE, 5 = FALSE}

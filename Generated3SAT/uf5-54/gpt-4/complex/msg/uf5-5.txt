@@ -1,0 +1,15 @@
+Solving SAT problems is a NP-Complete problem which means it is difficult to solve with classical programming methods. However, the framework of the problem can be tackled by employing different strategies depending on the problem at hand. Here though, we can use a black-box SAT solver.
+
+The way SAT solvers work is by taking as input a boolean logic problem (also called a formula) and returning whether or not the problem can be solved, and, if it can, giving one solution to it. This problem is usually expressed in Conjunctive Normal Form where each clause is a disjunction of literals (i.e. a variable or its negation), and the full formula is a conjunction of these clauses. In other words, each clause is an OR of literals, and the full problem is an AND of these clauses.
+
+Sphere of influence are algorithms for solving SAT problems. These can be based on methods like Backtracking, local search heuristics, and more complex methods like the DPLL (Davis-Putnam-Logemann-Loveland) algorithm and its successors, such as CDCL (Conflict-Driven Clause Learning). These are used by modern SAT solvers.
+
+These algorithms operate on a low-level encoding of the problem, where each proposition is a variable and each clause is a disjunction of these variables or their negations. Clauses are then hopefully combined and simplified in advanced ways by the solver to determine whether a satisfying assignment of variables exists.
+
+The specific procedure to solve such a problem are as follows:
+1. Import the problem in the solver: Most modern SAT solvers accept problems in the DIMACS CNF format as input which we have in this problem.
+2. Let the solver run: The actual algorithms the SAT solver employs are beyond the scope of this discussion, but they will attempt to find a satisfying assignment to the problem ? that is, a way to assign truth values to variables such that the overall problem evaluates to true.
+
+Applying a SAT solver to the given problem in the DIMACS format, we get the interpretation of the literals:
+
+Answer: Problem is satisfiable and the interpretation is: 1=-1, 2=-1, 3=-1, 4=-1, 5=1.

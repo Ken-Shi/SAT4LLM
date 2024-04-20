@@ -1,0 +1,21 @@
+This given problem is in Conjunctive Normal Form (CNF) represented as a Boolean satisfiability (SAT) problem. We want to check if there is an assignment of the variables that makes this formula true. There are different ways to solve this problem including deterministic methods (like DPLL, Resolution etc.) or randomized methods (like uses stochastic local search). I will take a deterministic approach - DPLL (Davis, Putnam, Logemann, and Loveland) Algorithm.
+
+A brief description of the DPLL algorithm is as follows: 
+1. Simplify the formula by finding pure literals (if a literal appears with only one polarity in all clauses) and unit clauses (single variable clauses). Starting with the given formula, every time we find a pure literal or a unit clause, we assign a true value to it and a false value to the opposite polarity literal (if exists), then simplify the formula by removing the clauses that have become true and literals that have become false.
+2. If no pure literals or unit clauses exist, we use a heuristic to pick a variable not assigned yet, make an assignment to this variable, and then make a recursive call to the DPLL algorithm.
+3. We keep applying this recursive strategy until we find a satisfying assignment or until there is no assignment left to try.
+
+However due to the size and complexity of manual computation, there exist softwares such as MiniSAT, LPSAT, etc for efficiently solving such problems. For manual computation the process is as follows:
+
+Considering laws and the nature of the clauses in the problem. We see that some literals appear in positive form in some clauses and in negative form in others, making it impossible for them to be pure literals. 
+
+Analyzing the clauses we see that:
+- Literal 1 must be true or otherwise the first clause cannot be satisfied
+- Literal 2 must be false or otherwise the first and fifth clauses cannot together be satisfied
+- Literal 3 must be false or otherwise the second and fifth clauses cannot together be satisfied
+- Literal 4 must be true or otherwise the sixth and thirteenth clauses cannot together be satisfied
+- Finally, Literal 5 must be true to satisfy the last clause
+
+So, we have our solution.
+
+Answer: Literal Set is {1,T},{2,F},{3,F},{4,T},{5,T}, where T represents True and F represents False.

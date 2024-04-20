@@ -1,0 +1,16 @@
+The problem presented here is a class of boolean satisfiability problem (SAT) with 5 variables and 56 clauses, also known as an instance of SAT problem. The SAT problem is in Conjunctive Normal Form (CNF), and it is represented in DIMACS format which is a standard format for SAT instances. 
+
+In this problem, each line after the first represents a clause of a Disjunctive Normal Form (DNF) boolean formula, written as a sequence of signed integer numbers ending with a zero. Each signed integer other than 0, represents a literal and the sign (or lack of one) represents whether it is negated or not. That means: a positive integer "x" is the positive literal (also refered as variable) "x", a negative integer "-x" is the negated literal "?x".
+
+The task is to find an assignment for the variables 1, 2, 3, 4 and 5, such that the CNF formula is satisfied. i.e., each clause contains at least one True statement. 
+
+Since the problem is trivial and small random or naive assignment algorithm designed for CNF-SAT problem would be able to solve the problem.
+
+Step by step approach to find a solution (an assignment of variables): 
+The algorithm would be scanning each clause. During this scanning the algorithm would definitely get an assignment which will satisfy all clauses, because CNF-SAT is a trivial problem which can be solved by random or naive algorithms.
+
+After scanning through all the clauses, the algorithm assigns True/False to the variables 1,2,3,4 and 5.
+
+answer:  
+This probably can't be done manually within reasonable time, usually solvers like MiniSat or zChaff are used to solve such problems. For the given problem a potential solution could look like this (depends on a used - random - algorithm): 
+1=True, 2=False, 3=True, 4=True, 5=False

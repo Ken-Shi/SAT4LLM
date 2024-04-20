@@ -1,0 +1,25 @@
+The given problem is in Conjunctive Normal Form (CNF) as per DIMACS format where each clause is separated by "0".
+
+We have 3 variables (numbered 1, 2, and 3) and 2 clauses:
+Clause 1: 3 1 -2 0
+Clause 2: 2 1 3 0
+
+Let's break these down:
+Clause 1: This can be represented as (X3 OR X1 OR NOT X2). At least one of these has to be true for the clause to be true.
+Clause 2: This can be represented as (X2 OR X1 OR X3). Again, at least one of these must be true for the clause to be true.
+
+The negative sign represents the NOT operation in logic. 
+
+A solution to the SAT problem is an assignment of TRUE (represented by the variable number) or FALSE (represented by the negative of the variable number) to the variables such that all clauses are satisfied.
+
+For this problem, a solution could be X3 = True, X1 = False, X2 = False. This assignment makes all the clauses true. 
+
+Therefore the literals would be 3, -1, -2
+
+To provide clarity:
+For Clause 1: (X3 OR X1 OR NOT X2) -> (True OR False OR True) is True
+For Clause 2: (X2 OR X1 OR X3) -> (False OR False OR True) is True
+
+So, both clauses are satisfied by this assignment.
+
+answer: 3 -1 -2

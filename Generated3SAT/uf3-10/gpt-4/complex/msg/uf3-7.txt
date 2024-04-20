@@ -1,0 +1,9 @@
+The DIMACS format is utilized to represent the problem of determining the satisfiability of Boolean formulae in conjunctive normal form. In DIMACS, each clause is represented by a line, where each variable and its negation is represented by a positive integer and its negative counterpart.
+
+The first line of the problem (p cnf 3 10) gives us the problem type (cnf), the number of variables (3), and the number of clauses (10). Each line following that represent the clauses, each of which end with a zero.
+
+By analyzing the conditions, we can see that variable 2 always appears as a positive integer, meaning it must be true. Variables 1 and 3 depend on variable 2 due to the direct and reverse implications. Since variable 2 is always true, variable 1 must take the value that makes -3 1 -2 clauses satisfied and also 2 -3 1 satisfy. Variable 1 should be true. Once 1 is true, variable 3 dependency on 1 should also make it true according to the clause  -3 1 -2.
+
+So,after solving it we can conclude that Variable 1, 2 and   3 are all TRUE. 
+
+answer: Variable 1 = TRUE, Variable 2 = TRUE, Variable 3 = TRUE

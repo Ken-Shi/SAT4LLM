@@ -1,0 +1,20 @@
+The given problem is an instance of the boolean satisfiability problem (SAT), which is a type of combinatorial problem. We are given a number of clauses, each containing literals, and we need to find an assignment of truth values to the literals such that each clause is satisfied. A clause is satisfied if at least one of its literals evaluates to true.
+
+Let's use slight modifications of the DPLL (Davis-Putnam-Logemann-Loveland) algorithm to solve this problem. This algorithm is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form (CNF).
+
+Firstly, let's clarify the DIMACS format: each line after the first gives a clause of the SAT instance. A positive number denotes the corresponding variable. A negative number denotes the negation of the corresponding variable. Zero denotes the end of the clause. E.g., '-2 1 -3 0' is the clause (NOT 2) OR 1 OR (NOT 3).
+
+Secondly, note that the predicate `p cnf 3 6` tells us the problem is in conjunctive normal form (cnf) with 3 variables and 6 clauses.
+
+Here is a step-by-step solution:
+
+1. '-2 1 -3 0', It means ((NOT 2) OR 1 OR (NOT 3)), choose 1=True.
+2. '3 -1 -2 0', It means (3 OR (NOT 1) OR (NOT 2)), since -1=False, we have (3 OR False OR (NOT 2)), turn to select variable 3 and make it True. 
+3. '1 2 3 0', It means (1 OR 2 OR 3), since 1=True and 3=True, the clause is True.
+4. '-3 -2 1 0', It means ((NOT 3) OR (NOT 2) OR 1), since 1=True, this clause is True.
+5. '3 1 2 0', It means (3 OR 1 OR 2), since 3=True and 1=True, the clause is True.
+6. '-2 1 -3 0', It means ((NOT 2) OR 1 OR (NOT 3)), since 1=True, this clause is True.
+
+When we go through all steps and variables, the final solution is:
+
+Answer: 1=True, 2=Not Given (Could be True or False), 3=True.

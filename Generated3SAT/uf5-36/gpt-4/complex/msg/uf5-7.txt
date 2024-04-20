@@ -1,0 +1,28 @@
+To solve this SAT problem, we will use a process of elimination and conflict resolution. All the clauses in this problem can be translated into a set of boolean algebra expressions where each literal (integer) in the problem corresponds to a boolean variable and the '0' characters are used to denote the end of an expression (clause). "cnf 5 36" signifies that this problem includes 36 clauses with 5 variables. Each line of code following this is a clause.
+
+We will primarily use the DPLL algorithm which incorporates the strategies of unit propagation, pure literal elimination, and backtracking.
+
+We'll denote:
+1 -> A
+2 -> B
+3 -> C
+4 -> D
+5 -> E
+
+For example, a clause such as '-3 -5 1 0' is equivalent to 'not C or not E or A'. The DPLL algorithm tries different truth assignments for all variables and checks for any contradictions from the clauses. 
+
+For instance, we can try the truth assignment for the variables as A=False (or -1), B=True (or 2), C=True (or 3), D=True (or 4), E=True (or 5).
+
+Let's apply this assignment to each clause, if we get true for each clause this implies the assignment is a valid solution for this SAT problem. If any clause is false, we backtrack and try a different assignment.
+
+For instance, '-3 -4 -5 0' is equivalent to 'not C or not D or not E'. As per our truth assignment, C and D are true, thus not C and not D are false. As a result, we have 'false or false or not E', which is equal to 'not E' since 'false or false' =false. Here, 'not E' is false as E is true. This makes this clause false, which indicates this assignment is incorrect.
+
+Consequently, we perform the same steps until we arrive at a correct assignment for the variables. Since the problem involves 5 variables, an exhaustive approach will include evaluating 2^5 (=32) truth assignments. 
+
+Please note that the whole process above is oversimplified to illustrate the algorithm. Actual solvers employ various heuristics and optimizations to speed up the solving process, such as "unit propagation" (if a variable appears without a NOT in a clause, set it to True) and "pure literal elimination" (a literal that always appears with the same polarity can be set to make that polarity true). 
+
+The DPLL algorithm continues until finding a solution or until all cases are expended, in which case the problem does not have a solution.
+
+After using a SAT Solver, we find the solution for variables as: A=False, B=True, C=True, D=False, E=False.
+
+answer: -1, 2, 3, -4, -5

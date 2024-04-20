@@ -1,0 +1,20 @@
+This problem represents a Boolean satisfiability problem. 
+
+The first line of the DIMACS format indicates that there are 3 variables (labelled 1, 2, and 3) and there are 2 clauses. The following lines then represent the clauses of the SAT problem in terms of these variables.
+
+The notation used in the clauses works as follows: 
+- Each number represents a variable or the negation of a variable.
+- A positive number in a clause represents the corresponding variable.
+- A negative number in a clause represents the negation of the corresponding variable.
+
+The two clauses given therefore represent the following Boolean expressions:
+1. clause 1: (3 OR NOT 1 OR NOT 2)
+2. clause 2: (NOT 2 OR 3 OR NOT 1)
+
+Here are the two clauses in plain English:
+1. At least one of variable 3, not variable 1 or not variable 2 must be true.
+2. At least one of not variable 2, variable 3 or not variable 1 must be true.
+
+By looking at both clauses, we see that both demand either variable 3 to be true, or one or both of variables 1 and 2 to be false. A simple solution could therefore be to set variable 3 to true and ignore the settings for variables 1 and 2 (they can be either true or false). The clauses would therefore be satisfied.
+
+Answer: 3=true, 1=true or false, 2=true or false.

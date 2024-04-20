@@ -1,0 +1,51 @@
+The problem is written in the DIMACS format used in programming to express the Boolean satisfiability problem (SAT), which is a problem of determining if there exists an interpretation that satisfies a given Boolean formula.
+
+Each line represents a disjunction (OR condition) of literals (which can be a variable or its negation) and 0 denotes the end of a clause. A negative sign means a negative literal (the negation of the variable).
+
+The logical expression of this problem can be written as follows:
+
+(1 or not 3 or not 4) and
+(1 or 5 or 3) and
+(not 2 or not 3 or 5) and
+(not 3 or 4 or 5) and
+(not 2 or 3 or 1) and
+(not 2 or not 3 or 1) and
+(5 or 4 or not 3) and
+(not 3 or 4 or 1) and
+(not 4 or 1 or not 2) and
+(not 2 or 5 or 4) and
+(1 or 4 or not 3) and
+(5 or not 2 or not 3)
+
+To resolve the problem, a backtracking algorithm is usually used to complete a depth-first search of the problem's tree of states. 
+
+However, if we look closely to simplify the problem, we notice that each clause has 3 literals, and they are either positive or negative of 5 variables, which are: 1, 2, 3, 4, and 5. 
+
+Also, by observing the clauses, we notice that any particular clause can be satisfied with by setting the appropriate literal, for instance to true, allowing us to achieve a single potential solution to SAT problem.
+
+Here's an example: 
+
+Assign 1 = True, 2 = False, 3 = False, 4 = True, 5 = True; 
+
+Checking each clause, we can see that this assignment satisfies all clauses.
+
+We can also verify this assignment:
+
+(1 or not False or not True) = (True or True or False) = True
+(True or True or False) = True
+(False or False or True) = True
+(False or True or True) = True
+(False or False or True) = True
+(False or False or True) = True
+(True or True or False) = True
+(False or True or True) = True
+(False or True or False) = True
+(False or True or True) = True
+(True or True or False) = True
+(True or False or False) = True
+
+Every clause evaluates to True, demonstrating that the assignment is a solution. 
+
+So one potential solution (assuming we have not overlooked another possible assignment) is 1=True, 2=False, 3=False, 4=True, 5=True.
+
+answer: [1, -2, -3, 4, 5]

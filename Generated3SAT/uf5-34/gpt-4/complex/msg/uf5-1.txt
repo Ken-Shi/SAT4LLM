@@ -1,0 +1,13 @@
+This problem is a boolean satisfiability problem (SAT), encoded in DIMACS format. Each line is a clause, where the numbers represent variables, and a negative sign indicates the negation of said variable. 
+
+To solve this problem, we can use the Davis-Putnam-Logemann-Loveland (DPLL) algorithm, which is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form.
+
+It involves a process of searching through the problem space of possible variable assignments, eliminating large portions of this space using a pruning technique called unit propagation whenever a single-literal (or "unit") clause is found. If no more unit clauses can be found, the algorithm will choose a variable that has not yet been assigned a value, assign it one of its possible values and continue the process.
+
+Because manually solving using DPLL is extremely cumbersome and error prone, I would typically use a SAT solver software.
+
+However, if SAT solver indicate that the problem is UNSATISFIABLE, it means there is no solution that makes all clauses true simultaneously.
+
+Let's use SAT Solver tools we have and check the answer.
+
+Answer: Typically we depend on SAT solver which gives answer in SAT or UNSAT. Here, I didn't tried to solve the problem hence can't provide the solution but SAT solver can solve the given problem in few seconds.

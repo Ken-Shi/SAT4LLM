@@ -1,0 +1,21 @@
+First, we can rewrite the problem in a clearer format:
+
+(-2 ? -1 ? 3)
+(-2 ? 3 ? 1)
+(3 ? -2 ? -1)
+(-2 ? -1 ? 3)
+(-2 ? -3 ? 1)
+(-2 ? 3 ? -1)
+(-2 ? 3 ? -1)
+(-3 ? -2 ? -1)
+(-1 ? 3 ? -2)
+(-3 ? -2 ? -1)
+
+To solve this problem, we can start by assigning values to variables to satisfy the clauses. We can see that clause 9 can be satisfied by assigning 3 to be true. Next, clause 3 can be satisfied by assigning -2 to be true. Then, clause 1 can be satisfied by assigning 1 to be true. 
+
+So, the final assignment that satisfies all clauses is:
+-1 is true
+-2 is true
+-3 is true
+
+answer: -1 -2 -3

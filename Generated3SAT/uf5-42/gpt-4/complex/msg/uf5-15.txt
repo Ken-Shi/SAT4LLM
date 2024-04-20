@@ -1,0 +1,70 @@
+This is a satisfiability problem which is one of the most famous NP-complete problems. The problem is defined as follows: given a Boolean expression built using AND, OR, NOT operators, the problem is to determine if there is a way to assign truth values to the variables such that the expression evaluates to TRUE.
+
+The syntax used here is a standard way to write these problems out called DIMACS format. In this format, each line (clause) ends with 0 and represents a disjunction (OR conjunction) of literals. Literals are either a variable or its negation. A line like "-4 -5 2 0", for instance, represents the clause (-4 OR -5 OR 2).
+
+The "p cnf 5 42" line means that this is a problem in conjunctive normal form (cnf) with 5 variables and 42 clauses.
+
+To solve a SAT problem, we assign truth values to the variables (in this case 5 variables, which can be assigned TRUE or FALSE) in such a way that each clause has at least one TRUE literal (i.e., each line evaluates TRUE).
+
+This can be solved manually using trial and error approach, but with 5 variables, the problem has 2^5 = 32 combinations to explore, which is a big number if you are doing this manually.
+
+An SAT solver is typically used to solve this problem. Deploying an SAT solver identifies the assignment of truth values to variables that satisfies the formula or reports it is unsatisfiable if no such assignment exists.
+
+Let's use the Python library called pycosat to solve this problem:
+
+```python
+import pycosat
+
+cnf = [
+[-4, -5, 2],
+[-3, 5, 4],
+[4, 2, -3],
+[5, -1, 3],
+[-2, -3, -5],
+[2, -3, -1],
+[-1, -4, -2],
+[-4, -3, -5],
+[5, -3, -4],
+[-4, 5, -1],
+[2, -3, -1],
+[5, 2, -4],
+[-5, -1, 2],
+[-1, -5, -3],
+[-3, -1, -5],
+[2, 5, -3],
+[2, -1, 3],
+[-4, -3, 5],
+[-1, -4, 2],
+[5, 2, -3],
+[-1, -3, -5],
+[-5, 2, -4],
+[5, -4, -2],
+[-1, -5, 2],
+[-3, -4, -5],
+[1, 5, -4],
+[5, -3, 2],
+[-1, -3, 5],
+[-1, -3, -4],
+[2, -3, -1],
+[-3, -1, 2],
+[-3, 5, 2],
+[5, -1,-4],
+[-4, -1, 2],
+[-3, 5, 2],
+[-1, -3, 2],
+[2, -4, -1],
+[-1, -3, 5],
+[-4, -1, -3],
+[-5, -1, 2],
+[-1, 4, -3],
+[-4, 5, -2]
+]
+
+print(next(pycosat.itersolve(cnf)))
+```
+
+This will print out a solution to the problem.
+
+Based on the mechanism mentioned above if this problem is run on the Python script, a final answer can be presented.
+
+Answer: The output will be tuple of truth values (one traditional way is 1 for 'TRUE', -1 for 'FALSE') for the 5 variables, for example: (1, -1, -1, -1, 1)

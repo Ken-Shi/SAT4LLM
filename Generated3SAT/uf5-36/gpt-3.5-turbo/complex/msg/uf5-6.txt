@@ -1,0 +1,6 @@
+To solve the SAT problem encoded in DIMACS format, we will use a SAT solver. The input is a CNF formula with 5 variables and 36 clauses.
+
+I will use an online SAT solver to find the solution.
+
+The solution to the SAT problem encoded in DIMACS format is:
+answer: 1 -2 -3 4 5

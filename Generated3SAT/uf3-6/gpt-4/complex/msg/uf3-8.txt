@@ -1,0 +1,30 @@
+DIMACS format is often used for encoding Boolean SAT (Satisfiability) problem. The problem you have given is an instance of 3-SAT problem where each clause contains 3 literals. Each line (except the first which is the header) represents a clause with the integers being the variables and a negative sign representing the NOT of that variable. The number '0' denotes the end of a clause.
+
+Now, let's go through our clauses and try to assign values to our three variables 1, 2 and 3 (which we will denote as a, b and c for simplicity) in a way that makes all the clauses true. The clauses can be represented as:
+
+(1)  a OR NOT c OR NOT b
+(2) NOT b OR NOT c OR NOT a
+(3)  a OR NOT c OR NOT b
+(4)  a OR c OR NOT b
+(5) NOT c OR NOT b OR a
+(6) NOT c OR NOT b OR a
+
+Observations:
+- In clause (2), for it to be true, at least one literal must be true, so either a is false (NOT a is true), or b is false (NOT b is true), or c is false (NOT c is true).
+- Clauses (1), (3) and (4) indicate that a should be true, as the other literals in these clauses can be false and the clauses can still be satisfied (as OR operation requires only one of the literals to be true).
+- Fix a as true.
+- Clauses (1), (3), (5) and (6) indicate that NOT c is a good guess as in three clauses NOT c is placed with a. Similarly, from clauses (2), (4), (5) and (6), NOT b is a good guess.
+- Fix c and b as false to satisfy as many conditions together.
+
+Let's check the settings with these assignments:
+
+(1)  a OR NOT c OR NOT b = true OR true OR true = true
+(2)  NOT b OR NOT c OR NOT a = true OR true OR false = true 
+(3)  a OR NOT c OR NOT b = true OR true OR true = true 
+(4)  a OR c OR NOT b = true OR false OR true = true 
+(5)  NOT c OR NOT b OR a = true OR true OR true = true 
+(6)  NOT c OR NOT b OR a = true OR true OR true = true 
+
+It looks like setting a=true, b=false, c=false is one solution that satisfies all clauses, thus making the whole CNF formula true.
+
+answer: a=true, b=false, c=false

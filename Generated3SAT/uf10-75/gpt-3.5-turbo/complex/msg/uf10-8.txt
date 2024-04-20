@@ -1,0 +1,5 @@
+To solve this SAT problem, we will use a SAT solver to find a satisfying assignment if one exists.
+
+Now, let's write the final answer based on the satisfying assignment provided by the SAT solver.
+
+answer: 6 -7 -5 -4 -2 1 -10 -9 -8 3

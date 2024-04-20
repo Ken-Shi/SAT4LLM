@@ -1,0 +1,17 @@
+To solve this SAT problem, we need to convert the DIMACS format into a logical expression:
+
+(1) (3 OR 1 OR 2)
+(2) (1 OR 2 OR NOT 3)
+(3) (NOT 2 OR 1 OR 3)
+(4) (NOT 1 OR 3 OR 2)
+
+Now, let's try to simplify the logical expression:
+
+From (1), we see that we need either 3, 1, or 2 to be true.
+From (2), if 3 is false (NOT 3), then either 1 or 2 must be true.
+From (3), if 2 is false (NOT 2), then 1 and 3 must be true.
+From (4), if 1 is false (NOT 1), then 3 and 2 must be true.
+
+Since we have contradictions in our simplified logical expression, this SAT problem is unsatisfiable.
+
+answer: unsatisfiable

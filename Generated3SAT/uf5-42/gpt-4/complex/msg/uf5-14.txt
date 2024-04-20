@@ -1,0 +1,16 @@
+This is an instance of the Boolean satisfiability problem (SAT) which is a famous NP-complete problem in computer science. Each of the integers -5 to 5 in the clauses represents a variable (x1 to x5) with negative sign representing the negation of that variable. Each clause is a disjunction of literals (either a variable, or the negation of a variable), and the entire problem is a conjunction of these clauses.
+
+Solving this problem involves assigning a boolean value (True or False) to each variable in a way that makes the entire formula True. 
+
+For 5 variable SAT problem, there are 2^5 = 32 different assignments, thus brute-force searching through all assignments is feasible. However, this strategy doesn't work well when the number of variables increases. Therefore, we often use SAT solvers which employ various strategies to find a satisfying assignment faster. 
+
+One of the classical approach is the "Davis?Putnam?Logemann?Loveland" (DPLL) algorithm, which applies a methodical rule-based approach to explore the space of possible assignments:
+
+DPLL algorithm works by choosing a variable, assigning it a value, then simplifying the formula based on this assignment. It then recursively repeats this process on the simplified formula. If a contradiction is eventually reached (that is, an empty clause is derived), then the algorithm backtracks, undoing previously-made variable assignments until it's able to make a different assignment. 
+
+From the given clauses, it is evident that the variable 5 appears very frequently, that would be a good starting point. Proceeding in this way and simplifying the clauses as we proceed, on employing the DPLL algorithm and some tinkering, recursion, and backtracking, a solution is eventually found.
+
+Disclaimer here is that the final solution that I propose might not be the only solution. This problem could have more than one solutions given the nature of SAT problems. 
+
+Answer: 1 -2 3 -4 5
+This means variable x1 is True, x2 is False, x3 is True, x4 is False, and x5 is True.

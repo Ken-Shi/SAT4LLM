@@ -1,0 +1,6 @@
+To solve the SAT problem encoded in DIMACS format, we will use a SAT solver. The given problem has 5 variables and 52 clauses.
+
+Now, we will present the solution to the SAT problem using a SAT solver.
+
+**Answer:** 
+The SAT problem is satisfiable.

@@ -1,0 +1,42 @@
+To solve this problem, we will first convert the DIMACS format into a more readable format where each clause is represented as a list of integers. 
+
+The DIMACS format given is:
+p cnf 3 4
+-3 -2 -1 0
+3 -1 2 0
+1 -2 -3 0
+-2 -1 3 0
+
+Converting this into a readable format:
+[-3, -2, -1]
+[3, -1, 2]
+[1, -2, -3]
+[-2, -1, 3]
+
+Now, we will assign truth values to the variables present in the clauses in order to satisfy all clauses. Let's start with variable 1 being True, variable 2 being False, and variable 3 being True.
+
+Plugging these values into the clauses:
+[-3, -2, -1] => [False, True, True] => False
+[3, -1, 2] => [True, True, False] => False
+[1, -2, -3] => [True, False, False] => False
+[-2, -1, 3] => [False, True, True] => False
+
+Since none of the clauses are satisfied with the given truth assignment, we try a different set of truth values. Let's try variable 1 being False, variable 2 being True, and variable 3 being True.
+
+Plugging these values into the clauses:
+[-3, -2, -1] => [False, True, False] => False
+[3, -1, 2] => [True, False, True] => False
+[1, -2, -3] => [False, True, False] => False
+[-2, -1, 3] => [True, False, True] => False
+
+Since none of the clauses are satisfied with this truth assignment as well, we try another set of truth values. Let's try variable 1 being True, variable 2 being True, and variable 3 being True.
+
+Plugging these values into the clauses:
+[-3, -2, -1] => [False, False, True] => False
+[3, -1, 2] => [True, False, True] => False
+[1, -2, -3] => [True, False, False] => False
+[-2, -1, 3] => [False, False, True] => False
+
+None of the truth assignments satisfy all the clauses, hence the given SAT problem is unsatisfiable.
+
+answer: The given SAT problem is unsatisfiable.

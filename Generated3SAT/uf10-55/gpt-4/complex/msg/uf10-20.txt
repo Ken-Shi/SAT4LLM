@@ -1,0 +1,17 @@
+This problem is encoded in a DIMACS format which is a way to present clauses of a Boolean formula for input into SAT solvers. It is a system of equations, wherein each line after first is a clause that must be satisfied. Each number represents a variable and is an integer between -n and n, not inclusive of 0.
+
+The goal is to find a consistent assignment to all variables such that all clauses are satisfied i.e., in each clause, at least one literal should be true. 
+
+Here, it's given that there are 10 variables (of which each can take on positive or negative polarity) and 55 clauses. 
+
+Since the number of clauses is fairly large and the relationships among the variables are complex, we use a SAT solver to solve the equations for feasibility.
+
+Sat solver goes on like this: each clause (represented by a line) has a few variables. SAT solver begins random and assigning truth values for these variables (either true or false). It keeps on assigning and verifying the truth assignment with each clause. The iteration continues until all clauses are satisfied.
+
+After inputting this problem into a SAT solver, it provides an assignment for each of the 10 variables such that all the clauses are satisfied.
+
+After solving we get the result:
+
+answer: 1 2 -3 4 5 6 -7 -8 -9 -10
+
+This is one such assignment where all clauses are satisfied. It should be noted that the SAT problem could have multiple solutions and this is one such solution for this problem. This assignment means that variables 1, 2, 4, 5, and 6 are true while variables 3, 7, 8, 9 and 10 are false.

@@ -1,0 +1,18 @@
+Solving a CNF SAT problem involves assigning truth values (true or false) to each variable such that each clause has at least one true literal.
+
+Here are two important observations: 
+1. Variable 2 appears frequently with positive polarity. This suggests that we probably need to set 2 as true. 
+2. Still, variable 2 isn't in every clause, so we have to consider other variables too.
+
+We will solve this problem using the DPLL (Davis?Putnam?Logemann?Loveland) algorithm, which is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form.
+
+We begin by setting a variable to true and proceed:
+- Set 2 to true, which simplifies many clauses (2 or anything is true, so they can be removed)
+- Next we look at another common variable. Let's choose 3 so that we simplify more clauses.
+- Set 3 to false since -3 appears more frequently than 3 (in clauses [-5 -3 1 0], [-3 -1 2 0], [-3 2 -5 0], [-3 -4 2 0], [-4 -3 2 0], and [-3 -1 -5 0}).
+- Most of the remaining clauses contain -5 or -1, so let's set 5 = True and 1 = False. 
+- Finally, it appears that we can let 4 be False to satisfy the remaining few clauses.
+
+Now that we've made these assignments, we can check that every clause is satisfied, so this is a valid solution. 
+
+Answer: (2, -3, -1, -4, 5)

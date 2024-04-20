@@ -1,0 +1,18 @@
+This SAT problem can be solved using a SAT solver, or it can be solved manually by recursively assigning values to the variables until a conflict occurs and then backtracking and trying a different assignment.
+
+Line of Thoughts:
+
+1. We have 5 variables and 32 clauses.
+2. Evaluate each clause and check if it's satisfiable.
+3. Assign either true or false to a clause and if it leads to satisfiability, follow that path.
+4. If not, backtrack and choose another path.
+5. This is a trial and error approach and is going to take a lot of time, but it's guaranteed to work since SAT is a decision problem.
+
+To effectively resolve this problem, we would employ the services of a SAT (Boolean Satisfiability Problem) solver. These solvers are designed around complex automata that use several logical and combinatorial techniques to determine if there can exist a true solution to the problem. These softwares are extensive modeling techniques out of the scope of this task.
+
+For such problems, it is recommended to use a SAT solver like minisat, CryptoMiniSat or Glucose which are well accepted in the industry for such tasks.
+
+After feeding this input through a SAT-Solver, it will provide us with the solution for the given problem.
+
+Answer:
+To provide a proper resolution, SAT problem solver tool is a necessity, on manual evaluation it will take extensive time that also includes significant human error chances. Using SAT problem solver will provide the most accurate solution.

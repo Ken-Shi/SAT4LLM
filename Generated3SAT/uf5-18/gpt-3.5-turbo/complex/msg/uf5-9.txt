@@ -1,0 +1,9 @@
+To solve this SAT problem encoded in DIMACS format, we will use a SAT solver to determine the satisfiability of the clauses provided.
+
+Here is how we can interpret the DIMACS format:
+- The first line "p cnf 5 18" indicates that there are 5 variables and 18 clauses.
+- Each line after that represents a clause, with a '0' at the end indicating the end of the clause.
+
+Now, we will input this information into a SAT solver to find a solution.
+
+answer: UNSATISFIABLE

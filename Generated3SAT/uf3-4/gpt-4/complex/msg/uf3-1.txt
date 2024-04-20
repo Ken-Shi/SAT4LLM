@@ -1,0 +1,19 @@
+The given problem is a boolean formula in Conjunctive Normal Form (CNF) which is used to represent problems for SAT solvers in a standardized way called DIMACS format. The problem is to find a solution that satisfies all the clauses.
+
+Each number represents a variable, where a positive number represents a Proposition (True) and a negative number represents its Negation (False). '0' at the end of each line indicates the end of the clause. Each clause is a disjunction (OR operation), and all the clauses together form a conjunction (AND operation).
+
+Let's interpret every clause:
+
+Clause 1: (-1 OR 3 OR 2) means either -1=False (therefore 1=True), 3=True, or 2=True.
+
+Clause 2: (3 OR -1 OR 2) means either 3=True, -1=False (therefore 1=True), or 2=True.
+
+Clause 3: (3 OR -1 OR -2) means either 3=True, -1=False (1=True) or -2=False (2=True).
+
+Clause 4: (2 OR -3 OR -1) means either 2=True, -3=False (3=True), or -1=False (1=True).
+
+From above clauses, if we assume 1=False, 2=True, and 3=True satisfy all clauses. In terms of SAT problem, we have solve a problem and found its solution. 
+
+So the solution of the given SAT problem is 
+
+Answer: 1=False, 2=True, and 3=True

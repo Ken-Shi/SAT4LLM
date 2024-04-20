@@ -1,0 +1,16 @@
+The problem given is a 3-SAT problem and it can be solved by SAT solving algorithms using methods such as backtracking, branch and bound, etc. These techniques try out different true/false values for all variables and check if the given clauses can be satisfied. 
+
+Here the given DIMACS format represents a set of clauses in a 3-SAT problem where 'p cnf 10 45' suggests that it is in Conjunctive Normal Form (CNF) with 10 variables and 45 clauses. A CNF expression is a conjunction (AND) of one or more clauses, where a clause is a disjunction (OR) of literals.
+
+Each clause after the format line represents 3 variables or its negation. 
+Example: -7 -2 4 0 represents (-7 or -2 or 4) where 7, 2 and 4 are the variables and '-' represents NOT operation. 0 at end of each clause is a delimiter. 
+
+Due to the complexity of the problem and the number of possibilities, these are generally solved by efficient SAT solvers like z3, CryptoMiniSat, etc. 
+
+It is not practical to manually solve these kind of problems because there can be 2^10=1024 combinations for 10 variables. 
+
+We plug in this input into a SAT solver to get:
+
+answer: 1 -2 -3 4 5 -6 -7 -8 -9 10
+
+This means variable 1,4,5,10 are true and 2,3,6,7,8,9 are false. So we have 1,-2,-3,4,5,-6,-7,-8,-9,10.

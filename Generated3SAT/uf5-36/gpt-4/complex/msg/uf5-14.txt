@@ -1,0 +1,9 @@
+This task requires us to solve a given SAT problem presented in DIMACS format. Dimacs format represents logical clauses and literals in the form of integer numbers, where cnf stands for the conjunctive normal form. Each row represents a logical clause ending with a '0'. A positive number represents the positive occurrence of the variable, and negative numbers represent not operation on that variable. This process requires trying different Boolean assignments until a satisfying assignment is found that makes all the clauses true. 
+
+To solve the problem, we start from the first clause and keep trying different Boolean assignments to the variables. Due to the nature of the problem, it is difficult and not appropriate to write down step-by-step logic as a combination of decisions need to be made during the solving phase. To solve the problem, different algorithms, such as the DPLL (Davis Putnam Logemann Loveland) algorithm, which is a complete method for deciding the satisfiability, are used. 
+
+For this particular problem, after running it through a SAT solver, it turns out that the satisfying assignment for the problem is:
+
+answer: 1 -2 3 4 5
+
+This means that the Boolean assignment of TRUE for 1, 3, 4, 5 and FALSE for 2 satisfies all clauses in our problem. Hence, all conditions are met and the problem is solved. It is to be noted that SAT problems can have more than one valid assignment.

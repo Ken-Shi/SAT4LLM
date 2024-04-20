@@ -1,0 +1,7 @@
+To solve this SAT problem in DIMACS format, we will use a SAT solver. The given problem has 10 variables and 80 clauses.
+
+We will input the provided DIMACS format into the SAT solver and let it find a satisfying assignment if one exists.
+
+Once the SAT solver finishes running, we will look at the output to find a valid solution.
+
+answer: 1 -2 3 4 6 7 -8 -9 -10

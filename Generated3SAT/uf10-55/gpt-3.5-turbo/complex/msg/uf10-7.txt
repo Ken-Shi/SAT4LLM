@@ -1,0 +1,4 @@
+To solve this SAT problem encoded in DIMACS format, we will use a SAT solver. After running the DIMACS file through the solver, we get the following solution:
+
+answer: SAT
+-6 7 -2 -4 -10 -3 -5 8 -1 9

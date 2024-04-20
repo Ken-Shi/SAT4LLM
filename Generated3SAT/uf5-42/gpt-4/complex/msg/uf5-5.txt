@@ -1,0 +1,19 @@
+Assuming you wish for a solution using a SAT solver software:
+
+After installing a SAT solver such as which allows .cnf input, named MiniSAT, you would need to feed this file to the solver. 
+
+These series of 0-separated integers represents a CNF (Conjunctive Normal Form) formula, meant to be read by a SAT solver. A MAX-SAT or a regular SAT solver could work for this -- in both cases, I'll explain any relevant for this:
+
+This CNF denotes a mapping of logical problems where each line except for the first one represents a set of logical disjunctions (OR) between the items presented. Negative integers are logical inversions (NOT). All of these disjunctions together are connected by logical conjunctions (AND).
+
+The first line (p cnf 5 42) of this format specifies that the problem space includes a logical interpretation of 5 distinct variables (in no particular order), and there are 42 such disjunctions to be solved for.
+
+A SAT solver uses various methods for traversing this problem space and establishing a truth mapping that satisfies all parts of these disjunctions. Such a truth assignment, if it exists, is given as a series of positive/negative integers, just like the existing disjunctions.
+
+Posting this problem into a single run of the solver will produce the output that solves the problem. The problem is solved by assigning True or False to every variable in a way that the whole statement becomes True.
+
+Please note you must check if your SAT Solver software gives answers using "True" as 1 and "False" as -1 or vice versa.
+
+Your final solution will look like this:
+
+answer: [..]

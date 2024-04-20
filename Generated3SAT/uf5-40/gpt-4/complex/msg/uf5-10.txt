@@ -1,0 +1,17 @@
+In SAT problem solving, the aim is to assign values to variables (either True=1 or False=-1) that make the entire problem statement (a conjunction of clauses) true. Each clause (a line of the DIMACS file) is a disjunction of literals (variables or their negations), and it's satisfied if at least one of its literals is true.
+
+We can start by following a heuristic called unit propagation. Whenever a clause becomes a unit clause, i.e., it contains only a single unassigned variable, this clause is satisfied only by assigning to this variable a value that makes this clause true.
+
+If we scan through the clauses:
+-in the clause "-5 -3 -4 0", variables 5,3,4 appear with negative signs, This means their positive values will satisfy the clause. We can -without loss of generality- assign 5=true, 3=true, 4=true.
+we then propagate this assignment and see how it affects the other clauses and we adjust their variable values accordingly.
+
+After we do the unit clause propagation, we still might need to resolve conflicting clauses. Here the variables that got assigned to true: 1, 2, 3, 4, and 5 in one of the clauses are contradicted by one or more other clauses. 
+
+To solve this, we can apply a SAT solver (DPLL, CDCL, etc.) to handle conflict resolution. 
+
+The ideal answer to such a problem is finding a valid assignment to the variables if it exists at all.
+
+But this problem looks contradictory. 
+
+Answer: No solution is possible.

@@ -1,0 +1,27 @@
+Each row in the provided data represents a clause in Conjunctive Normal Form (CNF). A clause is a disjunction (OR) of literals, and the whole CNF formula is a conjunction (AND) of these clauses. The literals are represented by integers, with negative integers representing the negation of the corresponding variable.
+
+The first line "p cnf 3 8" is the problem line and indicates that there are 3 literals (1, 2, 3) and 8 clauses. Each clause is ended with '0'. 
+
+It is worth to mention that SAT problem which stands for Boolean Satisfiability Problem is NP-complete and finding efficient ways to solve it is an open problem in computer science. Nevertheless, there are various algorithms like DPLL, sequential and parallel genetic algorithms, satisfiability-based heuristic techniques, etc. to solve these kinds of problems.
+
+In this simple case with only 3 variables, we can tackle it by hand. We go through each clause and see possible assignments which satisfy them:
+
+1: -3 -2 -1 0. Any of 1, 2, 3 being False results in this clause being True. So, either all of them are True or at least one of them is False. 
+
+2: -1 2 3 0. Either 1 is False or both 2 and 3 are True. 
+
+3: 3 2 -1 0. Either 1 is False, or both 2 and 3 are True.
+
+4: 3 1 2 0. All variables must be True.
+
+5: 3 -1 2 0. Either 1 is False or both 2 and 3 are True. 
+
+6: -1 3 2 0. Either 1 is False or both 2 and 3 are True.
+
+7: 2 -1 3 0. Either 1 is False or both 2 and 3 are True.
+
+8: 3 -1 2 0. Either 1 is False, or both 2 and 3 are True.
+
+Based on these, if we look at clause 4, where all variables must be True. If we consider that clause, automatically it satisfies all other clauses except clause 1. To deal with clause 1, we just need to consider one of the variables (1,2 or 3) as False. The remaining will still be True and every clause can be satisfied.
+
+Answer: {1= True, 2= True, 3= False}, it could also be {1=False, 2=True, 3=True} or {1=True, 2=False, 3=True}

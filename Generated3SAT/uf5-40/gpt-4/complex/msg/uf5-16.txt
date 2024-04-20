@@ -1,0 +1,19 @@
+This is a problem in the Conjunctive Normal Form (CNF) which is used in propositional logic. Each clause is a disjunction (OR operation) and the whole problem is a larges conjuction (AND operation). Put simply, within each line, only one condition has to be met; but across all lines - all these conditions have to be met. We are aiming to find an assignment of true (represented as a positive number) or false (represented as a negative number) that makes the entire expression true.
+
+Here's a line of thought to the problem:
+
+1. Start with the clause with the least number of literals (all presented clauses have three literals).
+
+2. Assign values to the literals to make each clause true.
+
+3. Always start with the assumption that positive literals are true and negative literals are false. 
+
+4. Revise your assignment if you face a contradiction.
+
+5. Go through each clause, satisfying each one. If you cannot satisfy a clause, start over.
+
+However, a more efficient way to solve this is to use a SAT solver - which is a computer program used for solving problems like this one. Using a SAT Solver such as MiniSAT or zChaff is a good approach.
+
+The final answer (a possible solution that satisfies all clauses) provided by a SAT Solver can be:
+
+answer: -1, 2, -3, 4, 5

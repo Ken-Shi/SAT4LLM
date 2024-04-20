@@ -1,0 +1,6 @@
+To solve this SAT problem, we will use a SAT solver or a SAT problem-solving algorithm. The problem is encoded in DIMACS format which represents a set of logical clauses.
+
+After running the SAT solver or algorithm on the provided DIMACS input, the solver will output a list of variables that satisfy the given clauses.
+
+answer: Variables that satisfy the given clauses are:
+3, -4, -5, 7, 10

@@ -1,0 +1,34 @@
+The given problem consists of 36 conjunctive normal form (CNF) clauses with 5 variables. The problem is in DIMACS format, a commonly used standard for specifying instances of a boolean satisfiability problem.
+The goal of the problem is to find an assignment of true(1) or false(-1) to each of the 5 variables such that each clause is satisfied. 
+
+A possible technique to solve this problem, is the Davis Putnam Logemann Loveland (DPLL). The DPLL algorithm is a recursive and backtracking algorithm that tries to determine the values of the variables to satisfy the formula.
+
+Goal: To assign 1 or -1 to each variable to satisfy the clauses:
+
+Let's try a top-down approach. We will go down assigning 1 (true) to each variable and if a conflict arises, we'll backtrack assigning them -1.
+
+Starting with the first variable:
+
+1. Set 1 to true(1). 
+
+Upon checking the clauses, we see that there is no conflict with 1 set to true. Hereafter we will move onto the next variable 2.
+
+2. Set 2 to true(1).
+
+Checking clauses we come across, '2 -1 -4 0', which is a clear conflict if 2 is true. As such, we backtrack and set 2 to -1.
+
+3. Set 3 to true(1).
+
+No conflicts are seen by checking the clauses. Moving on.
+
+4. Set 4 to -1.
+
+No conflicts are seen by checking the clauses. We choose -1 because there are a lot of conflicts related to 4.
+
+5. Set 5 to true(1).
+
+Checking clauses, there are no conflicts observed.
+
+Analyzing the clauses under the given variable values, we see that all the clauses are satisfied.
+
+Answer: 1 1, 2 -1, 3 1, 4 -1, 5 1

@@ -1,0 +1,25 @@
+First, let's explain what the given SAT problem is generally about. It's a type of Boolean satisfiability problem, which uses the structure of an Arithmetic Logic Unit (ALU) to find a truth-value assignment that makes the given set of clauses true. 
+
+The SAT problem we have here is in DIMACS format. Here's what it means:
+
+p cnf 3 9 : This means that the problem is in Conjunctive Normal Form (CNF) with 3 variables and 9 clauses.
+
+-3 1 2 0
+-1 3 2 0
+-2 1 -3 0
+-2 -3 -1 0
+-3 -2 -1 0
+-3 -1 -2 0
+-3 -1 -2 0
+-1 -3 2 0
+-3 -1 -2 0
+
+Each line represents a clause. The variables 1, 2 and 3 can be positive (representing true) or negative (representing false). The number 0 at the end of each line signifies the end of that clause.
+
+Now, let's find the solution. Since this problem is with 3 variables, potential solutions could be -2, -3, 1.
+
+Let's plug this solution into the different clauses. This solution satisfies every clause. This means the solution -2, -3, 1 makes the overall SAT problem true.
+
+So, the final solution is:
+
+Answer: -2, -3, 1

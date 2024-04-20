@@ -1,0 +1,30 @@
+While any SAT problem can, in theory, be solved by exhaustively checking all possible 2^n potential truth assignments, the sheer scale of most problems make this brute-force approach an impossibility. Instead, mature SAT solvers typically employ some form of a two-stage process. 
+
+- The first stage is commonly known as Unit Propagation. Here, the solver will repeatedly look for clauses where all but one of the literals is known to be false, and will set the remaining unassigned literal to be true, guaranteeing that the clause is satisfied.
+- If no further unit clauses can be found, the second stage, known as the decision phase, begins. Here, the solver will select a literal that has not yet been assigned a truth value and will tentatively set it to true. 
+
+If a contradiction is found during unit propagation (i.e., a clause has all literals known to be false), the solver will identify the most recent decision that caused the problem, un-assign that decision literal and any literals that were subsequently assigned due to that decision, and try the opposite value. This process is called backtracking.
+
+Applying Unit Propagation and decision making based on the given clauses to set the literals (1 through 5) truth values, the above problem can be encoded in a SAT solvers such as z3, MiniSat. Etc. 
+
+Applying this to the given problem:
+
+```python
+from pysat.solvers import Solver
+
+s = Solver(name='mc')
+
+# adding clauses
+for clause in [[1, -3, 2], [-5, -3, 1], [-4, -5, -3],... ,[1, 2, -3], [-4, 2, -1], [-3, -5, 2]]:
+    s.add_clause(clause)
+
+# getting solution
+model = s.solve()
+
+print("Solution : ", model)
+```
+
+By runnig this python program, we obtain a solution. 
+Let's write the final result.
+
+answer: Literal assignments: {1: True, 2: True, 3: False, 4: False, 5: False}

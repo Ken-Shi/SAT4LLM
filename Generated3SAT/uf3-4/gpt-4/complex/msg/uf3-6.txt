@@ -1,0 +1,21 @@
+This is a problem of Boolean Satisfiability (SAT). The problem in the DIMACS format consists of clauses in conjunctive normal form (CNF), where each clause is a disjunction of literals. In the CNF, a literal is positive if it's not negated (e.g., '1'), otherwise it's negative (e.g., '-1'). 
+
+Let's take a look at each clause:
+1. (-1 3 2) -> it is satisfied if at least one of the literals is true. It means 'not x1 OR x3 OR x2 is true'.
+2. (3 -1 -2) -> 'x3 OR not x1 OR not x2 is true'.
+3. (-1 3 -2) -> 'not x1 OR x3 OR not x2 is true'.
+4. (-2 -3 -1) -> 'not x2 OR not x3 OR not x1 is true'.
+
+The goal is to find an assignment for all variables (x1, x2, x3) that makes all clauses true. We can do it in several steps, typically by the process of unit propagation, elimination, and splitting, although in some cases, it is possible to directly look at the problem and guess the correct answer. 
+
+By looking at the problem, it's notable that the second and third clauses have the same literals as the first one, but the sign of the third literal is flipped. Therefore, we can guess that at least one of the first two literals (-1 and 3) has to be FALSE, and likewise, the second literal of the last clause (-3) has to be FALSE. This suggests assigning the variables as follows: x1 = FALSE, x2 = FALSE, x3 = TRUE. 
+
+Now we can confirm this potential solution: 
+1. Clause 1 is satisfied because x3 is TRUE.
+2. Clause 2 is satisfied because of x1 and x2 being FALSE.
+3. Clause 3 is satisfied because x3 is TRUE.
+4. Clause 4 is satisfied because of x1 and x2 being FALSE. 
+
+This assignment satisfies each clause, and therefore it is the solution. Since SAT problems are written in DIMACS, the negation is shown as a negative number and a positive literal is shown as a positive number, so remember to remove the negation when writing your final answer.
+
+Answer: (x1 = FALSE, x2 = FALSE, x3 = TRUE) in DIMACS format would be -1 2 3.

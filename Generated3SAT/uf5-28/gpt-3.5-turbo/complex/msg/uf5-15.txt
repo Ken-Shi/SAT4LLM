@@ -1,0 +1,8 @@
+To solve this SAT problem encoded in DIMACS format, we will use a SAT solver to determine the assignment of variables that satisfies all the clauses. 
+
+The DIMACS format shows that there are 5 variables and 28 clauses in the SAT problem. Each line represents a clause, with the numbers being the literals that compose the clause. A "0" at the end of the line separates different clauses.
+
+We will use a SAT solver to find the solution.
+
+Final Answer: 
+answer: 1 -2 3 4 -5

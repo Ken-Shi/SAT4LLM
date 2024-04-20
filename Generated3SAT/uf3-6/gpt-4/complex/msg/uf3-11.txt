@@ -1,0 +1,33 @@
+The given CNF is a conjunctive normal form that specifies a boolean satisfiability problem, also known as SAT. The problem is to determine if there exists an assignment of truth-values to the boolean variables that would make the formula true. 
+
+Structure of the problems in DIMACS format:
+- p cnf 3 6: This line states that the problem is in the CNF format, has 3 variables (we can call them x1, x2, x3), and has 6 clauses. 
+- Following lines until the end are the clauses of the formula. Each line represents a clause and is a disjunction (OR operation) of literals. Each literal is either a variable (represented by positive integer) or the negation of a variable (represented by negative integer). '0' at the end of lines denotes the end of a clause.
+
+My steps for solving the SAT Problem:
+
+1. Start with arbitrary truth values for the 3 variables and evaluate each clause.
+2. If a clause is false, pick one literal from the clause and flip its truth value. 
+3. Continue this process, iterating through the clauses, until each clause is true.
+
+Let's start with all variables set to false. 
+
+First clause: -3 2 1 0; means: NOT(x3) OR x2 OR x1. Given our initial truth values (false, false, false), this clause is false as all literals are false.
+
+Set got literal x1 (third literal in first clause) to true and reassess:
+
+Second clause: 2 1 3 0; means x2 OR x1 OR x3. Clause is true (x1 is true).
+
+Third clause: -1 3 2 0; means: NOT(x1) OR x3 OR x2. The clause is false (all literals are false).
+
+Set x3 to true and reassess :
+
+Fourth clause: 2 3 1 0; means: x2 OR x3 OR x1. Clause is true (x1 and x3 are true).
+
+Fifth clause: 3 2 1 0; means: x3 OR x2 OR x1. Clause is true (x1 and x3 are true).
+
+Sixth clause: 1 3 2 0; means: x1 OR x3 OR x2. Clause is true (x1 and x3 are true).
+
+After iterating through all the clauses, all of them are true, the assignment (false, true, true), where x1=true, x2=false, x3=true, is a solution to the SAT problem.
+
+Answer: x1=true, x2=false, x3=true

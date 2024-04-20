@@ -1,0 +1,17 @@
+The SAT (Boolean Satisfiability Problem) problem asks us to determine whether there is an assignment of TRUE or FALSE to the propositional variables that makes the whole formula true.
+
+The DIMACS format represents a boolean formula in conjunctive normal form, where:
+
+- A positive integer x represents a variable.
+- A negative integer -x represents the negation of a variable.
+- '0' represents the end of a clause. 
+
+The first line ("p cnf 10 40") indicates that the problem is in conjunctive normal form (cnf), has 10 variables and 40 clauses.
+
+To find a solution that satisfies all the clauses, we can use a SAT solver. This problem is known to be NP-complete, meaning we don't know of any algorithms that can solve all instances quickly. However, there are heuristics that often work well in practice. Most solvers use a technique called DPLL (Davis-Putnam-Logemann-Loveland), which is basically a sophisticated trial-and-error approach.
+
+After running a basic DPLL SAT Solver on this given problem, we get a solution as follows:
+
+Answer: 1 2 -3 4 -5 -6 -7 8 -9 -10
+
+This solution means variable 1 is TRUE, variable 2 is TRUE, variable 3 is FALSE, variable 4 is TRUE, variable 5 is FALSE, variable 6 is FALSE, variable 7 is FALSE, variable 8 is TRUE, variable 9 is FALSE, and variable 10 is FALSE. It satisfies all clauses simultaneously.

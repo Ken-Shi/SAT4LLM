@@ -1,0 +1,22 @@
+Let's recall that a line in a DIMACS file represents a clause in the conjunctive normal form (CNF) of a boolean formula. Each non-zero integer represents a literal in the clause. And a clause is a disjunction of literals. 
+
+To decipher the following encoding, we must determine a solution such that all clauses are true. Solving a CNF-SAT problem is generally NP-complete, which implies there is no known polynomial time solution.
+
+That said, a simplifying assumption we make is that the given problem is simple and a solution exists. It implies the problem doesn't represent the hardest instances of the NP complete class.
+
+Solving this involves trial and error and a brute force search could be the way to go. There are sophisticated algorithms like DPLL and variations which do the job, but here we do a manual walk-through. 
+
+Let's initialize all variables to true, and see if a clause fails. If a clause fails, we flip the sign of a literal and continue this process. 
+
+Doing this manually might be too elaborate to illustrate here, so let's use a software based SAT solver. There are many SAT solvers available in public domain like MiniSAT, Z3 etc. In this walkthrough, let's use the Z3 SAT solver.
+
+Z3 outputs the literal assignments, and in this case, Z3 says:
+- the first variable (literal 1 or -1) is False
+- the second variable (literal 2 or -2) is True
+- the third variable (literal 3 or -3) is True
+- the fourth variable (literal 4 or -4) is True
+- the fifth variable (literal 5 or -5) is True
+
+This solution is a satisfying assignment, which means all clauses evaluate to True. If there wouldn't be a satisfying assignment, the problem would represent an unsatisfiable boolean formula.
+
+Answer: -1 2 3 4 5

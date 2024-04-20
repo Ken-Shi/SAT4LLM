@@ -1,0 +1,10 @@
+To solve this SAT problem encoded in DIMACS format, we will use the WalkSAT algorithm. This algorithm randomly assigns truth values to variables and attempts to minimize the number of unsatisfied clauses by flipping variable values.
+
+1. Initialize the truth assignment to random values.
+2. Check all clauses to find any unsatisfied ones.
+3. If there are unsatisfied clauses, randomly select one and flip the truth value of a randomly selected variable in that clause.
+4. Repeat steps 2 and 3 until all clauses are satisfied or a specified number of iterations is reached.
+
+After running the WalkSAT algorithm, the final solution is as follows:
+
+answer: -10 -9 -3 -8 -6 -5 -4 -2 -1 -7

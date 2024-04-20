@@ -1,0 +1,28 @@
+Given the following SAT problem encoded in DIMACS format:
+
+p cnf 3 3
+3 2 1 0
+-2 3 1 0
+3 -2 -1 0
+
+We have 3 variables (1, 2, 3) and 3 clauses.
+
+To solve this SAT problem, we can use the following steps:
+
+1. Start with an empty assignment for the variables: {}.
+2. Evaluate each clause one by one:
+   a. In the first clause (3 2 1):
+      - Since all the variables (1, 2, 3) are positive, we can assign True to all of them: {1: True, 2: True, 3: True}.
+      - This makes the clause True.
+   b. In the second clause (-2 3 1):
+      - Since variable 2 is negated, we assign False to it: {1: True, 2: False}.
+      - Evaluating the clause, we have {1: True, 2: False, 3: True}.
+      - This makes the clause True.
+   c. In the third clause (3 -2 -1):
+      - Since variable 1 is negated, we assign False to it: {1: False, 2: False}.
+      - Evaluating the clause, we have {1: False, 2: False, 3: True}.
+      - This makes the clause True.
+
+Therefore, the assignment {1: False, 2: False, 3: True} satisfies all the clauses, and hence the SAT problem is satisfiable.
+
+answer: 1 0 0

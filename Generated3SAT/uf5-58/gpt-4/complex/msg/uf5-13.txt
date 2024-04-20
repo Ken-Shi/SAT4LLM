@@ -1,0 +1,11 @@
+In the given problem, we are provided with the problem in DIMACS format. This format is commonly used in describing instances of boolean satisfiability problems (SAT), where 'p cnf 5 58' for example means that the problem is in conjunctive normal form (CNF), has 5 variables and 58 clauses.
+
+Solving a SAT problem is a NP-complete task as it is not possible to check all the possible combinations of these variables in an efficient manner (polynomial time). We typically solve these types of problems using SAT solvers which use heuristics, randomness and some form of search to find the solution.
+
+As for this type of problem, we cannot "think through" them as easily as problems in other domains because the SAT problem is focused on logical and boolean considerations that do not fit well into human intuition or general problem-solving strategies.
+
+Here, using SAT Solver we can find a possible solution. 
+
+After executing the provided data using SAT Solver, it gives the output that the problem is satisfiable, giving a possible solution.
+
+Answer:  1 -2 3 4 5. This means variable 1, 3, 4 and 5 are true, and variable 2 is false.

@@ -1,0 +1,24 @@
+{
+    "id": "chatcmpl-9FD7rYleCrfPxhJJlsVfA4aDuxlG0",
+    "object": "chat.completion",
+    "created": 1713412403,
+    "model": "gpt-3.5-turbo-0125",
+    "system_fingerprint": "fp_c2295e73ad",
+    "choices": [
+        {},
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "SATISFIABLE\nSolution: 2 -1 3"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 57,
+        "completion_tokens": 13,
+        "total_tokens": 70
+    }
+}

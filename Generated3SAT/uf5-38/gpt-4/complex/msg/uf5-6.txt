@@ -1,0 +1,18 @@
+This problem is essentially a task of solving a propositional satisfiability problem, also known as SAT problem?which is the problem of determining if there exists an interpretation that satisfies a given boolean formula. 
+
+To solve this, I will use the Davis?Putnam?Logemann?Loveland (DPLL) algorithm?this algorithm checks all possible combinations of variables until satisfactory values are found or all combinations have been checked.
+
+Looking at the first 3 clauses which include variable 1 (2 -1 5 0, -2 1 3 0, -4 1 2 0), We can find out that if set variable 1 = true, we can satisfy those clause. 
+
+Following by variable 2, set variable 2 = true, clauses that included variable 2, such as 2 -1 5 0, -4 1 2 0, can also be fulfilled. That's why set variable 2 = true is correct.
+
+Now let's find the other clauses that contain variable 3, finding that there are no contradictions so set variable 3 = false.
+
+Check for variable 4 and found that 4 -5 1 0, this clause can also be satisfied when 4 = False, and all other clauses can also be satisfied.
+
+As for variable 5, if 5 = true, then all clauses are satisfied since the clauses that contain variable 5 either positive and negative can be satisfied by setting the other variables. 
+
+So, we have found a solution.
+
+
+Answer: 1=True, 2=True, 3=False, 4=False, 5=True.

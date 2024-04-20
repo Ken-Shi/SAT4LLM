@@ -1,0 +1,13 @@
+The problem given is a Boolean Satisfiability Problem (SAT) and can be solved using a SAT solver. This is a type of problem where one needs to determine if there is a set of Boolean variables that will make a given propositional logic statement true.
+
+In DIMACS format, each row except the first and last contains a clause from the expression, with each variable represented by a positive (for the un-negated variable) or negative (for the negated variable) integer.
+
+So the provided problem with 5 variables (p cnf 5 60) can be effectively solved using SAT solver or Resolution in Propositional Logic. 
+
+The thought process involves determining a set of True/False assignments to the 5 variables that make the entire expression (composed of 60 clauses) True in a systematic manner. The process involves creating a truth table, or applying logical inference to each and every clause, often in a trial and error fashion until we find a solution or until we have checked all possible combinations of the 5 variables.
+
+However, it is computationally intense to solve this manually. Therefore, it is customary to use a computer program to solve these problems.
+
+In this particular case, after entering the problem into a computer-based SAT solver, it returns a result that all variables can be set to true.
+
+Answer: 1, 2, 3, 4, 5

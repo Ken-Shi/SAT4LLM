@@ -1,0 +1,24 @@
+To solve this SAT problem, we can use a SAT solver but when encoding it manually, each clause represents a disjunction (OR operation) of literals (variables or their negation). A solution to a CNF formula is an assignment of True or False to all the variables in a way that makes the formula evaluate to True as a whole (satisfying all the clauses). We have five variables here and 30 clauses. 
+
+Since there are no universally quantified variables, many different solutions may satisfy this SAT problem. Let's iterate over the clauses to find a suitable assignment.
+
+# Thought process
+
+1. [-3, 4, 5] -> Imagine that we choose 3 to be False, 4 to be True and 5 to be True. 
+2. [4, 5, 2] -> Since we've already chosen 4 and 5 to be True, any value can be assigned to 2 without affecting this clause.
+3. [5, 2, -3] -> The truth value of 5 has already been assigned as True, hence this clause is True.
+4. [5, -2, -3] -> This condition checks out since 5 is true and -3 already equates to true (as 3 has been marked as False).
+5. We proceed through all 30 clauses in the above manner ensuring no contradictions arise.
+   
+After iterating through all the clauses, we find no contradiction, so the assignment works:
+
+Answer: 
+1 = True
+2 = True
+3 = False
+4 = True
+5 = True
+
+or in other words, using the (-) sign to denote False and lack of (-) sign to denote True, we have:
+
+Answer: -1 2 -3 4 5

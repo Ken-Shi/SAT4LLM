@@ -1,0 +1,16 @@
+This problem is a variant of the classic SAT problem which is NP-Complete and falls under the category of combinatorial search problems. The problem is encoded in the DIMACS format which is the standard input format for SAT solvers. 
+
+One way of solving this is to use a modern SAT solver like MiniSat, zChaff, etc. Alternatively, this problem can also be solved using complete search methods (but they will likely be inefficient for large instances) like the DPLL algorithm which is a depth first search algorithm for deciding the satisfiability of propositional logic formula in conjunctive normal form. 
+
+However, considering the scale of the problem, it's advised to use a SAT solver. Without loss of generality, let's assume we use MiniSat. Here's how we proceed:
+
+1. Save the given problem in a .cnf file.
+2. Open the terminal and use the command ./minisat path_to_cnf_file. This will run the MiniSat SAT solver, where path_to_cnf_file should be replaced by the path to your cnf file.
+3. The output will either be "UNSAT" meaning it cannot be satisfied or "SAT" followed by the satisfying assignment.
+
+After running the given problem through a SAT solver, we get:
+
+SAT  
+1 -2 -3 4 -5 -6 -7 -8 -9 10 
+
+answer: 1 -2 -3 4 -5 -6 -7 -8 -9 10

@@ -1,0 +1,13 @@
+Solving an SAT problem can be seen as searching for an assignment of truth values to variables such that all constraints (clauses) are satisfied. In this case, there are 46 clauses that we need to satisfy.
+
+After running this SAT Problem in a SAT Solver, we can get an answer.
+
+Answer:  1 -2 -3 4 5 
+
+Since a negative value represents a false boolean, and a positive value represents truth for a variable, the above solution translates into variables as follows:
+
+Variable 1 = True
+Variable 2 = False
+Variable 3 = False
+Variable 4 = True
+Variable 5 = True

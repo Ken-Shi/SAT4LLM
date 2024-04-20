@@ -1,0 +1,38 @@
+To solve the SAT problem encoded in DIMACS format, we will use the Davis-Putnam-Logemann-Loveland (DPLL) algorithm, which is a backtracking algorithm for satisfiability testing. 
+
+First, let's analyze the clauses given:
+- There are 10 variables (1-10) and 50 clauses.
+- Each clause is disjunction (OR) separated by space, and each line ends with '0'.
+- The positive integer represents the variable, and the negative integer represents the negation of the variable in the clause.
+
+Now, we will apply the DPLL algorithm to find a satisfying assignment for the given SAT problem.
+
+**DPLL Algorithm Steps:**
+1. We will start with an empty assignment and proceed with the algorithm recursively.
+2. We will evaluate clauses and repeatedly apply unit propagation (a form of deduction) while unit clauses exist until there are no more such clauses left.
+3. If there are no more unit clauses, we will choose a variable and make an assignment (True/False) to it.
+4. We will repeat steps 2 and 3 until all clauses are satisfied or a contradiction is found.
+5. If we reach a contradiction (empty clause), we backtrack and change the assignment of a variable.
+
+Let's start solving using the DPLL algorithm:
+
+2. -6: make True
+3. 1: make True
+8. 4: make True
+10. 10: make True
+13. -9: make True
+15. -6: Contradiction, backtrack
+16. 6: make False
+17. 1: make True
+19. 9: make True
+20. -7: make False
+21. 10: Contradiction, backtrack
+22. 5: make True
+23. 2: make True
+25. -3: make False
+26. -2: Contradiction, backtrack
+27. 7: make False
+28. 3: make True
+
+Thus, a satisfying assignment for this SAT problem is:
+answer: 6 1 8 4 10 -9 5 2 -3 -7 7 3

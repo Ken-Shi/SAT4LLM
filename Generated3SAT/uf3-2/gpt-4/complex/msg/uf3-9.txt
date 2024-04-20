@@ -1,0 +1,21 @@
+This problem is in conjunctive normal form (CNF), which is a format widely used in computational logic and theoretical computer science, and especially in automated theorem proving and SAT solver tools.
+
+It's important to understand what the given data means:
+
+- The first line "p cnf 3 2" indicates that the CNF formula has three variables and two clauses.
+- The next lines contain the clauses. Logically, each clause is a disjunction of variables or its negation. Therefore, "1 2 -3 0" represents the clause "(1 OR 2 OR NOT 3)" and "2 -3 -1 0" represents the clause "(2 OR NOT 3 OR NOT 1)".
+- The number ?0? at the end of each clause signals the end of that clause.
+
+As per the problem solving, in order to solve a SAT problem, we are looking for an assignment of truth-values to the variables that makes all the clauses true and that would satisfy the CNF formula.
+
+Let's evaluate the clauses:
+
+For the first clause - "1 2 -3 0"
+Let's assign "1" to the variable 1 and 2, and "-1" to variable 3. Since any clause will be true if at least one of its variables is true, our choice will make the first clause true, (since 1 OR 2 is true).
+
+Now, let's move to the second clause - "2 -3 -1 0"
+Notice that our previous choice of 1 for variable 2 already satisfies the second clause (since 2 is true). The value for variable 1 and 3 we made doesn't contradict the clause since NOT 3 OR NOT 1 is also true (since NOT 3 is true).
+
+So, given that all the clauses are satisfied, hence the whole formula is satisfied.
+
+Answer: Variable 1 = true, Variable 2 = true, Variable 3 = false

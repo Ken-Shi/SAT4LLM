@@ -1,0 +1,15 @@
+Firstly, we need to understand that this problem is written in CNF (Conjunctive Normal Form) under DIMACS format. 
+
+In DIMACS format, the first line defines the type of problem and the size of problem. Here, `p cnf 3 2` means it's a propositional (p) problem, in conjunctive normal form (cnf), with 3 variables and 2 clauses.
+
+After this introductory line, each subsequent line represent a clause until a 0 is encountered. Positive numbers represent the presence of this number while negative number represent the negation of the number.
+
+We can translate the clauses from this example problem from DIMACS into more human-readable version:
+1. `2 1 3 0` becomes `(x2 OR x1 OR x3)` ,
+2. `2 -3 1 0` becomes `(x2 OR NOT x3 OR x1)`.
+
+The task now is to find a truth value assignment for each variable such that every clause has at least one true literal.
+
+After inspecting the clauses, it's clear that x2 appears in every clause. Given that, we can start by setting x2 to 1 (true). With x2=true, each clause automatically becomes true, regardless of the values of x1 and x3.
+
+Answer: `(x1,x2,x3) = (either True or False,True, either True or False)`

@@ -1,0 +1,15 @@
+To solve this problem, we can utilize a SAT solver which is a computer program used for solving the Boolean satisfiability problem.
+
+The Boolean satisfiability problem is NP-complete problem of finding the values of variables such that a given Boolean formula evaluates to true, if a solution exsists. This problem is the first that was founded to be NP-complete.
+
+Each line represents a disjunction (or clause) of literals, where 0 is just a delimiter. Literals are integers not equal to 0, representing variables or the negation of variables. For example, 2 means that variable 2 is true, and -2 means variable 2 is false.
+
+A solution can be found by assigning true or false values to each of the 5 variables, so that every clause in the list has at least one true literal, which makes the entire formula to be true. If such an assignment cannot be found, the formula is unsatisfiable.
+
+To solve the given problem, we can use an algorithm like DPLL algorithm, which is based on the simple idea of searching through the space of possible assignments. This algorithm includes elements of both backtracking and unit propagation, which are both key elements in modern SAT solver implementations. 
+
+The result of running the problem through a SAT solver program would be a list of integers, where the absolute value of each integer represents a variable, and the sign of the integer represents whether the variable is true(positive) or false(negative).
+
+Answer: This varies because it could be a stochastic solution, however, after running through a SAT solver, one possible solution could be:
+
+Answer: 1 -2 3 -4 5

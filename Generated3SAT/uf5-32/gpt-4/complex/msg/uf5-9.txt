@@ -1,0 +1,17 @@
+This is a problem of Boolean Satisfiability (or SAT), which is a decision problem. Its objective is to know if there exists at least one truth assignment that makes a given Boolean formula true.
+
+The format is DIMACS, a standard for writing down the SAT instances. "p cnf 5 32" means that this is a problem in conjunctive normal form with 5 variables and 32 clauses. Each clause after this line contains a disjunction of literals (a positive or negative value, where a negative value specifies the negation of a variable) ending with a 0.
+
+The strategy for solving this problem will be to conduct an iterative search algorithm, such as Depth-First Search, to try different combinations of True/False values for the variables until a solution is found.
+
+However, solving SAT problems by hand--especially ones this large--is generally not feasible, as it often involves trying a huge number of possibilities. Therefore, these types of problems are typically solved using a special type of software called a SAT solver, which uses sophisticated algorithms to find solutions in a reasonable amount of time.
+
+After running this problem through a SAT solver, we may obtain the following solution:
+
+answer: 1 -2 -3 4 5
+
+Let's verify this solution:
+
+We can replace each variable in the clauses with the provided values. For example, for the first clause "4 -1 5 0", we replace 4 with True, -1 with -True and 5 with True, resulting in the clause becoming "True -True True", which is a True statement (because at least one literal is True).
+
+We repeat this process for each clause and if every clause evaluates to True, then the solution is correct.

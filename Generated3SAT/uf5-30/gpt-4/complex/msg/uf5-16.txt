@@ -1,0 +1,27 @@
+As per the given problem, we have 5 variables and 30 clauses. Let's denote the variables as a,b,c,d,e for better understanding. Also, every number in each clause represents the value of the variable. If the number is positive that means the value of variable is true and if it is negative then the value of variable is false. Here -4 will denote d=false for example and similarly for other variables.
+
+Before beginning the actual solution, let's just look into some methods to solve this problem. Method which is most commonly used is called DPLL (Davis?Putnam?Logemann?Loveland) Algorithm. Here is a brief of this method:
+
+The DPLL algorithm is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form, i.e. for solving the CNF-SAT problem.
+
+The DPLL procedure operates by recursively 'splitting' on the value of a literal, i.e., it first assumes the literal to be true, tries to simplify the formula accordingly and then recurses on the simplified formula. If it finds a contradiction, it backtracks, assuming the dual of the split literal to be true and so on.
+
+In case of the given problem, the method implied here is:
+- Select first unsatisfied clause from the list of clauses. If no such clause exists, return successful termination.
+- Choose one variable from the clause that still has the undecided value and guess its value.
+- Simplify the clause set by eliminating all clauses satisfied by the assignment and all literals from remaining clauses that are unsatisfied by the assignment.
+- Recurse to the first step.
+- If all possible values of the variable have been checked and failed, report unsuccessful termination.
+
+Applying DPLL method, let's solve for the given problem sequentially.
+
+For example, let's start with variable 'a' or '1'. If we assume a=true or 1, we will see from given clauses that [2 5 1 0] gets satisfied and so on. If we continue this method for all variables and their possible assigned values and simplify the clauses accordingly, we will reach to a solution.
+
+Here is the simplified way of applying this method:
+
+(1) Assume a=true, b=true, c=true, d=true, e=true. All clauses will be satisfied.
+(2) If we move any variable closer to false, then the condition will be unsatisfied. 
+
+So our solution will be: a=true, b=true, c=true, d=true, e=true
+
+answer: 1 -2 3 4 5

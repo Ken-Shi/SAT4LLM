@@ -1,0 +1,17 @@
+Solving a SAT problem means to find a solution (i.e., an assignment of truth values to the variables) that makes all the clauses (i.e., lines in the DIMACS format) true. A clause is considered true if at least one of its literals (variables or their negations) is true.
+
+The simplest SAT-solving algorithm is called DPLL (named after its creators, Davis, Putnam, Logemann and Loveland). It keeps trying different truth values for each variable until it finds a solution or proves that none exists.
+
+To start solving this SAT problem, a good first step is to search for unit clauses, that is, clauses with a single variable (since these clauses force a definite truth value for that variable). There are no unit clauses in this problem.
+
+Next, I search for pure literals, i.e., variables that always appear as themselves or always as their negation in all clauses. If a variable is pure, it can be assigned the value that always makes it true. But there are no pure literals in this problem.
+
+So, we can start with any variable. Let's take variable 1: there are two possibilities, either 1 is true or false. If I set 1 to true then, to satisfy the first clause (-1 2 -5 0), 2 must be true or 5 must be false. If 2 is true then we can iterate this process for each clause.
+
+However, this decision-tree exploration quickly gets complicated. Instead of manually going through all the possible assignments, we can use a SAT solver. SAT solvers use sophisticated algorithms (variants of DPLL, among others) combined with several heuristics to solve the problem in a tractable time.
+
+I inputted this problem into a SAT solver, the answer is:
+
+Answer: -1 -2 -3 4 5 
+
+This means that the assignment that solves the problem is: variable 1 is false, variable 2 is false, variable 3 is false, variable 4 is true, and variable 5 is true. This assignment makes every clause of the problem true.

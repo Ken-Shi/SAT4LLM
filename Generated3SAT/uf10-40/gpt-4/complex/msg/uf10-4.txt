@@ -1,0 +1,24 @@
+To solve a satisfaction problem from DIMACS format, we can use a satisfiability solver such as MiniSat or Glucose. These are tools designed to find a valid truth assignment when given a problem in conjunctive normal form (CNF).
+
+The process of solving SAT problems involves iteratively selecting and assigning truth values to the unassigned variables in a way that makes as many clauses as possible true. When a satisfying assignment is found, the algorithm terminates. 
+
+For example, in the line "-6 4 5 0", it means either variable 6 is False, or variable 4 is True, or variable 5 is True. The clause is satisfied if any of the variables fulfill their condition.
+
+This process typically uses techniques such as backtracking, unit propagation, and heuristics to find a satisfying solution.
+
+However, since these SAT solvers are complex programs and not easily performed by hand, we will execute a SAT solver in order to provide an 'answer'. 
+
+For the line of thoughts, typically modern solvers operate under these rules:
+1. If any clause is all False, unsatisfiable.
+2. If any literal appears in an unsatisfied clause, but its negation does not, assign the literal True.
+3. If any remaining variable appears with only one polarity in the formula, assign the value making all literals of same polarity true.
+4. If a variable occurs twice and both polarities appear equally often, try both assignments.
+5. Give up, output: "No solution exists".
+
+Let's run the given problem through a solver such as MiniSat.
+
+Assuming the MiniSat was executed, the "answer" would be: 
+
+(This part would depend on the output of the SAT solver, so insert output here once known)
+
+Please note, not every SAT problem will have a valid solution (hence the "give up" step in the solving heuristic). If the problem is unsatisfiable, then it would mean that there is no assignment of truth values that makes all clauses true.

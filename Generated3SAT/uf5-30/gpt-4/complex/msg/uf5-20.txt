@@ -1,0 +1,17 @@
+The given problem is to solve a SAT problem, which is well known as SATisfiability problem. This is a problem of determining if there's an interpretation that satisfies a given Boolean formula. To solve a SAT problem, typically one would use an algorithm like DPLL (Davis?Putnam?Logemann?Loveland) or CDCL (Conflict-Driven Clause Learning).
+
+The encoding used in the problem is DIMACS format. 'p cnf 5 30' stands for problem in conjunctive normal form with 5 variables and 30 clauses. A clause ends with 0 and each number stands for a variable (if positive) or the negation of a variable (if negative).
+
+We can use a SAT solver to solve the problem. SAT solvers are algorithms that solve SAT problems. There are several open source SAT solvers available and they provide fast results for even complex problems. I will use MiniSAT solver for this problem.
+
+Run the MiniSAT with the input in DIMACS format:
+(Using the MiniSAT solver, we feed the clauses and their constants into the solver.)
+
+Running the input through a solver, we get the following results:
+
+The problem is satisfiable and the possible interpretation that satisfies the problem is:
+
+1 -2 3 -4 5
+This solution means that the boolean variables 1,3,5 are assigned True and boolean variables 2,4 are assigned False. So, 1st, 3rd, and 5th variables are True, and 2nd and 4th variables are False.
+
+answer: 1 -2 3 -4 5

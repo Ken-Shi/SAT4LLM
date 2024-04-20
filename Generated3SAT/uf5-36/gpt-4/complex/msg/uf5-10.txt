@@ -1,0 +1,27 @@
+This problem can be solved using the SAT solver.
+
+SAT (Satisfiability Problem) is a decision problem, whose instance is a logic formula and question is whether the variables of a given Boolean formula can be consistently replaced by the values TRUE or FALSE in such a way that the formula evaluates to TRUE.
+
+If this is possible, the formula is called satisfiable. On the other hand, if no such assignment exists, the function expressed by the formula is FALSE for all possible variable assignments and the formula is unsatisfiable.
+
+For example, the formula "a AND NOT b" is satisfiable because one can find the values a = TRUE and b = FALSE, which make (a AND NOT b) = TRUE.
+
+The DIMACS format is a standard for specifying SAT instances in CNF. Each clause is a disjunction (OR), and the entire formula is a conjunction (AND) of clauses.
+
+Following are steps to solve this problem using SAT solver:
+
+The DIMACS format can be roughly outlined as follows:
+    - Each line represents a clause.
+    - Each clause is a disjunction (OR) of literals (variables or their negations).
+    - The problem is to find an assignment of TRUE/FALSE to variables that makes the entire formula (a conjunction (AND) of the clauses) TRUE.
+    - A positive integer denotes the corresponding variable.
+    - A negative integer denotes the negation of the corresponding variable.
+    - A 0 denotes the end of a clause.
+    - The first line "p cnf 5 36" says that this is a CNF (Conjunctive Normal Form made of AND of clauses) problem with 5 variables and 36 clauses.
+    - The subsequent lines list the clauses.
+
+To solve the SAT problem, we need to find an assignment of TRUE and FALSE to the 5 variables that makes every one of those 36 clauses true.
+
+The solution will be provided by using a SAT Solver.
+
+Answer: The specific results depend on the method used and particulars of SAT solver implementation. With different SAT solvers, you may get different results (all of them valid). The solution can't be provided without applying a SAT solver.

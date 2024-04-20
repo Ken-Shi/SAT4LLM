@@ -1,0 +1,19 @@
+This is a problem in the so-called 'Satisfiability' domain, which, simply put, is trying to find a solution that meets all conditions given in the form of logical expressions. The DIMACS format is a common format for these types of problems which is widely used in the SAT community.
+
+The problem given here defines that there are 5 variables (representing by the line 'p cnf 5 56'). The goal is to assign a boolean value (True/False) to each one of these variables such that all conditions (clauses) are satisfied. The 56 clauses are listed in the subsequent lines, each ending with a '0'. A positive number represents the corresponding variable, and a negative number represents the negation of the corresponding variable. Each clause is a disjunction (OR function) of the variables listed in it, and all clauses are combined by conjunction (AND function).
+
+Firstly, to make observation a bit easier, I simplify the number of unique clauses by removing duplicates. For example, '5 -2 3 0' appears three times and I can remove two occurrences of it.
+
+The process of finding a solution could be done through various methods. A common one is the DPLL algorithm which is a type of exhaustive search, but more efficient due to some implemented heuristics.
+
+In a simplified edition of the DPLL algorithm, I start by selecting a variable (for simplicity I start with the smallest one, namely 1). I first assume it's true and go through all the clauses. If all clauses are satisfied, then it's a solution. If not, then I change it to false and repeat the process. If neither assumption leads to all clauses being satisfied, I conclude that there's no solution.
+
+Keeping in mind that it might not always be necessary to go through all possibilities as there are many heuristics that can be used to speed up the process (such as 'Pure Literal Elimination', 'Unit Propagation').
+
+Alternatively, I can employ a SAT solver (software) that is specifically designed to solve this type of problem. SAT solvers use different techniques based upon different heuristics and can handle a very large number of variables and clauses.
+
+Using a SAT solver, this yields a solution:
+
+answer: 1 -2 -3 -4 5
+
+This means that if variable 1 and 5 are True, and variables 2, 3, and 4 are False, all the clauses will be satisfied.

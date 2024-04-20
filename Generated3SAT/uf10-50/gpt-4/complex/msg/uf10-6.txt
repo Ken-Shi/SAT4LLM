@@ -1,0 +1,14 @@
+This problem is in Conjunctive Normal Form (CNF), usually solved using a SAT Solver algorithm. The SAT problem is a decision one, where we check if there exist assignments of boolean values (True or False, represented as 1 and 0 respectively) to variables that make the expression true. This CNF problem consists of clauses, where each clause is a disjunction (OR operation) of literals, and the entire expression is conjunction (AND operation) of these clauses. 
+
+To solve this manually is complex, but generally, a common "thought" procedure is as follows:
+
+- Start with arbitrary assignments of variables
+- Each clause must have at least one literal (variable or its negation) that is true
+- If any clauses in the expression are false, find a variable in the clause that you can flip (from 0 to 1 or from 1 to 0) to make that clause true
+- This might turn other clauses to false, which you then have to correct through the same method
+- If at any point all the clauses are true, the initial problem is satisfiable and you have found the solution
+- But, if you enter a loop where you have a clause that is always false, the problem is unsatisfiable.
+
+Using a SAT Solver, we can derive the solution more quickly without having to repeat the aforementioned steps.
+
+answer: 1, -2, 3, 4, -5, 6, 7, 8, -9, 10

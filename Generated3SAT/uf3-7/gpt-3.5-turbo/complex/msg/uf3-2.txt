@@ -1,0 +1,26 @@
+Given the DIMACS format:
+p cnf 3 7
+1 -3 2 0
+1 -2 -3 0
+-2 -3 1 0
+-3 -2 1 0
+-2 -3 1 0
+-2 1 -3 0
+-2 -3 1 0
+
+This SAT problem has 3 variables and 7 clauses.
+
+To solve this problem, we can use the resolution method. We need to look for a satisfying assignment that makes all the clauses true. 
+
+Let's consider the first clause:
+1 -3 2
+
+We can see that -3 is negated. So, either 3 is false or 1 is true. Since it is an OR operation, we can ignore this clause, as it is already satisfied by other clauses.
+
+Similarly, we can analyze the other clauses and see that they are also satisfied by other clauses. 
+
+Hence, all the clauses are redundant and can be ignored. This means that there is no need to assign any values to the variables in order to satisfy the SAT problem.
+
+Therefore, the SAT problem is unsatisfiable.
+
+answer: unsatisfiable

@@ -1,0 +1,19 @@
+This problem is a propositional logic problem represented in conjunctive normal form (CNF), which is a conjunction of disjunctions (clauses). In other words, it's a boolean problem which we are trying to find values (either True or False; represented by 1 or -1 correspondingly) for the variables (1, 2, 3 in this problem). 
+
+Let's see our clauses:
+- First clause: -2,-3,-1. Seen as "not_2 and not_3 and not_1". It means that at least one of these variables needs to be False.
+- Second clause: -1,2,3. Seen as "not_1 and 2 and 3". It means that at least one of these variables needs to be True.
+- Third clause: -3,-2,-1. Seen as "not_3 and not_2 and not_1". It means that at least one of these variables needs to be False.
+- Fourth clause: -2,3,-1. Seen as "not_2 and 3 and not_1". It means that at least one of these variables needs to be True.
+- Fifth clause: 3,-2,-1. Seen as "3 and not_2 and not_1". It means that at least one of these variables needs to be True.
+- Sixth clause: -1,-2,-3. Seen as "not_1 and not_2 and not_3". It means that at least one of these variables needs to be False.
+
+The solution to SAT problems can usually be found through brute force or algorithms like DPLL, but this problem is simple enough to solve by inspection.
+
+Choosing values that satisfy all the clauses at the same time can be a bit trial and error. Given that clauses state that at least one of these variables needs to be True or False, one solution could be all variables are False (-1).
+
+This means:
+- In the clauses where at least one must be False, any of the variables provides that.
+- In the clauses where at least one must be True, there's no contradiction because they're interpreted as 'or' statements, so any one value being True would satisfy the clause. In this case, none are True, which still does not violate the clause because it's not demanding that any specific variable must be True.
+
+Answer: -1 -2 -3

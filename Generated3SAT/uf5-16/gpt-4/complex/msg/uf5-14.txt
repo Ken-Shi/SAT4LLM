@@ -1,0 +1,30 @@
+The DIMACS format is a standard encoding for SAT (Boolean Satisfiability) problems and is composed as follows:
+
+? 'p cnf 5 16' is the problem line. 'p' is to identify the problem line, 'cnf' reveal it is a conjunctive normal form problem, number '5' indicate there is five variables and the '16' reveals there is Sixteen clauses.
+
+? The following lines are the clauses. Each number represent a literal, positive ones are the variables and negative one represent the negation of the corresponding variable. The 0 indicates the end of a clause.
+
+Here's how we can solve the problem:
+
+STEP 1: Start by seeking an empty clause, which would return the problem as unsolvable immediately. None is present in this case.
+
+STEP 2: Follow that by seeking unit clauses - those with only one literal. None exists here either.
+
+STEP 3: Seek pure literals; those that only appear as a single form(either positive or negatively) across all clauses. Literal '1' appears only positively and literal '3' appears only positively. Make them 'true'.
+
+STEP 4: Since we don't find the solution yet, we can begin resolution - select a literal, make it true and simplify the clauses. We can start with literal '2'. If '2' is true, clauses 2, 3, 5, 6, 8, 9, 11 become true. We delete these clauses and delete '-2' in clauses 1, 7, 10, 12, 13, 15. 
+
+Repeat this step until a solution is found or no more simplification can be done.
+
+STEP 5: If no solution is found, revert the decision on literal '2' (make '2' false instead), and resolve. In this case a resolution is reached after trying literal '2' as true, hence no need for this step.
+
+The above steps solve the SAT problem, and provide the following solution:
+
+Answer:
+1: True 
+2: True 
+3: True 
+4: Unassigned (could be True or False) 
+5: Unassigned (could be True or False) 
+
+(Note: Since 4 and 5 do not appear in the remaining clauses, they can be assigned either True or False without affecting the overall satisfiability of the formula.)

@@ -1,0 +1,22 @@
+The SAT problem is a boolean satisfiability problem which is determining if there exists an interpretation that satisfies a given boolean formula. The problem takes a list of clauses and each clause is a disjunction of literals. A literal is either a variable or a negation of variable and a clause will be true if at least one literal is true. If all the clauses are true then the formula is true and the problem is satisfiable. 
+
+From the given problem, there are 5 variables (1,2,3,4,5) and 20 clauses which are represented in Conjunctive Normal Form (CNF). 
+
+The first step in solving the SAT problem is understanding the DIMACS format:
+- "p cnf 5 20" means that we are dealing with a problem in conjunctive normal form (cnf), with 5 variables and 20 clauses.
+- The rest of the rows represent the clauses, where a "0" marks the end of a single clause and negative numbers represent negated variables.
+
+Now let's solve the problem:
+
+Looking at the clauses, it seems like 5 and 2 appear in almost every clause, often in positive form. Starting with these being True will likely to satisfy many clauses:
+
+1. Start with 5=True,2=True.
+2. Now observe first and second clauses, the third literal in them which is 3 or -2, either will have to be True. Let's set 3=True.
+3. Observing clause 5, -1, it has to be False. So 1=False.
+4. Now looking at the 10th clause 5 4 1 0, even though 5 and 1 are set, the whole clause will not become True unless 4=True, let?s assign 4=True.
+
+Now lets check if this assignment (5=True, 2=True, 3=True, 1=False, 4=True) satisfies all the clauses.
+
+It turns out that our guess satisfies all the clauses, so this is a satisfying assignment.
+
+Answer: 5=True, 2=True, 3=True, 1=False, 4=True

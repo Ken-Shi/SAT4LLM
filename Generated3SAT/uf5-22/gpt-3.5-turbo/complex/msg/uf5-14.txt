@@ -1,0 +1,30 @@
+To solve this SAT problem, we need to analyze the given CNF formula in DIMACS format. 
+
+The formula has 5 variables and 22 clauses: 
+1. -2 3 5
+2. -2 -3 -4
+3. 3 -1 -2
+4. -4 -1 - 2
+5. 3 -4 -2
+6. 2 3 -1
+7. -2 3 5
+8. -4 2 5
+9. 5 2 -1
+10. -4 -2 -1
+11. 5 -4 3
+12. -1 -5 2
+13. 5 -4 -3
+14. 5 3 2
+15. -4 -1 -2
+16. 3 5 -1
+17. -4 -3 -2
+18. -4 -2 -3
+19. -4 -3 -1
+20. -2 -1 -4
+21. 3 2 -1
+22. -4 5 -1
+
+Now let's solve this problem by trying to assign values to the variables in order to satisfy all the clauses. 
+
+answer: The given SAT problem is satisfiable, one possible solution is: 
+1. -1, 2, 3, -4, 5

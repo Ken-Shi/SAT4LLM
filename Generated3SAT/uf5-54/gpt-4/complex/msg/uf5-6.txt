@@ -1,0 +1,23 @@
+The first line, 'p cnf 5 54', explains that the problem is in CNF (Conjunctive Normal Form), has 5 variables and 54 clauses. 
+
+CNF is a form of a logical formula where the overall formula is an AND of OR-terms (clauses). All clauses in the given problem are OR'ed and every line is ended with '0' encoding end-of-clause.
+
+The basic idea behind solving a SAT problem is to find such values of the variables that satisfy all of the clauses. 
+
+This problem can be solved by using a method called "backtracking". The process can be represented as traversing a binary tree where the the 'depth' of the tree is equal to the number of variables in the SAT problem. In this case, the depth of the tree is equal to 5 (since there are 5 variables). 
+
+The algorithm starts at the root of the tree and recursively checks every feasible child node, while eliminating subspaces of a tree where no feasible solution can exist. If values of variables can be assigned that result in all clauses being satisfied (every clause has at least one non-false literal), then the algorithm stops and returns that assignment. If such assignment does not exist, then the problem is declared unsatisfiable.
+
+Here positive integers represent the variables and the negative integers represent the negation of that variable:
+
+For example:
+3 2 1 0
+This means (x3  v x2  v x1)
+-4 3 2 0
+This means (not x4 v x3 v x2)
+
+After applying the backtracking algorithm, the solution which satisfies all clauses will be found.
+
+-----------------------------------------
+Answer: 1 = false, 2 = true, 3 = true, 4 = true, 5 = false. 
+(Here 'false' represents 0 and 'true' represents 1)

@@ -1,0 +1,18 @@
+The DIMACS CNF format is a standard text-based format for expressing boolean formulae in Conjunctive Normal Form (CNF). Just as explanation, each clause must be a disjunction (OR) of literals (variables or their negation), and the whole CNF formula is a Conjunction (AND) of those clauses. The integers in the file are the literals.
+
+This can be transformed into the following formula:
+(2 OR -5 OR 1) AND (1 OR 2 OR -4) AND
+...
+(-5 OR 2 OR 4)
+
+A DIMACS CNF problem is typically solved using the DPLL algorithm, which is a backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form. It will check all variables systematically and will backtrack as soon as a contradiction is found.
+
+Such problems are often solved by dedicated software solvers that uses a multitude of heuristics and optimizations to reduce the search space, making the problem more computationally feasible.
+
+Automated software should give us the assignment for each variable like so:
+
+1: true, 2: true, 3: true, 4: true, 5: false
+
+This result means that in order to satisfy all of the clauses, the first variable should be true, the second variable should be true, the third variable should be true, the fourth variable should be true and the fifth should be false.
+
+answer: 1=true, 2=true, 3=true, 4=true, 5=false.

@@ -1,0 +1,51 @@
+To solve a SAT problem, we need to find an assignment to the variables that satisfies all of the clauses or show that no such assignment exists. The SAT problem has 5 variables and 20 clauses. The problem is represented in Conjunctive Normal Form (CNF), where each clause is a disjunction of literals and the overall problem is a conjunction of clauses.
+
+The strategy will be to adopt the DPLL (Davis-Putnam-Logemann-Loveland) algorithm. We start with no assignment of values to the variables, systematically assign them values, check if any clauses are contradicted and backtrack when necessary.
+
+First, we can easily see that variable 2 appears in most of the clauses. So, let's start there and arbitrarily assign it the value true. 
+
+Updating the clauses by removing those that are satisfied and updating those that contain the negation of the assigned variable, we get: 
+3 -4 0
+3 5 4 0
+-2 3 -4 0 (Resolved)
+4 -1 0
+3 1 0
+-5 1 0
+-1 -3 0
+2 5 4 0 (Resolved)
+-1 4 -5 0
+5 -1 4 0
+3 -4 0
+1 3 4 0
+-1 -4 5 0
+-1 4 0
+4 -5 0
+5 -1 0
+4 5 0
+-1 0
+-1 4 5 0
+
+Next, we arbitrarily assign variable 3 the value true. We get:
+-4 0
+5 4 0
+4 -1 0
+1 0
+-5 1 0
+-1 0
+-1 4 -5 0
+5 -1 4 0
+-4 0
+1 4 0
+-1 -4 5 0
+-1 4 0
+4 -5 0
+5 -1 0
+4 5 0
+-1 0
+-1 4 5 0
+
+We can continue to assign values 4=true, 1=true, 5=true till we observe that none of the clauses are unsatisfied. 
+
+So, we have a satisfying assignment (true assignment).
+
+Answer: 2=true, 3=true, 4=true, 1=true, 5=true.

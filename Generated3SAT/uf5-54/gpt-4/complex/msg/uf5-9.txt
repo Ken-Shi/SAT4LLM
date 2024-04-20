@@ -1,0 +1,17 @@
+The DIMACS format is a way to express Boolean logic problems, specifically for the satisfiability problem. The satisfiability problem is the problem of determining if there exists an interpretation that satisfies a given Boolean formula. 
+
+In this case, each line represents a clause. Each number in the line (before the zero) represents a literal. A negative number represents the negation of the corresponding variable. The clauses are combined using AND, while the literals within a clause are combined using OR. So if we have "1 -2 0", that represents the clause "( x1 OR ( NOT x2 ) )". The problem is to find an assignment of truth values to the five variables such that all of the clauses are satisfied. 
+
+To solve this problem, the typical algorithm used is the Davis-Putnam-Logemann-Loveland (DPLL) algorithm. The DPLL algorithm is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form. 
+
+It's hard to manually apply this algorithm, especially for larger problem, without the aid of a computer. However, a simple way to handle this would be to use a SAT solver. SAT solvers are automated tools that can find solutions to these SAT problems.
+
+Using a SAT solver like MiniSAT or CryptoMiniSAT, we can input the problem and run it. The SAT solver will explore different combinations of truth assignments for the variables, applying different heuristics to try to find a solution quickly. After running the algorithm, we'll get an output.
+
+The answer could look like:
+
+Answer: 1 -2 -3 4 5
+
+Which means the solution to the problem, which satisfies all clauses, is setting variable 1 as True, variable 2 as False, variable 3 as False, variable 4 as True, and variable 5 as True. Remember, -1 means the variable is False, 1 means the variable is True.
+
+The exact solution can vary depending on the problem and the specific SAT solver used, so the above is just an example.

@@ -1,0 +1,1 @@
+To solve this SAT problem, we will use a SAT solver to find a satisfying assignment. Let me run the code for you.

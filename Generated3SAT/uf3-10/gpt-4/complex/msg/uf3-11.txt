@@ -1,0 +1,26 @@
+The given problem is a Boolean Satisfiability Problem(SAT), sometimes also known as Propositional Satisfiability Problem.
+
+The SAT problem is a decision problem, whose instance is a Boolean expression written using only AND, OR, NOT, variables, and parentheses. The question is: given the expression, is there some assignment of TRUE and FALSE values to the variables that will make the entire expression true? A formula of propositional logic is said to be satisfiable if truth value 'true' can be assigned to every variable in some way that the formula evaluates to 'true'.
+
+The problem is presented in DIMACS format, which is a standard format for encoding SAT and related problems. Here's an explanation of the problem:
+
+First, the letter 'p' stands for 'problem', 'cnf' stands for 'Conjunctive Normal Form', and the numbers '3' and '10' represent the total number of variables and clauses respectively.
+
+Each of the following lines represents a clause, with each clause being composed of literals separated by space and ending with a 0. For example, the clause 1 -2 3 0 represents (x1 OR -x2 OR x3).
+
+Let's analyze each clause:
+- In clause 1 -2 3 0, we have x1 as True OR x2 as False OR x3 as True.
+- In clause 3 -2 1 0, we have x3 as True OR x2 as False OR x1 as True.
+- In clause 1 3 -2 0, we have x1 as True OR x3 as True OR x2 as False.
+- In clause -2 3 1 0 we have x2 as False OR x3 as True OR x1 as True.
+- In clause 3 -1 2 0 we have x3 as True OR x1 as False OR x2 as True.
+- In clause -2 3 1 0 we have x2 as False OR x3 as True OR x1 as True (duplicated).
+- In clause 3 -2 -1 0 we have (-2 OR 3 OR -1) meaning x2 is False OR x3 is True OR x1 is False.
+- In clause 3 1 -2 0 we have (3 OR 1 OR -2) meaning x3 is True OR x1 is True OR x2 is False.
+- In clause 3 -2 1 0 we have (3 OR -2 OR 1) meaning x3 is True OR x2 is False OR x1 is True.
+- In clause -3 -2 1 0 means x3 is False OR x2 is False OR x1 is True.
+
+One answer:
+Looking at the clauses, a single solution could be to set (x1 = true), (x2 = false) and (x3 = true). All the clauses are met.
+
+answer: x1=true, x2=false, x3=true

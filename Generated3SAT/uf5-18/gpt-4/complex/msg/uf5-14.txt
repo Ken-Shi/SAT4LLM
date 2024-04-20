@@ -1,0 +1,23 @@
+This problem is a propositional logic problem that can be solved using a method called the DPLL (Davis, Putnam, Logemann, Loveland) algorithm, a specific form of backtracking search that is mostly used in the field of SAT (satisfiability) solving.
+
+The problem has 5 variables and 18 clauses, each clause consisting of various literals (the variables or their negations). The aim is to find a truth assignment for these variables that satisfies all the clauses.
+
+Each clause clause meaning OR between its literals and the entire formula meaning AND between its clauses.
+
+Thinking through solving: Initially we need to look for any unit clauses, i.e., clauses that contain a single literal, but there are none in this formula. 
+
+Next, we look for pure literals, i.e., literals that always appear with the same polarity in all clauses. But, there are no pure literals in this formula.
+
+Since there are neither unit clauses nor pure literals, we are forced to pick a variable and assign it a boolean value. Let's pick 1 and set it to true. Propagating this value we get unit clause -4 from the first clause and unit clause -5 from the fourth clause. 
+
+Next, if 4 is false, from the first clause we have 2 is true, but considering the rest of the clauses doesn't give any further units.
+
+Then if 5 is false, but we got no further units. 
+
+So, by trying assignments recursively, try another assignment, let's try setting 2 to true. But again no further units.
+
+So, try setting 2 to false instead, we get another assignment 3 to false from 11th clause.
+
+Then values for the literals 1=true, 4=false, 5=false, 2=false, 3=false satisfies all clauses, thus it is the solution.
+
+Answer: 1=true, 4=false, 5=false, 2=false, 3=false.

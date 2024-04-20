@@ -1,0 +1,23 @@
+This is a problem of Boolean Satisfiability (SAT) represented in the DIMACS format. Which means we have five boolean variables and a total of twelve clauses that these variables need to satisfy. The goal is to find a pattern that solves this problem. Automatically, this problem can be solved using a SAT solver, but I can explain the concept of how to manually solve this problem through an example.
+
+The DIMACS CNF format has each row end with 0 and each row represents a clause. A clause is a disjunction of literals, where a literal is a variable or the negation of a variable. If a number has a negative sign, it means the clause needs the boolean variable to be False for it to be satisfied. If a number is positive, it indicates the clause needs that variable to be True.
+
+Let's try to solve this problem with the following assignments of variables. With enough experience, one could see that a good starting point for this problem is -4 false, -1 true, -2 true, 3 false and 5 true. That is, set 1, 2, and 5 as True and 3, 4 as False.
+
+Check each clause in order to verify if they are satisfied by our chosen values:
+- -4 1 -3 0, it is satisfied by 1 (true).
+- 5 -2 -3 0, it is satisfied by 5 (true).
+- -2 -4 -3 0, it is satisfied by -2 (true).
+- -3 1 -4 0, it is satisfied by 1 (true).
+- -4 -1 -2 0, it is satisfied by -1 (true).
+- -4 5 -2 0, it is satisfied by 5 (true).
+- -3 5 4 0, it is satisfied by 5 (true).
+- -3 5 1 0, it is satisfied by 5 (true).
+- 1 -2 5 0, it is satisfied by 1 (true).
+- 3 1 -2 0, it is satisfied by 1 (true).
+- -3 1 -4 0, it is satisfied by 1 (true).
+- -4 -2 -5 0, it is satisfied by -2 (true).
+
+As you can see, with this configuration all clauses are satisfied so this is a possible solution for the SAT problem.
+
+answer: {1: True, 2: True, 3: False, 4: False, 5: True}

@@ -1,0 +1,11 @@
+To solve this SAT problem encoded in DIMACS format, we will use the DPLL algorithm. 
+
+The DIMACS format provided has 65 clauses and a total of 10 variables. We will start by initializing an empty assignment and an empty set of clauses.
+
+The goal is to assign boolean values (True or False) to each variable in a way that satisfies all the clauses.
+
+We will then apply the DPLL algorithm which involves recursively choosing a variable, assigning a boolean value to it (True or False), and simplifying the clauses based on this assignment.
+
+After applying the DPLL algorithm with the given set of clauses and variables, the final assignment of variables that satisfies all the clauses is the solution to the SAT problem.
+
+answer: 3 -6 -7 -9 -10

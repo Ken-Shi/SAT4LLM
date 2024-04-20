@@ -1,0 +1,15 @@
+To solve this problem, we need to convert the DIMACS format into a logical expression. 
+
+The first line "p cnf 3 2" tells us that there are 3 variables and 2 clauses. 
+The second line "3 1 -2 0" represents the clause (3 OR 1 OR -2).
+The third line "2 1 3 0" represents the clause (2 OR 1 OR 3).
+
+Next, we need to examine each clause:
+
+Clause 1: (3 OR 1 OR -2)
+- If we assign variable 3 to True, variable 1 to True, and variable 2 to False, the clause becomes True. 
+Clause 2: (2 OR 1 OR 3)
+- If we assign variable 2 to True, variable 1 to True, and variable 3 to True, the clause becomes True. 
+
+Therefore, the solution to this SAT problem is:
+answer: 1 -2 3

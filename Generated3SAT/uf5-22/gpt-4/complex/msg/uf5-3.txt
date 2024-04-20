@@ -1,0 +1,29 @@
+Here are the procedural steps to solve the SAT problem.
+
+1. The DIMACS file represents a Boolean formula in conjunctive normal form (CNF). Each line of the file (except for the header) represents a clause of the formula. In a clause, each number except the last zero represents a literal. In the literal, positive integers represent the variables themselves and negative integers represent the negations of the variables. The variable number is the absolute value of the integer.
+
+2. To find a satisfying assignment, we aim to assign a Boolean value (true or false) to each variable such that every clause has at least one true literal and hence the whole formula becomes true.
+
+Know that:
+
+   - A clause is true if any of its literals is true.
+   - A literal is true if its variable is true and it's positive, or its variable is false and it's negative.
+
+3. In some cases, the problem can be solved using the "unit clause" and "pure literal" rules:
+
+   - A unit clause is a clause with only one unassigned variable. We must assign its variable to make the clause true.
+   - A pure literal is a variable that appears with only one polarity in all clauses. We can assign it to make all these literals true.
+
+However, in this case there are no unit clauses or pure literals that will help directly. We need to make decisions and try assignments.
+
+4. We'll use a method called "branching" to make decisions and "backtracking" to revise wrong decisions.
+
+Let's go:
+
+- Assign 1 to true. This makes clauses [-5 -1 -3 0] and [-5 -1 4 0] true, so they're satisfied and should be removed from the formula. Now the third clause has only [-5 -2 0], which is a unit clause. Assign 2 to false to satisfy it.
+- Assign 3 to true. This will satisfy several clauses, so we remove them from the formula. There is a unit clause [5], so assign 5 to true as well.
+- Assign 4 to true. This satisfies the remaining clauses, so our assignment is a solution.
+
+So, the solution to the SAT problem encoded in the DIMACS file is:
+
+answer: 1=true, 2=false, 3=true, 4=true, 5=true

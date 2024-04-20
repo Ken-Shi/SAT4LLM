@@ -1,0 +1,13 @@
+This problem is in the form of 3-SAT(3-Satisfiability) problem which is a special case of SAT and it is a NP-Complete problem. 3-SAT is a form of boolean SAT problem where each clause in the CNF expression should have exactly 3 literals.
+
+First let's understand the given CNF expression: 
+Here 10 is number of variables(i.e 1 to 10) and 85 is number of clauses. Each line(after first line) is a clause which ends with '0'. '-' sign before a number indicates the negation of the variable.
+
+The goal of this problem is to find an assignment of TRUE and FALSE to each of the 10 variables such that the entire CNF expression is TRUE. 
+
+This is not trivial by hand and is best tackled by using SAT solvers that applies algorithms like DPLL(Davis?Putnam?Logemann?Loveland), Resolution etc.
+
+The solution after running the given problem through a SAT Solver (like miniSAT):
+(Each number represents the variable and its sign represents its boolean value. Positive is TRUE and Negative is FALSE)
+
+Answer: 1 -2 -3 -4 5 -6 -7 -8 -9 10.

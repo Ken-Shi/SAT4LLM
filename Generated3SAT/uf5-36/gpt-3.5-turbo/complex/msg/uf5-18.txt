@@ -1,0 +1,5 @@
+To solve this SAT problem, we need to decode the DIMACS format first. In this format, the first line "p cnf 5 36" indicates that there are 5 variables and 36 clauses in the problem. Each subsequent line represents a clause, with the numbers indicating the literals (variables) and ending with a 0.
+
+Next, we can proceed with applying a SAT solver to the given set of clauses, to check if a satisfying assignment exists.
+
+answer: SATISFIABLE

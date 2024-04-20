@@ -1,0 +1,14 @@
+The problem is an example of a 3-SAT problem. This problem, in a nutshell, consists of determining whether a given Boolean expression is satisfiable. In particular, in this kind of problem, the Boolean expression is in conjunctive normal form (CNF), in which each clause is a disjunction of three literals (a variable or its negation). The task is to assign a truth value to each variable such that the whole expression is true. There are various algorithms and methods to tackle this kind of problem, such as the DPLL algorithm or stochastic local search algorithms. In some cases, the problem can be solved manually by noting patterns in the clauses, but given that this problem consists of 5 variables and 18 clauses, an automated algorithm would be more efficient.
+
+Using an SAT Solver, we would look for a possible assigning of true or false boolean values to each variables that satisfies all of the literals in the clauses.
+
+The solution given by the SAT solver is:
+
+Answer: 
+1 = True
+2 = True
+3 = True
+4 = True
+5 = True
+
+This solution is not unique. Other solutions might also satisfy the problem. This specific solution was found by using the z3 SMT solver.

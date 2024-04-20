@@ -1,0 +1,19 @@
+To begin, let's understand first that the SAT problem is a classic computer science problem that stands for "satisfiability problem". It's one of the first problems that was proven to be NP-complete, which means it's used as a benchmark for other computational problems.
+
+The format given here (DIMACS) is just a way of encoding a problem into a text file, that can be consumed by software that solves these kinds of problems. 
+
+The 'p' line just defines the problem space: 'p cnf 3 6' means we have a CNF (Conjunctive Normal Form) problem with 3 variables and 6 clauses. 
+
+Each of the following lines until the end describe a clause, with each number representing a variable, while a negative sign indicates logical NOT. Each clause is a disjunction (OR of its literals) and the overall problem is a conjunction (AND of the clauses). For example, '3 1 2 0' equates to (x3 OR x1 OR x2), and '1 -3 2 0' to (x1 OR NOT x3 OR x2). 
+
+To solve it manually, we can use truth tables, logical equivalences, or a more sophisticated solving algorithm. But in general, you work through the clauses and isolate variables where possible, working to make clauses true. 
+
+From the given clauses, let's start assuming values:
+
+Assume x1 = 1, x2 = 1, x3 = 1. 
+
+This satisfies all clauses, and hence is a solution.
+
+Answer: x1 = 1, x2 = 1, x3 = 1.
+  
+While more complex SAT problems require more intricate tactics, this problem's solution falls out quite readily. In many cases, there might be more than one solution or no solution at all. We need to check all possible assignments which is generically a computationally expensive process, and that's why SAT problem is NP-complete.

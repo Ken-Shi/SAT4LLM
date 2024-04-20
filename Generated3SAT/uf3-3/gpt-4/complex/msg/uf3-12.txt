@@ -1,0 +1,25 @@
+This task involves solving a problem given in DIMACS format for the SAT problem. A SAT problem is a Boolean problem where we want to determine if there exists a satisfying assignment of true/false variables to all expressions such that all clauses are true.
+
+The problem is given in the following format:
+
+p cnf 3 3: This tells us that there are three variables and three clauses in the problem.
+
+Below this, each clause is listed line by line.
+
+Our goal is to find an assignment of three variables (as mentioned in the DIMACS representation - cnf 3 3) that satisfies every clause. In each clause, a variable with a negative sign represents NOT operation.
+
+Here's how the clauses look:
+
+    Clause 1: 2 OR NOT 3 OR 1
+    Clause 2: 1 OR NOT 3 OR 2
+    Clause 3: NOT 2 OR NOT 3 OR 1
+
+Our goal is to find assignments for the variables 1, 2, and 3 that make each clause true. The beauty of an OR operation is that as long as we have a single TRUE in the clause, the whole clause becomes TRUE. 
+
+For Clause 1 to be true, we have either variable 2, or NOT variable 3, or variable 1 to be true. But looking at all of the clauses, it seems like variables 1 and 2 are always positive, so let's set both 1 and 2 to TRUE. This will instantly satisfy all of our clauses.
+
+We can assign variable 3 any value since it doesn't influence the satisfiability of the clauses in this case (it always appears as NOT 3).
+
+Hence, we assign 1 = TRUE, 2 = TRUE, and 3 = FALSE/TRUE.
+
+Answer: 1=TRUE, 2=TRUE, 3=FALSE or 3=TRUE

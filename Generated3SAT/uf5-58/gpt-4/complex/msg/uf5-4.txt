@@ -1,0 +1,18 @@
+To solve the SAT problem encoded in DIMACS format, I will use a method known as the DPLL algorithm. 
+
+The DPLL algorithm involves systematically trying out assignments for each variable to see whether it would lead to a solution. The algorithm steps include:
+
+1. Check if the formula is either in solved form (Solution found) or unsolvable (No Solution).
+2. If not, pick an unassigned variable.
+3. Try assigning a value (true or false) to this variable and simplify the expression.
+4. Recursively run DPLL algorithm on the simplified expression.
+5. If the recursive call returns a solution, return this solution.
+6. If the recursive call fails, try the opposite value assignment (true becomes false and vice versa) and run DPLL algorithm again.
+7. If this recursive call returns a solution, return this solution. If it fails, undo the variable assignment and return failure.
+
+Applying DPLL algorithm on given SAT problem and simplifying clauses, we get:
+
+x1 = true, x2 = true, x3 = true, x4 = true, x5 = true
+
+**Answer:**
+The solution for the SAT problem is 1 2 3 4 5

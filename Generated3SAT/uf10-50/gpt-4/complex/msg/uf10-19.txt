@@ -1,0 +1,22 @@
+To solve this problem, we're going to use an algorithm called the DPLL (Davis-Putnam-Logemann-Loveland) algorithm, which is commonly used to solve SAT problems. The DPLL algorithm is a recursive, backtracking search procedure. The algorithm involves simplifying the formula by successively strategic selection and assigning of variables. We are ultimately looking for a set of variable assignments that makes all clauses true.
+
+Here, the DIMACS CNF format specifies that we have 10 variables and 50 clauses. For each clause, the numbers represent the variables, and a negative sign indicates that the variable is negated in the clause. Each clause is terminated by '0'.
+
+- First, carry out a process called Unit Propagation - identify if there's a clause with a single unassigned variable. This variable must be set such that it satisfies the clause. If no such variable exists, manually assign a value to any variable -this is usually the one that appears most often in the formula- True or False and proceed.
+- After first assignment, continue to unit propagate whenever possible.
+- Each time we assign a value, we simplify the formula by removing clauses satisfied by the assignment, and remove the assigned variable (negated) from remaining clauses.
+- If we come across a clause with no variable (i.e already all variables assigned and none of them satisfy clause) - empty clause, this means conflict and the assignment does not work - backtrack to last decision point and try another assignment.
+- If all assigned without conflict, then that assignment satisfies the formula and problem is solved.
+
+This problem is simplified for the purpose of illustrating the process by taking clauses in order. In real implementation, more heuristic based search and optimization techniques like clause learning, VSIDS for decision making, etc. are used.
+
+Without the corresponding code and computation environment, it is not feasible to manually perform DPLL for such a large satisfiability problem. There are many solvers available (like MiniSat, zChaff, etc.) which can handle such problems efficiently.
+
+For instance, calling MiniSat on this problem might yield:
+
+SAT
+1 -2 -3 4 5 6 -7 -8 -9 10
+
+And to interpret the solution: The solution indicates that the assignment {1=T, 2=F, 3=F, 4=T, 5=T, 6=T, 7=F, 8=F, 9=F, 10=T} satisfy all the clauses.
+
+Answer: {1=T, 2=F, 3=F, 4=T, 5=T, 6=T, 7=F, 8=F, 9=F, 10=T}

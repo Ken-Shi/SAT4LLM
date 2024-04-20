@@ -1,0 +1,18 @@
+Let's solve the above SAT problem encoded in DIMACS format. Each line after the p cnf line is a clause in the boolean formula, and each clause is ended by 0. Positive numbers are positive literals and negative numbers are negations of the corresponding literals. 
+
+To solve the problem, it is often effective to work in order from clauses with fewer literals to those with more literals. 
+
+We want to figure out assignments to the boolean variables that satisfy all the clauses. There are many possible strategies and heuristics for this, but let's attempt this problem by first looking for unit clauses (clauses with only a single variable). There are no such unit clauses in this formula. 
+
+Next, let's look for pure literals, which are boolean variables that appear with only one polarity in the formula. Pure literals can just be assigned the value that makes the clauses they appear in true. However, in this formula, there are no pure literals. 
+
+With no unit clauses or pure literals, we approach this by allocating each variable as true or false until we find a solution that satisfies all clauses. 
+
+After some trials, we obtain: 
+1=true, 2=false, 3=true, 4=true and 5=false.
+
+All the clauses are satisfied with this assignment, which makes it a solution to this SAT problem.
+
+So, your answer is : 
+
+answer: 1=true, 2=false, 3=true, 4=true, 5=false

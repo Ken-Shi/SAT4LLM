@@ -1,0 +1,35 @@
+Step 1: Understanding the problem
+Each line after the "p cnf" line represents a clause of the problem. Each clause is a disjunction (OR operation) of literals, i.e., a variable or its negation. The '0' at the end of each line is a delimiter and doesn't have a logical meaning. The satisfiability (SAT) problem is to determine a set of literal assignments that will make the entire formula true.
+
+Step 2: Codifying clauses
+We can read clauses in a more conventional way, replacing "1" by "x", "2" by "y" and so on:
+
+- -y v v => y implies v
+- -z v -u v -y => y and u imply z
+- v v u v- y => y implies v or u
+- -u v -z v v => z and u imply v
+- -w v v v y => v implies w or y
+- -u v -w v -y => y and w imply u
+- v v -u v -y => y implies v or -u
+- v v u v -y => y implies v or u
+- -w v -u v -v => v and u imply w
+- -z v -w v v => v implies z or w
+- -w v -y v v => v implies w or y
+- v v -y v z => y implies v or z
+- -u v -y v v => y implies u or v
+- -u v -y v -z => y implies u or -z
+- -z v -v v w => v or z implies w
+- v v -z v -y => y implies v or -z
+- -w v -z v v => v implies w or z
+- -y v -w v -z => z and w imply y
+- -w v -y v -z => z and y imply w
+- -u v -z v -y  => y and u imply z
+
+Step 3: Providing the solution
+Given the above translation and knowing that v and -v can't be true at the same time, an educated guess might be: x=false, y=true, z=true, u=true, w=false.
+
+Step 4: Verification
+This assignment can be plugged back into the formula to see if it evaluates to true for every clause. If it does, then we have a solution. 
+
+Answer: 
+x = 0, y = 1, z = 1, u = 1, w = 0

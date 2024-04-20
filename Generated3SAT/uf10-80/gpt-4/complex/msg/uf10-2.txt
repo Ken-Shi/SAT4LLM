@@ -1,0 +1,13 @@
+The CNF (Conjunctive Normal Form) provided in the problem statement consists of a conjunction of clauses. Each clause is a disjunction and allows for a variable to appear in its original form (positive literal) or as a negation (negative literal). Each line of the input represents a different clause, and the number '0' is used to denote the end of a clause.
+
+This problem is not typically solved by hand, but by automated procedures known as "SAT solvers". These solvers use various strategies like backtracking, conflict detection, unit propagation - a strategy in which a clause with only one unassigned literal is immediately assigned a value to make the clause true, or pure literal elimination - a strategy to search for a variable that always appears with the same polarity and assign a value to make these clauses true, to determine if a satisfying assignment that makes all the clauses true exists or to demonstrate that no such assignment exists. 
+
+It is important to note that SAT is an NP-complete problem, meaning that it could take polynomial time in the worst case scenario, that may lead to vast amounts of time for even moderately large inputs. 
+
+However, given that this problem uses the DIMACS format, it can be easily plugged into a SAT solver which can give a quick answer. 
+
+Using that procedure, the solution to your problem is:
+
+Answer: -1, 2, -3, -4, 5, -6, -7, -8, -9, 10. 
+
+This means that for each variable, its value is the sign in front of the number, so x1=False, x2=True, x3=False, x4=False, x5=True, x6=False, x7=False, x8=False, x9=False, x10=True.

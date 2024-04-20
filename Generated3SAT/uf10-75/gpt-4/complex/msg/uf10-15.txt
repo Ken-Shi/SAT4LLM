@@ -1,0 +1,13 @@
+The problem presented in the question can be solved by using the DPLL (Davis-Putnam-Logemann-Loveland) algorithm. The algorithm works based on the principles of backtracking and propagation. 
+
+In simple terms, the DPLL algorithm takes a SAT problem (in this case provided in DIMACS format), assigns a value to a variable, simplifies the problem with that assignment and recursively checks if the simplified problem is satisfiable. If it isn't, it backtracks and tries a different assignment. It keeps on doing this until it finds a satisfying assignment or determines that the problem is unsatisfiable.
+
+The algorithm begins by selecting a variable and tries assigning it a value (true or false). It then simplifies the remaining clauses using this assignment. If the assignment leads to a clause getting reduced to an empty clause, the assignment isn't correct. So it must backtrack and try the next value.
+
+Propagation is used to simplify the problem. There are two forms of propagation: unit propagation and pure literal elimination. Unit propagation is applied when there exists a clause with only one unassigned variable. Pure literal elimination is applied when a variable always occurs with the same polarity (either positive or negative). These variables can be assigned the value which makes these literals true.
+
+By performing these operations recursively, the algorithm generates a tree of solutions and search through this tree. The process could take some time for complex problems, but it ends up providing a solution if one exists.
+
+Applying these principles to the problem at hand, the solution is:
+
+Answer: 1 -2 -3 4 -5 -6 7 -8 9 -10

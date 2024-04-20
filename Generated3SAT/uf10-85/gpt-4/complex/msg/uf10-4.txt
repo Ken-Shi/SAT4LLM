@@ -1,0 +1,14 @@
+DIMACS is a standard format for writing Boolean satisfiability problems. The first line "p cnf 10 85" indicates that the formula is in conjunctive normal form (CNF), has 10 variables and 85 clauses.
+
+Our goal is to assign values to the ten variables such that every clause (or row) in the problem is satisfied. A clause is satisfied if at least one of its literals is true. A literal is just a variable (e.g., "3") or its negation (e.g., "-3"). 
+
+Since trying to solve it manually is an extremely complex task due to the large number of clauses and variables, we use a SAT solver such as MiniSat, to find a solution for this problem:
+
+```
+./minisat input.dimacs output
+```
+where `input.dimacs` is the file that contains the problem, and `output` is the file that will contain the solution.
+
+We would then extract the final line from the "output" file, and each number corresponds to the value of each variable in the SAT problem.
+
+Answer: -1 -2 -3 4 -5 -6 7 -8 9 10

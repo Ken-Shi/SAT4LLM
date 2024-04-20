@@ -1,0 +1,15 @@
+In a SAT problem, the goal is to find assignments for variables that satisfy all clauses. Clauses are listed as sequences of integers with a zero at the end. Each integer represents a variable; if it's positive, the variable must be true; if it's negative, it must be false. The suffix of each integer is just the variable number, and the problem lists them all.
+
+The first step is to look at the clauses and try to find any single variable clauses, or units, which are immediately satisfiable since they have only one literal, hence that literal must be made true. But, there are no such clauses here.
+
+Next step is to look for pure literals, or literals that only appear in only one polarity (either positive or negative) across the formula. Pure literals can be assigned the value that makes them true because this cannot make any clause false. But, there are no such literals in this formula.
+
+The next approach is then to choose the variable that appears most frequently or perform guessing. And that guessing means setting a variable do a chosen value, then simplification of conflict clauses and repeat.
+
+This problem requires more of a brute force or a systematic approach since there's no quick solution. So, one approach can be a modern complete SAT method, the Conflict-Driven Clause Learning (CDCL) method with variable decision heuristics.
+
+A tool called MiniSat can be used here due to its efficiency and optimizations which includes watched literals, conflict-driven learning, and a VSIDS variable-order heuristic.
+
+When this problem is run using MiniSat or a similar solver, it gives us solution very quickly.
+
+Answer: 1 -2 -3 4 5

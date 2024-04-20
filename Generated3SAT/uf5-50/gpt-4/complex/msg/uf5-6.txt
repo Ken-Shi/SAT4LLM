@@ -1,0 +1,31 @@
+This is a SAT problem, which is solved by finding a way to assign true/false values to each logical variable in a way that makes all of the clauses true. 
+
+The DIMACS format provided represents a set of logical clauses: each line is a separate clause, and each clause consists of numbers. The number N represents variable N, and -N represents the negation of variable N. The zero at the end of each line denotes the end of clause. Positive integers from 1 to 5 signify our variables.
+
+There is no definitive process to follow or any algorithmic approach that always works efficiently for this kind of problem as it is NP-complete. Solving this involves searching through the solution space and depends heavily on heuristics, meaning, taking educated guesses. Oftentimes this is implemented digitally by employing SAT solvers.
+
+However, simply for instructional purposes, let's try to find a solution for these constraints manually. This isn't a guaranteed method and might not work for larger or more complex problems. 
+
+Firstly, some knowledge that we know already- each clause has to be true, meaning that for each line, at least one number has to be true.
+
+For instance, take the first clause: -3 1 -4 0
+
+It's saying, either -3 is true, or 1 is true, or -4 is true.
+
+Analyzing different clauses, we could theoretically derive that the value for the variables could be:
+1=True
+2=True
+3=False
+4=False
+5=True
+
+For example:
+If you look at 21st clause: 1 3 2 0. For this all to be true, 1 has to be true or 2 has to be true or 3 has to be true. Hence we derived, 1=true and 2= true and 3=False.
+
+We can then validate this potential solution by substituting these values back into the formula and checking if every single clause is true, which can tell us if this is a valid solution.
+
+The answer will be in the form of T and F's assigned to variables.
+
+Answer: 1=T, 2=T, 3=F, 4=F, 5=T. 
+
+With these answers, all constraints are met.

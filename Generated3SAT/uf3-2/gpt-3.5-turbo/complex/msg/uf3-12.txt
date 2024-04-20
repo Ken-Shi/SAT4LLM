@@ -1,0 +1,29 @@
+To solve this SAT problem, let's first break down the DIMACS format:
+
+p cnf 3 2
+-2 3 -1 0
+3 -1 -2 0
+
+- The first line "p cnf 3 2" indicates that there are 3 variables and 2 clauses.
+- The second line "-2 3 -1 0" represents the first clause: (?x2 ? x3 ? ?x1)
+- The third line "3 -1 -2 0" represents the second clause: (x3 ? ?x1 ? ?x2)
+
+To solve this problem, we can use the following steps:
+
+1. Begin with an assumption for each variable.
+2. Substitute the assumptions into each clause and check if any clause evaluates to True.
+3. If all clauses are satisfied, then the assumptions are the solution.
+
+Let's check the clauses with the assumptions:
+
+Assumption:
+x1 = True
+x2 = True
+x3 = True
+
+Clause 1: (?2 ? 3 ? ?1) = (?True ? True ? ?True) = (False ? True ? False) = True
+Clause 2: (3 ? ?1 ? ?2) = (True ? ?True ? ?True) = (True ? False ? False) = True
+
+Both clauses are satisfied with the assumptions x1=True, x2=True, x3=True. Therefore, the solution to this SAT problem is:
+
+answer: x1=True, x2=True, x3=True

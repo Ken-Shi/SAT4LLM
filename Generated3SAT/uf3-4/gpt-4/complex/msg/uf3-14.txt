@@ -1,0 +1,12 @@
+The SAT problem provided is a Boolean Satisfiability problem, more specifically, a 3-Satisfiability (3SAT) problem. In this problem, the Boolean function is defined using a conjunction of clauses, where each clause is a disjunction of exactly three literals. The goal is to find a satisfying assignment for the variables which makes the whole Boolean function true. "2 -1 3 0", for example, presents the clause (2 OR NOT 1 OR 3).
+
+Let's consider the clauses:
+
+1. 2 -1 3: This states either variable 2 is true, 1 is false or 3 is true.  
+2. 3 1 2: This states either variable 1, 2 or 3 is true.  
+3. 2 1 3: This states either variable 1, 2 or 3 is true. Similar to the previous clause.
+4. -1 2 3: This states either variable 2 is true, 1 is false or 3 is true. This is identical to the first clause.
+
+Looking at the clauses, there can be many solutions possible. One can be [1=True, 2=True, 3=False] or [1=False, 2=True, 3=True]. Another can be [1=True, 2=True, 3=True].
+
+Answer: One of the satisfying assignments for the variables thus can be 1=False, 2=True, 3=True.

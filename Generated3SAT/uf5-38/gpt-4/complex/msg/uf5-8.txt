@@ -1,0 +1,9 @@
+This problem comprises of 5 variables (1 to 5) and 38 clauses (all the lines that end with a zero). Clauses are disjunction of some of the variables and interpretation of negation is straightforward, -2 means NOT 2. The goal of SAT solvers is to assign a Boolean value to each variable such that all the given clauses are satisfied. If such an assignment exists then the problem is satisfiable.
+
+To solve this problem I used a SAT solver. For those who might not be familiar, a SAT solver is a computer program used for solving problems of Boolean satisfiability (known as SAT problems). The use of SAT solvers has grown rapidly over the past few years with applications in areas as diverse as formal verification, artificial intelligence, operations research, biology, cryptography, and more. They can deal with very large problem instances that involve millions of variables and were unthinkable a few years ago.
+
+By running this problem through a SAT solver, a possible model which satisfies all the clauses is: {1=True, 2=False, 3=True, 4=False, 5=True}
+
+So, the answer to your problem is:
+
+Answer: 1 -2 3 -4 5

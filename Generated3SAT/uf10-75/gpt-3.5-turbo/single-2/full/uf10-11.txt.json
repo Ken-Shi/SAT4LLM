@@ -1,0 +1,24 @@
+{
+    "id": "chatcmpl-9FWmTTUKfTGplj8R8KN80icVdumhL",
+    "object": "chat.completion",
+    "created": 1713487957,
+    "model": "gpt-3.5-turbo-0125",
+    "system_fingerprint": "fp_d9767fc5b9",
+    "choices": [
+        {},
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "SATISFIABLE\n3 -2 6 -4 -5 -7 -8 -9 -10 -1 0"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 687,
+        "completion_tokens": 26,
+        "total_tokens": 713
+    }
+}

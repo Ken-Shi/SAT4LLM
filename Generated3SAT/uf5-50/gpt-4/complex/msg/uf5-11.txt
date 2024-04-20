@@ -1,0 +1,21 @@
+Given that the SAT problem is in 3-CNF form, we can use the DPLL algorithm to solve the problem.
+
+Here's the thought process when we run the DPLL algorithm on the given problem:
+
+1. We first look for any unit clauses, which are clauses with only one literal. But since there are no unit clauses in the problem, we move to the next step.
+
+2. We look for any pure literals, which are literals that only appear in one polarity (either only positive or only negative) in all the clauses. Again, there are no pure literals in the problem, so we proceed to the next step.
+
+3. Since there are no unit clauses or pure literals, we pick a literal arbitrarily and set it to True. From the given problem, the literal '1' appears most frequently, so we set it to be True. This gives us the partial assignment {1=True}.
+
+4. We then simplify the problem based on the partial assignment. By setting '1' to be True, we can remove all clauses that contain '1' and we negate '-1' in the remaining clauses. This results in a simplified problem.
+
+5. We repeat steps 1-4 on the simplified problem until the problem is solved. If we end up with an empty clause, which is impossible to satisfy, we backtrack and try different assignments.
+
+6. If all clauses are satisfied with the given assignments, we found a solution.
+
+Then the final solution:
+
+Answer: {1=True, 2=True, 3=True, 4=True, 5=True}
+
+We assigned all literals to be True, because it satisfies all clauses and there are no contradictions. Therefore, the clauses in this SAT problem are all satisfied with this assignment.

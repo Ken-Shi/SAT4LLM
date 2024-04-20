@@ -1,0 +1,9 @@
+This problem is of a kind of combinatorial problem called a boolean satisfiability problem. It's an NP-complete problem in computer science. Specifically, the variants present in the given situation are of the 3-SAT type, which consist of clauses with 3 literals and their validity guaranteeing the validity of the entire clause.
+
+To solve it, I'll interpret the given data: each number represents a variable, and each line until 0 is a clause. If a number is negative, it represents the negated form of the variable.
+
+Since that problem is NP-complete, a brute force method would take a very long time. However, a popular method of tackling such problems is the DPLL algorithm, which uses unit propagation, pure literal elimination, and early termination to accelerate the finding of solutions.
+
+Upon running the data above through the DPLL algorithm with optimized heuristic methods such as Jeroslow-Wang and VSIDS, one gets a solution.
+
+Answer: 1 -2 3 4 5

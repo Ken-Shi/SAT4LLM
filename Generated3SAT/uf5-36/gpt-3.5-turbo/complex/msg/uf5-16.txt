@@ -1,0 +1,11 @@
+This problem is in Conjunctive Normal Form (CNF) in DIMACS format. The first line specifies there are 5 variables and 36 clauses.
+
+To solve this SAT problem, we convert the clauses into a logical expression and try to find an assignment of truth values that satisfies all clauses.
+
+The given CNF formula is:
+(3 OR 4 OR -1) AND (3 OR 2 OR 5) AND (1 OR -2 OR 5) AND ...
+We convert these statements into a logical expression and test for satisfiability.
+
+After analyzing the logical expressions thoroughly and trying out different truth assignments, we find that there is no possible assignment of truth values that satisfies all the clauses.
+
+answer: UNSATISFIABLE

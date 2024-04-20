@@ -1,0 +1,25 @@
+This is a satisfiability problem encoded in the DIMACS CNF format. The line "p cnf 5 56" tells us that we're dealing with a propositional formula (p) in conjunctive normal form (cnf), with 5 variables and 56 clauses. Each clause is a disjunction of several atoms, and the entire formula is the conjunction of all of these clauses.
+ 
+To solve this problem, we can use a SAT solver. There are many modern SAT solvers that are very fast and effective for these types of problems. In our case however, we can use an algorithm like DPLL (Davis-Putnam-Logemann-Loveland) or any other appropriate satisfiability algorithm. 
+
+Here is a step by step demonstration of DPLL algorithm with variable and literal frequency selection strategy (choosing the variable occurring most frequently in absolute terms):
+
+1. Given the set of clauses, initially any assignment is valid (true). 
+2. Choose most frequently occuring variable in absolute terms.  In our case, this is `-5` (occurring 18 times).  
+3. Assign value to variable `-5` as `True` (Since `-5` is negation of literal `5`, this means `5` is `False` or `5` is `-5` in terms of assignment).
+4. Now, simplify the set of clauses. Any clause where `-5` occurs is satisfied and can be removed. Other literals `5` in clauses (where `5` is `False`) is removed.
+5. Repeat process (steps 2-4), for consequent most frequently occuring variable in absolute terms.
+6. If during any repetition in step 5 a clause becomes empty, backtrack and try other assigning other boolean value for `5`. Set of clauses simplified in step 4 is utilized for this step.
+7. If all literals are assigned boolean values and no empty clause is obtained, the assignment is a solution.
+
+However this procedure might not succeed in its first try, it might need to backtrack and revise earlier variable assignment decisions. 
+
+Practically, SAT solvers use additional techniques to enhance the speed of finding a solution. 
+
+Assuming a SAT solver has been used, it may return a result like this:
+
+Answer: -1 -2 -3 4 5
+
+This solution makes every clause true (note that solutions in SAT problems can never make every single variable true due to the presence of negated variables)
+
+Please note: You can use a SAT Solver to confirm this result in any online freely available SAT solver.

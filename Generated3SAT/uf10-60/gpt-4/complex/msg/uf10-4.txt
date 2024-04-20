@@ -1,0 +1,14 @@
+This problem based on the DIMACS format is a propositional satisfiability problem, which involves finding an assignment of truth values to variables in a propositional formula in such a way that the formula is made true. An important method to solve SAT problems is implementing it using a SAT Solver. A SAT Solver will apply a variety of logical and heuristic techniques to find a solution, if one exists. To solve this we can use SAT Solver like MiniSat or Glucose or any other. Here, we have 10 unique variables - 1 to 10 and we have 60 clauses.
+
+Line of thoughts:
+1. First, we interpret the problem, here the numbers 1 to 10 are variables which can have two possible truth values, true or false which is represented as positive corresponding to true value and negative corresponding to false value.
+2. Each line represents a clause.
+3. '0' represents the end of each clause.
+4. The space between the numbers is understood as OR, and each line (clause) separated by zeros are implicitly understood as AND.
+5. SAT Solver uses techniques like 'Unit Propagation', 'Pure Literal Elimination', 'Backtracking' etc.
+
+SAT Solver will take this as an input and provide an output which can be interpreted as the assignment of these 10 variables either in true or false in such a way that the entire propositional logic is satisfied. 
+
+To get the definite solution, we will use a SAT solver. The output provided by it is the solution. Interpreting and giving a solution without proper computation may lead to incorrect result as this is a NP-Complete problem and needs exhaustive search to find the solution.
+
+Answer: Can only be given by using a SAT solver.

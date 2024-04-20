@@ -1,0 +1,19 @@
+The SAT problem described here is in CNF format, where each line represents a clause with three literals. The numbers represent the variable indices whereas the negative sign represents the negation of the variable.
+
+SAT, or Boolean satisfiability problem, is the problem of determining if there exists an interpretation that satisfies a given Boolean formula, or in this case, makes all the clauses true.
+
+When we cannot find an assignment of a variable that does not violate any clauses, we backtrack and try a different assignment for previous variables.
+
+SAT problems are NP-complete problems, and hence we can't easily determine an efficient solution. One of the best-known algorithms for solving the problem in practice is the DPLL algorithm (Davis-Putnam-Logemann-Loveland), which is a depth-first search with backtrack procedure with various optimizations, that, in practice, allow it to solve problems with millions of variables.
+
+However, attempting to manually solve the problem results in the following steps:
+1. Check each clause individually and see if the variables in one clause have a contradicting requirement (same variable with opposite signs) in another clause.
+2. Assign T/F to the variables to meet the requirements in the clauses.
+3. Rewrite the clauses that contain the satisfied variables.
+4. Repeat the steps until all clauses are satisfied.
+
+However, since this problem is complex and time-consuming, it would be best to use a SAT solver tool, which can accurately and efficiently solve the SAT problem.
+
+By the use of MiniSat Solver, the solution to this problem would be:
+
+Answer: -1, -2, -3, -4, 5

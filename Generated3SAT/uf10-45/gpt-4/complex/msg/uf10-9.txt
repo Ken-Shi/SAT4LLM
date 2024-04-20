@@ -1,0 +1,25 @@
+The problem is in DIMACS format used for encoding boolean satisfiability problems (SAT). Lets split the problem down:
+
+The first line "p cnf 10 45" is stating the problem type and size.
+- "p" indicates this is a problem.
+- "cnf" is the format (conjunctive normal form). 
+- "10" is the number of variables (numbered from 1 to 10)
+- "45" is the number of clauses.
+
+Each following line before the "0" represents a clause of the boolean formula and it's composed of a series of integers each indicating the variables in the clause. Each variable is either positive (if it's not negated) and negative (if it is negated). For example, "6 -5 -9 0" represents the clause "(x6 OR NOT x5 OR NOT x9)".
+
+Each clause should be true to make the formula in CNF true. If a solution exists it will be a setting of each variable to either true (represented as "1") or false (represented as "-1") that make the entire formula true.
+
+To solve it we can use a SAT solver. We solve it applying the DPLL algorithm, a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form:
+
+Starting with the empty assignment (?), we:
+
+1. Add a new literal to the set of assignments
+2. Become consistent with the clauses. If it's impossible, delete the added assignment, add its negation instead. If it's impossible to make it compatible, then there is no satisfying assignment otherwise continue.
+3. If we have assigned truth values to every variable and all clauses hold, then the set of assignments is a satisfying assignment, return it. Otherwise, go to step 1.
+
+After applying the algorithm, we can find a solution:
+
+answer: x1=-1, x2=-1, x3=1, x4=1, x5=1, x6=-1, x7=-1, x8=1, x9=1, x10=-1 
+
+Notes that in SAT problem, there are usually numerous correct answers. The answer provided here is just one possible correct solution.

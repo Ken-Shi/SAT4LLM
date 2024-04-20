@@ -1,0 +1,13 @@
+The problem is represented in the CNF (Conjunctive Normal Form) and belongs to SAT (Satisfiability) Problem, which is well known NP-Complete problem if number of literals (variables) are more than 3. A CNF SAT problem solution attempts to find a set of objective truth values (True or False) for variables that would make the whole expression true.
+
+Our problem has 5 distinct variables (1,2,3,4,5) possibly negated using a '-' sign and a total of 42 clauses. Each clause is signify by a 0, and literals in the clause are separated by a space. The literal can be either a variable or its negation (indicated by a '-'). All literals in a clause are linked by OR operator, and all clauses are linked by AND operator.
+
+A common strategy for solving such problems is the DPLL (Davis-Putnam-Logemann-Loveland) Algorithm, which is a backtracking approach based on the resolution rule of inference, and uses techniques like unit propagation, pure literal elimination and simplification.
+
+The "p cnf 5 42" line indicates the problem is in CNF (Conjunctive Normal Form, i.e., an AND of ORs) with 5 variables and 42 clauses.
+
+Note: The space of possible solutions for 5 variables would be 2^5 = 32 possibilities, a number which is typically small enough to manage exhaustively. However, for larger problems DPLL or some other algorithm should be implemented.
+
+Running this problem through a solver, such as MiniSAT or a handwritten script, will return the answer.
+
+Answer: 1 -2 -3 -4 -5

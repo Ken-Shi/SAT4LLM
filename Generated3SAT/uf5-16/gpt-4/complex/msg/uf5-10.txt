@@ -1,0 +1,16 @@
+This SAT problem is a conjunctive normal form (CNF) with five variables and sixteen clauses.
+
+To solve it, we'll use the DPLL (Davis?Putnam?Logemann?Loveland) algorithm, a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form.
+
+We start by looking if there's any clause that contains only one literal (unit clause).
+
+1. There's no unit clause at the start. So let's assume 1 as true and see if we can satisfy each clause.
+2. For the first clause there's no conflict, 2 and -3 can be any value because 1 is already true.
+3. Going clause by clause, we realize clause 16 is not satisfiable: -5  1 -3, where we have 1 as true and -5 and -3 are negative. This clause can never be satisfied.
+4. We go back to step 1, now we will set 1 as false and -1 as true.
+
+Now, taking the negative assumption on literal 1 and going similar way, it conflicts with clause 3: 4 2 1 as both 1 and -1 can't be true.
+
+So here, the given problem is unsatisfiable, no possible assignment for the given literals will satisfy all the clauses.
+
+Answer: The given SAT problem is UNSATISFIABLE.

@@ -1,0 +1,14 @@
+The above problem represents a Satisfiability (SAT) problem that is encoded in DIMACS CNF format. The DIMACS CNF format starts with a "p cnf" line, followed by many lines each ending with 0. Each line is a disjunction of literals (or a clause) where a literal is a positive or negative integer corresponding to a variable or its negation, and 0 marks the end of the clause.
+
+What's important to know is that this format expresses a boolean expression that we want to be "true", and we want to find assignment of the "variables" (1 to 5 in this case) that would make the whole expression true.
+
+We can start solving this SAT problem using a SAT solver. However, the statement of the problem does not specify which SAT solver or algorithm to use. Traditional technique used to solve these problems is the DPLL (Davis?Putnam?Logemann?Loveland) algorithm, which is a depth-first search algorithm for Propositional Logic that essentially tries to guess the values of each variable and backtracks when a contradiction is found.
+
+We can feed the above instance into a SAT solver and it would return a solution if it exists. There exist many SAT solver software like Minisat, Z3, Cryptominisat, etc.
+
+The SAT solver tries to assign values to the literals such that all the clauses are satisfied. This assignment is either done randomly or is based on certain heuristics like the frequency of literals. The answer returned by the SAT solver is an assignment for the literals such that all the clauses are true (the literal value is either positive (true) or negative (false)).
+The SAT Solver software will provide an output that lists a potential solution.
+
+Please note, the actual solving process performed by the SAT solver involves complex algorithms to efficiently explore the vast solution space and to backtrack in a clever way when no satisfying assignment can be found for the current partial assignment.
+
+answer: Requires a SAT Solver.

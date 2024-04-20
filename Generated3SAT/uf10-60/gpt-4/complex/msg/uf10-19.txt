@@ -1,0 +1,13 @@
+SAT problems, or Boolean satisfiability problems, are known to be NP-complete and represent a class of problems that is fundamental to theoretical computer science. 
+
+In this case, we have a CNF (Conjunctive Normal Form) problem with 10 variables and 60 clauses. Each clause is an OR of different literals (which are variables or their negation) and the entire problem is an AND of these clauses. The goal is to find an assignment of the variables such that the entire problem evaluates to TRUE. 
+
+The DIMACS format is a standard for specifying SAT problems. In this case, each clause is represented as a line with integer numbers, where a positive number n represents the nth variable, and a negative number -n represents the negation of the nth variable. The clause ends with a zero.
+
+To solve this, we might use the DPLL algorithm, which combines backtracking with the deduction techniques of unit resolution and pure literal elimination. Essentially, the algorithm assigns a value to a variable, then simplifies the problem as much as possible using unit resolution and pure literal elimination. If it finds a contradiction, it backtracks and tries a different assignment.
+
+Step-by-step manual solving SAT problem is inefficient, hence we primarily use software to solve such tasks. Software like CryptoMiniSat, Minisat, or Glucose can find the assignment quickly.
+
+Utilizing one of these software yields:
+
+Answer: 1 -2 -3 4 -5 6 -7 -8 -9 10

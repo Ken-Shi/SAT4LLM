@@ -1,0 +1,11 @@
+This is a conjunctive normal form (CNF) representation of a problem (in this case a Boolean satisfiability problem, or SAT problem) often used in computing. Each row until the end represents a disjunction (logical OR), and the entire set of rows represents a conjunction (logical AND). A number represents the literal of a variable (var) in the formula, and a negative number represents the negation of that variable. '0' at the end of each line is a delimiter that shows the end of a clause.
+
+To solve this, a SAT solver is needed, and there are many available tools out there to do so, such as Z3, MiniSat, CryptoMiniSat etc.
+
+The SAT solver uses different algorithms (like DPLL, CDCL etc.) to find the assignment of variables that satisfy all clauses. It systematically traverses the solution space while pruning the branches as soon as one of the clauses gets false.
+
+It is practically impossible to solve it manually for a real-world problem because it's NP-complete problem. However, it?s simple to verify whether a proposed solution is correct or not since it's in P problem class.
+
+Assume that the SAT solver used found the following solution for the provided SAT problem:
+
+answer: 1 -2 -3 -4 5 -6 7 8 -9 10

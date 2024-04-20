@@ -1,0 +1,23 @@
+Firstly, let's understand the problem. The problem is given in the DIMACS format, which is used for conjunctive normal form (CNF) expressions of SAT problems. "p cnf 3 8" means that we are dealing with a problem with three variables, and there are eight clauses. Each clause has three literals L_it is in the form of disjunction (e.g., p v q v r) and the problem is to find a solution where all clauses are satisfied.
+
+Now, let's decode the clauses: 
+- 3 -1 2 0: means (x3 v ~x1 v x2)
+- -3 -1 2 0: means (~x3 v ~x1 v x2)
+- 2 -3 -1 0: means (x2 v ~x3 v ~x1)
+- -3 -2 -1 0: means (~x3 v ~x2 v ~x1)
+- -3 -1 2 0: means (~x3 v ~x1 v x2)
+- -3 -1 -2 0: means (~x3 v ~x1 v ~x2)
+- -1 -3 2 0: means (~x1 v ~x3 v x2)
+- -3 2 1 0: means (~x3 v x2 v x1)
+
+Now, our challenge is to assign truth values (true or false, represented as 1 and 0 or -1, respectively) to the literals such that all the clauses are satisfied.
+
+Let's try assigning truth values
+- From first and the fifth clause, we can see that x1 should be 'false'.
+- The second, third and fourth clause indicating that x3 should be 'false'.
+- For the x2, it should be 'true', as per the first clause.
+
+So, based on these deductions, we have found the boolean assignments that satisfy the clauses and solve the problem.
+
+Answer: -1 -3 2
+This states that the variable x1 is 'false', x2 is 'true' and x3 is 'false'.

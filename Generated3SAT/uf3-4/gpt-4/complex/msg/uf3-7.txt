@@ -1,0 +1,14 @@
+The given SAT problem contains 4 clauses. To solve this SAT problem, we have to find an assignment of true or false to each of the variables (1,2,3) in such a way that each clause in the problem has at least one literal that evaluates to true.
+
+We can start by looking each clause:
+1) The first clause is (1 OR NOT 2 OR NOT 3). In this clause, if we assign 1 to be true, the entire clause will be true.
+
+2) The second clause is (NOT 1 OR 2 OR NOT 3). From the previous step, we have 1 as true. Therefore, NOT 1 will be false. We still can make this clause true by making 2 to be true (because we have the literal OR 2).
+
+3) The third clause is (2 OR 3 OR 1). We already have 1 and 2 as true from the previous steps. We can ignore 3 for now, since the clause is already true.
+
+4) The fourth clause is (3 OR NOT 2 OR 1). From our previous steps, we have 1 and 2 as true. Therefore, NOT 2 will be false. However, this clause can still be true because 1 is true.
+
+Therefore, a solution for this problem is: 1 = true, 2 = true, 3 = don't care (true or false).
+
+Answer: x1=1, x2=1, x3=dontcare

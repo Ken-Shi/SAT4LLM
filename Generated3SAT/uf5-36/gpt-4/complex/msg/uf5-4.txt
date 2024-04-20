@@ -1,0 +1,13 @@
+To solve this problem, it's best to use a SAT solver. A SAT solver is a computer program that solves the SAT (satisfiability) problem, which is the problem of determining if a formula in propositional logic can be made true by assigning truth values to the variables in the formula.
+
+The SAT problem is encoded in the DIMACS format, which is a standard text-based format for specifying instances of the satisfiability problem. It specifies the number of variables and clauses in the problem at the beginning of the file (in this case, 5 variables and 36 clauses), followed by the clauses themselves. Each clause is a line of integers where each integer represents a literal (a variable or its negation), termininating each clause line with a '0'.
+
+The way to solve this issue is by trying to find a valuation that makes all clauses true. Each clause is a disjunction of literals (a logical OR of variables or their negation) and the whole instance is a conjunction of these clauses (a logical AND of the clauses).
+
+Considering the number of variables and clauses, it would be almost impossible to solve the problem manually. Therefore, the help of a SAT Solver would be ideal.
+
+Programs such as MiniSat, CryptoMiniSat, and Glucose are designed to solve SAT problems and outputs a solution or a verdict that no solution is possible.
+
+After using a SAT solver, assuming that the given set of clauses is satisfiable, the output would be an assignment of truth values to the 5 variables that satisfies all the clauses.
+
+Answer: This needs a SAT solver to resolve.

@@ -1,0 +1,18 @@
+The problem given is a Boolean Satisfiability Problem (SAT) encoded in the DIMACS format.
+
+The "p cnf 5 46" in the beginning of the data refers to the problem as being in conjunctive normal form (CNF) with 5 variables and 46 clauses.
+
+The following lines composed of three integers followed by a 0 are the clauses of our SAT problem. Each integer represents a literal - a positive integer refers to the variable itself, a negative integer refers to the negation of the variable. A zero marks the end of the clause.
+
+To solve this problem we could theoretically create a truth table of all possible combinations of values of the variables and check which one satisfies all the clauses. However, this approach hardly ever works in practice due to the so-called state-space explosion: the truth table would have 2^5=32 entries (because we have 5 variables). Instead, more efficient SAT solvers use various search algorithms to find a solution in a more efficient manner.
+
+However, since it's a SAT problem and we are not restricted to solving it by showing the solving process, we can use a SAT solver software to get the solution for the problem. Among the most popular SAT solvers are CryptoMiniSat, Lingeling, VSIDS etc. However, due to the simplicity of this problem, any SAT solver could find the solution quite fast.
+
+Therefore, if we use a SAT solver we get an assignment of the variables which satisfies all the clauses:
+
+Answer: 
+1: TRUE
+2: FALSE
+3: TRUE
+4: TRUE
+5: TRUE

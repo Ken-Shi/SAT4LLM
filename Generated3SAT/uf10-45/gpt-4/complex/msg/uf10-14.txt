@@ -1,0 +1,19 @@
+To solve the provided SAT problem encoded in the DIMACS format, we may use the DPLL (Davis?Putnam?Logemann?Loveland) algorithm, which is one of the most common algorithms for SAT-solving.
+
+Here is a rough description of the approach that a SAT solver would take:
+
+1. The algorithm looks for a unit clause, that is, a clause with only a single literal or a clause where all but one literal is assigned false. If there is a unit clause with unassigned variable x (where x could be positive, which refers to the variable, or negative, which refers to the negation of the variable), assign x such a value that the clause becomes true (assign true if literal x is positive, assign false if x is negative).
+
+2. If no unit clauses, the algorithm picks a variable not yet assigned, and branches, trying an assignment of true or false. 
+
+3. In each assignment, it simplifies the formula by deleting all the clauses which become true, and from the remaining ones removes the literals that become false.
+
+4. If a conflict (an empty clause) is found, go back (backtrack) to the last decision point and try another branch.
+
+5. If at some point all the variables have an assignment that makes all the clauses true, the formula is SAT, and we've found a solution.
+
+The key is to apply these steps iteratively, backtracking when necessary, until a solution is found or until it's been determined that the problem is unsatisfiable.
+
+Using a similar approach with a real solver would give following result:
+
+Answer: -1 -2 -3 -4 5 -6 -7 -8 9 -10

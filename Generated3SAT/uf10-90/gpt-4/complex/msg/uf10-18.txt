@@ -1,0 +1,7 @@
+Consider each line/clause in the input. The first line reads -5 6 4 0, which means -p5 OR p6 OR p4. The problem can be solved by finding any possible combination of truth values for the propositions.At the end, a model is satisfying only if each clause has at least one positive literal. It is then, therefore, approached by a constructive method such as depth-first search and applied the unit propagation repeatedly.
+
+After going through the list of clauses, we find the solution that each variable is either True or False, I denote True as '1' and False as '-1'.
+
+The answer to this SAT problem:
+
+answer: 1 -1 1 -1 -1 -1 -1 -1 -1 1

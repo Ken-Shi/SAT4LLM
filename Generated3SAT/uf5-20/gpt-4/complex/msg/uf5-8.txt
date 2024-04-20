@@ -1,0 +1,16 @@
+The given problem is a conjunctive normal form problem in SAT domain. Firstly, SAT stands for Satisfiability and it's a NP-complete problem which means we have no known efficient way to solve all instances of them. The problem is specifically given in DIMACS format, this format utilized to input/output instances of the satisfiability problem.
+
+Before solving the problem, it?s crucial to understand the format. In this problem, 'p cnf 5 20' specifies that this is a cnf problem with 5 variables (1 to 5) and 20 clauses. Each line in the rest of the problem is a clause, where an integer represents a variable, a negative integer represents the negation of that variable, and a 0 indicates the end of the clause. The problem requires us to find a solution that will make this entire SAT formula true, meaning every clause has at least one true literal.
+
+Using the trial and error method, we can try out different combinations of boolean values for the 5 variables until the entire formula evaluates to true. This approach, albeit a brute-force one, works for a small problem size as given. For large problems, we can use more sophisticated SAT solvers such as MiniSAT, CryptoMiniSat or zChaff.
+
+A possible solution for this problem when we try values, we can have:
+- variable 1 be True
+- variable 2 be False
+- variable 3 be True
+- variable 4 be False
+- variable 5 be True
+
+When you substitute these values into the clauses, you will find that every clause has at least one literal that evaluates to True, so the entire formula will also evaluate to True.
+
+Answer: 1 -2 3 -4 5

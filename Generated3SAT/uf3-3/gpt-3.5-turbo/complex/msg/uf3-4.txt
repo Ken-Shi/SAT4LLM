@@ -1,0 +1,12 @@
+To solve this problem, we first need to understand the DIMACS format. In this case, the problem has 3 variables and 3 clauses. The clauses are:
+1. 1 OR 3 OR NOT 2
+2. NOT 1 OR 3 OR NOT 2
+3. 2 OR NOT 1 OR 3
+
+Now let's analyze each clause:
+1. For the first clause to be true, at least one of the literals must be true. If we set variables 1 and 3 to true and variable 2 to false, the clause becomes true.
+2. For the second clause to be true, at least one of the literals must be true. If we set variables 1 and 3 to true and variable 2 to false, the clause becomes true.
+3. For the third clause to be true, at least one of the literals must be true. If we set variables 1 and 3 to true and variable 2 to false, the clause becomes true.
+
+Therefore, the solution to this SAT problem is: 
+answer: 1 1 -1

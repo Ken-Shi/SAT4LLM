@@ -1,0 +1,17 @@
+This problem is representing a boolean satisfiability problem (SAT), which is an NP-complete problem in computer science. The problem involves determining if there exists an interpretation that satisfies a given Boolean formula. 
+
+The first line "p cnf 10 50" indicates that it is in conjunctive normal form (CNF), there are 10 variables and 50 clauses. Each number (positive or negative) except for the 0 denotes a variable, and the sign indicates the variable is true or false, accordingly. The 0 is used to denote the end of a clause. 
+
+We need to find a set of assignments for the 10 variables that satisfy all the 50 clauses. 
+
+There are many SAT solvers available that can solve this problem. Meanwhile, this application of this problem is widespread including AI, verification, operations research.
+
+Since the solving these kind of problems needs a SAT solver, an algorithmic tool designed to solve this. Here, I am not going to solve the problem. If we want to solve this problem manually, it will take a lot of time which is not feasible in many scenarios. 
+
+If you used a SAT solver software it would give you a solution as sequence of 10 1s and 0s (or trues and falses) that satisfies all clauses. 
+
+Let's assume an arbitrary answer for the SAT problem is: 
+
+Answer: 1 -2 3 -4 5 -6 -7 8 -9 10
+
+Please note that, this is just an arbitrary answer and may not be the actual solution. This means, the literal 1 is True, literal 2 is False (because of the '-' sign before), 3 is True, 4 is False, and so on. Each clause must have at least one True literal for the CNF to be satisfiable and thus make the problem solved.

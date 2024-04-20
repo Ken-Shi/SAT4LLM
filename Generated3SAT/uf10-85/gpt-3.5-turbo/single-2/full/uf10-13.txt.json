@@ -1,0 +1,24 @@
+{
+    "id": "chatcmpl-9FWmyq2pcFJPAIS6r6S7T4p2eLe2U",
+    "object": "chat.completion",
+    "created": 1713487988,
+    "model": "gpt-3.5-turbo-0125",
+    "system_fingerprint": "fp_d9767fc5b9",
+    "choices": [
+        {},
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "SAT Solution: 2 -4 10 -7 -8 -1 -6 9 3 5"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 757,
+        "completion_tokens": 23,
+        "total_tokens": 780
+    }
+}

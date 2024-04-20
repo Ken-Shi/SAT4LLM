@@ -1,0 +1,11 @@
+This is a testcase for Boolean Satisfiability Problem (SAT). It represents a conjuction (AND operation) of many disjunctions (OR operations) built from literals between 1 and 10 or their negations. A literal is a Boolean variable or its negation. Each line after 'p cnf 10 55' specifies a disjunction. The 0 at the end of each line is merely a terminator and does not factor into the SAT problem.
+
+Procedure:
+
+The simplest algorithm to use for solving the SAT problem is DPLL (Davis?Putnam?Logemann?Loveland) which involves recursively assigning TRUE to some unassigned variable, if no conflict is encountered the process continues until all variables have been assigned and a satisfying assignment is found. If the process encounters a conflict, it undoes all assignments back to the assignment causing the conflict, and that variable is then assigned FALSE. This continues until all variables have been assigned with no conflicts (in which case the formula is satisfied), or every variable has been tried with both TRUE and FALSE assignments and conflicts resulted each time (in which case the formula is unsatisfiable).
+
+It is non-trivial to manually apply this algorithm for a real world DPLL software application with 10 variables and 55 clauses due to the large number of assignment possibilities and potential conflicts. Therefore, a SAT solver tool is needed to apply this algorithm and find the solution.
+
+Answer:
+
+In this platform, Kindly use a SAT solver to find solution of the above-provided test case. The final answer would have 10 variables assigned with either TRUE or FALSE (represented numerically as 1 or -1) in such a way as to satisfy all of the clauses.

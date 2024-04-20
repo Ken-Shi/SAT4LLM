@@ -1,0 +1,24 @@
+{
+    "id": "chatcmpl-9FVkqYxlPTqDqBQwDuubveLj6F8Uq",
+    "object": "chat.completion",
+    "created": 1713484012,
+    "model": "gpt-4-0613",
+    "system_fingerprint": null,
+    "choices": [
+        {},
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "The following solution assignment satisfies the SAT Problem in the query:\n\n1 -2 3 4 5"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 472,
+        "completion_tokens": 21,
+        "total_tokens": 493
+    }
+}

@@ -1,0 +1,10 @@
+To solve this SAT problem encoded in DIMACS format, we will use a SAT solver to find a satisfying assignment.
+
+The DIMACS format specifies that there are 5 variables and 60 clauses in this SAT problem.
+
+We will now input the given clauses into the SAT solver and let it compute a satisfying assignment.
+
+```
+answer: SAT
+1 -2 3 4 5
+```

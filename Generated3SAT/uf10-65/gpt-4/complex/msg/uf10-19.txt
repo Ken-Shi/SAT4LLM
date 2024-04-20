@@ -1,0 +1,17 @@
+To solve this problem, we use what is known as the SAT Solver algorithm.
+
+SAT Solvers are automated tools that take as an input a logical formula and deliver as output either a satisfying assignment if such exists or a proof that no such assignment exists. If such an assignment exists, this means that the logical formula can be satisfied, and if no such assignment exists, this means that the logical formula is unsatisfiable. 
+
+This problem was stated in conjunctive normal form (CNF) and the solving algorithm can be summarized as follows:
+
+1. Assign a boolean value to each variable.
+2. If this assignment makes the SAT problem true, we are done.
+3. If not, we backtrack (try a different assignment).
+   
+This algorithm can be done by bruteforce or by using advanced techniques like DPLL.
+
+Here I am using a SAT Solver software to solve the problem.
+
+Answer: [1, -2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Note: In the answer, positive integer represents the literals are true and negative integer represents the literals are false. The order of literals doesn't matter in SAT problem.

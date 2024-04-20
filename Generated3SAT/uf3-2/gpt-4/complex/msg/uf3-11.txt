@@ -1,0 +1,14 @@
+To solve the problem for SATisfiability (SAT Problem), we need to find a satisfying interpretation that makes all the clauses in the problem true or find out that there is no such interpretation.
+
+Let's walk through the problem step by step:
+
+1. The first line of the problem represents the problem specification `p cnf 3 2`. Here `cnf` means the problem is presented in conjunctive normal form. `3` signifies that we have three variables, and `2` signifies the count of clauses in the problem.
+2. The next two represent the clauses of the problem in conjunctive normal form where `0` represents the end of the clause.
+3. The clause `1 -2 3 0` can be interpreted as `1 V ~2 V 3` (`V` stands for the logical OR) meaning that either variable 1 is true, variable 2 is false, or variable 3 is true.
+4. The clause `1 3 -2 0` reads as 'variable 1 or variable 3 or not variable 2'.
+
+Our job is to find the values for variables 1, 2, and 3 that make all these clauses true. If we set variables 1, 2, and 3 all to be true, then both clauses become true and our problem is solved.
+
+So, in this case, a possible solution looks like this: 
+
+Answer: Variable 1 = true, Variable 2 = true, Variable 3 = true. This can also be written as 1 2 3 in the solution space.

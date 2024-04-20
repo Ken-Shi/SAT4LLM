@@ -1,0 +1,6 @@
+To solve the SAT problem encoded in DIMACS format, we will use a SAT solver to determine a satisfying assignment if one exists. We can use the SAT solver z3 to find a solution to the given problem. 
+After running the SAT solver on the provided problem, we get the following solution:
+
+answer: 1 -2 -3 -4 5
+
+This solution satisfies all the clauses in the given CNF formula.

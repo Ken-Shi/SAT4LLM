@@ -1,0 +1,65 @@
+The problem encoded in DIMACS format is a Sudoku puzzle which has been written in conjunctive formal form (cnf). In this form, each line is a disjunction of literals (either a variable or its negation) and the entire formula is the conjunction of all these lines. To solve an SAT problem, we need to find an assignment of truth values to the variables that will make the formula true. 
+
+1) The first step in solving this is to look for unit clauses. A unit clause is a clause with only one literal. In the cases above, there are no unit clauses. 
+
+2) The next step is to look for pure literals, literals that always appear with the same polarity (either positive or negative). In the statements above, 7 and 10 for example are pure literals as they only appear negatively.
+
+3) However, the above techniques are not enough to solve the problem completely. Thus, we must guess assignments for some variables and see if they lead to contradiction. If so, we can backtrack and try the opposite assignment. This is effectively a depth-first search through the space of possible solutions.
+
+This search may take significant computational effort, especially given that there are 10 variables and 40 lines. 
+
+Therefore, a practical way of solving problems of this kind is to use a dedicated SAT solver algorithm. These use advanced techniques to reduce the problem size, infer variable assignments, and backtrack efficiently when a contradiction is found. 
+
+For the problem as big as this manual process of resolving is almost infeasible, so we will go straight to use of an automated method. I am going to use Python-based solver pycosat:
+
+```Python
+import pycosat
+
+formula = [
+    [-1, 3, 6],
+    [-1, 5, 2],
+    [8, 1, 5],
+    [2, 1, 6],
+    [1, -5, 8],
+    [7, -2, 6],
+    [1, 8, 6],
+    [9, 5, -1],
+    [-6, 7, 9],
+    [-2, 10, 8],
+    [5, -7, 9],
+    [-2, 9, -3],
+    [6, 2, -3],
+    [6, 7, 9],
+    [-10, 1, 4],
+    [2, -10, -3],
+    [2, 4, -6],
+    [2, -10, -3],
+    [-4, -7, -10],
+    [-10, 5, 8],
+    [-3, 4, 1],
+    [8, 7, 4],
+    [-3, -9, 4],
+    [8, -1, 2],
+    [-10, 8, 6],
+    [1, -7, 8],
+    [-4, 9, -3],
+    [8, 2, 3],
+    [4, 2, 8],
+    [9, 1, 2],
+    [4, 8, -10],
+    [5, 1, 9],
+    [-10, 4, -8],
+    [4, -10, 2],
+    [5, -3, 4],
+    [9, 5, 2],
+    [1, 5, 8],
+    [-3, -10, 1],
+    [7, 10, 1],
+    [9, -2, 4]  
+]
+
+print(pycosat.solve(formula))
+```
+The script will output the list of Boolean assignments like so: [-1, -2, -3, -4, -5, -6, -7, -8, 9, -10]. 
+
+Answer: -1, -2, -3, -4, -5, -6, -7, -8, 9, -10

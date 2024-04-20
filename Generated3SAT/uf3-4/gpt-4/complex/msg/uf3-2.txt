@@ -1,0 +1,35 @@
+DIMACS is a standard format to represent Boolean SAT (satisfiability) problems. In this format, numbers represent variables and a negative number represents the negation of the variable. Each clause is a disjunction (an OR operation) where clauses are combined by an AND operation. Each line ends with a 0. 
+
+This problem can be translated to:
+(Not 2 or Not 3 or 1) AND
+(Not 1 or Not 3 or 2) AND
+(Not 1 or Not 3 or 2) AND
+(Not 2 or Not 3 or Not 1)
+
+Our requirement is to find a single allocation of variables (1, 2, and 3) that makes the entire expression true.
+
+We can try for possible solutions. 
+
+Assuming 1=True, 2=False, 3=False:
+1st clause is true since 2 and 3 are set to false
+2nd clause is false since 1 is set to true but 3 is set to false
+3rd clause is also false with the same reason as the 2nd.
+4th clause is true since 2 and 1 are not true
+
+So this assignment cannot make the formula true.
+
+Let?s try with 3=True.
+
+Let 1= False, 2= False, and 3= True:
+1st clause is true since 1 is True
+2nd clause is true since 2 is True
+3rd clause is true like the 2nd
+4th clause is false since 1, 2, and 3 are not all False
+
+So, an assignment where 3=True isn't working either. 
+
+Now, let's try setting all variables to False.
+So, we have 1=False, 2=False, 3=False
+All clauses are satisfied, so this is our solution
+
+answer: 1=False, 2=False, 3=False

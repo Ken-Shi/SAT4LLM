@@ -1,0 +1,21 @@
+To solve this SAT problem encoded in DIMACS format, we first need to understand the format. The first line "p cnf 3 2" indicates that there are 3 variables and 2 clauses in the problem. Each clause is represented on a separate line with the variables listed followed by a 0.
+
+The clauses are as follows:
+1 2 -3 0
+3 -2 1 0
+
+Now, let's analyze the clauses one by one:
+
+Clause 1: 1 2 -3
+This clause has three literals: 1, 2, and -3. This means that at least one of these literals must be true for the clause to be satisfied. Since variable 1 and variable 2 are both in the clause, we can say that this clause is satisfied if either variable 1 or variable 2 is true.
+
+Clause 2: 3 -2 1
+This clause also has three literals: 3, -2, and 1. Similarly, this clause is satisfied if either variable 3 or variable 1 is true.
+
+Now, let's find the solution that satisfies both clauses:
+
+- If we set variable 1 = true, then clause 1 is satisfied. However, clause 2 cannot be satisfied with this assignment because variable 1 is true.
+- If we set variable 1 = false and variable 2 = true, then both clauses are satisfied. 
+
+Therefore, the final answer is:
+answer: 1 false, 2 true, 3 true

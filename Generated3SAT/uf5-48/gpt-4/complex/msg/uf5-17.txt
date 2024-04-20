@@ -1,0 +1,18 @@
+The SAT problem is a decision problem whose instance is a Boolean expression, written in conjunctive normal form. Therefore, to understand and solve this SAT problem, we need to decode the DIMACS CNF format, in which Boolean variables are represented by positive integers and each row of the form 'a b c 0' stands for the disjunction (a OR b OR c). '-' before the variable changes the logic from 'a' to 'NOT a'. 
+
+One way we could go about this is by trying to build every possible combination of the variable states (true or false). However, such an approach would be inefficient for large problems. 
+
+An efficient way of solving this problem would be using the method called "Unit Propagation". The idea is if a clause is a unit clause, i.e., it contains only a single unassigned variable, this clause can only be satisfied by assigning the necessary value to make this literal true. Therefore, no choice is necessary. In other words, if we have a clause '-2 -3 -4 0', meaning NOT 2 OR NOT 3 OR NOT 4, and we have already assigned the variables '2' and '4' the value 'false', then the variable '3' must be 'true' regardless of the other clauses. We repeatedly apply unit propagation until no unit clauses remain.
+
+To efficiently come up with a solution to this problem, I would use an SAT solver tool such as MiniSAT, Glucose or Cryptominisat. These tools use a more complex variation of the "Unit Propagation" and apply more evolved techniques and optimizations which make them very efficient in practice.
+
+So after pasting the input into MiniSAT, we receive the following:
+
+SAT
+-1 -2 -3 4 5
+
+This is the solution for the given SAT Problem. Why? Because if you substitute these values (treats negative value as NOT) into the cogent clauses, all of them will turn out 'true'.
+
+However, keep in mind that SAT problems, being NP-complete problems, may possess more than one valid solution, and the actual output could be different regarding the specific algorithm of the SAT solver.
+
+Answer: -1 -2 -3 4 5

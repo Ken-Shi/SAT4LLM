@@ -1,0 +1,14 @@
+Here, you are given a Boolean Satisfiability (SAT) problem. The SAT problem aims to determine whether the given set of clauses (i.e., a disjunction of literals) can be satisfied. The goal is to assign True (T) or False (F) values to each variable in such a way that each clause contains at least one True literal, and hence the entire formula evaluates to True.
+
+Looking at the given set of clauses, the last clause demands every literal (variables) to be True, because it is a conjunction of all variables i.e., (3 ? 2 ? 1). Hence we need to assign True to all the three variables 1 , 2, 3.
+
+Before we finalize our thoughts, let's cross-verify with respect to all other clauses:
+1) Clause 1: (3 V 2 V ~1) -> (T V T V ~T) = T V T = T -> Hence, clause 1 is satisfied.
+2) Clause 2: (~2 V 1 V 3) -> (~T V T V T) = F V T = T -> Hence, clause 2 is satisfied.
+3) Clause 3: (3 V 1 V 2) -> (T V T V T) = T -> Hence, clause 3 is satisfied.
+4) Clause 4: (~3 V 2 V ~1) -> (~T V T V ~T) = F V T = T -> Hence, clause 4 is satisfied.
+5) Clause 5: (2 V 3 V 1) -> (T V T V T) = T -> Hence, clause 5 is satisfied.
+6) Clause 6: (1 V ~3 V 2) -> (T V ~T V T) = T -> Hence, clause 6 is satisfied.
+7) Clause 7: (1 V 3 V 2) -> (T V T V T) = T -> Hence, clause 7 is satisfied.
+
+Answer: With the above variable assignments, every clause evaluates to true, thereby giving a solution to the given SAT problem. Thus, the final assignment that fulfills this SAT problem is 1 = True, 2 = True, 3 = True.

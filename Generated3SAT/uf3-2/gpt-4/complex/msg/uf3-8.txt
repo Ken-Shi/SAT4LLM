@@ -1,0 +1,22 @@
+To solve this problem, we'll need to understand DIMACS format for CNF problems and the associated domain of knowledge in propositional logic.
+
+The DIMACS file begins with a line "p cnf 3 2" which states that the problem is in conjunctive normal form, has three variables, and two clauses. The two lines following it are the two clauses in the CNF problem, and an individual line ends with a 0. A positive number represents the corresponding variable. A negative number represents the negation of the corresponding variable. Here, 1, 2, 3 are the variables.
+
+The first line, "3 1 2 0", indicates the clause "3 OR 1 OR 2", and can be written symbolically as "(x3 v x1 v x2)". 
+
+The second line, "2 -1 -3 0", represents the clause, "2 OR NOT 1 OR NOT 3", translating it to symbols we get "(x2 v ~x1 v ~x3)".
+
+So the CNF SAT problem is:
+"(x3 v x1 v x2) ^ (x2 v ~x1 v ~x3)".
+
+Now, this problem is a satisfiability problem, we are trying to find a truth value for each variable such that the entire formula is true. 
+
+The truth assignment of variables is:
+x1 = False (represented by -1)
+x2 = True (represented by 2)
+x3 = False (represented by -3)
+
+With this assignment, both clauses become true leading to the whole formula true.
+Hence, this is a valid SAT solution.
+
+Answer: -1 2 -3

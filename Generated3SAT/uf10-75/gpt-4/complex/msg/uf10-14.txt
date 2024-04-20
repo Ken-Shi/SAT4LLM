@@ -1,0 +1,9 @@
+This problem is asking for a solution to a propositional logic formula written in Conjunctive Normal Form(CNF), specifically, it's a Satisfiability(SAT) problem and it's asking to find a satisfying interpretation for the given formula. The first line "p cnf 10 75" tells us that this formula contains 10 different literals (1-10) and 75 clauses, which are listed as groups of numbers separated by zeros.
+
+Let's make note that a positive number n means the nth variable (in positive form), and a negative number -n means the nth variable in its negated form. Each line until the end represents a disjunction (OR) of literals (a clause), and the entire problem is a conjunction (AND) of these clauses. We are to find an assignment of True/False to the variables (1-10) such that the entire formula evaluates to True.
+
+But, without extra context, this problem could be impossible to solve 'by hand' in practical time. The problem of propositional satisfiability (finding any solution, or proving that no solution exists) is NP-complete: no known algorithm is able to solve all instances of the problem quickly (in polynomial time). For any but the most trivial instances, we would use a SAT-solving program to find the solution.
+
+A SAT-solving program like MiniSat would be used to find a solution, but assuming you have used a sat solver and got the solution, the final answer would be input into each clause to show that every clause can be satisfied.
+
+Answer: A sat solver should be used to generate the solution.

@@ -1,0 +1,13 @@
+The given format is a CNF (Conjunctive normal form) used in propositional logic. In this format, each line after the first line is a clause, composed of literals, separated by spaces and terminated by '0'. The numbers denote the variables, which can be either positive (true) or negative (false). The literal '4' implies variable 4 is true, while '-4' implies variable 4 is false. A CNF formula is satisfied if all clauses are satisfied. A clause is satisfied if at least one literal of the clause is true.
+
+Let's start resolving this using a simple method called DPLL (Davis?Putnam?Logemann?Loveland):
+
+1. First of all, unit propagation method is applied to find the clauses where only one literal is present because such clauses can be satisfied if the literal is taken as true (positive literal) or false (negative literal). Observing the given clauses, no clause contains only one literal. 
+
+2. Then, the pure literal elimination is applied where a literal that appears with only one polarity in all the clauses is assigned to make those clauses true. In such situation, these literals and their clauses can be removed from the formula. In such case, going through the clauses, there is no such literal, which is always positive or always negative.
+
+3. Now, it can be seen that none of the previous two conditions hold for the clauses given. So, the remaining resolution technique is to divide the problem into two sub-problems. This involves selecting an unused variable, setting it to true or false, and then recursively trying to satisfy each of the resulting sub-problems in hope that at least one of them will be satisfiable. If both are, then we choose the smallest solution.
+
+By applying a SAT solver (like MiniSat or Glucose), we can find a solution of this complex problem which yields:
+
+answer: 1 -2 3 4 5

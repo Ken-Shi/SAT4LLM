@@ -1,0 +1,7 @@
+Please solve the following SAT Problem encoded in DIMACS format, provide line of thoughts, write your final answer as a single solution at the end of response with header 'answer: ' : 
+p cnf 3 4
+-3 1 -2 0
+-3 -2 -1 0
+-3 1 -2 0
+1 -2 -3 0
+

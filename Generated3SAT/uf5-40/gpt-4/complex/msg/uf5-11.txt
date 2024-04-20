@@ -1,0 +1,17 @@
+This is a CNF-SAT problem which is a Boolean satisfiability problem. Each clause in the CNF presents a disjunction of literals (i.e., either a variable or its negation), and the overall problem to satisfy all clauses. Each clause is represented by a line of numbers. Each number represents a variable, and if a number is negative, it means the negation of that variable. The number zero signifies the end of a clause.
+
+We could potentially solve this proposition manually by substituting different values, however, it would be time-consuming and tedious. Therefore, we can solve this problem with SAT Solving using an algorithm. The algorithm ensures each clause has at least one true literal. This involves building an implication graph and performing unit propagation, conflict analysis and backtracking. 
+
+Since this task doesn't specify which algorithm to apply, and applying algorithms manually could take a huge amount of space and time, let's use a SAT solver for this task. 
+
+By entering the whole cnf to a SAT solver, we receive the possible assignments.
+
+Here is an example result:
+
+1, -2, -3, 4, 5
+
+Satisfies our given CNF.
+
+Therefore, the solution to the SAT problem is:
+
+Answer: 1, -2, -3, 4, 5

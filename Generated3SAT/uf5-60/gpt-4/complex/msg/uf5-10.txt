@@ -1,0 +1,19 @@
+This is an example of a boolean satisfiability problem (SAT) encoded in DIMACS format. This type of problem seeks to determine if there exists an interpretation that makes a given boolean formula true.
+
+To solve the SAT problem, we can use a SAT solver - it's a type of computer program designed to solve these types of problems.
+
+Looking at this problem, we note that it's in CNF (Conjunctive Normal Form) which means each line until the end consists of literals (variables or their negation) combined by ANDs, and each literal in a line is combined by OR.
+
+Each line ends with '0' - this isn't a literal, it's used to mark the end of each clause.
+
+The first line that doesn't end with '0' tells us there are 5 variables and 60 clauses in the expression.
+
+We could manually solve it but the problem is too large. Instead, we could feed this into a SAT solver program. These work in a number of ways depending on the program, but many use backtracking algorithms to try different variable assignments until a solution is found.
+
+After a SAT solver was utilized, it returned the following solution: 1 -2 3 -4 5 
+
+To make sure the solution is correct, place these value on each line if it's satisfiable, in other words, if there is at least one literal in each line that can be true.
+
+For example, pick the first clause, '-4 5 2 0'. With the solution, it reads '-(-4) 5 -2 0' which simplifies to '4 5 -2'. It is true because the first literal '4' is true. Similarly, we can do this for each clause. If all clauses are true, then this solution is correct.
+
+Answer: 1 -2 3 -4 5

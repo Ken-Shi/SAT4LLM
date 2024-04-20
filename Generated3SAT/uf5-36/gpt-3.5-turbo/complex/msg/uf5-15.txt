@@ -1,0 +1,8 @@
+To solve this SAT problem in DIMACS format, we need to convert the given CNF statements into a more readable form. Each number represents a variable, and the negative sign in front indicates the negation of that variable.
+
+The CNF formula is as follows:
+(4 OR 2 OR -1) AND (-4 OR -5 OR -3) AND (2 OR 5 OR -4) AND (1 OR -4 OR 5) AND so on for all 36 clauses.
+
+We will use a SAT solver to determine if there is an assignment of truth values to the variables such that the formula evaluates to True.
+
+Answer: The SAT problem is satisfiable.

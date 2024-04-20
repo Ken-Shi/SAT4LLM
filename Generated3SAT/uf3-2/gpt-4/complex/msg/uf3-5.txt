@@ -1,0 +1,13 @@
+SAT (or Boolean Satisfiability Problem) is a decision problem with variables that could be either true or false and the objective is to find values for the variables such that all given formulas or clause will be true. 
+
+This SAT problem consists of 3 variables (as specified by the "p cnf 3 2" line). The problem is written in Conjunctive Normal Form, with 2 clauses (specified by the "2" in the "p cnf 3 2" line). The clauses are:
+1. -1 2 3, which means NOT V1 OR V2 OR V3
+2. -1 -2 -3, which means NOT V1 OR NOT V2 OR NOT V3
+
+Let's assign values to the variables to solve the problem. 
+If we assign V1 = False, V2 = True, V3 = True, then the first clause will be true, as V2 and V3 are True.
+If we assign V1 = False, V2 = True, V3 = True, then the second clause will be False, as V2 and V3 are True.
+
+To satisfy both clauses, we can assign: V1 = False, V2 = False, and V3 = True. This makes both clause 1 and clause 2 true.
+
+Answer: V1 = False, V2 = False, V3 = True.

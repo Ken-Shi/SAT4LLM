@@ -1,0 +1,19 @@
+The problem given is a SAT-Problem in Conjunctive Normal Form, listed in the DIMACS format, where each line after the first one describes a clause: a disjunction of variables or their negations.
+
+DIMACS format interpretation:
+The "p cnf 3 3" line specifies that it is in conjunctive normal form "cnf", that there are "3" variables named by integers from "1" to "3", and that there are "3" clauses.
+
+The subsequent lines are the clauses:
+
+1. -1 3 2 0 : This clause translates to  the logical expression "?x1 OR x3 OR x2"
+2. 1 -2 3 0: This clause translates to "x1 OR ?x2 OR x3"
+3. 3 2 1 0: This clause translates to "x3 OR x2 OR x1"
+
+Here, the disjunctions are represented by whitespace, negation by "?", and each clause ends with a "0".
+
+We need to find an assignment for x1, x2, and x3 that would make all of these clauses true. Each clause in our SAT problem is an OR-statement, so we only need to have at least one true literal in every clause for it to be true. We also note that in our SAT problem, every clause contains the literal "x3", so just by setting x3=true, every clause becomes true as well, regardless of the values we assign to other literals.
+
+Answer: 
+x1 = false, x2 = false, x3 = true
+Or in terms of the integers used in the DIMACS data 
+Answer: -1 -2 3

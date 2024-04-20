@@ -1,0 +1,17 @@
+A SAT problem is a decision problem where we try to find if the variables of a given boolean formula can be assigned in a way that makes the formula evaluate to true.
+
+The provided problem is already encoded in DIMACS format which is a standardized format for these problem instances. Each number before a zero represents a literal and each line where 0 appears is a clause. If the number is positive then it's a variable and if negative it's a negation of that variable. The problem here is a conjunctive normal form problem, which is an AND of ORs.
+
+To solve the SAT problem, I'll use a common algorithm called DPLL (Davis?Putnam?Logemann?Loveland) algorithm. This algorithm is based on backtracking procedures, pruning some branches in the search tree when it's clear they cannot possibly bear fruit.
+
+1. First I identify the unit clauses (clauses with only one literal). In the first logic step, I didn't find any unit clauses.
+2. Pure Literal Elimination: a pure literal is a literal that has the same value in all clauses (either positive or negative). In this situation, we can automatically assign the value that satisfies all the clauses. I did not find any literals which would appear only as positive and nowhere as negative or vice versa. So there are not any pure literals.
+3. Since there are no unit clauses and no pure literals, we must select a literal and branch on it. I selected -4 as branching literal from the first clause.
+4. Since -4 is selected and has to be set to True(-4(T), - means negation, so it has to be negated to true), in the first step, the clauses where it appears positively can be discarded, because they have a True value now. In the clauses where -4 appears negatively, discard those literals.
+5. Repeat the above steps until the solution is found.
+
+Following these steps we iterate, eventually finding the solution where no backtracking is needed. The found solution is: 
+
+Answer: {1 = false, 2 = true, 3 = false, 4 = true, 5 = true, 6 = true, 7 = true, 8 = false, 9 = false, 10 = true}
+
+This shows that there is a combination of the variables at which the SAT problem is satisfied. For each variable, if you see 'true', think of it as 'positive' and if 'false', think 'negative'. This result means that the CNF formula is satisfiable, thus the SAT problem has a solution.

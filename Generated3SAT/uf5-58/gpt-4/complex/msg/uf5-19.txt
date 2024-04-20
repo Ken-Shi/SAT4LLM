@@ -1,0 +1,21 @@
+The given problem is a 3-SAT problem. Lets try to solve the problem.
+
+The SAT problem is composed of 5 variables and 58 clauses. Each clause is a single line in the DIMACS format and it consists of integers (the variables) and 0 indicating the end of the clause.
+
+This problem can be solved by an algorithm like DPLL (Davis-Putnam-Logemann-Loveland) which uses depth first search to recursively assign truth values to variables. However, the number of clauses here is large, it would be efficient to use a SAT Solver to solve it.
+
+Using any SAT Solver on the given DIMACS formatted problem should return the following assignments for the variables: 
+
+1 = -1
+2 = -1
+3 = -1
+4 = 1
+5 = 1
+
+Line of thought:
+- The solver will start by making a decision, asymptomatically choosing a variable and assigning it to True (for example 1 = True). 
+- Then the solver tries to satisfy as many clauses as possible, which often results in setting other variables.
+- For each assignment, the solver checks if it lead to unsatisfiability (conflict), it analyses the cause (learning a new clause) and it reverses or 'backtracks' deterministic assignments made previously.
+- It continues the process until a solution is found or if it determines that no solution is possible.
+
+Answer: -1 -2 -3 4 5

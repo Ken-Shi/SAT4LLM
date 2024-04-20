@@ -1,0 +1,3 @@
+The following solution assignment satisfies the SAT Problem in the query:
+
+1 -2 3 4 5

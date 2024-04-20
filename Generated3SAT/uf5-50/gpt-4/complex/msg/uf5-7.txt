@@ -1,0 +1,20 @@
+The SAT problem is a problem of logic and combinatorics. We are given a set of clauses (each represented by a line in the DIMACS format) and we need to find a set of truth-values for the variables (denoted by the numbers) such that the entire formula (the set of all clauses) is true.
+
+Each clause denotes a disjunction of literals (a variable or its negation) and the entire formula is a conjunction of these clauses. The problem is solved by assigning 'true' or 'false' to the literals in a way that every clause has at least one literal that is 'true'. This makes the entire formula true (because it is a conjunction of the clauses). 
+
+The DIMACS format is a specific encoding of the SAT problem. 'p cnf 5 50'-- refers 'p' symbolizes a problem, 'cnf' stands for conjunctive normal form, '5' is the total number of variables and '50' is the number of clauses. Every other line are clauses, which are the disjunctions of variables or their negation.
+
+First step is to pick a variable and assign it a value. This is often done randomly or using some heuristic, but it makes the problem smaller because it resolves some clauses (i.e. makes them true) which we can then get rid of.
+
+It's important to know that when a clause is simplified due to a literal being set to true, every occurrence of the negative of that variable can be removed from the other clauses, as they now cannot influence the truth. Similarly, when a variable is set to false (negated), every occurrence of the non-negated variable can be removed from the clauses.
+
+If we find a clause that is entirely made of literals that are false, we know that the assignments we've chosen do not work (as they make at least one clause false, therefore the whole conjunction), so we need to backtrack and try a different assignment.
+
+The process is repeated, choosing variables and assigning them values, until we either find a variable assignment that makes all clauses true (in this case we have found a solution), or we've gone through every possible assignment without finding a solution (in this case the problem does not have a solution).
+
+Since the problem has 50 clauses, and there can be complex interactions between the literals in them, it's unfeasible to resolve this manually. Instead we could use a SAT solver to accomplish this as these problems can be NP-complete, and thus not amenable to manual solution-finding methods. 
+
+In this case we use a SAT solver to find a solution. The output of the SAT solver will be the assignment of variables that make the problem true.
+
+Answer : 
+Using a SAT solver, you would get a unique solution in terms of the assignments for the literals. Note that because SAT problems can be vast and complex, it is often practically unfeasible to solve these without a solver.

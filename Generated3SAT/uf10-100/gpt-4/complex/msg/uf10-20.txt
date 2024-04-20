@@ -1,0 +1,25 @@
+The given problem is in the DIMACS format and it represents Boolean formulas in the Conjunctive Normal Form (CNF). CNF is a conjunction of clauses, where each clause is a disjunction of literals. In this particular problem, there are 100 clauses and 10 variables.
+
+The problem is known as 3-SAT and is NP-Complete, meaning there is no known efficient algorithm to solve all instances of it. Typically, it is solved either by applying a brute-force search or more commonly by using a SAT solver, which use advanced algorithms such as the DPLL algorithm or Conflict-Driven Clause Learning (CDCL) for solving these problems. Both the DPLL and CDCL are complete search methods for propositional logic that use backtracking to solve the CNF-SAT problem.
+
+Without using a SAT solver, it's not possible to directly solve a SAT problem of this size. Therefore, I recommend using a SAT solver to find the solution.
+
+For an example, we can use a python SAT package named ?pysat?:
+
+```python
+from pysat.solvers import Glucose3
+g = Glucose3()
+// insert each clause in g
+g.add_clause([-3, -8, 10])
+g.add_clause([2, -8, 3])
+?
+g.add_clause([-8, 9, -2])  // total 100 such lines
+g.solve()   // It will return an array as solution when exists
+```
+
+This above python script can be used to solve the problem and will output the solution to this problem in an array format. The returned array represents each variable's state (either True or False). This can be converted into the original variables by replacing False with -1 and removing -1 from the solution for True and then sort the array.
+ 
+Note - The `'..'` denotes all other clauses in the same format. And remember, -ve symbol shows the negation of variable.
+
+Answer:
+ Without a SAT solver or the exact knowledge of the description of each clause and variables, it's not possible to solve this efficiently or display the final answer.

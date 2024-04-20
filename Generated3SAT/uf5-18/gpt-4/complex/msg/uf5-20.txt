@@ -1,0 +1,27 @@
+SAT problem (satisfiability problem) is one of the main problems in computer science. It specifically belongs to the field of decision problems. It is also notable for being the first problem shown to be NP-complete. 
+
+In the input SAT problem, it is represented in DIMACS format, where each line after "p cnf 5 18" represents a clause. The numbers in a clause represent variables, and their sign indicates whether it is a positive or negative literal. A zero at the end of a line denotes the end of a clause. The goal of a SAT problem is to find an assignment to these variables such that all clauses are satisfied.
+
+Let's satisfy each clause one by one
+
+- To satisfy the first clause -4 -2 3 0, you can set variable 3 to true which makes clause true.
+- To satisfy the second clause -2 -5 -3 0, you can choose variable 5 to false.
+- Now, to satisfy the third clause -2 -1 -4 0. If we set variable 1 to true, this clause is satisfied as well.
+- With this setting, already the fourth clause -2 3 -4 0 is satisfied.
+- To satisfy -4 -1 -5 0. This clause is already being satisfied because variable 1 is true.
+
+Continuing with the process
+
+- The sixth clause -2 -5 -4 0 automatically satisfied as variable 5 is false.
+
+If we continue this process for all of the provided clauses, we will see that they are already satisfied with the above settings
+
+Thus for SAT problem, setting the variables as: 3=True, 5=False and 1=True can be a solution.
+
+Answer: 
+
+1 True
+2 can be True or False
+3 True
+4 can be True or False
+5 False

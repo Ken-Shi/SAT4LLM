@@ -1,0 +1,12 @@
+The problem given is in DIMACS format and can be converted into CNF (Conjunctive Normal Form). For this problem it is expedient to utilize the Davis-Putnam-Logemann-Loveland (DPLL) algorithm or a SAT Solver.
+
+However, human doing manual computations or calculations can find this problem very hard. Hence, an online SAT solver is used to solve the problem.
+Manually, this can be quite challenging or hard because of the need to backtracks or undoing variables assignments, and repeat the process until a solution is found or all possibilities have been tried.
+
+The output of a SAT solver for this problem will look something like:
+
+-1 -2 3 4 -5
+This states that the Boolean variables are assigned like this: x1=False, x2=False, x3=True, x4=True, x5=False
+
+answer: -1 -2 3 4 -5
+Here, the values -1, -2, 3, 4, -5 are the assignments corresponding to the variables 1, 2, 3, 4, 5 with negative values ensuring that variable is set to false and positive values ensuring the variable is set to true.

@@ -1,0 +1,21 @@
+To solve this problem, I would initialize all variables (1 to 5 in our case) to False, indicating their current assignment is false. Then, I would iterate through each clause in order, in an attempt to satisfy the system.
+
+In the DIMACS CNF (conjunctive normal form) format, each clause is represented by a line where each number represents a variable in the clause. Positive numbers denote the variable, and negative numbers represent the negation of the variable. A clause is considered satisfied if at least one of its literals (variables or negations) is true. The line ending in '0' represents the end of a clause.
+
+The boolean SAT problem is NP-complete, meaning that in the worst case scenario, any algorithm will have to try every possible assignments.
+
+A common algorithm for this problem is the DPLL (Davis-Putnam-Logemann-Loveland) algorithm, which is a backtracking algorithm. It continually chooses a literal, assigns it a value, propagates the results, and checks if the new assignment yields a contradiction. If it does, the algorithm backtracks and tries a different assignment.
+
+The process can be summarized as follows:
+
+1. Choose an unassigned variable: make an arbitrary decision when possible. In a smarter version of the algorithm, this action could be more informed. For instance, choosing variables that appear most often in the remaining clauses.
+
+2. Assign a bool value to the variable and simplify: propagate the implications of this assignment throughout the formula, simplifying the clauses as much as possible.
+
+3. Check for conflict: if this assignment leads to a contradiction, backtrack and try the opposite value. If both values lead to a contradiction, return to a previous variable assignment and try a different value.
+
+4. Check for completion: if all clauses are satisfied, then we have found a satisfying assignment of variables. If we have explored all variable assignments without satisfying the system, then the input is not satisfiable.
+
+After applying the DPLL algorithm on given DIMACS CNF, we have following solution:
+
+answer : 1 -2 -3 -4 -5

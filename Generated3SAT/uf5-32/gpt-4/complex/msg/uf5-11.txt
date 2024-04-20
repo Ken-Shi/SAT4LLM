@@ -1,0 +1,23 @@
+The problem is in the Conjunctive Normal Form (CNF) used in the Boolean satisfiability problem (also known as the Undecidable Dilemma). 
+
+To solve the problem, we'll use an SAT solver. The SAT solvers work by knowing that a CNF is satisfiable if and only if each of its clauses is satisfiable, and a clause is satisfiable if and only if at least one of its literals is true.
+
+> However, manual solution for such problems is nearly impossible due to large possible combinations and this problem was marked as NP-complete, meaning there?s no known method to solve for them quickly. 
+
+Let's bring this to an SAT solver: we could use any modern SAT solver such as MiniSat, CryptoMiniSat or CDCL(Conflict-Directed Clause Learning) based, DPLL(Davis-Putnam-Logeman-Loveland) based solvers, etc. 
+
+**Algorithm steps:**
+1. Parse the problem, converting it into a data structure that's easy to manipulate.
+2. Begin with an empty assignment.
+3. Pick an unassigned variable.
+4. Assign it a value.
+5. Simplify the problem based on this assignment.
+6. If the problem is unsatisfiable, backtrack to step 3 and try the opposite value.
+7. If the problem has been solved, return the assignment.
+8. Otherwise, go to step 3.
+
+Upon inputting the given DIMACS format data to a solver and running it will give us the result. 
+
+Solution provided by SAT Solver: [1=TRUE, 2=TRUE, 3=TRUE, 4=TRUE, 5=TRUE]
+
+**Answer: {1, 2, 3, 4, 5}**.

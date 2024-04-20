@@ -1,0 +1,40 @@
+To solve this SAT problem, we use the method of Iterative Boolean Satisfiability(SAT) solving. We sequentially choose the variable that appears most frequently in unsatisfied clauses and assign value to it.
+
+The given SAT problem has 5 variables and 20 clauses. Let's understand few things about the DIMACS format:
+
+- Each clause ends with '0' 
+- 'p cnf 5 20' denotes a propositional conjunctive normal form with 5 variables and 20 statements or clauses.
+- If the variable appears as it is (positive), it represents 'true' occurrence of the variable in the clause and if it appears as negative, it represents a 'false' occurrence of that variable in the clause.
+
+Here's what we get from each clause:
+
+From clause 1: (!v1 OR v3 OR v4)
+From clause 2: (!v2 OR v5 OR !v1)
+From clause 3: (!v3 OR !v2 OR v4)
+From clause 4: (v5 OR v1 OR v2)
+From clause 5: (v5 OR v4 OR !v2)
+From clause 6: (v5 OR !v1 OR v4)
+From clause 7: (v5 OR v4 OR v1)
+From clause 8: (v4 OR v3 OR !v2)
+From clause 9: (!v2 OR v4 OR !v3)
+From clause 10: (v4 OR !v2 OR !v1)
+From clause 11: (!v3 OR v1 OR !v2)
+From clause 12: (v5 OR !v1 OR v4)
+From clause 13: (!v2 OR v4 OR !v5)
+From clause 14: (!v1 OR !v2 OR !v3)
+From clause 15: (v5 OR v4 OR v3)
+From clause 16: (!v2 OR v4 OR v5)
+From clause 17: (!v4 OR v5 OR !v2)
+From clause 18: (v4 OR !v1 OR v5)
+From clause 19: (!v3 OR v4 OR v5)
+From clause 20: (!v3 OR v5 OR !v2)
+
+We can solve this problem by using a SAT solver, which would run through each of these clauses and find an assignment for the variables.
+
+After applying the SAT solver, the answer would be:
+
+Answer: v1 = False, v2 = False, v3 = True, v4 = True, v5 = True. 
+
+This is a possible assignment which resolves all the clauses to True, making the entire CNF expression True.
+
+Please note: SAT problems are NP-complete, and given that this problem has a small number of variables it is feasible to solve by manually building the truth table or through simple iterative assignment, but for larger problems, using SAT solver software would be necessary. The answer can vary as multiple solutions may be acceptable.

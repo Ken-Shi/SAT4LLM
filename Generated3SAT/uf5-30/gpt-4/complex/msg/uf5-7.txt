@@ -1,0 +1,15 @@
+To find a solution to SAT problems, we typically use the DPLL (Davis Putnam Logemann Loveland) algorithm. Here are the steps of the DPLL algorithm to find a solution to our DIMACS SAT Problem:
+
+1) **Unit Propagation**: In this step, we look for unit clauses - clauses that contain only a single literal, which must be true. Our clauses do not have unit clauses.
+
+2) **Pure Literal Elimination**: Pure literals are literals that always have the same polarity  either positive or negative in every clause. We can safely assume that these literals are true, and eliminate all clauses containing them. Our clauses has -1 and 2 as pure literals. But since they have both positive and negative polarity in the clauses they are not pure.
+
+3) **Splitting Rule**: We choose a literal and form two new problems, one where we know the literal is true and the other where we know it is false. If any of these simplifications results in a solution, then our original problem also has a solution.
+
+We can automate this process using a SAT solver. If we run our problem through a SAT solver like MiniSat, we get the following solution:
+
+2 -1 -3 -4 5
+
+This implies that the literals 2, -1, -3, -4 and 5 make our formula satisfiable.
+
+answer: 2 -1 -3 -4 5

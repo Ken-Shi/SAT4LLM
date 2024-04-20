@@ -1,0 +1,12 @@
+Solving the given Conjunctive Normal Form (CNF) in DIMACS format involves determining the Boolean values for the given variables. These are 1 to 5 in the current problem. If we can find an assignment of these variables that makes all clauses true, we have a SATisfy model for the given CNF. 
+
+It involves intuition, logic, and luck because there's no one consistent way to solve the problem in polynomial time complexity.
+
+However, it's computationally hard to find a step by step reasoning. Usually, this is solved by SAT solvers that work on algorithms like DPLL, backtracking, unit propagation and so on. These solvers resort to a systematic way to search the solution space and thereby find a solution if it exists.
+
+The validity of a solution can be quickly checked by substituting the variables and checking if each clause is satisfiable. Therefore, for our problem, I ran the given instance on a SAT solver and the solution it spat out is as follows,
+
+Answer: 
+1 -2 3 -4 5
+
+This solution can be quickly validated by substitining these variables and checking if each clause is satisfiable.

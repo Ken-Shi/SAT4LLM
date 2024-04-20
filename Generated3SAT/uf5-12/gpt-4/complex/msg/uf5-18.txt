@@ -1,0 +1,42 @@
+First, let's explore what the problem is asking. This is a SAT(orary logic) problem where 5 represents the total number of variables(x1, x2, x3, x4, and x5), and 12 is the total number of clauses. Each line after 'p cnf 5 12' is a clause where a variable's sign is positive if it is not negated and negative if it is negated. ending '0' in each clause denotes the end of each clause.
+
+First we will list out the 12 clauses: 
+
+1) -x4 OR x1 OR x3 
+2) -x5 OR x4 OR x3 
+3) -x4 OR x2 OR -x5 
+4) x4 OR x3 OR x5 
+5) x1 OR x3 OR x2 
+6) -x2 OR -x5 OR x4 
+7) x4 OR x3 OR x1 
+8) x4 OR x5 OR -x3 
+9) x2 OR -x5 OR x4 
+10) x1 OR -x5 OR x4 
+11) x3 OR x5 OR x2 
+12) -x2 OR x4 OR x1 
+
+Next, we start analyzing the clauses to find a consistent assignment of truths that will satisfy all the clauses. We can derive the following facts from the list of clauses:
+
+Since (1) includes -x4 and (4) includes x4, we know that one of x1, x3 and x5 must be true.
+
+Since (2) includes -x5 and (8) includes x5, we know that one of x3, x4 and x1 must be true.
+
+Since (3) includes -x4 and (4) includes x4, we know that one of x2 and x5 must be true.
+
+From (6) and (9), we can decide that either -x5 or x4 must be true, but clause (4) has x4 OR x3 OR x5, which means x4 is false then either x3 or x5 must be true but again from (2) since -x5 is there x3 must be true.
+
+From clauses 7, 1 and 10 we can infer that x1= true.
+
+From clauses 7 and 9 x4 must be true. 
+
+From clauses 11 and 4 x2 must be false and based on (3) we have x5 is true.
+
+So, final values are 
+
+x1= true 
+x2= false
+x3= true 
+x4= true 
+x5= true 
+
+Answer: 1 -2 3 4 5

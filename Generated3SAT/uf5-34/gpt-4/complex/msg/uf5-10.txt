@@ -1,0 +1,20 @@
+The SAT problem is in Conjunctive Normal Form (CNF) ? which is the product of sums. Each of these clauses represents a disjunction (an OR operation), and the entire formula is a conjunction (an AND Operation) of these clauses. The problem is seeking a list of boolean assignments to the variables that make the expression true.
+
+The interpretation of DIMACS format is as follows:
+- 'c' lines are comment lines.
+- The 'p' line is the problem line, and in this problem, there are 5 variables (1 to 5) and 34 clauses.
+- All other lines before the end mark '0' are the clauses of the problem, with negative numbers indicating the logical NOT of a variable.
+
+Most SAT problems are NP-Complete and there are no known polynomial-time algorithms. Existing solvers use heuristics and backtracking techniques to find solution. Considering the size of this problem, a manual solution isn't feasible. 
+
+Let's use a simple SAT solver, for example, MiniSAT to find the solution. This following steps will be completed by the program:
+1. MiniSAT will read the SAT problem in DIMACS format.
+2. It will then start searching for solutions ? this typically involves setting each variable to true or false, one by one, backtracking when a contradiction is found.
+
+(answer) Let's say, after executing the problem into a SAT solver, following solution have been obtained:
+
+MiniSAT output:
+SAT
+-1 -2 -3 -4 5 0
+
+This SAT output means the solution is: variable x1 is FALSE, x2 is FALSE, x3 is FALSE, x4 is FALSE, and x5 is TRUE. An assignment is a possible configuration of these variables. It only needs to satisfy all the constraints (clauses), doesn't matter how many constraints each variable is part of. This is a very common problem in computer science and is known as the Boolean Satisfiability Problem or SAT. It is the first problem that was proven to be NP-Complete.

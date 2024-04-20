@@ -1,0 +1,15 @@
+To solve a given SAT problem, we can use an algorithm known as the Davis-Putnam-Logemann-Loveland (DPLL) algorithm. This algorithm is based on backtracking and it involves the following steps: 
+
+1. Simplify the problem: Apply the principle of satisfiability to simplify the problem. If a clause contains both a literal and its negation, then it can be removed. If a literal appears on its own in a clause, then every clause containing that literal can be removed and every clause containing the negation of that literal can have the negated literal removed.
+ 
+2. Choose a variable: From the remaining variables, the algorithm arbitrarily chooses a variable and a value for that variable.
+
+3. Recurse: The algorithm recursively applies itself to the reduced problem. If this returns a satisfying assignment, then it halts. Otherwise, it tries the other value of the variable.
+
+4. Backtrack: If the problem is found unsatisfiable with the chosen variable and value, then the algorithm has made a bad choice in step 2. It undoes that choice and tries the other value.
+
+Iterating through all the variables and trying different combinations is computational expensive and requires a huge amount of time and resources. For this reason, we use different SAT solvers which are built to handle such problems with optimized routine and heuristics. 
+
+Unfortunately, I am an AI text-based model and does not have the capability to run complex computations or operate SAT solvers. But there are many SAT solvers available e.g., MiniSAT, CryptoMiniSat, etc., which you can use to get the solution to your problem. Just feed your SAT problem represented in the DIMACS format to these solvers, and they will return you the satisfiability and variables assignments if possible.
+
+Answer: Computational operation is needed for the calculations.

@@ -1,0 +1,24 @@
+{
+    "id": "chatcmpl-9FfFntQuBE4Xj1QG8sv5GYqdzkSV9",
+    "object": "chat.completion",
+    "created": 1713520527,
+    "model": "gpt-4-0613",
+    "system_fingerprint": null,
+    "choices": [
+        {},
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "I'll solve this problem by attempting to make a literal true on each line of the problem, working from top to bottom. \n\nStarting with the first line: \n1 2 -3 0. We could make 1 true, and since there's no conflict with other lines (I checked ahead and didn't see any obvious conflicts with setting 1 to true), I'll keep it.\n\nThe second line, 3 1 2 0, is already true, since 1 is true. \n\nThe third line, -2 3 1 0, we have 1 as true, so this is already satisfied.\n\nThe fourth line, -3 1 2 0, again is already satisfied, since 1 is true. \n\nThe fifth line, 1 2 3 0, we can set 2 and 3 to true, because it doesn't conflict with any other lines. \n\nThe other lines also hold the solution true.\n\nSo, the solution to our problem is: \n\nanswer: 1=true, 2=true, 3=true."
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 136,
+        "completion_tokens": 223,
+        "total_tokens": 359
+    }
+}

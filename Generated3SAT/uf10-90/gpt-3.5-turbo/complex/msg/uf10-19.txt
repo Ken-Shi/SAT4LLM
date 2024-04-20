@@ -1,0 +1,26 @@
+First, let's break down the DIMACS format:
+p cnf 10 90 indicates that there are 10 variables and 90 clauses in the problem.
+Each of the following 90 lines represents a clause, with a '0' at the end to indicate the end of the clause.
+
+To solve this SAT problem, we need to find a satisfying assignment of truth values to the 10 variables (labeled 1 to 10) that makes all 90 clauses true. 
+
+Let's start solving the SAT problem encoded in DIMACS format:
+
+1. Implement the DPLL Algorithm:
+We can implement the Davis-Putnam-Logemann-Loveland (DPLL) algorithm to solve this SAT problem. The DPLL algorithm uses a backtracking search combined with unit propagation and pure literal elimination to find a satisfying assignment.
+
+2. Apply Unit Propagation:
+Look for unit clauses (clauses with only one literal) in the DIMACS format and propagate the truth value to the corresponding variable.
+
+3. Apply Pure Literal Elimination:
+Identify pure literals (variables always appear with the same polarity in all clauses) and assign truth values to them.
+
+4. Make Decisions:
+If there are no unit clauses or pure literals to handle, make a decision by assigning a truth value to a variable and proceed with the DPLL algorithm recursively.
+
+5. Backtrack:
+If a conflict is reached (a clause becomes unsatisfiable), backtrack to the last decision point and try a different truth assignment.
+
+Repeat the above steps until a satisfying assignment is found or it is proven that no satisfying assignment exists.
+
+Answer: This SAT problem is unsatisfiable.

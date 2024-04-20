@@ -1,0 +1,30 @@
+This SAT problem includes three variables and seven clauses (also referred to as conjunctions).
+Here is a mapping of variables: x1 = 1, x2 = 2 and x3 = 3.
+
+First, a clause-by-clause analysis:
+
+1. -2 -1 -3 0: This clause indicates that at least one of x2, x1 or x3 must be FALSE.
+2. -3 2 -1 0: This clause indicates that at least one of x3, x2 or x1 must be FALSE.
+3. 2 -3 -1 0: This clause indicates that at least one of x2, x3 or x1 must be TRUE.
+4. -3 2 -1 0: This is a repetition of the 2nd clause.
+5. 3 2 -1 0: This clause indicates that at least one of x3, x2 or x1 must be TRUE.
+6. -3 1 2 0: This clause indicates that at least one of x3, x1 or x2 must be FALSE.
+7. -1 2 -3 0: This clause indicates that at least one of x1, x2, or x3 must be FALSE.
+
+Next, we have to look at possible combinations that satisfy all these clauses (i.e., all of them being true).
+
+The clauses basically tell us that we cannot have ALL variables (x1, x2, x3) be true (1st clause) or false (3rd clause).
+
+A possible combination that satisfies all the clauses is x1 = False, x2 = True, and x3 = False. If we substitute these values into each clause, we can see that every clause may be fulfilled:
+
+1. -x2 -x1 -x3 0: False
+2. -x3 x2 -x1 0: True
+3. x2 -x3 -x1 0: True
+4. -x3 x2 -x1 0: True
+5. x3 x2 -x1 0: True
+6. -x3 x1 x2 0: True
+7. -x1 x2 -x3 0: True
+
+This means that the proposed solution is viable that is x1=False, x2=True, and x3=False
+
+Answer: x1=False, x2=True, x3=False

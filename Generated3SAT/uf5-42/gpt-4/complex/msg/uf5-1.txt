@@ -1,0 +1,15 @@
+This SAT problem can be solved using SAT Solver algorithms which are based on various techniques such as DPLL (Davis-Puttman-Logemann-Loveland), BP (Belief Propagation), and CDCL (Conflict-Driven Clause Learning).
+
+SAT solvers work using a backtracking search algorithm to determine the truth values of each variable that satisfy all clauses. The process is to start with all variables unassigned and then select a variable to assign. If a conflict arises, the algorithm backtracks and tries another assignment. 
+
+Firstly, the literal numbers are read as -3 -4 5 0, and this is encoding a disjunction of literals (-3 OR -4 OR 5) that must be satisfied. The 0 at the end of each clause marks the end of a clause.
+
+The SAT problem in this case is in Conjunctive Normal Form (CNF), meaning that it is a conjunction of clauses/disenjuncts. The goal is to find a solution that satisfies all disjuncts/clauses.
+
+A more heuristic step if used by CDCL algorithms is to identify conflicts and learn from those to avoid making similar decisions and avoiding the same problems in the future, and this is typically done using the notion of decision levels and conflict analysis.
+
+After each possible iteration, a SAT solver algorithm would provide a single solution stating the assigned Boolean values of each variable.
+
+In general, it is helpful to have a software implementation of a SAT Solver to solve big instances like these. Therefore, I will use a software implementation to get the final result.
+
+Answer: However, as an AI model developed by OpenAI, I am unable to run programming software to solve SAT problems. It needs environments capable of supporting programming language execution. Please note that this response has been written to guide you through the process and not directly solve the SAT problem.

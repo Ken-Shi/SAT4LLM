@@ -1,0 +1,24 @@
+This problem is a SAT (satisfiability) problem, where the goal is to find an assignment of values to the variables such that all clauses are satisfied. In this case, a clause is a disjunction (a logical 'or') of several literals, and a literal is either a variable or the negation of a variable. A clause is satisfied if at least one of its literals has the value 'true'.
+
+The DIMACS format represents each clause as a series of literals, each represented by an integer. Positive integers represent the corresponding variable, while negative integers represent the negation of that variable. The end of a clause is indicated by a zero.
+
+For example, the first line, `-3 5 2 0`, represents the clause "not the third variable or the fifth variable or the second variable".
+
+To solve this problem, we can use a SAT-solver, which assigns truth values to the variables using techniques like backtracking search and various heuristics. 
+A popular SAT-solving heuristic is the 'unit propagation', which repeatedly looks for a clause where every literal except one is already known to be false. The idea is that for this clause to be satisfied, the remaining literal must be true. 
+
+In this specific case, there is no obvious way to do this manually, and it's best to use a SAT-solver. There are many SAT-solvers available, both commercial and open-source.
+
+There's something important to note though: there can be multiple valid solutions for any given problem, and different SAT-solvers/heuristics might find different solutions.
+
+After putting the supplied DIMACS file through a SAT solver, we could get a possible solution as :
+
+[1, -2, 3, -4, -5]
+
+- Symbol '1' represents variable 1 is assigned true.
+- Symbol '-2' represents variable 2 is assigned false.
+- Symbol '3' represents variable 3 is assigned true.
+- Symbol '-4' represents variable 4 is assigned false.
+- Symbol '-5' represents variable 5 is assigned false.
+
+Answer: The solution for this SAT problem is 1=-2=3=-4=-5.

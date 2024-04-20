@@ -1,0 +1,26 @@
+To solve an SAT problem, a SAT solver is typically used. The solver attempts to find an assignment to the variables in an expression such that the expression evaluates to True. In this type of problem, we have clauses (a disjunction of literals) and the aim is to find an assignment to all variables such that all the clauses are true. 
+
+Let's opt to simplify this SAT problem manually. 
+
+We need to satisfy the clauses in the DIMACS format including at least one literal from each clause. We could start by assigning the variable value that appears the most in the clauses. For this problem, "-1", "-2", "-3", "-4" and "5" seem to appear frequently. 
+
+Let's start by trying client instances:
+
+For instance, we can satisfy the first clause by setting variable 5 (5) to True, variables 2 (-2) and 3 (3) or we can set variables 2 and 3 to False and variable 5 to True so as to not contradict later clauses.
+
+For the next clause, variables 4 (-4) and 5 (-5) can be set to False, and variable 3 (3) can be set to True.
+
+We continue this process, iteratively assigning variables such that they make as many clauses true as possible. 
+
+NOTE: This manual approach does not guarantee the optimal solution, which can only be assured by using a SAT solver.
+
+If we follow the above process and continue with subsequent clauses, we get:
+
+(Answer may vary based on the order of clause inspection, and the strategy used)
+- Variable 1(-1) to False 
+- Variable 2(-2) to False 
+- Variable 3(3) to True
+- Variable 4(-4) to False 
+- Variable 5(5) to True
+
+answer: [False, False, True, False, True]

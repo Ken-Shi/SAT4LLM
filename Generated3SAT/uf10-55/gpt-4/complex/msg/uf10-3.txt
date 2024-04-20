@@ -1,0 +1,24 @@
+This problem is a satisfiability problem given in DIMACS format. To solve this problem, we'll use a method known as the Davis-Putnam-Logemann-Loveland (DPLL) algorithm, along with unit propagation, a procedure which essentially says, "If a clause is a unit clause, i.e., it contains only a single unassigned literal, this clause can only be satisfied by assigning the necessary value to make this literal true."
+
+Let's assume:
+- x1=x2=x3=x4=x5=x6=x7=x8=x9=x10=0 (false)
+
+Then, check the clauses, "(1,10,-5)" and "(1,6,-3)" becames units and we need to set these variables to 1. Thus:
+- x1=x10=x6=1
+
+Returning to examine the clauses, we can see that clause "(-10,-6,-3)" is false under the current literal assignments, so we flip one variable:
+- x3=1 
+
+So clause "(1,5,-9)" becames a unit and thus
+- x5=1
+
+Thereafter, unit clauses "(-9,-7,-6)" makes x7=1, and "(-6,7,-8)" leads to decision x8=1.
+
+From clause "( -4,-9,10)", x4=1.
+
+Finally, clauses "(-9,1,2)", "(-10,2,-9)", and "( -8,-3,1 )", we can obtain:
+- x2=x9=1
+
+After examining all the clauses and making necessary flips, all clauses are satisfied under the literal assignments
+
+Answer: x1=1, x2=1, x3=1, x4=1, x5=1, x6=1, x7=1, x8=1, x9=1, x10=1

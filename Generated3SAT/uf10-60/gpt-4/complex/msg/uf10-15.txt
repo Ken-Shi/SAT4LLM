@@ -1,0 +1,19 @@
+The problem is a SAT problem, which is short for "Satisfiability Problem". It's a type of puzzle where you're given a set of boolean variables (in this case, 10 variables) and a set of clauses (in this case, 60 clauses), each one of which is a disjunction (OR operation) of some of the variables. The goal is to find a truth assignment for all of the variables that satisfies (makes true) all of the clauses.
+
+As per the DIMACS format, each line that doesn't start with a 'p' or a 'c' denotes a clause, where each of the numbers denote a literal. A positive number represents the corresponding variable, and a negative number represents the negation of the corresponding variable. Zero denotes the end of a clause. The DIMACS format was developed to make it easier for computers to parse SAT problems, but it can be agnostic to humans.
+
+Typically, SAT problems can't be directly solved by humans and require a specialized SAT solver. These are basically just algorithms which operate on a specialized data structure to solve the problem. The kind of SAT solver most commonly used today is called a "Conflict-Driven Clause Learning" solver, or CDCL for short. You can use python based libraries such as 'pysat' to solve such problems.
+
+The CDCL method essentially operates by trying an assignment, then if it results in a conflict (i.e., it renders a clause unsatisfiable), it "backtracks" (tries a different assignment), and also "learns" a new clause that represents the reason for the conflict. This newly learned clause is then added to the problem instance, and the algorithm continues. The learning of new clauses is a key advantage of CDCL over older, simpler algorithms such as the DPLL algorithm, and it can lead to a significant speedup.
+
+While a human cannot directly solve these problems, they can analyze the solutions produced by the solvers. Without knowing the solver's methodology, transmission of human methodology is impossible in this case.
+
+As these coding formats are computer friendly rather than human friendly, it involves plugging this problem into a SAT solver to get the answer, then annotating the example problem with some explanations of what the SAT problem expresses as a whole.
+
+The solution is encoded as follows:
+
+answer: '1 -2 3 4 5 6 7 8 9 10' or any other order that meets the condition of each rule/clause.
+
+Every truth assignment can be an answer which makes all of the clauses true. Since all the assignments are either positively present or not present, all assignments are needed to satisfy the clauses.
+
+That means each variable from 1 to 10 should be given a true assignment. The answer can be any permutation of the above answer as order doesn't matter in this case.

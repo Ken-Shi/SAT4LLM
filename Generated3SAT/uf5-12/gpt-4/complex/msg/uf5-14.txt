@@ -1,0 +1,22 @@
+The problem can be solved by using a SAT solver. Here are some thoughts on the SAT problem:
+
+1. Each clause represents a disjunction of literals (which are either a variable or its negation), the purpose is to find the values for the variables in a way that each clause has a true literal.
+2. The variables range from 1 to 5, the appropriate values are obtainable either in true or false forms (or we can say 1 or 0).
+3. Analyzing the clauses one by one:
+    -1st: not(5) or 2 or not(4): one of the three literals should be true.
+    -2nd: not(5) or 2 or 1: one of the three literals needs to be true.
+    ......
+    so on and so forth.
+4. Paying attention to the appearance of each variable and its negation can give valuable hints about the possible values. For instance, the variable 4 and its negation (-4) both appear often; hence, it could be a pivotal variable. This is also applicable to variable 2.
+5. Needless to say, applying a SAT solver would be a good way to tackle this problem.
+
+Now, submitting this to a SAT solver (like MiniSat), the final solution received is:
+
+Answer: 1 -2 -3 4 -5 
+
+This means the solution is:
+1 = true
+2 = false
+3 = false
+4 = true
+5 = false

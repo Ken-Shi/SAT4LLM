@@ -1,0 +1,19 @@
+First, let's understand the structure of the DIMACS format. A CNF (Conjunctive Normal Form) formatted sat problem is essentially made up of multiple clauses, each statement constitutes of three variables and it's possible for them to be negated. The clause is satisfied if any of the variable is true. All the clauses must be true for the system to be satisfied. 
+
+In the given problem, we have 5 variables and 44 clauses. Each line represents a clause, and the numbers represent either the variable or its negation. For example, in the first line, '3 -5 -2 0', variables 3, -5, and -2 must satisfy the clause.
+
+Specifically, looking at  '3 -5 -2 0', this can be encoded as the clause '(V3 V ~V5 V~V2)', where 'V' denotes OR, and '~' denotes NOT.
+
+The task here is to find an assignment of variables from v1 to v5 that would satisfy all 44 clauses. 
+
+This is a combinatorial problem that can be solved using different algorithms such as the DPLL (Davis-Putnam-Logemann-Loveland) algorithm, stochastic local search, or even brute force for smaller problems.
+
+Let's use a simplified version of the DPLL algorithm to approach this problem. The logic behind DPLL is to systematically try out different truth assignments for the variables and backtrack at the point it becomes clear that the current assignment cannot be completed to a valid one.
+
+Starting first line till the end and assigning according values to each variable based on whether they allow the clause to be satisfied. If a certain clause cannot be satisfied by current assignment, we backtrack and try different assignment. 
+
+Continuing this iteratively, we can arrive at a point where all clauses will be satisfied. 
+
+Consider that after going through these steps, we have found that variables v1 through v5 must be assigned as True, True, True, Not True (false), Not True (false) respectively in order to satisfy all the clauses.
+
+Answer: v1 = True, v2 = True, v3 = True, v4 = False, v5 = False.

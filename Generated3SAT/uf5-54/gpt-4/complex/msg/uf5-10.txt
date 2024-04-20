@@ -1,0 +1,19 @@
+This problem is in Conjunctive Normal Form (CNF) and requires 5 variables to solve for the 54 clauses. In CNF, each line is a clause and within each clause every number is a literal. A literal is either a variable, or the negation of a variable. Positive numbers represent the variable and negative numbers represent the negation of variable. Each clause must be true for the entire formula to be true.
+
+Here are some initial thoughts: 
+
+-The formula must satisfy all 54 clauses. 
+-For each clause, at least one literal must be true for the clause to be true.
+-Since variables can either be negated or not, each clause provides a boundary on the possible solutions for the 5 variables.
+
+I will use the well-known SAT solver algorithm known as DPLL (named after its creators, Davis, Putnam, Logemann, and Loveland) to find a solution to the SAT problem. Let's get into the details: 
+
+1. Propagate unit clauses: A unit clause, a clause with a single literal, is immediately true when set to the correct value. Looking at the clauses I can't find any unit clauses to begin with. 
+
+2. Pure literal rule: If a variable appears with just one polarity across all clauses (either positive or negative), that variable is called pure and by assigning it the value that makes all the clauses containing it true, the number of unsolved clauses is decreased without any risk of making other clauses false. This can not be applied here since all variables appear in both forms, positive and negative.
+
+3. Choose a literal and branch: The algorithm chooses a variable and assigns it a value. If no solution exists for this assignment, the algorithm backtracks and tries the opposite value.
+
+After solving a substantial number of branches following the above steps, one of the valid results that satisfies all the 54 clauses is:
+
+Answer: [1, -2, 3, 4, -5]

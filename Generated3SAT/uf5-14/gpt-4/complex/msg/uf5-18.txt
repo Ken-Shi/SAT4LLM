@@ -1,0 +1,38 @@
+Firstly, let's understand the DIMACS format you presented. It is a way to write Description Logic problems in a standard way that different programs can understand.
+
+The first line specifies that we have five variables (called literals in SAT, and they can be either true or false) and fourteen clauses (a clause is a disjunction of literals). 
+
+Then, each clause is written on a new line. A positive number represents the corresponding variable, and a negative number represents the negation of the variable. Each line ends with a zero.
+
+Here are the clauses from the SAT problem:
+
+1) (x4 v x1 v x3)
+2) (~x1 v ~x3 v x2)
+3) (x4 v ~x1 v x3)
+4) (x2 v ~x1 v x4)
+5) (~x4 v x2 v x5)
+6) (x4 v x2 v x5)
+7) (~x1 v x5 v ~x3)
+8) (x3 v ~x5 v x4)
+9) (x5 v x2 v ~x1)
+10) (x1 v x3 v x2)
+11) (~x5 v ~x2 v x4)
+12) (x1 v x5 v x3)
+13) (x2 v x4 v x3)
+14) (x5 v x3 v x2)
+
+From the clauses, some simple truths can be surfaced:
+
+From clause 1), x4 must be true because there's no other negative appearance of x4 amongst the rest of the clauses. This also resolves clause 3, 6, 8, 13.
+
+With x4 being true, from clause 5, x2 must also be true in order to satisfy the clause. This also resolves clause 4, 9, 14.
+
+Then if we check clause 2, it is automatically satisfied because x2 is true.
+
+Following up in clause 7, it indicates ~x1 v x5 v ~x3. Since x1 and x3 don't otherwise appear in a negative clause, we can make both the negations false, which means x1 and x3 are true. This also resolves clause 10, and 12.
+
+From clauses 11 we can see that x5 is true because as x4 and x2 are true then ~x5 can't be true.
+
+So, summarising, the values are: x1 = True, x2 = True, x3 = True, x4 = True, x5 = True.
+
+Answer: 1 2 3 4 5

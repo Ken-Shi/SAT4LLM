@@ -1,0 +1,21 @@
+The given problem is a Boolean formula in Conjunctive Normal Form with 3 variables and 2 clauses. The formula is:
+
+(2 v 3 v ~1) ? (3 v ~1 v 2)
+
+or in other words:
+
+((x2 or x3 or not x1) and (x3 or not x1 or x2))
+
+The positive value of a variable (such as 2) indicates the true state of the variable (x2 is true) and the negative value (-1) indicates the false state of the variable (x1 is false or "not x1").
+
+Each line in a DIMACS format represent one OR clause and the entire problem represents each clause connected by AND. The goal is to find an assignment of truth values to the variables that satisfy all the clauses in the formula.
+
+Let's start with the second clause (3 v ~1 v 2). If x3=true (or 3), the clause is satisfied. Likewise, if x1=false (or ~1) OR if x2=true (or 2), this clause can again be satisfied.
+
+Next, looking at the first clause (2 v 3 v ~1), with the previous assignment of 3 to be true, 2 to be true and 1 to be false, this clause would be satisfied.
+
+Therefore, all clauses can be satisfied with these assignments: x1=false, x2=true, x3=true. Note: The other possible valid assignment is x1=true, x2=false, x3=false according to De Morgan's laws.
+
+It's important to remember that SAT problems may have more than one valid solution, so the goal is only to find one possible solution that satisfies the problem.
+
+Answer: x1=false, x2=true, x3=true.

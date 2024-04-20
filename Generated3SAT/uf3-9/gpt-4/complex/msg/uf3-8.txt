@@ -1,0 +1,22 @@
+This DIMACS format represents the SAT problem in conjunctive normal form (CNF). Each line after `p cnf 3 9` represents a disjunction of literals (variables or their negations). The total number of variables ('3' in `p cnf 3 9`) are `1`, `2`, and `3` and there are 9 clauses in the CNF.
+
+The CNF corresponding to given DIMACS format is:
+(3 ? 1 ? 2) ? 
+(1 ? 2 ? ?3) ? 
+(?2 ? 1 ? ?3) ? 
+(?3 ? 1 ? 2) ? 
+(1 ? 2 ? ?3) ? 
+(1 ? 2 ? ?3) ? 
+(1 ? 2 ? ?3) ? 
+(?1 ? 2 ? ?3) ? 
+(?3 ? 2 ? 1)
+
+The parentheses are indicative of AND operators, while the operands without parentheses are OR'd together within each clause. The SAT problem is satisfied when all of the disjunctions (operands without parentheses) are true.
+
+Let us consider a possible solution as `1=true, 2=true and 3=true`. It satisfies the first clause (3 ? 1 ? 2) as 3 is true. It does not satisfy the second clause because although `1` and `2` are true, `3` is falsely negated, making the whole clause false.
+
+The solution for given problem can be `1=true, 2=true and 3=false` because it satisfies all the clauses. Another solution is `1=false, 2=true and 3= false` as it also satisfies all the clauses.
+
+However, the exact solution may vary because the SAT problem may have multiple solutions. For instance, the values that satisfy a particular CNF may not necessarily satisfy another CNF, even though they both may be generated from the same set of variables.
+
+Answer: `1=true, 2=true, 3=false` or `1=false, 2=true, 3= false`

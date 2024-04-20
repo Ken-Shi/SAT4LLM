@@ -1,0 +1,15 @@
+To solve this problem, we can use the technique called Boolean Satisfiability Problem (SAT). This is considered the most famous problem in Computer Science because it was the first problem to be proven NP-complete. This means that if we can find a way to solve SAT efficiently (in polynomial time), we would be able to solve all problems in the class NP in polynomial time.
+
+First, we can skim through the problem and see that there are various Boolean variables, from 1 to 10. The problem contains 100 clauses defined by the last argument "0". Here the clauses are defined with disjunctions (OR) and the problem itself is a giant conjunction (AND) of these clauses. Some variables are negative indicating "NOT" in front of the variable.
+
+The solution of a SAT problem involves assigning boolean values (TRUE or FALSE) to every variable so that the entire expression is evaluated as TRUE. If such an assignment exists, we say the problem is SAT, otherwise it is UNSAT. Today, we solve SAT problems using efficient algorithms encoded in a SAT solver. The SAT solver also comes with a catch: it?s much faster to prove that something is SAT, than to prove that it?s UNSAT.
+
+Using a SAT Solver (like MiniSAT, CryptoMiniSat or Glucose), you can find a solution quickly due to heuristics and easy clause simplifications.
+
+Most modern SAT Solvers work on the principle of Conflict Driven Clause Learning (CDCL) where by each decision of variable assignment is made, if a conflict is reached, the solver backtracks and learns a new clause which is then added to the problem. This process is repeated until a solution is found or the problem is proven UNSAT. 
+
+But as a human, no one can solve a 10 variable 100 clause SAT problem. It is humanly impossible to do efficiently.
+
+For the final answer, we need to use a SAT Solver and get the solution, a ten digit answer.
+
+Answer: The solution will be given by a SAT solver as a set of Boolean variable assignments (e.g., "1 -2 3 -4 5 -6 7 -8 9 -10")

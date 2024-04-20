@@ -1,0 +1,13 @@
+This problem is an instance of the Boolean satisfiability problem (SAT) which is represented in the DIMACS format. There have been many heuristic search algorithms that are developed to solve SAT problems, such as DPLL algorithm, WalkSAT, stochastic algorithms, etc.
+
+The given problem is encoded with '3' variables and '3' clauses. The first clause (3 1 -2) can be interpreted as (X3 OR X1 OR NOT X2), the second one (3 1 -2) as (X3 OR X1 OR NOT X2), and the last one (3 -2 -1) as (X3 OR NOT X2 OR NOT X1).
+
+The key to solving SAT problems is to find assignments that satisfy all clauses. There are many ways to assign variables. 
+
+We can try to start from clause 1 and clause 2, which are the same. You can see in the clause that the NOT Symbol '- ' is in front of variable 2, which means that variable 2 needs to be false to make the clause true. Also, since the clause is OR'd, you can either make variable 1 or 3 as true to make the clause true.
+
+Clause 3 has NOT X2 and NOT X1. We've already assigned X2 as false, now we make X1 to be false to satisfy this clause and also X3 needs to be true because of the OR in the clause.
+
+Thus, the assignment of X1 = false, X2 = false, and X3 = true will satisfy all the clauses given.
+
+Answer: X1 = False, X2 = False, X3 = True

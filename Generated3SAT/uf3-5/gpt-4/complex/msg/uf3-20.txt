@@ -1,0 +1,23 @@
+The DIMACS CNF format is a way of encoding Boolean expressions (expressed in conjunctive normal form) for use with various algorithms that requires SAT-Solving techniques.
+
+Here we see there are 3 variables and 5 clauses.
+
+Take a look at first 2 clauses:
+-2 -1 3 0
+-2 -1 -3 0
+
+First clause says (-2 OR -1 OR 3) and the second (-2 OR -1 OR -3) should be true (0 in this format is the end of clause marker). 
+
+Looking at these two clauses you can see that both will be satisfied if -1 is true (-1 equivalent is literal 1 being false). Also, we have enough information now to satisfy this SAT problem (without looking at the rest of the clauses) because the literals 2 and 3 are only dependent on literal 1 to be false.
+
+But let's validate above assumption by looking at the remaining clauses:
+
+Third clause: [-3, -1, 2] can be read as (not 3 or not 1 or 2). This is true if -1 is true.
+
+Fourth clause: [-2, 3, -1] can be read as (not 2 or 3 or not 1). This is true if -1 is true.
+
+Fifth clause: [-3, -1, -2] can be read as (not 3 or not 1 or not 2). This is true if -1 is true.
+
+We would still need to look at other clauses and consider multiple possible combinations in a more complex problem, but in this case, setting the variable 1 to false (or -1 to true) makes all the clauses true. 
+
+Answer: {1=False, 2=Free, 3=Free}

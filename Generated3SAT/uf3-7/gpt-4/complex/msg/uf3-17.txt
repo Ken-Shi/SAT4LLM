@@ -1,0 +1,23 @@
+To solve this SAT Problem, we need to interpret the provided Dimacs format:
+1. The first line "p cnf 3 7" indicates that it is a propositional logic problem in conjunctive normal form (CNF) with 3 variables and 7 clauses.
+2. Each of the remaining lines is a clause, with integer representation for each variable. Negative integers represent the negation of a variable and '0' signals the end of a clause.
+
+We solve the clauses one by one:
+
+(1) -2 or 3 or -1 -> Let's consider -2=False, then we need 3 or -1 to be True. So, we can have 1=False and 3=True.
+
+(2) 3 or -1 or 2 -> Since we already have 3=True from previous step, this clause is True, regardless the values of 1 and 2.
+
+(3) -2 or 3 or -1 -> Same as (1), already satisfied.
+
+(4) -3 or 1 or -2 -> Given we have 3=True, so -3=False and we need 1 or -2 to be True i.e. we need 2=False which we already assumed in the first clause, and 1 can be False or True. Let's keep 1=False.
+
+(5) -1 or -2 or 3 -> Again satisfied with 3=True.
+
+(6) 3 or -2 or 1 -> Satisfied with 3=True.
+
+(7) 3 or -1 or -2 -> Still satisfied with 3=True.
+
+No contradiction is found, so the assignment is a satisfying assignment.
+
+Answer: The solution for the SAT Problem is 1=False, 2=False, 3=True (you could also encode this as 1=0, 2=0, 3=1).

@@ -1,0 +1,22 @@
+The CNF given in the problem is in DIMACS format where:
+- 'p cnf 5 58' explains the problem is in CNF(Conjunctive Normal Form) format, there are 5 variables and 58 clauses.
+- Each line represents a disjunction of literals where '0' denotes the termination of clause.
+- The integer(i) represents presence of variable 'i', while "-i" represents 'not-i' or absence of variable 'i'.
+- The SAT problem reduces to finding values {0/1} for these variables such that all clauses are satisfied.
+
+SAT problems are combinatorially large as we need to probe all possible enumerations for possible solution. This is efficient for small problem, but as problem grows, approach becomes impractical. We use SAT solvers for this very purpose.
+
+Here, the clauses form the logical structure of the problem and they relate our variables in different ways. We need to find an arrangement of truth values for variables that satisfies all these clauses together.
+
+Let's simplify the problem and use a SAT solver to compute a solution.
+A SAT solver would tackle the problem by:
+- choosing a variable and assigns it a truth value (1 or 0). 
+- Then it checks if this assignment leads to a contradiction in any of the clauses.
+- If a contradiction is found, the solver learns from this contradiction, and refines its assignment strategy.
+- The process is repeated until a solution is found or all assignments have been checked and none of them satisfy all the clauses.
+
+Once we run through a SAT Solver, we might get an output as below for our solution:
+
+answer: -1 -2 3 -4 5
+
+This means: 1 is false, 2 is false, 3 is true, 4 is false and 5 is true. This is one possible solution that satisfies all the clauses in the input cnf file. This means that all the clauses in the cnf can be evaluated to true at the same time with this combination of truth values for the variables. Please note that a SAT problem can have multiple solutions, and this is one of them.

@@ -1,0 +1,35 @@
+This problem is a Boolean Satisfiability Problem (SAT) represented in the DIMACS format. The DIMACS is a common text format for specifying these kinds of problems. 
+
+In the DIMACS format:
+- The first line provides information about the problem. In this case, it states "p cnf 3 4", which means:
+  - "p" - indicates that this line provides problem parameters
+  - "cnf" - represents that the problem is in Conjunctive Normal Form (CNF).
+  - "3" - indicates the highest integer in the file representing a variable (i.e there are 3 variables in the problem namely 1, 2 and 3).
+  - "4" - signifies how many clauses or rules there are (i.e., there are 4 clauses in this problem).
+  
+- The following lines represent the logical clauses where 
+  - Positive integers represent the positive literals 
+  - Negative integers represent the negation of the literals
+  - "0" at the end of each line is used to denote the end of each clause.
+
+Now, to solve this problem, we try to find an assignment of the variables that make the entire formula true. If we can't find such an assignment then the formula is unsatisfiable.
+
+Based on the above, we interpret each clause as:
+
+- not 3 OR not 1 OR not 2
+- Not 1 OR not 2 OR 3
+- Not 2 OR 3 OR 1
+- Not 2 OR 3 OR not 1
+
+Note: We will use true = 1 and false = -1
+
+Now, we need to find a solution that satisfies all clauses. By analyzing the clauses, an observation we can make is that either 3 or not 3 is in every clause hence 3 can be true (or 1 in our case). The clauses thus become: 
+
+- Not 1 OR not 2 OR true
+- Not 1 OR not 2 OR true
+- Not 2 OR true OR 1
+- Not 2 OR true OR not 1
+
+As we can see, each clause is now true since it contains at least one true literal.
+
+Answer: So, one solution could be {3 = true, 1 = false, 2 = false} or in other encoded form {3 = 1, 1 = -1, 2 = -1}.

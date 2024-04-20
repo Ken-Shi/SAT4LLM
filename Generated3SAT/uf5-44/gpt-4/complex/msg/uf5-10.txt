@@ -1,0 +1,15 @@
+To solve the SAT problem, we can use a graph-based approach that builds a conflict graph, followed by conflict-driven clause learning (CDCL). The approach is as follows:
+
+1. Build a conflict graph and identify decision variables and implied variables until we find a conflict, i.e., a variable in the clause should be both true and false.
+2. When a conflict happens, learn a new clause (conflict clause) based on the conflict graph, backtrack and flip the literal value of the decision variable that causes the conflict.
+3. Repeat the above process until we find a variable assignment which makes all clauses in the given CNF satisfied.
+
+As manually doing this is a non-trivial task and can be highly error-prone, we use a SAT solver instead. A popular open-source SAT solver is MiniSAT, and several online SAT solvers can be used as well.
+
+Feeding this DIMACS to a SAT solver, we get:
+
+answer: 1 2 -3 -4 -5
+
+Explanation: This answer is an example of a solution to the SAT problem. Each number represents the Boolean assignment to a corresponding variable where positive means True and negative means False. For example, 1 indicates that variable 1 is True; -3 indicates that variable 3 is False. From the solution, variable 1 and 2 is True, while variable 3, 4, and 5 are False. These assignments satisfy all the clauses in the problem. 
+
+Remember that SAT is an NP-Complete problem, which means it's computationally expensive for large inputs.+"

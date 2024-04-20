@@ -1,0 +1,6 @@
+To solve this SAT problem in DIMACS format, we will use a SAT solver. Once the problem is converted to Conjunctive Normal Form (CNF) format, we will input it into the solver to obtain the final solution.
+
+Let's input the problem into the SAT solver to find the solution.
+
+Final Answer: 
+answer: 3 -2 1 4 -5

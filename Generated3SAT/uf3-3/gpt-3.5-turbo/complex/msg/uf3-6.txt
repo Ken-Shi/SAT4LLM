@@ -1,0 +1,25 @@
+To solve this SAT problem, we first need to analyze the DIMACS format given:
+
+p cnf 3 3
+-3 -2 1 0
+-2 1 -3 0
+-2 1 -3 0
+
+The first line indicates that there are 3 variables and 3 clauses in this SAT problem. 
+The clauses are:
+1. Clause 1: -3 -2 1 (meaning NOT x3 OR NOT x2 OR x1)
+2. Clause 2: -2 1 -3 (meaning NOT x2 OR x1 OR NOT x3)
+3. Clause 3: -2 1 -3 (repeated clause)
+
+We can simplify the clauses by removing the repeated one, giving us:
+1. -3 -2 1
+2. -2 1 -3
+
+Now, let's try to find a solution by assigning values to the variables:
+Let's assume x1 = True, x2 = False, and x3 = False:
+1. -3 -2 1 = -False -False True = True
+2. -2 1 -3 = -False True -False = True
+
+Therefore, our assignment x1 = True, x2 = False, and x3 = False satisfies all the clauses, making the SAT problem solvable.
+
+answer: x1=True, x2=False, x3=False.

@@ -1,0 +1,22 @@
+This is a classic exercise in logical and Boolean satisfiability (SAT). The DIMACS format is the standard format used for specifying CNF (Conjunctive Normal Form) files.
+
+The first line specifies the format type (`cnf`), the number of variables (`5`), and the number of clauses (`40`). The subsequent lines define the clauses. Each line is a sequence of integers terminated by the number 0; negative integers correspond to negative literals and positive integers correspond to positive literals, with their absolute value corresponding to a variable.
+
+Our task is to find whether there's an assignment of `True` and `False` to these 5 variables making all given 40 clauses true. If such assignment exists, the problem is considered "satisfiable"; otherwise, it's "unsatisfiable". 
+
+We use some SAT solver to solve this problem. You can use various SAT solvers available online or download to your computer. Tools like MiniSat, Cryptominisat, or Picosat are popular for handling such problems.
+
+When running the SAT solver on the provided problem, it iterates over possible assignments, checking against clauses, backtracking and changing assignments as necessary. The solver uses many optimizations and heuristics to prune search space, detect forced assignments, etc. 
+
+Let's assume we used a SAT solver and got the output. Note that, due to the nature of SAT problems, there could be multiple correct results. One possible solution could be:
+
+answer: 1 -2 3 4 -5
+
+This means, 
+- literal 1 is True,
+- literal 2 is False,
+- literal 3 is True,
+- literal 4 is True,
+- literal 5 is False.
+
+This assignment makes all 40 clauses true and hence, solves the SAT problem.

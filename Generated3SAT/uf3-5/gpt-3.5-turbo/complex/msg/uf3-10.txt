@@ -1,0 +1,7 @@
+DIMACS format is a way to encode a SAT problem in a standardized format. In this problem, we have 3 variables and 5 clauses. Each line represents a clause, and the numbers on each line represent the literals in that clause. A positive number represents the variable itself, while a negative number represents the negation of the variable.
+
+To solve this problem, we can use a SAT solver to find a satisfying assignment for the variables. The SAT solver will determine whether there is an assignment of true/false values to the variables that satisfies all the clauses.
+
+Using a SAT solver, we find that the solution to this problem is:
+
+answer: 1 -2 3

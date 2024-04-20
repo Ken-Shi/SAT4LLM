@@ -1,0 +1,33 @@
+The presented SAT problem is in Conjunctive Normal Form (CNF), which means it is a conjunction (AND operation) of several disjunctions (OR operation). Each number in the lines represents a literal and '0' denotes the end of a clause.
+
+Here are the general steps to solve the SAT problem:
+1. Convert DIMACS CNF notation to SAT formula (standard form).
+2. Solve the SAT problem.
+
+1. Convert DIMACS CNF notation to SAT formula:
+
+(-x2 v -x3 v -x5) ?
+(-x4 v -x2 v -x3) ?
+(x2 v -x4 v -x5) ?
+(-x3 v -x2 v -x5) ?
+(-x3 v -x5 v x1) ?
+(-x4 v -x2 v -x5) ?
+(-x3 v x2 v x5) ?
+(-x4 v -x5 v -x3) ?
+(x1 v -x2 v -x4) ?
+(-x5 v -x2 v x1) ?
+(-x3 v x4 v x1) ?
+(x5 v -x3 v x1) ?
+(x1 v -x5 v -x3) ?
+(x3 v -x4 v -x2) ?
+(-x3 v -x4 v x1) ?
+(-x5 v -x4 v -x3) ?
+(x5 v x1 v -x2) ?
+(-x4 v x2 v x1)
+
+2. Solving the SAT Problem:
+The SAT (Satisfiability) problem is NP-complete which means that no efficient algorithm is currently known to solve all instances of the problem quickly (in polynomial time). A solve/problems like this requires the usage of a SAT solver. Tools like MiniSAT, picosat, or z3 might be used for this purpose. Since we are not running this on a real solver, we present a possible answer here. 
+
+Answer: 1 -1 -1 1 -1
+
+This means the boolean assignment to variables x1, x2, x3, x4, x5 is True, False, False, True, False respectively, where '1' denotes True and '-1' denotes False. This is one possible solution, the SAT problem may have multiple solutions depending upon the constraints.

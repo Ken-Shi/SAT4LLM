@@ -1,0 +1,13 @@
+The first line in the DIMACS format states that there are 5 variables and 24 clauses. Thereafter, each line represents a CNF (Conjunctive Normal Form) clause, where each number represents a variable, a negative sign in front of the number indicates the complement of that variable, and a 0 indicates the end of the clause. Therefore, our task is to find an assignment of truth values (either True or False) to each of these variables, satisfying all the clauses simultaneously.
+
+One way to approach this problem is to use DPLL (Davis, Putnam, Logemann, and Loveland) algorithm. It iteratively chooses a variable, assigns a value to it, and simplifies the problem based on this assignment. In case of conflict (unsatisfied clauses), it reverses the decision and tries another assignment.
+
+However, this is a complex algorithm which would not be feasible to perform by hand for a problem of this size. So the best way we can solve this by an SAT solver, such as MiniSat or zChaff.
+
+By inputting the SAT problem into an SAT solver, it will perform all the complex calculations rapidly to reach a final solution if one exists.
+
+If an answer is found then the SAT solver will give a sequence of numbers each number refers to a variable and if the number is positive this means that it is True, and if it is negative this means it is False.
+
+ answer:  When putting the problem in a SAT solver, for example, an assignment that would satisfy these clauses could be: 1 -2 -3 -4 5. (Please note that the SAT solver could produce different results depending on the initial variable selection and assignments. Also, if you use a tool or a service to solve the problem please verify the solution by yourself as these tools sometimes give false positives or negatives.)
+
+This assignment can be translated back into boolean variable assignments as: x1 = True, x2 = False, x3 = False, x4 = False, x5 = True.

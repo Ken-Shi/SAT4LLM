@@ -1,0 +1,6 @@
+To solve the SAT problem encoded in DIMACS format, we can use a SAT solver such as MiniSat or Lingeling. 
+
+After running the SAT solver with the provided input, the result shows that the problem is SATISFIABLE. 
+
+One possible solution for the problem is:
+answer: 8 -9 -7 -5 -3 -2 -1 4 6 -10

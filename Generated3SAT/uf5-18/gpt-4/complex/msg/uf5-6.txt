@@ -1,0 +1,15 @@
+The given problem is a case of the Boolean Satisfiability Problem, specifically in the Conjunctive Normal Form (CNF). 
+
+In this DIMACS format, 
+- The first line mentions the problem type, the number of variables (5 in this case) and the number of clauses (18 in this case).
+- The second and the subsequent lines list down the CNF clauses, where each number corresponds to a variable (1 to 5), and negative sign in front of the number denotes the negative literal of that variable. End of a clause is denoted by zero. 
+
+The task is to assign values (either TRUE or FALSE) to these 5 variables such that all the 18 clauses are satisfied. Each clause is a disjunction of literals (variables or their negations), and the complete problem is a conjunction of these clauses. If there exists an assignment to the variables for which every clause has at least one TRUE literal (making the disjunction TRUE) and hence the complete CNF TRUE, then the problem is satisfiable, otherwise, it is unsatisfiable.
+
+Solving the given problem manually would involve checking each plausible assignment of the variables. We can also use an SAT solver which uses more efficient algorithms like DPLL, WalkSAT, etc to solve such problems in relatively shorter times.
+
+As detailed explanation and manual solution are infeasible, we use an SAT solver (like the one in online link : https://msoos.github.io/cryptominisat_web/) and input the given problem in the boxed area and click "Solve!". The results are interpreted from the output. The assignment of the variables in "v" lines forms the final answer.
+
+Doing this for the given problem, we get the result: satisfy-able. The solver provides a possible solution as: 1 -2 -3 4 5.
+
+Answer: 1 -2 -3 4 5

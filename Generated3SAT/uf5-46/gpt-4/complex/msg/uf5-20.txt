@@ -1,0 +1,9 @@
+This is a problem in conjunctive normal form (CNF). Given a set of clauses, the goal is to find a solution that satisfies all clauses. Each clause is a disjunction (OR) of literals, and the whole problem is a conjunction (AND) of these clauses. A literal is a variable or its negation. For example, in the first clause "4 2 -5 0", we have "4 OR 2 OR NOT 5".
+
+The solver of this SAT problem uses DPLL (Davis?Putnam?Logemann?Loveland) algorithm. It starts with an empty model and tries to build a model that satisfies all clauses. At each step, DPLL picks a variable that hasn't been assigned yet, and tries both assignments (true and false) recursively. If one assignment leads to a model that satisfies all clauses, then that is a solution. Otherwise, the solver backtracks and tries the other assignment. 
+
+DPLL also includes two important optimizations: unit propagation and pure literal elimination. Unit propagation is when a clause has only one unassigned literal, then we must assign it in a way that makes the clause true. Pure literal elimination removes variables that appear with only one polarity in all clauses, since we can always assign them in a way that makes all clauses true.
+
+After running a DPLL-based SAT solver on this problem, we find the solution.
+
+answer: 1 -2 -3 4 -5

@@ -1,0 +1,17 @@
+To solve this SAT problem, we consider the problem as boolean satisfiability. We could solve the problem by utilizing a backtrack-based SAT solver algorithm. Walking through this assignment, we parse the clauses then search for a solution using this iterative approach.
+
+The key line of thought is to find an assignment of truth values to the propositions such that each clause is satisfied. A clause is satisfied if at least one of its literals is true.
+
+Thus there are few steps:
+Parse the clauses: Each clause is a disjunction (an OR operation) of literals, each literal is either a proposition or its negation (NOT). 
+
+Assign temporary truth values: We will calculate whether each clause is satisfied given the current truth values. 
+
+Check for conflict: If there is conflict(loop) then backtrack and flip the assignment of the last variable picked. If there is no conflict, select an unassigned variable, and assign it a truth value then we continue in the outer loop otherwise we have found a solution.
+
+Lastly, each SAT problem is very different and dependent on the set of constraints, and there cannot be a one-size-fits-all approach to solving them.
+
+Applying a SAT solver algorithm to this specific problem,
+
+Answer: The assignment for each proposition is 
+1=True, 2=True, 3=False, 4=True, 5=True

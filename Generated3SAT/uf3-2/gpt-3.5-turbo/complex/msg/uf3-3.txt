@@ -1,0 +1,20 @@
+First, we need to understand the DIMACS format. The problem is in conjunctive normal form (CNF) and has 3 variables and 2 clauses.
+
+The clauses are:
+1. (2 OR 3 OR -1)
+2. (3 OR -1 OR 2)
+
+To solve this problem, we can try assigning truth values to the variables and check if the clauses are satisfied.
+
+Let's start with the first clause:
+1. (2 OR 3 OR -1)
+- If we assign True to variable 2, True to variable 3, and False to variable 1, the clause is satisfied.
+- The first clause is satisfied.
+
+Now, let's move on to the second clause:
+2. (3 OR -1 OR 2)
+- If we assign True to variable 3, False to variable 1, and True to variable 2, the clause is satisfied.
+- The second clause is satisfied.
+
+Since both clauses are satisfied, the solution is:
+answer: 2 3 -1

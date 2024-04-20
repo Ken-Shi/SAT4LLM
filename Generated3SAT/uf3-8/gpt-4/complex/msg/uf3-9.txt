@@ -1,0 +1,24 @@
+To solve this SAT problem, we can use a range of SAT solving techniques, including unit propagation, pure literal elimination, and backtracking.
+
+Unit propagation aims at identifying clauses with only a single literal and setting the value of that literal in a way that satisfies the clause. 
+
+Pure literal elimination works by identifying and assigning a true value to literals that always appear with the same polarity (either negative or positive).
+
+Backtracking is a method of searching the space of potential solutions by recursively trying out different literal assignments.
+
+This problem, however, can be easily solved by checking the provided clauses:
+
+Here is how the clauses can be written for better understanding:
+
+1. (NOT x1) AND (NOT x2) AND (NOT x3)
+2. (NOT x1) AND (NOT x2) AND (NOT x3)
+3. (NOT x1) AND (NOT x2) AND (NOT x3)
+4. (NOT x1) AND (NOT x2) AND (NOT x3)
+5. (NOT x1) AND (NOT x2) AND (NOT x3)
+6. (NOT x1) AND (NOT x2) AND (NOT x3)
+7. (NOT x1) AND (NOT x2) AND (NOT x3)
+8. (NOT x1) AND x2 AND (NOT x3)
+
+Obviously, all clauses require x1, x2, and x3 to be false (NOT operator implies they should be false) except clause 8, which requires x2 to be true and x1 and x3 to be false. This contradiction results in the SAT problem being unsolvable because there is no assignment that could satisfy all these clauses at the same time.
+
+Answer: The problem is unsolvable.

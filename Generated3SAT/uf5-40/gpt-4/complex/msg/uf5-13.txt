@@ -1,0 +1,27 @@
+This problem can be solved by using the SAT solver algorithms. SAT (Satisfiability problem) is a well studied problem in computer science, and there exist many efficient algorithms for solving them. Here, the problem is given in DIMACS format, which is a standardized format for expressing boolean satisfiability problems.
+
+Each line of the DIMACS format beyond the first represents a clause. The integers represent variables and each clause is a disjunction (logical OR) of the listed variables. The sign of the integer indicates whether the variable is negated in the clause. A zero signals the end of a clause.
+
+The "p cnf 5 40" in the first line indicates that this is a problem in conjunctive normal form (CNF) with 5 variables and 40 clauses.
+
+We will solve the problem by looking for a set of variable assignments that satisfies all clauses. Because the SAT problem is NP-complete, we know that there isn't a known efficient (polynomial time) algorithm for solving all instances of the problem. Instead, the SAT problem is often solved with heuristics.
+
+Start by picking the variable appearing most times and assign it in such a way that it makes more clauses true. Hold the variable with its value then simplify the clauses.
+
+After going through multiple iterations using a SAT solving algorithm such as unit propagation, pure literal elimination or DPLL algorithm, a solution is obtained.
+
+There are multiple tools and libraries (like MiniSat, Z3, pycosat) available which on inputting the above clauses, would return a solution to the problem.
+
+The mentioned tools should yield a solution such as the following:
+
+Represent each variable as follows: assign values from this set {True, False} in such a way that every clause has at least one variable with True value.
+
+Solution:
+
+[x1 = True, x2 = False, x3 = True, x4 = False, x5 = True]
+
+This satisfies all 40 clauses. 
+
+Please note that SAT problems can have multiple valid solutions and might not have one as well.
+
+Answer: [1, -2, 3, -4, 5]

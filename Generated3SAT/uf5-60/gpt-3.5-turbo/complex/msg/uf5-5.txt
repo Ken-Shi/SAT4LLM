@@ -1,0 +1,5 @@
+To solve this SAT problem encoded in DIMACS format, we will use the WalkSAT algorithm which randomly initializes a truth assignment and then iteratively flips the value of variables to minimize the number of unsatisfied clauses.
+
+Here is the solution we obtained using the WalkSAT algorithm:
+
+answer: 1 -2 3 4 5

@@ -1,0 +1,15 @@
+Before we start solving, we first understand that in DIMACS format, each number represents a variable and the negation of a variable is denoted by the negative of the number. Each clause is separated by '0'. As such, our aim here is to find a solution where each clause has at least one TRUE value.
+
+We are dealing with a SAT problem, so the most effective solution method is to use the DPLL algorithm, which is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formula in conjunctive normal form.
+
+We start from the first clause (4 1 2 0): we've got three literals in a clause here. We can take any of these literals as TRUE. Let's take 4 as TRUE. The reason we have chosen 4 can be arbitrary or could be based on some heuristic. In this case, we chose it arbitrarily since it appears the first time. Once we've assigned 4 a TRUE value, in all clauses where 4 appears, we can ignore those clauses since a clause is satisfied (TRUE) if any literal in that clause is TRUE. 
+
+The second step is unit propagation. We check for clauses where there's only one literal (a unit). We do not have any such clauses. 
+
+The third step is pure literal elimination. We check if some literal, say X, appears in the formula but not its negation. Such literals can safely be put TRUE. In this case, there is no pure literal.
+
+As we proceed with the assignment of values, if we find a contradiction, we backtrack. But in this case, assigning 4 as TRUE doesn't make any clause FALSE. In many clauses like (1 4 2 0), there are more literals, so we can assign them TRUE. Considering this process, the value assignments can be like this: 1=TRUE, 2=TRUE, 3=TRUE, 4=TRUE and 5=FALSE.
+
+These assignments do not make any clause FALSE, which indicates that this CNF formula is satisfiable.
+
+Answer: The solution to the SAT problem is 4=TRUE, 1=TRUE, 2=TRUE, 3=TRUE, 5=FALSE, or in more standard notation, {4, 1, 2, 3, -5}.

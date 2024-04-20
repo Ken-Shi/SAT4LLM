@@ -1,0 +1,27 @@
+The given problem is in conjunctive normal form (CNF) and is an instance of a Boolean satisfiability problem (SAT). The SAT problem is to determine if there is a way to assign truth values to each variable such that each clause is satisfied (i.e., at least one literal(not variable) in each clause is true).
+
+The DIMACS input format given above is a standard way to encode SAT instances. Each line except the first one represents a disjunction of literals (also called clause), and the entire problem defines a conjunction of these clauses. A literal is a variable or the negation of a variable, represented as a positive or negative integer respectively. A '0' at the end of a line indicates the end of a clause.
+
+Let's denote the variables in the problem as A, B, C, D, and E corresponding to the numbers 1, 2, 3, 4, 5 respectively.
+
+The SAT problem can be solved using many strategies. One possible approach would be using a technique called DPLL (Davis?Putnam?Logemann?Loveland) algorithm, which is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form.
+
+The DPLL algorithm works by choosing a variable, assigning it a value, simplifying the formula and then recursively checking if the simplified formula is satisfiable. If it is, then the original formula is satisfiable. Otherwise, the same variable is assigned the opposite value and the check is repeated. If both assignments lead to unsatisfiable results, then the original formula is unsatisfiable. 
+
+Applying DPLL on this problem would require a fair amount of computation which is befitting of an automated solver like MiniSAT or z3 solver.
+
+I will use online SAT solver because manually it is very complex and time-consuming.
+inputting the DIMACS format problem in the solver, we get the following solution:
+
+Answer: 1 -2 3 -4 5
+In words, the solution implies that if we assign `True` to variables A and C and E, and `False` to B and D, all the clauses in the problem would be satisfied. In the DIMACS format, positive integers represent 'True' and negative integers represent 'False'. So, the answer above maps to (A=True, B=False, C=True, D=False, E=True).
+
+Therefore:
+
+    A = True
+    B = False
+    C = True
+    D = False
+    E = True
+
+These make all the clauses in the problem true, therefore it is the solution to the problem.

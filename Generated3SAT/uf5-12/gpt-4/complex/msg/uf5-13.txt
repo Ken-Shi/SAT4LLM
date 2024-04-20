@@ -1,0 +1,26 @@
+This problem is a conjunctive normal form problem, and each line from the second line onwards represents a clause with either the variable or its negation. Each variable can be either true or false, represented by 1 or 0 respectively. The 0 at the end of each line does not represent a variable value, it just marks the end of the clause.
+
+The task here is to find a valuation of variables that makes the whole formula (the conjunction of all clauses) true. 
+
+Let's interpret these clauses:
+
+-1 5 -3 0 => not x1 or x5 or not x3
+2 -3 -5 0 => x2 or not x3 or not x5
+5 -2 -3 0 => x5 or not x2 or not x3
+-2 5 4 0 => not x2 or x5 or x4
+-3 -2 4 0 => not x3 or not x2 or x4
+-2 5 4 0 => not x2 or x5 or x4
+-2 -3 4 0 => not x2 or not x3 or x4
+-2 -3 4 0 => not x2 or not x3 or x4
+-3 4 -1 0 => not x3 or x4 or not x1
+-1 5 -3 0 => not x1 or x5 or not x3
+-3 5 -1 0 => not x3 or x5 or not x1
+-1 -2 5 0 => not x1 or not x2 or x5
+
+Let's propose a solution for this problem:
+
+If we set x1 = 0 (false), x2 = 0 (false), x3 = 1 (true), x4 = 1 (true), x5 = 1 (true).
+
+This assignment makes all clauses true and hence the conjunction of all clauses true.
+
+Answer: x1 = 0, x2 = 0, x3 = 1, x4 = 1, x5 = 1.

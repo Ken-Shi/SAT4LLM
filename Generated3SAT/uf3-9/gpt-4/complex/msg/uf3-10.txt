@@ -1,0 +1,15 @@
+This problem is presented in conjunctive normal form (CNF) which is a conjunction of disjunctions representing logical AND of ORs. This particular CNF is encoded in DIMACS format where each line represents a clause and each number represents a literal. "0" is used to indicate the end of a clause, and negative signs indicate that the literal is negated. 
+
+1. We start going clause by clause.
+2. The first clause (-1 -3 2 0) requires that either variable 1 is false, variable 3 is false, or variable 2 is true.
+3. The second clause (-2 -1 3 0) requires that either variable 2 is false, variable 1 is false, or variable 3 is true. 
+4. Proceeding similarly through all clauses.
+5. After analyzing every clause, we try to find a combination of values for variables 1, 2, and 3 that satisfies every single clause.
+6. After some experimentation, it seems that the setting the values of the variables as follows satisfies every clause: 
+    - Variable 1 (Not necessary)
+    - Variable 2 = True
+    - Variable 3 = True
+
+This approach is generally known as the DPLL algorithm, a complete, backtracking based search algorithm for deciding the satisfiability of propositional logic formulae represented in CNF.
+
+answer: 2 3

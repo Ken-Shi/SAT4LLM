@@ -1,0 +1,28 @@
+As we interpret the problem, the letter 'p' stands for problem, 'cnf' stands for Conjunctive Normal Form, 3 stands for the number of variables (x1, x2, x3) and 3 stands for the number of clauses.
+
+The rest of the lines represent the clauses.
+
+3 -1 2 0 -> means (x3 OR NOTx1 OR x2)
+2 -1 -3 0 -> means (x2 OR NOTx1 OR NOTx3)
+2 -1 3 0 -> means (x2 OR NOTx1 OR x3)
+
+We can use the Model Enumeration Method to solve these clauses.
+
+Creating a table of all possible boolean values for x1, x2, x3, there are 2^3 = 8 possibilities. 
+
+Each line of the table is a model and we check if these satisfy the formula:
+
+x1, x2, x3 = 
+
+F, F, F -> None of the clauses are satisfied, therefore this solution is invalid.
+F, F, T -> The first clause is satisfied, but the other two are not, therefore this solution is invalid.
+F, T, F -> The first and second clause are satisfied, but the third is not, therefore this solution is invalid.
+F, T, T -> All clauses are satisfied, therefore this is a valid solution.
+T, F, F -> None of the clauses are satisfied, therefore this solution is invalid.
+T, F, T -> None of the clauses are satisfied, therefore this solution is invalid.
+T, T, F -> None of the clauses are satisfied, therefore this solution is invalid.
+T, T, T -> The first clause is satisfied, but the other two are not, therefore this solution is invalid.
+
+So there is only one solution that satisfies all the requirement.
+
+answer: x1=False, x2=True, x3=True.

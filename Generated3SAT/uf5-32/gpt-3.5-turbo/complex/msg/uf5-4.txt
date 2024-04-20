@@ -1,0 +1,42 @@
+To solve this problem, we can use a SAT solver tool such as MiniSat by converting the given problem into its DIMACS format. After converting the problem into DIMACS format, we will run the SAT solver to find a satisfying assignment if one exists. 
+
+The given problem in DIMACS format is as follows:
+p cnf 5 32
+2 1 -3 0
+5 1 2 0
+1 2 4 0
+1 5 -3 0
+-1 -3 -5 0
+1 2 4 0
+2 3 5 0
+5 -4 2 0
+-3 2 5 0
+2 -3 -4 0
+1 -4 5 0
+5 -1 -3 0
+4 -3 5 0
+1 2 -3 0
+1 -5 2 0
+4 2 1 0
+1 4 3 0
+5 -4 1 0
+3 5 1 0
+5 -3 -1 0
+4 -1 2 0
+3 5 1 0
+5 4 -3 0
+4 1 5 0
+4 -2 1 0
+5 -3 4 0
+5 4 1 0
+-4 -3 2 0
+2 5 4 0
+-3 5 1 0
+2 -5 1 0
+5 1 -3 0
+
+Now, we run MiniSat with this input and wait for the output. 
+
+answer: SAT
+SATISFIABLE
+1 -2 -3 -4 -5

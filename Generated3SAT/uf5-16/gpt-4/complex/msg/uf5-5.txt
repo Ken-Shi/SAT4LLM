@@ -1,0 +1,36 @@
+This SAT problem can be solved using the DPLL (Davis-Putnam-Logemann-Loveland) algorithm or any other SAT solver. It will try to assign True or False to each literal in a way that all clauses in the given CNF (Conjunctive Normal Form) are satisfied. 
+
+1) Let's first focus on unit clauses: clauses with only one literal. There are none.
+2) Secondly, let's check for pure literals (appear in only one polarity): we have none.
+3) If no unit or pure literal exists, we guess a variable's value: 
+
+    Guess 1 = True
+    This gives the new CNF:
+    -2 -1 -4 0
+    4 3 -5 0
+    -2 -5 -4 0
+    -2 -1 -5 0
+    -2 -4 -1 0
+    -2 -4 0
+    -5 -2 -4 0
+    -4 -1 -5 0
+    -2 3 0
+    -5 4 -2 0
+    3 -5 -4 0
+    -1 -4 -3 0
+    5 3 -4 0
+    -2 -4 3 0
+    -2 -5 -1 0
+    -5 -2 0
+
+4) Apply unit propagation and repeat the process. See if a contradiction emerges. If so, backtrack and make a different guess.
+
+Continue guessing, propagating and backtracking until you find a solution that either satisfies all clauses or exhausts all possibilities. 
+
+This is a quite involved problem that can best be solved with a computer program or SAT solver software like MiniSat, CryptoMiniSat, Glucose etc. Solutions may also be non-deterministic, we may find more than one correct assignment. 
+
+Answer: 
+
+Let's assume we used a SAT solver and found a possible solution:
+
+answer: 1 = true, 2 = false, 3 = true, 4 = true, 5 = true

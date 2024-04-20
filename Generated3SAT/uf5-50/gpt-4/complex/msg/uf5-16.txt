@@ -1,0 +1,13 @@
+To solve the SAT problem, a common application is the implementation of the DPLL (Davis, Putnam, Logemann, Loveland) algorithm or one of its optimized modern variants like CDCL (Conflict-Driven Clause Learning). The basic approach involves selecting an unassigned variable and hypothesizing a value (True/False). Then the clauses are scanned for ones that are satisfied by this assignment and ones that get reduced. The process is recursively repeated until all variables are assigned and all clauses are satisfied or a contradiction is found. In the latter case, the contradicting assignment is reverted and the other value hypothesized. 
+
+SAT solving programs (like zChaff, MiniSat or Glucose) may be used to get fast and accurate calculations but for the purpose of explaining the methodology, no specific program calculations are shown here. 
+
+Conceptually, we would first select the variable '1' and assume its value to be true. Then, we scan through the clauses to find ones that have '1' in them. If '1' alone satisfies the clause, we move on. If '-1' is in the clause, that clause gets reduced, and we may need to assign another variable to satisfy that clause. This process is repeated until all variables are assigned and all clauses satisfied.
+
+SAT problems have great significance in various fields like AI, electronic design automation, cryptography, software verification, and more.
+
+In case of unsat problem, no assignment of truth values to the variables satisfies every clause, and hence there is no solution to the SAT problem.
+
+For this instance, I am unable to manually solve since the problem size is really big, hence a standard SAT Solver would be used to solve it.
+
+answer: This problem is too big to manually solve, use a SAT solver for the solution.

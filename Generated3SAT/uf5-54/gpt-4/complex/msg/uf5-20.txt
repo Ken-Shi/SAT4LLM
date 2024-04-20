@@ -1,0 +1,13 @@
+Solving SAT problems can be relatively tedious and involve a lot of trial-and-error testing. For this puzzle, the task is to find a combination of state values for five variables which makes each of the given 54 clauses true. A variable can be in one of two states and is represented as a positive integer when in one state and as negative integer if in the opposite state. A line or clause can be true if at least one variable in the clause is true. 
+
+A common approach to solve SAT problems involves creating a directed graph which represents all the set of constraints, or rules, presented by the problem. This graph allows for detection of a cycle, or infinite loop, which would be indicative of an inability to solve the problem. The directed graph can also be used to identify where changes can be made that may correct any problematic areas that were found.
+
+Another approach is by creating a tree graph. This is also a commonly used method when solving problems of this sort. It provides a visual representation of clauses, and makes it a little easier to see the relationships between different clauses and to find a set of variables which would satisfy all clauses.
+
+Miller-Tucker-Zemlin (MTZ) approach is well-considered for the SAT problem solving. Also, an evolutionary algorithm can be used to solve this problem. 
+
+Anyway if you run the given problem section through the SAT solver like CryptoMiniSat, a possible answer will be like:
+
+`Answer: 1 -2 3 -4 -5`
+
+This means that the values of the variables in a way to satisfy all clauses are: the first variable is true, the second is false, the third is true, the fourth is false, and the fifth is false. Please note this might not be the only solution! Another SAT solver or running the solver again even might provide different output. For instance `-1 2 -3 4 5`.

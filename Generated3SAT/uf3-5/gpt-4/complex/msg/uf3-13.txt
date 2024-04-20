@@ -1,0 +1,18 @@
+This DIMACS CNF format represents a Boolean satisfiability problem (SAT). Let's introduce some notations first. In this scenario, we have 3 variables and 5 clauses:
+
+1. "-3 -1 -2 0" => (NOT x3) OR (NOT x1) OR (NOT x2)
+2. "2 -3 -1 0" => x2 OR (NOT x3) OR (NOT x1)
+3. "-3 1 -2 0" => (NOT x3) OR x1 OR (NOT x2)
+4. "2 1 -3 0" => x2 OR x1 OR (NOT x3)
+5. "-3 1 2 0" => (NOT x3) OR x1 OR x2
+
+SAT problems are typically solved using backtracking, DPLL algorithms, stochastic local search or satisfiability solvers. But we can try to solve this by hand due to its simplicity.
+
+Let's begin by setting x3 = False (due to its repetitive occurrence in a NOT state):
+
+- Clauses 1, 3, and 5 are immediately satisfied.
+- In the 2nd clause (x2 OR (NOT x3) OR (NOT x1)), we need either x2 or (NOT x1) to be True. Let's set x2 = True.
+- This satisfies the 4th clause (x2 OR x1 OR (NOT x3)).
+- For the 2nd clause (x2 OR (NOT x3) OR (NOT x1)) which is not satisfied yet, you can make x1 = False.
+
+Answer: [False, True, False] for [x1, x2, x3] respectively.

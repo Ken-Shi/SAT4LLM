@@ -1,0 +1,20 @@
+The given problem in SAT is in the DIMACS format. First, let's understand what the problem says.
+
+Here is a breakdown of the notations:
+* p cnf 3 2 : declares the problem as a conjunctive normal form (CNF) problem. It involves 3 variables and 2 clauses.
+* -3 -1 2 0 : represents the first clause. It means NOT variable 3 OR NOT variable 1 OR variable 2. The 0 at the end simply means end of clause.
+* -3 -2 -1 0 : represents the second clause. This implies NOT variable 3 OR NOT variable 2 OR NOT variable 1. 
+
+We need to find a solution that makes the whole expression true.
+
+Following is a line-by-line solution process:
+
+1. Try with variables = {1, 2, 3}
+2. In first clause (-3 -1 2), 2 is positive and others are negative. So, the only way to satisfy it is to set 2=True and 3=1=False
+3. Now, variable values: {1=False, 2=True, 3=False}
+4. Try second clause (-3 -2 -1) with current variable values: False True False
+5. It results in true because all variables are in negative form. So, if any one is False (i.e., its negative form is True), the complete clause become True.
+
+Summarizing, all clauses/sentences are true with the above values. Hence, this is a correct solution. If there were more clauses, we would have continued checking them with the current variable values to see if all clauses can be satisfied. If any clause cannot be satisfied, we would have tried different variable values.
+
+Answer: {1=False, 2=True, 3=False}

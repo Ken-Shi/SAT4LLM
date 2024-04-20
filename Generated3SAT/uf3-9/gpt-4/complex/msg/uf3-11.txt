@@ -1,0 +1,21 @@
+DIMACS format is used to encode SAT (Boolean Satisfiability Problem) problems. Each line after "p cnf 3 9" contains a clause, and "0" marks the end of a clause. There are three variables (labeled 1, 2, and 3), and 9 clauses in this problem. The sign in front of a variable in a clause designates its truth value: minus (-) means the variable must be FALSE and plus (+), or no sign, means the variable must be TRUE.
+
+The way to solve this kind of task is to look for an assignment of truth values to the variables that satisfies all the clauses at the same time, if such an assignment exists.
+
+There are two methods which are used frequently:
+   1) Using an automatic SAT solver software such as MiniSat.
+   2) Sometimes, using a manual resolution method might be feasible. 
+    
+Here for manual resolution, we solve the problem by applying resolution on the clauses. We pick two clauses, negate the first one and see if any of the variables in the negated clause occur in the second clause. If yes, we replace that variable with the OR of the remnants of the two clauses.
+
+A notable point about SAT problems is that, while these problems are NP-complete, meaning that there are no known algorithms to solve all instances efficiently, certain instances of this problem can be quite easy to solve.
+
+In this instance, with a quick overview of the problem, we don't see an apparent contradiction that might lead to this problem being unsolvable. Therefore, we try different combinations of variable assignments and check if they satisfy all the clauses.
+
+After trying different combinations, we find that the assignment {1=TRUE, 2=FALSE, 3=TRUE} satisfies all the clauses. 
+
+There could be more than one solution to a given problem. Different SAT solvers may even return different solutions for the same problem. 
+
+For example, {1=FALSE, 2=FALSE, 3=TRUE} or {1=TRUE, 2=TRUE, 3=TRUE} could also be valid solutions.
+
+Answer: {1=TRUE, 2=FALSE, 3=TRUE}

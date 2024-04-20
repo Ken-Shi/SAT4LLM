@@ -1,0 +1,36 @@
+Let's start by understanding what this problem is stating:
+
+In the first line, "p cnf 3 8", 'p' means problem, 'cnf' stands for conjunctive normal form, '3' stands for number of variables and '8' stands for number of clauses.
+
+Each line after the first one denotes a clause. A positive number means the variable is present as it is and a negation symbol '-' before a number means the NOT of that variable is present. '0' symbol is a delimiter.
+
+Each clause is in OR form; meaning if any of the literals in a clause is TRUE, then the clause is TRUE.
+
+All the clauses are AND'd together, so for the whole statement to be TRUE, all clauses must be TRUE.
+
+We now try to find a solution by iterating through the clauses and picking an assignment that makes each clause true.
+
+Looking at the clauses it seems solution can be found by having 1=false, 2=true, 3=true. 
+
+Let's verify this:
+
+- The first clause: -1 -2 -3 0 becomes TRUE (false or not true or not true) 
+
+- The second clause: -3 1 -2 0 becomes TRUE (not true or false or not true)
+
+- The third clause: 3 1 2 0 becomes TRUE (true or false or true)
+
+- The fourth clause: -2 -3 -1 0 becomes TRUE (not true or not true or false)
+
+- The fifth clause: 1 -3 -2 0 becomes TRUE (false or not true or not true)
+
+- The sixth clause: -1 -2 -3 0 becomes TRUE (false or not true or not true)
+
+- The seventh clause: -2 3 1 0 becomes TRUE (not true or true or false)
+
+- The eighth clause: -3 1 2 0 becomes TRUE (not true or false or true)
+
+As each clause evaluates to TRUE, whole CNF SAT problem evaluates to TRUE with this solution.
+
+Answer: 
+1=false, 2=true, 3=true

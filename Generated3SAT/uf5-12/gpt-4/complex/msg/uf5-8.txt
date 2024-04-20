@@ -1,0 +1,49 @@
+This is a problem from SAT where we are given a set of clauses, each clause consists of literals, and we are looking for an assignment of variables that makes all the clauses true. 
+
+The given SAT problem is already in conjunctive normal form (CNF), mentioned by `p cnf 5 12` where 5 is the number of variables and 12 is the number of clauses. All clauses are listed below it.  
+
+Each clause after the CNF statement is ended by a 0 and the negative sign in front of a number represents the negation of that variable. 
+
+Here is a solution which involves a step-by-step assigning of true/false values or 1/-1 values to each literal: 
+
+A convenient way to start is to assign a value to variable 5, since it seems to appear most frequently (7 times). 
+
+After assigning 5 = -1 (false), the resulting simplification leads to clauses:
+
+1 4 0 
+3 -2 0
+-1 -2 -3 0
+-2 -3 4 0
+-2 -3 4 0
+1 4 0 
+4 1 0 
+3 0 
+4 -2 -3 0
+-2 -3 0
+1 0
+
+After simplifying the clauses and ignoring identical clauses we get:
+
+1 4 0 
+3 -2 0
+-1 -2 -3 0
+-2 -3 4 0
+3 0 
+-2 -3 0
+1 0
+
+At this point, we see the clause "3 0", which means 3 must be true or all the formula would be false. So let's assign 3 = 1. 
+
+After assigning 3 = 1 we get the list of clauses as follows :
+
+1 4 0
+-2 0
+-2 4 0
+-2 0
+1 0
+
+Solving the remaining clauses we can assign 1 = 1, 2 = -1 and 4 = -1. 
+
+After translating the above assignments back to the form in which the original input was given, the solution is 1, -2, 3, -4, -5.
+
+Answer: 1, -2, 3, -4, -5

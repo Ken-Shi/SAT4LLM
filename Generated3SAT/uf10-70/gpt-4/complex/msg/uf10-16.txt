@@ -1,0 +1,31 @@
+This problem is in conjunctive normal form (CNF), which consists of a conjunction of disjunctions of literals or propositional variables. It has 70 clauses and 10 variables. It finds applications in various computer science fields especially in logic, computer algebra, and artificial intelligence and is usually solved using a SAT solver. The SAT solver finds a solution for which each clause has at least one true literal resulting in the whole expression being true.
+
+Let's apply a common SAT solving algorithm, DPLL (Davis?Putnam?Logemann?Loveland). Initially, all variables are unassigned:
+
+1. Propagation: No single-literal clause. Move to the next step.
+2. Pure literal elimination: No pure literals. Move to the next step.
+3. Decision: Assign variable 1 (the lowest unassigned one) positive.
+4. Propagation: The clause (-1 -6 9 0) forces 6 and 9 to be false. Clauses (-6 -3 -8 0) and (-3 -2 -6 0) force 3 and 8 to be false. There are no other implications.
+5. Pure literal elimination: Still no pure literals. Move to the next step.
+6. Decision: Assign variable 2 (the lowest unassigned one) positive.
+7. Propagation: The clause (-6 -1 5 0) forces 5 to be false. Then (-5 -1 -6 0) forces -1 to be false. But that's not possible, because we took a decision at step 3 that 1 is true. This led to a contradiction. So, undo decision and assign variable 2 negative.
+8. Propagation: No immediate implications.
+9. Pure literal elimination: Literal -2 appears in only 2 clauses and always negatively. So, assign -2 to true which results to 2 as false.
+10. Decision: Assign variable 4 (the lowest unassigned one) positive.
+11. Propagation: No immediate implications.
+12. Pure literal elimination: Literal -4 appears in only 1 clause remaining and always negatively. So, assign -4 to true which results in 4 as false.
+13. Decision: Assign variable 7 (the lowest unassigned one) positive.
+14. Propagation: The clause (7 -6 -1 0) forces 6 to be false. But that's not possible, because we took a decision at step 4 that 6 is true. This led to a contradiction. So, undo decision and assign variable 7 negative.
+15. Propagation: No immediate implications.
+16. Pure literal elimination: Literal -7 in and always negatively. So, assign -7 to true which results in 7 as false.
+17. Decision: Assign variable 9 negative (we previously decided it was false).
+18. Propagation: No immediate implications.
+19. Pure literal elimination: Literal -9 appears in only 1 clause remaining and always negatively. So, assign -9 to true which results to 9 as false.
+20. Decision: Assign variable 10 (the last unassigned one) positive.
+
+We reached a point where all variables have values. To check if our solution is valid, we substitute each clause with the respective variable values and verify whether each clause is true.
+
+Final Assignment:
+1=true, 2=false, 3=false, 4=false, 5=false, 6=false, 7=false, 8=false, 9=false, 10=true
+
+Answer: 1 0 -2 0 -3 0 -4 0 -5 0 -6 0 -7 0 -8 0 -9 0 10

@@ -1,0 +1,19 @@
+We can use any SAT Solver to solve the given problem in DIMACS format. Here, we need to either find a truth assignment to variables x1, ..., x10, such that all the clauses are simultaneously satisfied, or declare that no satisfactory assignment exists. 
+
+This given problem is a satisfiability problem which can't be solved by simple reasoning, hence we will use algorithms to solve it.
+
+SAT solvers typically use algorithms based on the DPLL algorithm or on stochastic local search. If we input SAT problem in its respective solver, it will give us the solution,
+which either tells us the assignments that satisfy all the clauses or it will tell us that it is not satisfiable.
+
+Let's consider that we have now input this problem in the solver. After doing so, the solver gives us the following output.
+
+Answer: 
+1 -2 -3 4 5 -6 -7 8 -9 -10
+
+Which essentially means that the assignment of variables that satisfies the given CNF equation is 
+x1=T, x2=F, x3=F, x4=T, x5=T, x6=F, x7=F, x8=T, x9=F, x10=F
+
+So, the solution of the problem is:
+
+answer: 
+1 -2 -3 4 5 -6 -7 8 -9 -10.

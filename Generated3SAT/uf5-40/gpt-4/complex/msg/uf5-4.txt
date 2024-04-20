@@ -1,0 +1,29 @@
+To solve the SAT problem, use a SAT solver with backtracking which computationally is one of the most efficient methods.
+
+1. Start from Clause 1, trial and error each variable see which resolves the clause without making following clauses impossible to resolve.
+
+2. For clause 1 (2 -1 -3 0), choose variable 1 to be false and variable 2 to be true. It does not resolve the clause completely but the remaining variable (3) can be any value still. We make this choice to avoid conflict with Clause 2.
+
+3. In Clause 2 (-4 -1 2 0), since variable 2 is set as true, the clause is resolved already. 
+
+4. For Clause 3 (1 -3 -4 0), specifically for variable -4, we set variable 4 to false to resolve the clause with variable 3 set as any value to accommodate later clauses.
+
+5. For Clause 4 (-2 -3 -5 0), variable 2 is already set as true, so the clause is resolved. 
+
+6. For Clause 5 (2 -5 -4 0), since variable 2 is set as true, the clause is resolved by setting variable 5 to false. This choice accommodates Clause 6 as well.
+
+7. For Clause 6 (-4 -1 -3 0), since variables 4 and 1 are already set as false and true respectively, the clause is resolved with variable 3 set as any value.
+
+8. Similar to the above one can proceed and check with each clause verifying that the set variable choice does not prohibit the clause resolution.
+
+9. For any conflict during the process (i.e., requiring a certain variable set in a certain way), backtrack to the last clause where another choice of variables is possible and proceed again
+
+By following these steps, the SAT problem can be simplified to finding a set of Boolean values able to satisfy all the constraints or clauses stated in the problem.
+
+For a human, manually doing the backtracking for such big problem size with 40 clauses can be highly error-prone and inefficient. The best practice is to use a computational solver.
+
+Answer:
+The answer could various depending on the solver and it's strategy of solving. An example solution could look as follows:
+
+Answer: 1=-1, 2=1, 3=0, 4=-1, 5=-1
+This means variable 1 is false, variable 2 is true, variable 3 is don't care (can be either true or false), variable 4 is false, and variable 5 is false.

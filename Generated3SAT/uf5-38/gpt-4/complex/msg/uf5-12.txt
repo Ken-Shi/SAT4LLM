@@ -1,0 +1,13 @@
+To solve the SAT problem, we'll use the method of resolution. The problem is encoded in Conjunctive Normal Form (CNF). Each line that ends with 0 represents a disjunctive clause (the OR of literals).
+
+Here are the general steps I took:
+
+1. I looked for unit clauses (clauses with a single literal). There was no unit clause to start with.
+2. I checked for pure literals (literal that always appears with the same polarity). I found that literal 5 always appears positive, and literal 1 always appears negative.
+3. I assigned these pure literals their satisfying values: 5 = true, 1 = false.
+4. With these assignments, I was able to eliminate some clauses (those that contain literal 5) and some literals from the other clauses (all instances of literal 1).
+5. I repeated steps 1 and 2, looking again for unit clauses and pure literals in the simplified problem. Literal 4 became unit clause, so 4 = true.
+6. All clauses containing literal 4 became irrelevant. After removing those and the negative instances of 4, literals 2 and 3 were also found to be pure literals. Hence, 2 = true and 3 = true
+7. After the above assignments, there were no clauses left, which means all constraints are satisfied, so the problem is satisfiable with these assignments.
+
+Answer: 1 = false, 2 = true, 3 = true, 4 = true, 5 = true.

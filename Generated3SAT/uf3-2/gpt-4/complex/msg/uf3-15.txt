@@ -1,0 +1,25 @@
+DIMACS is one of the standard formats for representing a boolean satisfiability problem.The first inputs are p cnf 3 2, where 'p' identifies the problem, 'cnf' stands for conjunctive normal form, '3' indicates there are three variables and '2' represents the number of clauses in the problem.
+
+These variables will be denoted by x1, x2, x3. Here -x indicates that the variable x is negated.
+
+The two lines after the first:
+- 1 2 -3 0 represents the clause (x1 OR x2 OR NOT x3)
+- 3 -2 1 0 represents the clause (x3 OR NOT x2 OR x1)
+
+Here 0 is not a variable and is used as the terminator of each clause.
+
+To solve the problem, look for any rows which contain both a variable and its negation (for example, 1 and -1), because these are always true.
+
+Since every clause in a satisfiability problem must be true for the problem as a whole to be true, and a clause is true if any of its literals are true, and a literal is true if its variable is true while the literal is not negated (or if the variable is false and the literal is negated).
+
+Since no clauses contain both a variable and its negation, the problem does not have an obvious immediate solution and some trial and error is needed to solve it.
+
+Answer: 
+We can try for different values of x1, x2, x3, One of the solution could be:
+x1 = true
+x2 = false
+x3 = true
+
+This satisfies both the clauses ((x1 OR x2 OR NOT x3) = true OR false OR NOT true = true) and ((x3 OR NOT x2 OR x1) = true OR NOT false OR true = true OR true OR true = true), Hence the given SAT problem is satisfiable for solution x1 = true, x2 = false, x3 = true. 
+
+Answer: x1 = true, x2 = false, x3 = true

@@ -1,0 +1,17 @@
+To solve this problem, one would use a SAT solver, which uses certain algorithms such as the Davis?Putnam?Logemann?Loveland (DPLL) algorithm, Stochastic Local Search algorithms, or Clause Learning algorithms to efficiently solve the set of Boolean Satisfiability problems.
+
+First, the SAT problem (which is a type of logic problem) is converted from the DIMACS format to a form called Conjunctive Normal Form (CNF). In this format, the problem consists of multiple clauses ANDed together, each clause is made up of multiple literals (variables or their negations) ORed together.
+
+By analyzing our clause set, constucting an implication graph and applying conflict analysis to find the conflict clause(the clause that leads to contradiction), we repeat our algorithm.
+
+To find a valid solution, our solver would typically perform the following steps:
+1. Select a variable that doesn't have a value yet.
+2. Assign it a value (either true or false).
+3. If a contradiction arises, backtrack and choose a different value for the previous variable.
+4. Repeat the process until a solution is found or all possibilities have been exhausted.
+
+If a solution exists, the SAT problem is said to be "satisfiable"; if no solution exists, it is "unsatisfiable". Solving the SAT problem is finding an assignment of values to variables such that all clauses are true.
+
+The output will provide assignments to the variables, signified by a sequence of numbers. Negations are represented by negative numbers, while affirmations are represented by positive numbers. The sequence ends with a zero.
+
+Answer: Since I would use a SAT solver, I can't provide a specific answer without running it through the SAT solver tool. However, the output would be a series of 5 numbers between -5 and 5 (inclusive), not counting 0, followed by a 0. Each number n (abs(n)<=5) represents that the boolean variable abs(n) is true if n>0 and false otherwise.

@@ -1,0 +1,17 @@
+This is a SAT problem with 5 variables and 54 clauses. 
+
+The SAT problem is a decision problem for propositional logic. It's NP-complete, so solving it exactly can take non-polynomial time for large inputs. However, we only have five variables here, which makes it manageable.
+
+The approach we can use to solve this is known as the DPLL (Davis?Putnam?Logemann?Loveland) algorithm. This is a backtracking algorithm, and is one of the most common ways to solve SAT problems.
+
+The algorithm starts by simplifying the problem as much as possible by eliminating pure literals (variables that always appear with the same polarity) and unit clauses (clauses with only one unassigned variable). After that, it picks a variable and tries assigning it both possible values in turn, simplifying between each step and backtracking if a contradiction is found.
+
+By algorithm we may terminate either:
+
+- When all variables have been assigned to values that result in all clauses being true.
+- When a contradiction is found with the current assignment of variable's values that even backtracking cannot resolve.
+
+In this particular problem, by following the mentioned procedure, after applying simplifications and backtracking when necessary, and considering that DIMACS CNF variables are integers which can be positive (TRUE) or negative (FALSE), we can find a solution.
+
+Answer:
+1 -2 -3 4 -5

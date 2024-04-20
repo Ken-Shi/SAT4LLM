@@ -1,0 +1,2 @@
+SATISFIABLE
+Solution: 2 -1 3

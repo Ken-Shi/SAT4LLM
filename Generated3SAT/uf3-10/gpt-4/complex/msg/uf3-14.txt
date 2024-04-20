@@ -1,0 +1,33 @@
+Each line in this DIMACS format SAT (Propositional Satisfiability) problem represents a clause of a Boolean expression, which consists of three variables: 1, 2, and 3. The 'p cnf 3 10' line specifies that this is a 3-variable problem with 10 clauses. The numbers in each line represent literals - a positive number indicates the variable, negative shows its negation. '0' at the end of a line signals the end of a clause.
+
+Firstly, let's try to write out each clause:
+
+(3 OR 2 OR NOT 1)
+(NOT 1 OR 3 OR 2)
+(NOT 1 OR 3 OR 2)
+(NOT 1 OR 2 OR NOT 3)
+(2 OR 1 OR 3)
+(NOT 1 OR 2 OR NOT 3)
+(3 OR 1 OR 2)
+(NOT 1 OR 3 OR 2)
+(NOT 1 OR 3 OR 2)
+(NOT 1 OR NOT 2 OR NOT 3)
+
+To find a solution, we try to assign the values (TRUE or FALSE) to the variables (1, 2 and 3) in a way to satisfy all clauses.
+
+It is clear that assigning 1 to FALSE would simplify things, as it occurs as a NOT 1 in most clauses. 
+
+After setting 1 = FALSE, the clauses become: 
+
+(3 OR 2)
+(3 OR 2)
+(2 OR NOT 3)
+(2 OR 3)
+(2 OR 3)
+(3 OR 2)
+(3 OR 2)
+(NOT 2 OR NOT 3)
+
+Now, if we assign 2 and 3 = TRUE, all clauses are satisfied because each clause obtains at least one TRUE literal. 
+
+answer: {1=FALSE, 2=TRUE, 3=TRUE}

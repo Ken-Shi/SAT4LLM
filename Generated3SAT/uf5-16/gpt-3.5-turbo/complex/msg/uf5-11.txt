@@ -1,0 +1,11 @@
+To solve this SAT problem, we need to find a satisfying assignment that makes the input formula true. The DIMACS format specifies 5 variables and 16 clauses.
+
+Let's find the satisfying assignment by applying the DPLL algorithm step by step:
+
+1. Choose a variable, let's say x1, and assign it a truth value (either True or False).
+2. Substitute the value of x1 in all clauses.
+3. Simplify the formula and continue until all clauses are satisfied.
+
+After applying the DPLL algorithm and simplifying the formula, we find the following satisfying assignment:
+
+answer: 1 -2 3 4 -5

@@ -1,0 +1,26 @@
+The provided CNF-SAT problem consists of 3 variables labelled 1, 2 and 3, and four clauses which are essentially expressed in disjunctive form, i.e., 
+
+(1 ? 2 ? ?3), 
+(2 ? ?1 ? ?3), 
+(?1 ? 2 ? ?3), 
+(2 ? ?3 ? ?1) 
+
+To generate a solution for this, we'll pick an initial assignment for the variables and then iteratively improve it until it satisfies all the clauses or it's clear that no solution exists.
+
+First, let's assign all variables to true (i.e., 1).
+
+So, ?1 is false, ?2 is false, and ?3 is false. 
+
+Looking at the first clause (1 ? 2 ? ?3), our assignment already satisfies it because 1 is true.
+
+The second clause (2 ? ?1 ? ?3) is also satisfied because 2 is true.
+
+The third clause (?1 ? 2 ? ?3) is also satisfied because 2 is true.
+
+Finally, the fourth clause (2 ? ?3 ? ?1) is satisfied because 2 is true.
+
+So, it turns out that our initial assignment satisfies all the clauses. Hence, we can conclude that the SAT problem has the solution where all variables are true.
+
+But remember, SAT is a problem in which we just need to find one solution that satisfies all clauses, not necessarily all possible solutions. There might be other assignments that satisfy all clauses as well, but we have found one and therefore our task is done.
+
+Answer: [1 - TRUE, 2 - TRUE, 3 - TRUE]

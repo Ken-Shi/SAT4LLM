@@ -1,0 +1,30 @@
+Solution Theory:
+
+The DIMACS SAT Problem is a mathematical problem where the input is a boolean expression written using only AND, OR, NOT, variables, and parentheses. We have to solve such boolean expressions in conjunctive normal form (CNF). Each line after the heads 'p cnf `v` `c`' represents a disjunction of literals (each element may be a single variable (-1, -2, -3, -4, -5) or the negation of a variable (1, 2, 3, 4, 5)), and the complete formula is the conjunction of these clauses (denoted by 0 at the end).
+
+Methodology to solve:
+
+The problem can be solved by the method of "Unit propagation", "Pure literal elimination" and "Backtracking". However, since this instance of the problem contains no unit clauses (one-literal clause) or pure literals (a variable that appears with only one polarity in all clauses), the backtracking method should be used.
+
+Backtracking Solver:
+
+A Backtracking solver would start by assigning arbitrary truth value to a variable and simplifying the formula accordingly, then repeat this process. If it hits a conflict (an empty clause), it would backtrack to the most recent assignment that is not yet tried with the other truth value, flip the value of this variable, and continue.
+
+Application:
+
+The backtracking method is applied quite a lot in computing, it is a very efficient way to solve the SAT problem, especially when combined with sophisticated data structures to implement the operations efficiently.
+
+Lets try out the backtracking method for propositional logic:
+
+1. Initially, all variables can be either true or false. Let's start by setting 1 = true.
+2. Analyzing the clauses, we can see that no contradictions occur.
+3. Now we set 2 = true, also without contradictions.
+4. Then, if 3 = true, -3 in clause 15 would create a contradiction. So, 3 = false. Revisiting the previous clauses, we see that no contradictions occur.
+5. Now we set 4 = true, also without contradictions.
+6. Finally, if 5 = true, then -5 in clause 1 would create a contradiction. So 5 = false. Again, this assignment causes no contradictions.
+
+Answer:
+
+So, our final assignment is 1=true, 2=true, 3=false, 4=true, and 5=false or in the format required by SAT solvers, which replace true with 1 and false with -1:
+
+answer: 1 2 -3 4 -5

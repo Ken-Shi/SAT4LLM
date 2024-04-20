@@ -1,0 +1,18 @@
+The given SAT problem is a Boolean satisfiability question which is asking for the assignment of the set of Boolean variables (in this case, we have 3 variables) that makes the CNF (Conjunctive Normal Form) formula true. 
+
+1. The formula is given in CNF form, which is a conjunction (AND operation) of several clauses, each clause is a disjunction (OR operation) of literals (variables or their negations).
+2. The "p cnf 3 2" line indicates there are 3 variables and 2 clauses.
+3. The next two lines indicate the clauses in the CNF formula. The "0" at the end of the clause marks its closure.
+4. The - before a variable number indicates that the variable is negated.
+
+The SAT problem at hand can be verbalized as: 
+Find boolean values for variable 1, variable 2, and variable 3 such that either (not variable 2 OR variable 3 OR not variable 1) AND (variable 3 OR not variable 1 OR not variable 2) are both true.
+
+Let's solve this by using the method of satisfying each clause separately:
+To satisfy "-2 3 -1 0", we can set variable 2 to False and variable 1 to False (since they both are negated). Variable 3 can be either True or False, and it won't affect the result.
+
+To satisfy "3 -1 -2 0", the values chosen above are also valid as variable 1 and variable 2 are False, and variable 3 is either True or False. 
+
+So, setting variable 1 to False, variable 2 to False, and variable 3 to either True or False will satisfy both the clauses.
+
+Answer: Solution is {1=False, 2=False, 3=True} or {1=False, 2=False, 3=False}

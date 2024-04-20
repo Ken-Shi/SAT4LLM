@@ -1,0 +1,18 @@
+To solve this satisfiability problem, we need to find a way to assign true (1) or false (0) to variables 1, 2, 3 in a way that meets all of the conditions defined by the clauses (the lines in the DIMACS representation starting with numbers). The DIMACS format expresses each clause as a set of literal, where each literal represents a boolean variable or its negation, and it is terminated with a 0. 
+
+The clauses in the given input are:
+1. (1 OR 3 OR NOT 2)
+2. (1 OR NOT 2 OR NOT 3)
+3. (NOT 2 OR 1 OR NOT 3)
+
+Let's follow this process:
+
+1) As all clauses contain "1" as a variable, let's set 1 = true.
+
+3) In the first two clauses, the literal "NOT 2" appears. Since 1 is true, to satisfy these clauses "NOT 2" has to be false. Therefore, 2 is true.
+
+4) Now, let's consider the third variable. It appears in the first clause as "3" and as "NOT 3" in the second and third clauses.  Since 1 and 2 are already true, to satisfy all the clauses, we need to assign 3 as false.
+
+So, if we let 1 = true, 2 = true, and 3 = false, then we see that all conditions are met. 
+
+answer: 1=true, 2=true, 3=false.

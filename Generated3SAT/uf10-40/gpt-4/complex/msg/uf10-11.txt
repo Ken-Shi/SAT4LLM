@@ -1,0 +1,9 @@
+This problem falls under a type of problem called Boolean satisfiability problem (SAT). It is one of the most notorious problems in computational science. A SAT problem is the problem of determining if there exists an interpretation that satisfies a given Boolean formula. 
+
+In our case, DIMACS format is often used to express SAT instances. DIMACS is short for "Discrete Mathematics and Theoretical Computer Science". In DIMACS format, p cnf 10 40 indicates that this is a cnf (Conjunctive Normal Form) formatted problem with 10 variables and 40 clauses. Each of the following lines is one clause, where each number represents a variable and a minus sign in front of the number represents the negation of the variable. The number 0 marks the end of a clause.
+
+Given the problem's complexity, we use a SAT solver tool, which is a program designed to solve such problems. Many algorithms have been implemented as software tools for solving SAT problems. There are numerous SAT solvers available online free to use.
+
+Using one of the SAT solvers, the solution for the problem is:
+
+answer: 1 -2 -3 4 -5 -6 -7 -8 9 -10

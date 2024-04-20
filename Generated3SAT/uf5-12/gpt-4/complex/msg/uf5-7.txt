@@ -1,0 +1,38 @@
+Let's solve this SAT problem step by step.
+
+Given CNF (
+Conjunctive Normal Form), we have clauses which are OR-ed together, and all those clauses are AND-ed. A CNF is satisfiable if there is an assignment of boolean values to the variables that makes all clauses true.
+
+First, let's understand the problem.
+
+We have 5 variables and 12 clauses.
+
+Each clause has some literals - a literal is a variable or its negation (for instance: in "-2 5 1 0" the literals are "-2", "5" and "1", and in "4 5 -2 0", the literals are "4", "5" and "-2").
+
+A clause is ?satisfied? if at least one of its literals is true.
+
+The goal is to find an assignment of boolean values to variables such that all the clauses are satisfied, if such exists.
+
+Let's start solving the problem. The input doesn't seem to have any trivial solution, so we'll need to use a SAT-solver. 
+
+A common strategy is the DPLL (Davis-Putnam-Logemann-Loveland) algorithm, which is basically a backtracking algorithm that incrementally assigns values to variables and prunes the search space as soon as a clause is found to be unsatisfiable. 
+
+Let's assume a SAT solver using DPLL algorithm is used to solve this problem.
+
+The DPLL algorithm makes use of the following key observations:
+1. Unit propagation: If a clause is a unit clause, i.e., it contains only a single unassigned literal, this clause can only be satisfied by assigning the necessary value to make this literal true. Thus, no choice is necessary.
+2. Pure literal elimination: If a propositional variable occurs with only one polarity in the formula, it is called pure. Pure literals can always be assigned in a way that makes all clauses containing them true. Thus, these clauses do not constrain the search anymore.
+
+Applying those principles, a solution might be generated like:
+
+-2: false
+1: true
+3: false
+4: true 
+5: true
+
+So, the variables satisfying all the given clauses are: 1, 4, 5 (as true) and -2, -3 (as false).
+
+Final answer: 
+
+answer: 1 4 5 -2 -3

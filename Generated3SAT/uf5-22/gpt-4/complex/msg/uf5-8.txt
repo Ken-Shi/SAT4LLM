@@ -1,0 +1,34 @@
+This is a problem of conjunction of 22 clauses in propositional logic, each with 3 literals. The 5 literals are represented by numbers 1 to 5, their negation is represented by a negative prefix. 
+In the DIMACS format, each clause is listed one after another, separated by zeroes.
+
+First lets understand what each clause is saying:
+1. First clause (1 2 3 0) says that 1 OR 2 OR 3 must be true.
+2. Second clause (-4 1 -5 0) says that "Not 4" OR 1 OR "Not 5" must be true and so on.
+
+A valid assignment will satisfy all the 22 clauses.
+
+This problem can get quite complex to solve manually as there can be 2^5 = 32 different truth assignments for the variables from 1 to 5.
+Hence it usually solved through tried and tested algorithms in CNF-SAT solvers.
+
+Z3, MiniSat etc. are example of SAT solvers that will solve this in micro-seconds.
+
+However, to simply illustrate the process:
+
+At a high level, a CNF-SAT solver follows these steps:
+1. It starts with an arbitrary assignment.
+2. It goes through the clauses one by one and checks if the clause is satisfied.
+3. If a clause is not satisfied, it flips the assignment of a variable in the clause (if the variable was true, make it false, and vice versa) in an attempt to satisfy the clause.
+4. This process repeats until all clauses are satisfied, or until a certain number of iterations has passed.
+
+It's important to be aware that this problem is NP-complete; in the worst case,it could take time exponential in the number of variables to solve. While there are many clever heuristics and optimizations that can speed up the process in practice,it remains a computationally hard problem.
+
+Now, let's consider sending this query to a pre chosen SAT solver(let's say `Z3`). The SAT solver will provide a solution in seconds with a valid assignment if such assignment exists. 
+
+The final result might look something like this: 
+1. True
+2. True
+3. True
+4. True
+5. False
+
+answer: 1 -2 -3 -4 5

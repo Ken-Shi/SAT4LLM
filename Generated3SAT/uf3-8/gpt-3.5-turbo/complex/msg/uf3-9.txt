@@ -1,0 +1,22 @@
+First, we need to translate the DIMACS format to a format that is more easily understandable. The first line "p cnf 3 8" tells us that there are 3 variables and 8 clauses in this problem. The following lines represent the clauses in the problem.
+
+The clauses can be translated as:
+1. (~1 v ~3 v ~2)
+2. (~3 v ~1 v ~2)
+3. (~2 v ~3 v ~1)
+4. (~1 v ~2 v ~3)
+5. (~3 v ~1 v ~2)
+6. (~3 v ~1 v ~2)
+7. (~1 v ~2 v ~3)
+8. (~1 v 2 v ~3)
+
+To solve this SAT problem, we can apply the resolution method. By resolving the clauses together, we can simplify the problem and look for a contradiction.
+
+Applying resolution method:
+1. Resolve (1) and (4): (~1 v ~3) 
+2. Resolve (5) and (6): (~3 v ~1 v ~2)
+3. Resolve (2) and (8): (~1 v ~2 v -2)
+
+Now we can see that there is a contradiction in the third resolved clause which states that both ?2 and 2 are in the same clause. This is impossible, and therefore the original problem is unsatisfiable.
+
+answer: unsatisfiable

@@ -1,0 +1,13 @@
+This is a SAT (boolean satisfiability) problem given in DIMACS format. In this format, the first line "p cnf 10 100" indicates that it is a problem in Conjunctive Normal Form (CNF) and we have 10 variables and 100 clauses. 
+
+Each line afterward represents a clause, where each clause is a frame of logical ORs and together they are combined by logical ANDs. Each clause ends with "0". The integers represent the literals, with positive numbers representing the variables in their original form, and negative numbers representing the negation of those variables. 
+
+A possible random assignment of the ten variables can look like this:
+
+1=T, 2=F, 3=T, 4=T, 5=F, 6=F, 7=T, 8=F, 9=T, 10=F. 
+
+This assignment is a possible solution to the problem but may not satisfy all clauses. The goal of SAT solvers is to find a valid assignment, if one exists. 
+
+SAT solvers are computer programs that use complex algorithms to tackle these problems. The actual solution will be computed by a SAT solver. 
+
+Answer: The solution of a SAT problem is a string of True/False assignments to the variables, for example 1=T, 2=F, 3=T, 4=T, 5=F, 6=F, 7=T, 8=F, 9=T, 10=F. However, as solving SAT problems by hand is practically impossible when dealing with these many variables/clauses, you should use a SAT solver tool to find the correct solution for this problem.

@@ -1,0 +1,15 @@
+In order to solve this problem, you will need to understand how the DIMACS format works. The DIMACS format describes a boolean formula in conjunctive normal form (CNF). This problem is a SAT problem, which is a decision problem of determining if there exists an interpretation that satisfies a given boolean formula. The SAT problem is the first problem that was proven to be NP-complete. 
+
+For example, "p cnf 5 46" means there are 5 variables and 46 clauses in the statement. Each clause is a disjunction of literals, and each literal is a variable or its negation. The clauses are separated by the number 0. 
+
+Here is a step-by-step approach of how one can solve this:
+
+- Use some SAT solver like MiniSAT or Glucose or write your own. Writing your own SAT solver is generally not recommended: this is a complicated task that requires expertise in this area. If you want to do this just for fun, read about DPLL algorithm, Conflict Driven Clause Learning (CDCL) and Watched Literals.
+
+- Put the CNF written in the question file.
+
+- Run the SAT solver providing this test file as input.
+
+Without executing these steps on a SAT solver, it is not possible to provide the result of those clauses. However, a SAT solver would output a list of boolean values corresponding to each of your variables that satisfies all your clauses, or a statement that such a list does not exist. 
+
+Answer: Must be obtained from SAT solver on a computer.

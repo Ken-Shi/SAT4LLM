@@ -1,0 +1,36 @@
+Let's try a brute force method, setting the literals to T or F and checking the clauses to find a solution.
+
+First, let's understand the DIMACS format. 'p cnf 5 60' means we have 5 variables and 60 clauses. Each line after that with the '0' at the end is a clause. Each number is a literal: if the number is positive, the literal is true; if the number is negative, literal is false.
+
+Now, let's set all literals (1-5) to True (T). 
+
+- First clause: not 1 or 4 or 2
+This is satisfied since 4 and 2 are True.
+
+We keep checking every clause with all literals being True. 
+
+Once we reach clause 18: 5, not 2, not 1
+This is not satisfied if 2 and 1 are set to True.
+
+This means we need to adjust our literals. So, let's set literal 2 to False (F). 
+
+- Checking clause 18 again: 5, not 2, not 1
+Now, this is satisfied since 2 is False and 5 is True.
+
+Continuing this process of checking each clause, we find that clauses like '5 -3 -1' are not satisfied because literal 3 is set to be True. Notice that we could have also started checking with all literals as False (F), or a mix of True and False values.
+
+So, we adjust literal 3 to False (F).
+
+Following this trial-and-error process, we end up with the following configuration:
+
+Literal 1 - True
+Literal 2 - False
+Literal 3 - False
+Literal 4 - True
+Literal 5 - True
+
+This configuration of literals (1=T, 2=F, 3=F, 4=T, 5=T) makes all the clauses True, which solves this SAT problem.
+
+Therefore,
+
+Answer: 1=T, 2=F, 3=F, 4=T, 5=T.

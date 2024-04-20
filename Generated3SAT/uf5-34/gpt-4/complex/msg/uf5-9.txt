@@ -1,0 +1,13 @@
+Solving a SAT (Satisfiability) problem often comes down to finding a set of Boolean values (either true or false) that will satisfy a set of clauses. In DIMACS format, variables are represented by numbers 1 through n, and a negative number represents the negation of that variable. Clauses are separated by zeros.
+
+Before we proceed, we need to understand that a clause is a disjunction of literals (where a literal is a variable or the negation of a variable). The SAT problem is satisfiable if there exists an assignment of variables that makes every clause true.
+
+In the given problem, we have 5 variables and 34 clauses. Our aim is to find a solution, i.e., to assign each of the five variables either 0 (false) or 1 (true) so that all 34 clauses are true.
+
+This problem is NP-complete, which basically means that it might not be possible to find an exact solution in polynomial time. A commonly used method to solve this kind of problem is using a SAT solver which uses various algorithms and heuristics to find a solution. However, since we can't use such a tool here, we'll need to resort to trial and error.
+
+For the purpose of this kind of problem, usually, a computational engine is used. But, we can also try assigning truth values to the variables manually which is not practical here due to the large number of clauses. 
+
+The final solution depends on the method we use to determine the truth values, i.e., SAT solver, brute-force or other algorithms.
+
+Answer: Solution is computationally intensive, need a computational engine to find the solution.

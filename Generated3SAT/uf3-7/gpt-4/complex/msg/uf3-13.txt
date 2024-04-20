@@ -1,0 +1,21 @@
+The given DIMACS format file encodes a SAT (satisfiability) problem with 3 variables (1,2,3) and 7 clauses. The clauses are disjunctions of literals, where each literal is either a boolean variable or its negation.
+
+Here is the interpretation of clauses:
+
+1. If variable 3 is False, then variable 2 is True or variable 1 is True.
+2. If variable 2 is True and variable 3 is False, then variable 1 is False.
+3. If variable 3 is False, then variable 2 is True or variable 1 is False.
+4. If variable 3 is False and variable 1 is False, then variable 2 is True.
+5. If variable 2 is True and variable 1 is False then so is variable 3.
+6. If variable 3 is True and variable 2 is True, then variable 1 is False.
+7. If variable 1 is False and variable 3 is False, then variable 2 is True.
+
+From the above clauses, observe that, clauses 1, 3, 4, 7 are equivalent. They state if 3 is False then either 1 or 2 must be True, and if 1 is False then 2 must be True. Hence, from these 4 clauses, we can infer that if 3 is False then 2 must be True.
+
+Similarly, clauses 5 and 6 say that if 2 is True and 1 is False then so is 3, and if 3 is True and 2 is True, then 1 is False. From here we can infer that if 2 is True then so is 3, and 1 must be False.
+
+From the second clause we can conclude that if 2 is True and 1 is True, then 3 must be False, which contradicts with our previous conclusions.
+
+Therefore to keep all clauses true, an intuitive solution would be to let variable 1 be False, variable 2 be True, and variable 3 be True.
+
+Answer: 1=False, 2=True, 3=True

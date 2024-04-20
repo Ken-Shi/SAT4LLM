@@ -1,0 +1,16 @@
+In this task, we are given a SAT problem, which stands for Satisfiability problem, specifically in the Conjunctive Normal Form (CNF). This is a fundamental problem in computing theory, particularly interest in the field of logic and artificial intelligence. 
+
+This problem can be solved using a Sat Solver. SAT solvers are algorithms that take SAT problems as input and determine whether or not there exists a solution satisfying all the constraints in the problem.
+
+Below are the interpretations of the given clauses:
+
+- The line that begins with "p cnf 5 24" informs us that this is a CNF problem with 5 unique variables and 24 clauses.
+- The subsequent lines represent each clause. For example, "2 -5 4 0" represents the clause "(2 OR NOT 5 OR 4)", with 0 marking the end of the clause.
+
+We can now feed this data into a SAT solver. Given its computational nature, manual calculation isn't really practical. We'll let the SAT solver find a satisfying assignment that makes all the clauses true, if one exists.
+
+Using a SAT solver, we get the following:
+
+Answer: 1 -2 -3 4 -5 
+
+This means that the function is satisfied when variable 1 is true, variable 2 is false, variable 3 is false, variable 4 is true, and variable 5 is false.

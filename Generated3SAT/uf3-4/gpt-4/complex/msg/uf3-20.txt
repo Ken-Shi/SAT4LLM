@@ -1,0 +1,39 @@
+To solve this SAT (Satisfiability) problem, we first need to understand the DIMACS format. It's used to represent Boolean satisfiability problems. The "p cnf 3 4" line stands for "problem: conjunctive normal form, with 3 variables and 4 clauses". Each of the following lines represents a clause, and the numbers represent literals (positive or negative of the variables).
+
+The 4 clauses given in the problem corresponds to:
+
+(3 OR NOT 2 OR 1)
+(NOT 3 OR NOT 2 OR 1)
+(1 OR 3 OR 2)
+(3 OR 1 OR 2)
+
+Each clause is a disjunctive clause which means if any single literal in the clause is true, then the clause is true. The whole problem is a conjunctive clause implying all clauses must be true for the formula to be true.
+
+Let's start to solve this problem by giving possible true or false to each value:
+
+Let's trial with variable assignment:
+1=true, 
+2=true,
+3=true
+
+Substitute these values into our statements:
+
+(3 OR NOT 2 OR 1)
+(true OR NOT true OR true) = true, because an OR clause is true if one constituent is true. 
+
+(NOT 3 OR NOT 2 OR 1)
+(NOT true OR NOT true OR true) = true, because true is part of the OR clause. 
+
+(1 OR 3 OR 2)
+(true OR true OR true) = true, because true is part of the OR clause.
+
+(3 OR 1 OR 2)
+(true OR true OR true) = true, because true is part of the OR clause. 
+
+Since all disjunctive clauses are true, the conjunctive clause (the entire problem) is also true. 
+
+answer: 
+Variable assignment:
+1=true, 
+2=true,
+3=true

@@ -1,0 +1,16 @@
+To solve this problem, we need to find a satisfying assignment for the variables in the DIMACS file. The file consists of 3 variables and 2 clauses.
+
+The clauses are:
+Clause 1: 1 OR 2 OR NOT 3
+Clause 2: 2 OR NOT 3 OR NOT 1
+
+Based on these clauses, we can see that for clause 1 to be true, either variable 1 or variable 2 must be true (since NOT 3 is included). For clause 2 to be true, variable 2 must be true (since NOT 3 is included) and either NOT 1 or NOT 3 must be true.
+
+From analyzing the clauses, we can see that variable 2 must be true to satisfy both clauses, and since variable 2 is not negated, it must be assigned a value of true. Assigning variable 2 = true satisfies both clauses.
+
+Therefore, the satisfying assignment for this SAT problem is:
+1. Variable 1 = false
+2. Variable 2 = true
+3. Variable 3 = false
+
+answer: 2 true 1 false 3 false

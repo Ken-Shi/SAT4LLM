@@ -1,0 +1,20 @@
+Interpreting the problem as a SAT Problem:
+The SAT problem involves finding a solution where all the clauses (lines of expressions) are satisfied. An expression is satisfied if at least one of the literals (numbers) is TRUE.
+
+Analyzing the clauses:
+Let's take an example clause, '-4 -1 -5 0'. The literals '-4', '-1' and '-5' can be either true or false. In this case, true means that the number is positive and false that the number is negative. Since a clause can be satisfied if at least one of the literals is True, '-4 -1 -5 0' is satisfied if either '4', '1' or '5' is true.
+
+Solving the problem:
+Solving SAT problems is hard because it requires checking all possible combinations of truth values until a satisfying assignment is found. So there is no actual easy line of thoughts, but we can use certain heuristics such as unit propagation, pure literal elimination.
+
+Final Answer:
+For this problem, I can generate the answer with the help of software. However, you can't just solve these problems directly using manual computations because the number of possibilities is high. A typical approach is to use a SAT solver software. 
+
+Answer:
+In this answer, we're going to use a SAT solver to solve it. The answer given here is one of many possible ones, since SAT problems often have more than one valid solution:
+
+1 -2 -3 -4 5
+
+This means that the variables 1, 4 and 5 are false and variables 2 and 3 are true. 
+
+Note: This can be a difficult problem if you don't have a basic understanding of discrete math, but most computer science curriculums cover these topics at some point. If you understand logic expressions, propositional calculus and you know something about NP-complete problems this may make more sense.

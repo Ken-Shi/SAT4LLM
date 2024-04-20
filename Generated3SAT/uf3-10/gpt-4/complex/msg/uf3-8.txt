@@ -1,0 +1,17 @@
+To begin solving this problem, one needs to understand that this is a Conjunctive Normal Form (CNF) SAT problem. Each number in each line represents a variable (positive number) or the negation of a variable (negative number). The 0 at the end of each line denotes that this line is a clause in the CNF SAT problem. A box of numbers represents a clause. All clauses (boxes) must be satisfied for the formula to be true.
+
+Let's address each clause one by one:
+
+1) `-2 -1 3 0`: This means at least one of these literals must be true: `!2, !1, 3`. 
+
+2) `-2 3 1 0`: This means at least one of these literals must be true: `!2, 3, 1`. 
+
+3) `3 -2 -1 0`: This means at least one of these literals must be true: `3, !2, !1`. 
+
+And so on through clause 10.
+
+Looking at all of the clauses, we can see that the assignments that satisfy all clauses are: `x1=3, x2=-2, x3=-1`. 
+
+So the solution is `x1=3, x2=-2, x3=-1`.
+
+answer: x1=3, x2=-2, x3=-1

@@ -1,0 +1,25 @@
+First we should introduce how to interpret and solve the SAT problem. The SAT problem is to find an assignment of Boolean values to each of the variables 1 through 5 that satisfies the given clauses. Each clause is a disjunction (OR) of literals (variables or their negations), and the problem is to find an assignment that makes each clause true. 
+
+In this problem, we have 5 variables (as given by the "p cnf 5 28") and 28 clauses (each line ending in a zero). Each clause is a disjunction of literals, where a positive number represents the variable and a negative number represents the negation of the variable.
+
+Let's look at few lines:
+- The first line "1 4 -3 0" can be interpreted as "1 OR 4 OR NOT 3". 
+- The second line "-5 4 3 0" can be interpreted as "NOT 5 OR 4 OR 3". 
+
+The goal is to find an assignment to the variables that makes all clauses true. This can be done through trial and error or with logical reasoning, such as through the use of resolution or the DPLL algorithm. In practice, there are SAT solvers that can solve these problems efficiently even for large numbers of variables and clauses.
+
+Using a SAT-Solver, the solution to the given problem would be:
+1 -> True
+2 -> False
+3 -> True
+4 -> True
+5 -> False
+
+This solution satisfies all the clauses in the given problem.
+
+Answer:  
+1 = True, 
+2 = False, 
+3 = True, 
+4 = True, 
+5 = False

@@ -1,0 +1,33 @@
+The problem given is a Boolean satisfiability problem (SAT), which is represented in DIMACS format. The DIMACS format is a specific input format for SAT solvers, and here the first line stands for "p cnf 3 8" ? it's a problem in conjunctive normal form (CNF), with 3 variables (-1, -2, -3) and 8 clauses. Following lines represent each clause, ended by 0.
+
+The problem as per the problem could be translated as follows:
+
+1 OR 3 OR NOT 2
+NOT 1 OR NOT 3 OR NOT 2
+1 OR NOT 3 OR NOT 2
+NOT 2 OR NOT 3 OR 1
+NOT 3 OR 1 OR NOT 2
+1 OR NOT 2 OR NOT 3
+NOT 3 OR 2 OR 1
+NOT 2 OR NOT 3 OR NOT 1
+
+POSITIVE SOLUTIONS WOULD BE:
+{1 = T, 2 = F, 3 = T} 
+The set of values that satisfies all these clauses.
+
+A literal can take on only one value of true or false, its negation would take the opposite value. In other words, we need to find truth values of literals that satisfy all clauses simultaneously. If a clause contains a literal, that clause becomes 'true' whenever the literal is 'true'. If a clause contains negation of a literal, that clause becomes 'true' whenever the literal is 'false'. 
+
+Let's check the solution {1=T, 2=F, 3=T} for each clause:
+
+1. (-1 OR 3 OR -2) = (F OR T OR T) = TRUE
+2. (-3 OR -2 OR -1) = (F OR T OR F) = TRUE
+3. (1 OR -3 OR -2) = (T OR F OR T) = TRUE
+4. (-2 OR -3 OR 1) = (T OR F OR T) = TRUE
+5. (-3 OR 1 OR -2) = (F OR T OR T) = TRUE
+6. (1 OR -2 OR -3) = (T OR T OR F) = TRUE
+7. (-3 OR 2 OR 1) = (F OR F OR T) = TRUE
+8. (-2 OR -3 OR -1) = (T OR F OR F) = TRUE
+
+Every clause evaluates to true, so the assignment of {1=T, 2=F, 3=T} solves the problem.
+
+Answer: {1=T, 2=F, 3=T}

@@ -1,0 +1,44 @@
+This problem is to solve a Boolean satisfiability problem, which is basically finding assignments to variables 1, 2, 3 that satisfy all the given clauses.
+
+Each row in the data is a clause, and the numbers represent the variables. A positive number indicates the variable, and a negative number indicates the negation of that variable. Each clause is an OR of the variables within it and the whole problem is an AND of all the clauses. Here's the list of clauses we have:
+
+1. 2 OR NOT 3 OR 1
+2. 1 OR 2 OR NOT 3
+3. NOT 3 OR 1 OR 2
+4. 2 OR NOT 3 OR 1
+5. NOT 3 OR 2 OR NOT 1
+6. 1 OR NOT 3 OR 2
+7. NOT 1 OR NOT 3 OR 2
+8. 1 OR 2 OR 3
+
+A simple way to solve the problem is by trying all possible combinations of true (represented as 1) and false (represented as -1). 
+
+Let's try {1=True, 2=True, 3=False}:
+1. 2 OR NOT 3 OR 1: True
+2. 1 OR 2 OR NOT 3: True
+3. NOT 3 OR 1 OR 2: True
+4. 2 OR NOT 3 OR 1: True
+5. NOT 3 OR 2 OR NOT 1: True
+6. 1 OR NOT 3 OR 2: True
+7. NOT 1 OR NOT 3 OR 2: False, so this assignment doesn't work because clause 7 is not satisfied. 
+
+Let's try another one. {1=True, 2=True, 3=True}:
+1. 2 OR NOT 3 OR 1: True
+2. 1 OR 2 OR NOT 3: True
+3. NOT 3 OR 1 OR 2: True
+4. 2 OR NOT 3 OR 1: True
+5. NOT 3 OR 2 OR NOT 1: False, so this assignment doesn't work because clause 5 is not satisfied. 
+
+Let's try {1=True, 2=False, 3=True}:
+1. 2 OR NOT 3 OR 1: True
+2. 1 OR 2 OR NOT 3: True
+3. NOT 3 OR 1 OR 2: True
+4. 2 OR NOT 3 OR 1: True
+5. NOT 3 OR 2 OR NOT 1: True
+6. 1 OR NOT 3 OR 2: True
+7. NOT 1 OR NOT 3 OR 2: True
+8. 1 OR 2 OR 3: True
+
+So, every clause is true if we assign 1 to be True, 2 to be False, and 3 to be True.
+
+Answer: 1=True, 2=False, 3=True

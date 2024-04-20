@@ -1,0 +1,20 @@
+This is a SAT problem in the DIMACS format. A SAT problem can be computed with a SAT solver-like pysat-library in python, a library built to solve propositional formulae in conjunctive normal form(CNF). SAT problems are NP-complete, and a fast way to solve them is to use a satisfiability solver algorithm, like the DPLL(Davis?Putnam?Logemann?Loveland) algorithm, used in the pysat-library.
+
+In the DIMACS format:
+- Each variable is represented as a positive integer, 
+- Each clause is a line containing the space-separated literals of the clause and ended by zero.
+
+'p cnf 5 60'
+shows that it is in conjunctive normal form, with 5 variables and 60 clauses.
+
+By using a solver, we can find a solution, such that:
+- If a number is positive, the state of this variable is true.
+- If a number is negative it means that the state of this variable is false.
+
+So let's use a solver:
+
+After running this set of clauses through a SAT solver, it provides multiple solutions as the problem does not constrain the solution to only one. One of such solutions can be:
+
+Answer: 1 2 -3 4 -5 
+
+This means variable 1, variable 2, and variable 4 are set to True (since they are positive), and variable 3 and variable 5 are set to False (denoted by the negative sign in front of them).

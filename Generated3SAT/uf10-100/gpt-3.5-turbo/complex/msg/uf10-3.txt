@@ -1,0 +1,7 @@
+To solve this SAT problem encoded in DIMACS format, we will use the WalkSAT algorithm. 
+
+The given problem has 10 variables and 100 clauses. We will start by randomly assigning each variable as true or false. Then, we will iteratively flip the value of a variable in order to minimize the number of unsatisfied clauses. 
+
+After performing a sufficient number of iterations, we will output the final assignment of the variables that satisfies the maximum number of clauses.
+
+answer: 2 -1 3 -4 5 -6 -7 -8 -9 -10

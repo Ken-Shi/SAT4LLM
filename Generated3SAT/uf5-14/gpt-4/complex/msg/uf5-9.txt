@@ -1,0 +1,24 @@
+To solve this SAT problem, you need to understand that SAT problems are nothing but a collection of clauses where each clause is a disjunction of literals and the entire problem represents the conjunctive normal form (CNF). The DIMACS format is the standard form for representing these problems in text files where "p cnf" signifies the beginning of the problem, followed by the total number of variables and clauses. Each subsequent line represents the clauses with each number representing the variable; positive for its true form, negative for its negated form and each line ends with a '0'.
+
+To solve this problem, I'll use the DPLL (Davis-Putnam-Logemann-Loveland) algorithm:
+
+1. Literals with a single occurrence like 1, 2, 3: Assign true to them.
+
+2. Literals whose negation doesn't occur: None.
+
+3. If a clause becomes false, backtrack. If all clauses are true, return the assignment.
+
+Now, I will apply these rules:
+Using rule 1, set variables 1, 2 and 3 to TRUE: 
+
+SAT = {1=T, 2=T, 3=T}
+
+Literals -5 and -4 appear in every remaining clause now, setting variable 5 and variable 4 to FALSE:
+
+SAT = {1=T, 2=T, 3=T, 5=F, 4=F}
+
+This satisfies all the clauses. No need of backtracking as our assignment satisfies all clauses.
+
+Therefore, the solution to the problem is 1=T, 2=T, 3=T, 4=F, 5=F.
+
+answer: 1=T, 2=T, 3=T, 4=F, 5=F

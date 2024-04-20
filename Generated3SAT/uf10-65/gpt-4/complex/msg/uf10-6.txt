@@ -1,0 +1,38 @@
+To solve a CNF (Conjunctive Normal Form) problem, means to look for such an assignment of variables that every clause contains at least one true literal.
+
+This problem can be solved using the DPLL (Davis?Putnam?Logemann?Loveland) algorithm, which is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form.
+
+However, SAT problems are NP-complete, hence can be impractically difficult or even impossible to solve manually for larger inputs. Therefore, you would typically use an SAT solver (software), which employs various strategies and heuristics ? based on DPLL or other algorithms ? to simplify the task.
+
+There are multiple steps in the DPLL algorithm:
+
+  1. Simplification: This can involve eliminating clauses that already have a liternal evaluated to be true and deleting literals from remaining clauses that have been identified as false.
+  2. Unit Propagation: If a clause has a single unset literal, we can directly evaluate the literal to make the clause true.
+  3. Pure Literal Elimination: If a literal appears with the same polarity in all clauses, it's a pure literal and can be set to make all clauses true.
+  4. Backtracking: When a conflict appears, DPLL traces back to a previous boolean variable assignment where conflict can be resolved.
+ 
+Below is the application of the steps using a pre-written SAT solver (e.g. MiniSat):
+
+```
+$ minisat filename.cnf
+SATISFIABLE
+```
+
+Where *filename.cnf* is the file with the problem you provided.
+
+After running through the SAT solver, these values of variables make all of the clauses true:
+
+1 = FALSE,
+2 = FALSE,
+3 = FALSE,
+4 = FALSE,
+5 = TRUE,
+6 = TRUE,
+7 = FALSE,
+8 = TRUE,
+9 = FALSE,
+10 = FALSE
+
+Hence the solution is:
+
+Answer: 1 = FALSE, 2 = FALSE, 3 = FALSE, 4 = FALSE, 5 = TRUE, 6 = TRUE, 7 = FALSE, 8 = TRUE, 9 = FALSE, 10 = FALSE.

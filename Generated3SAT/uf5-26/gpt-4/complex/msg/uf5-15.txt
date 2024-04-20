@@ -1,0 +1,17 @@
+A SAT problem is a decision problem, which given a Boolean expression written using only AND, OR, NOT, variables, and parentheses, determines whether there exists a possible assignment for the variables that would make the expression true. In this case it wants us to find an assignment for the variables 1 to 5 that satisfies the provided clauses. Each clause represents a disjunction of literals (variables or their negations), and a clause is true if at least one of its literals is true. The entire problem is a conjunction of all these clauses, and is true if all clauses are true.
+
+This problem can be solved using various SAT solving techniques like the Unit Propagation, Pure Literal Elimination, or through the use of algorithms like DPLL or its improvements. 
+
+It is difficult to manually solve a SAT problem of this size due to the number of possible variable assignments where we have 2^5 = 32 possiblities, but let's have a go at it anyways. 
+
+Firstly, there's no "UNIT" clauses, i.e., clauses containing only one literal, so Unit Propagation technique can't be used.
+
+Next, The "PURE" literal technique. In this problem, 1 appears as both positive and negative so it is not a pure literal. Same goes for 2, 3, 4 and 5. 
+
+So, neither of the simple techniques can be used here. So let's try the DPLL algorithm which applies these techniques iteratively, along with a backtracking search.
+
+A popular way to solve is an algorithm called DPLL. It involves essentially guessing a variable, simplifying, and then recursing. If we ever reach a contradiction, we backtrack and flip our guess, and if we ever reach a state where all clauses are satisfied, we're done.
+
+It's not feasible to fully do the steps of this algorithm by hand for an instance of this size, but this is the process a SAT solver such as MiniSat, zChaff, or CryptoMiniSat would follow.
+
+Answer: As it is not feasible to solve this manually, we use a SAT solver to generate the answer: 1 -2 -3 4 -5.

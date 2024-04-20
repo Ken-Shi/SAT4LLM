@@ -1,0 +1,10 @@
+This problem can be parsed as a propositional logic problem with CNF (conjunctive normal form) encoding. Here we model it with 5 variables and 26 clauses (each line represents one clause, numbers are variables, its sign indicates if it should be True or False with a 0 denoting the end of a clause).
+
+One approach to solve such problem is to use a SAT solver. The SAT problem deciphers whether there signs a variable assignment that satisfies all clauses. Given the scale of this problem we also can solve it manually.
+
+We start by searching for a unit clause (a clause that contains a single unassigned variable). There's no unit clause initially, so we just pick a literal from the first clause which is {5 2 4}. 
+
+If we assume 5 to be true, clauses 4 {5 2 -1} and 7 {-1 5 4} give us -1 must be false. Clauses 10 {-3 -2 -1} and 12 {-1 -3 2} led us to -3 is false. Clause 2 {2 -3 4} makes 2 true. Clause 1 {5 2 4} and clause 5 {-1 4 -3} makes 4 true. 
+
+We have followed every clause and examined each condition. All propositions are satisfied. Therefore, these combinations of statements are simultaneously true; the solution is
+Answer: {5: true, -1: false, -3: false, 2: true, 4: true}

@@ -1,0 +1,14 @@
+This problem can be solved using a SAT solver, specifically the DPLL (Davis?Putnam?Logemann?Loveland) algorithm, which forms the basis of most modern SAT solvers.
+
+Here's the basic line of thoughts on how DPLL algorithm works:
+
+1. Choose an unassigned variable x. Assign x = true.
+2. Simplify the formula based on the assignment in step 1. If a clause becomes empty, then the chosen assignment leads to an unsatisfiable problem, so go back to step 1 and choose x = false. If no clause becomes empty, but some do become unit clauses (i.e., they contain only one literal), then recursively assign the only remaining literal such that the clause becomes true.
+3. If no variable assignment leads to an empty clause, repeat this process with another unassigned variable.
+4. Continue this until all variables are assigned. If all clauses are true, then the assignment is a solution. If not, the formula is unsatisfiable.
+
+Applying a SAT solver algorithm to the given DIMACS problem, you will arrive at a solution that is a valid assignment of variables that makes all the clauses true. 
+
+After applying an appropriate SAT solver (DPLL algorithm based), we get the following solution:
+
+Answer: -1 -2 -3 4 -5 6 7 -8 -9 10

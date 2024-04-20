@@ -1,0 +1,29 @@
+To solve this problem, we use the method of SAT solvers, which is an algorithmic approach to solve problems of Boolean satisfiability. A satisfying assignment is a set of variables that when plugged into the clauses make all the clauses true. 
+
+Each line in the DIMACS format represents a clause. The number in each clause represents a variable, the sign of the number indicates whether the variable is negated or not in the clause. 
+
+For example, the first line '-5 4 -3 0' represents the clause (!v5 OR v4 OR !v3). 0 is the end of clause. p represents the problem line. cnf 5 16 represents that there are 5 variables and 16 clauses. 
+
+The given boolean formula will be as follows,
+(!v5 OR v4 OR !v3) AND 
+(v2 OR v3 OR v4) AND 
+(!v4 OR !v5 OR !v2) AND 
+(v3 OR v1 OR v5) AND 
+(!v4 OR !v2 OR !v5) AND 
+(!v2 OR !v1 OR !v4) AND 
+(!v2 OR v4 OR !v5) AND 
+(!v3 OR !v4 OR v1) AND 
+(!v5 OR !v4 OR v3) AND 
+(!v5 OR v3 OR !v4) AND 
+(v2 OR v3 OR !v5) AND 
+(!v4 OR v1 OR !v2) AND 
+(!v5 OR !v4 OR v2) AND 
+(v3 OR !v1 OR !v4) AND 
+(!v2 OR v1 OR v4) AND 
+(v1 OR !v3 OR !v5)
+
+With a Boolean Satisfiability (SAT) solver, we can find that there exists a satisfying assignment and the solution is:
+
+Answer: v1=1, v2=0, v3=1, v4=0, v5=0
+
+This set of variables makes all clauses true. Therefore, the formula is satisfiable.

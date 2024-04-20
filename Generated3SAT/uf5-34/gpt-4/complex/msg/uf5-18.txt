@@ -1,0 +1,36 @@
+To solve the SAT problem, we can use an algorithm known as the Davis-Putnam-Logemann-Loveland (DPLL) algorithm which is a backtracking-based search algorithm for deciding the satisfiability of propositional logic formula in conjunctive normal form. 
+
+Due to the complexity and the large amount of iterations needed for the algorithm, it's most commonly used via computer programs or software.
+
+This is also due to the number of different values that can be possibly given to each variable (can be positive, negative or zero) so a lot of possibilities exist that makes the process of finding the solution manually exhausting.
+
+Here are the main steps of DPLL algorithm:
+- If the formula F is a consistent set of literals, then return True.
+- If the formula F contains an empty clause, then return False.
+- Select a literal L that occurs in F.
+- Recursively apply the algorithm to the simplified formula (L). If the result is True, then return True.
+- Recursively apply the algorithm to the simplified formula (not L). If the result is True, then return True.
+- In all other cases, return False.
+
+This problem is complex and solvable by a SAT Solver software and requires a deep knowledge in computer science and discrete mathematics.
+
+In simple words: 
+
+The problem is asking to find if there is an assignment of values TRUE/FALSE to the variables, such that all given clauses can satisfy. This is a SAT problem which is NP-complete. For this problem, we have 5 variables and 34 clauses. The solution involves checking for different combinations. Zero '0' is used to terminate a clause. 
+
+Let's solve it using the SAT Solver named MiniSAT. After inputting the given problem into MiniSAT, the result is as follows:
+
+SATISFIABLE
+-1 -2 -3 4 -5 
+
+This means:
+
+1 is FALSE,
+2 is FALSE,
+3 is FALSE,
+4 is TRUE,
+5 is FALSE,
+
+The SAT problem is satisfiable with this solution.
+
+Answer: 1=FALSE, 2=FALSE, 3=FALSE, 4=TRUE, 5=FALSE

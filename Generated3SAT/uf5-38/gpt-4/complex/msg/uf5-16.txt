@@ -1,0 +1,18 @@
+To solve this problem, we can use the DPLL (Davis-Putnam-Logemann-Loveland) approach commonly used to solve SAT problems, which is a recursive, depth-first search of the possible values of the variables. It uses unit propagation, pure literal deletion, and early termination to solve the problem more efficiently.
+
+Here are the steps to solve the problem:
+
+1) Start by examining all clauses to check whether there is any clause which has only one literal. It can be instantly satisfied by assigning the true value to the variable in the literal. This is called as unit propagation. If none, then move to the next step.
+
+2) Next, check if there?s any variable that appears always with the same polarity in all clauses. If so, we can satisfy all these clauses by simply assigning the appropriate value to such variable. This operation is called pure literal deletion.
+
+3) If neither unit propagation nor pure literal elimination can be applied, pick an unassigned variable and assign it a value of either true or false. 
+
+Repeat these steps until a solution is found or it's determined that no solution exists.
+
+Now, if we apply these steps on this problem, and using a SAT solver program or algorithm, we can get the solution for the problem. 
+
+Answer: 1 -2 -3 4 -5
+This indicates that to satisfy all the clauses, the variables should be assigned such that variable 1 and 4 are true, variable 2, 3, and 5 are false.
+
+Remember, SAT problems are NP-complete, implying there might be a large number of steps and computations, especially for large problems. Therefore, they're often solved with automated solver programs rather than manually.

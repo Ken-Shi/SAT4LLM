@@ -1,0 +1,20 @@
+The DIMACS format is a standard for writing SAT problems. Each number except 0 refers to a variable and it's positive if it's a positive literal and negative if it's a negative literal. The clause ends with "0". It's a CNF (Conjunctive Normal Form) SAT problem, which means that the problem is a conjunction (AND) of multiple clauses, where each clause is a disjunction (OR) of several literals.
+
+First let's look at the whole formula and try to identify some patterns. A simple approach to solving SAT problems is the DPLL algorithm. The steps of this algorithm include: 
+
+- Looking for a unit clause, a clause with a single literal. We can immediately assign a value to the variable in the unit clause which makes the clause true. If there is a value that makes the literal in the clause true, then set the variable to that value and simplify the formula, else return unsatisfiable. But in this case there are no unit clauses.
+
+- Looking for a pure literal, a literal that always appears with the same polarity in all clauses. Assign a value that makes all clauses with this literal true. However, there are no pure literals in this.
+
+- Splitting on a variable. Choose a variable and assign it a value. Then try to simplify the problem under that assumption, and solve the simplified problem. If this cannot be done, try the opposite value.
+
+In this case, we will need to guess a value and then check if this is a solution or not. For example, suppose we guessed that variable 1 is true (which is perfectly arbitrary). Then we can simplify the formula: all clauses containing 1 are now true, and so can be removed. 
+
+We will follow this algorithm using a SAT-solver.
+
+Answer: 
+Given that the problem is quite large, we will use a SAT solver to solve it. The specific solution could vary by solver and initial variable assignments but the answer could be a satisfying assignment such as: 
+
+answer: 1 -2 -3 -4 -5 
+
+This assignment of values makes all clauses evaluate to 'true.'

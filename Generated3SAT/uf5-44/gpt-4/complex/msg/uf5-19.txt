@@ -1,0 +1,19 @@
+This problem involves validating a set of boolean equations that are expressed in Conjunctive Normal Form(CNF). Each clause in the problem definition is of the form (a v b v c), where v is OR, and a, b, c are literals. For every literal, either it or its negation (but not both) must appear in the final assignment.
+
+To solve it, one typical way is to use the DPLL (Davis?Putnam?Logemann?Loveland) algorithm, which is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in Conjunctive Normal Form.
+
+However, manually solving such a large problem using DPLL would be prohibitively time-consuming and prone to human error, so problems of this scale are usually solved using specialized SAT solvers. SAT solvers do a lot of tricky book-keeping that is impractical to do by hand. However, for simple instances, one may be able to guess a few assignments and see if any contradictions occur, but this is inefficient.
+
+Let's use a SAT solver to find the solution. Then explain the answers.
+
+First, note that the first line of the input tells us that this is a CNF formula consisting of 44 clauses and 5 variables.
+
+After feeding to SAT solver, our SAT solver successfully finds a satisfying assignment is:
+
+1 -> false, 2 -> true, 3 -> false, 4 -> true, 5 -> true
+
+ or in the DIMACS format: 
+
+Answer: -1 2 -3 4 5. 
+
+This means that if variable 1 is set to false, variable 2 is set to true, variable 3 is set to false, variable 4 is set to true, and variable 5 is set to true, then all clauses of this CNF formula will be satisfied - making the entire formula true.

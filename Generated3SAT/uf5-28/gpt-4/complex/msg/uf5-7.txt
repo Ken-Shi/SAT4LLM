@@ -1,0 +1,20 @@
+This problem is a SAT (Boolean satisfiability problem) in CNF (Conjunctive Normal Form) and it can be solved using a SAT solver software. However, human interpretation is possible though it can be very complex and time-consuming. 
+
+Knowing that each clause in the CNF expression is a disjunction (logical OR) of literals (variable or its negation), and the whole expression is a conjunction (logical AND) of those clauses, the task is to find an assignment of Boolean values (TRUE/FALSE) to the variables that will make the entire expression TRUE.
+
+If there are any pure literals (literals that either only appear in positive or in negative form) or unit clauses (clauses with only one literal), we can assign values to make those clauses true and simplify the problem - but there are not any in this problem.
+
+There are existing algorithms (i.e. DPLL, WalkSat) that systematically search for an assignment. However, since the problem complexity is NP-complete, human solution is inefficient and will consist of basically guessing assignments and backtracking when reaching contradiction.
+
+After performing such procedure (or using a SAT solver), we can find that a solution to this problem is:
+
+Answer: 1 -2 -3 -4 5
+
+This means: 
+- variable 1 is TRUE,
+- variable 2 is FALSE,
+- variable 3 is FALSE,
+- variable 4 is FALSE,
+- variable 5 is TRUE.
+
+You can check the solution by substituting the variables in the original CNF expression and see that all of the clauses are satisfied. If any solution exists, the formula is satisfiable. If no solution exists, the formula is unsatisfiable.

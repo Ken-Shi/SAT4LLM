@@ -1,0 +1,17 @@
+To solve this SAT problem, we can start by analyzing the clauses in the DIMACS format:
+
+1. (1 2 -3) - This means either variable 1 and 2 are true and variable 3 is false or vice versa.
+2. (-3 2 1) - This means either variable 3 is false and variables 2, 1 are true or vice versa.
+3. (1 3 2) - This means either variable 1, 3 are true and variable 2 is true.
+4. (1 2 -3) - Same as 1.
+5. (1 -2 -3) - This means variable 1 is true and either variable 2 or 3 are false.
+6. (1 -2 3) - This means variable 1 is true and either variable 2 is false or variable 3 is true.
+7. (-3 2 1) - Same as 2.
+
+From these clauses, we can see that the only way to satisfy all clauses simultaneously is to assign:
+- variable 1 as true
+- variable 2 as false
+- variable 3 as false
+
+Therefore, the solution to this SAT problem is:
+answer: 1 -2 -3

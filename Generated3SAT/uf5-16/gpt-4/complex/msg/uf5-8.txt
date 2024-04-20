@@ -1,0 +1,33 @@
+This is a typical problem of a Boolean satisfiability problem (SAT). SAT is an NP-complete problem in computer science. It is an example of a decision problem whose instance is a Boolean expression and a question whether the variables of the given Boolean equation can be consistently replaced by TRUE or FALSE in order for the equation to be true. If that is the possible scenario, the logical formula ? is satisfiable. If there is no such assignment that can lead to the equation to be TRUE, the function? is unsatisfiable.
+
+Apart from finding a single solution for SAT, most SAT solvers try to measure all potential solutions. That would be the most satisfying assignment. In theory, one could use a SAT solver, or brute force search to see whether it is possible to find a logical assignment that makes each clause true. A truth assignment is satisfying if it satisfies all of the clauses. 
+
+For this SAT problem:
+-  Every line represents a disjunctive clause of literals, where each literal is a variable or its negation.
+-  Every clause is assumed to be connected by a logical AND.
+-  Each variable is represented by a positive integer.
+-  Each line ends with a zero.
+
+The problem given in the DIMACS format can be translated to the following logical expression:
+
+    (1 OR 4 OR 3) AND
+    (-2 OR -5 OR 3) AND
+    (-5 OR -1 OR 4) AND
+    (-3 OR 1 OR 2) AND
+    (5 OR 3 OR -2) AND
+    (4 OR -2 OR -3) AND
+    (4 OR -2 OR 1) AND
+    (1 OR 3 OR 4) AND
+    (2 OR -1 OR -5) AND
+    (-2 OR 4 OR 1) AND
+    (3 OR 1 OR -5) AND
+    (-5 OR -3 OR 4) AND
+    (1 OR 4 OR 5) AND
+    (3 OR -5 OR 4) AND
+    (1 OR -3 OR -4) AND
+    (4 OR 1 OR 3)
+
+
+There are several ways to solve a SAT problem. We can use the DPLL algorithm, Watched literals method, or stochastic methods.
+
+Answer: A valid solution could be (1=true, 2=true, 3=true, 4=true, 5=true). This assignment satisfies all clauses.

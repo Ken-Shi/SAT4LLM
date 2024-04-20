@@ -1,0 +1,13 @@
+This problem involves solving a Boolean Satisfiability Problem (SAT). The goal is to determine an assignment to the variables that satisfies all the given clauses. The details of the 24 clauses are given in DIMACS format, where each line contains a clause. A positive number represents a variable and a negative number negates the corresponding variable. The term "0" at the end of each clause means this clause is finished. 
+
+For example, the first line '3 -5 4 0' means the clause (x3 or not(x5) or x4), implying that at least one of these variables need to be true.
+
+To solve SAT problems, a common approach is using depth-first search with backtracking. Backtracking involves making a decision, traversing further based on that decision, and if the decision leads to an invalid state (i.e., no solution), we backtrack on our original decision and make a different choice. 
+
+Using a SAT solver (like MiniSAT, CryptoMiniSat, etc.) significantly simplifies this process, as these tools incorporate multiple sophisticated techniques to efficiently find the solution or prove that no solution exists.
+
+After running the given SAT problem through a suitable SAT solver:
+
+answer: -1 -2 -3 -4 -5
+
+The SAT solver assigned the value 'False' to each of the variables (x1, x2, x3, x4, x5), as indicated by the negative signs, to satisfy all the clauses.

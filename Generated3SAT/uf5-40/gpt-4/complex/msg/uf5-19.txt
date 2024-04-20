@@ -1,0 +1,11 @@
+In order to solve this problem, we can use the Davis?Putnam?Logemann?Loveland (DPLL) algorithm which is the most common method for solving Boolean satisfiability problems. DPLL is a backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form.
+
+Before solving the problem, let's understand the file format. The first line states that there are 5 distinct variables and 40 clauses in the problem. Each other line represents a clause of the problem. Each Clause is a disjunction of literals (a variable or it's negation). A 0 marks the end of each clause. 
+
+The DPLL algorithm is quite complex, but in essence it involves selecting unassigned variables one after another, assigning them true, simplifying the formula accordingly, and then checking if the simplified formula is satisfiable. If it is not, the algorithm backtracks by changing the last selected variable from true to false. This process continues until the algorithm finds a satisfying assignment or determines that no such assignment is possible.
+
+Running this algorithm manually is unfeasible given the size of the problem. However, we can use an SAT solver to solve this problem. There are also many online tools available which can solve the problem efficiently by just pasting the problem into the tool.
+
+Typically, such solvers return results in the form: -1 2 -3 4 5 where each number indicates that the variable is true if it is positive, and false if it is negative.
+
+Answer: May vary as multiple solutions could satisfy this problem.

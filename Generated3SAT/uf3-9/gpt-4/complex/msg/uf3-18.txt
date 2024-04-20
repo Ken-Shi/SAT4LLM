@@ -1,0 +1,24 @@
+Given Problem is a Conjunctive Normal Form (CNF) which is a type of boolean formula to be solved via SAT (Satisfiability) solver. SAT is NP-complete problem where the challenge is to determine if there exists an interpretation that satisfies a given boolean formula. 
+
+In the DIMACS format of representation, every number represents a variable in the clause: a positive number for the variable itself and a negative number for not of that variable. "0" indicates the end of clause.
+
+Let's decode the given problem, where each line after "p cnf 3 9" represents a clause:
+1. Not Variable3 and Not Variable2 or Variable1
+2. Variable1 and Variable2 and Not Variable3
+3. Variable2 and Variable1 and Not Variable3
+4. Variable1 and Variable2 and Not Variable3
+5. Not Variable3 and Not Variable1 or Variable2
+6. Variable2 and Variable3 and Variable1
+7. Variable1 and Variable3 and Variable2
+8. Variable1 and Not Variable3 or Variable2
+9. Variable1 and Variable2 and Not Variable3
+
+Now, let's find an assignment that makes the CNF satisfiable i.e., each clause to be true. 
+
+By looking at the clauses, except for clause 6 and 7, all other clauses can be satisfied if we set Variable3 = false. Now the problem is there are clauses which need Variable3 = true in clause 6 and 7. 
+
+But this can be solved if we set Variable1 = false for clause 6 and Variable2 = false for clause 7. This does not violate the satisfiability of other clauses.
+
+So, an assignment that satisfies all clauses is Variable1 = false, Variable2 = true, and Variable3 = false.
+
+Answer: Variable1=false, Variable2=true, Variable3=false

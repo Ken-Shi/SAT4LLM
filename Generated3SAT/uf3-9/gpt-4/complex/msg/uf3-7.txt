@@ -1,0 +1,38 @@
+This problem is a propositional logic problem usually used in SAT Solvers. It's represented in DIMACS format, which is widely used in computer science to represent boolean formula.
+
+Here's a breakdown of each line:
+
+p cnf 3 9: This line defines the problem. The "p" signals a problem definition. "cnf" means the problem is in Conjugate Normal Form. "3" is the maximum number literal (3 distinct boolean variables), and "9" is the number of clauses.
+
+Afterwards, each line ending in "0" is a clause, and the numbers in that line are literals corresponding to propositional variables. A positive number represents the variable itself and a negative number represents the negation of that variable. For example, 1 -3 2 0 means (x1 v ~x3 v x2).
+
+To solve, we can start assuming values for variables and check if the result is a valid or satisfying truth assignment. Let's start assuming:
+
+x1 = True
+x2 = False
+x3 = True
+
+Using these values, we will check if all the clauses are satisfied:
+
+1 -3 2 0 translates to (True v ~True v False), which is True
+-3 1 2 0 translates to (~True v True v False), which is True
+-3 2 1 0 translates to (~True v False v True), which is True
+2 1 3 0 translates to (False v True v True), which is True
+2 -1 -3 0 translates to (False v ~True v ~True), which is False
+-3 2 1 0 translates to (~True v False v True), which is True
+-1 2 3 0 translates to (~True v False v True), which is True
+3 1 2 0 translates to (True v True v False), which is True
+-3 2 1 0 translates to (~True v False v True), which is True
+
+This assignment doesn't satisfy all clauses. Hence, let's try another assignment:
+
+x1 = True
+x2 = False
+x3 = False
+
+Checking against all clauses now gives True for all clauses. Hence the assignment (x1 = True, x2 = False, x3 = False) satisfies all the clauses and is a solution.
+
+Answer:
+x1 = True,
+x2 = False, 
+x3 = False

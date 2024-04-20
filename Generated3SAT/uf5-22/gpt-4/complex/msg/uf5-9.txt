@@ -1,0 +1,22 @@
+To solve this, we will use the Davis-Putnam-Logemann-Loveland (DPLL) algorithm. Here is how it goes: 
+
+- The number of variables is 5, from 1 to 5. The number of clauses is 22. 
+- First, we randomly assign a value to a variable, assuming variable 1 is True.
+- Check the implication of this assignment (i.e, what is forced to be true or false).
+- If there are conflicts (both True and False assignments for a variable), backtrack and try the next value for a variable. If there are no conflicts and all clauses are satisfied, then we have found a solution.
+- We can choose the next variable by some heuristic. For simplicity, let?s choose 2. Assume 2 is True.
+- Again, check all clauses. If there are conflicts, backtrack and try the next value (False). For each assignment, propagate its effect to all clauses.
+- Repeat this process until you reach a valid assignment for all the variables or you have tried all possible combinations.
+- If all combinations have been tried and there is no solution, then we can conclude that the SAT problem does not have a solution.
+
+Here, we can use the following facts:
+
+1) If a clause only contains one literal (variable or its negation), the variable must be assigned a truth value so that the clause becomes true.
+
+2) If a variable only appears in one polarity in all clauses (like all positive or all negative), we assign a value to make all those clauses true.
+
+By looking closely, all 5 variables appear in both polarities. We then have to take an arbitrary value for a variable. 
+
+Setting 1 to True, we can reduce the problem. If there're any conflicts we continue with 1 as False, and so forth. Then, we go to the second variable and test the possible values, resulting in the DPLL decision tree. Following this process, we can get the following solution:
+
+answer: 1 False, 2 True, 3 False, 4 True, 5 False.

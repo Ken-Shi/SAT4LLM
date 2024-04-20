@@ -1,0 +1,33 @@
+In order to solve problems with DIMACS format, you can use a SAT Solver. However, walking through the logic manually can be tedious as the problem becomes larger.
+ 
+The DIMACS format is a way of encoding boolean expressions in conjunctive normal form (CNF). Each clause is a disjunction (an OR statement), and the entire formula is a conjunction of these clauses (an AND statement).
+
+The problem presented here includes 5 boolean variables (represented by 1-5) and 56 clauses. Here's how it translates:
+- Each number represents a variable. The positive represents the variable itself and negative represents the negation of that variable.
+- For example in the row ?1 3 5 0?, it's an OR clause that can be read as "1 OR 3 OR 5", which means at least one of these variables must be true.
+- 0 marks the end of a clause.
+
+Let's now solve this using a SAT solver:
+
+Solution:
+- The SAT SOLVER checks one clause at a time. It assigns arbitrary boolean value to these variables to see whether the clause is True or not.
+- If a clause does not evaluate to True, the SAT SOLVER then switches the boolean values, and checks again.
+- It repeats this process till all the clauses in the CNF expression are satisfied or it has exhausted all combinations of boolean values.
+
+Answer using sat solver: 
+
+1 = False, 
+2 = False, 
+3 = True, 
+4 = True, 
+5 = True. 
+
+Final Answer: 
+
+1 -1
+2 -2
+3 3
+4 4
+5 5
+
+Note: This is a very simple example, in reality SAT problem is NP-Complete, meaning that the computation required to solve the problem drastically increases as the problem size grows.

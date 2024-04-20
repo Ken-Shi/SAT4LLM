@@ -1,0 +1,33 @@
+To solve this problem, we will convert the DIMACS format clauses into logical expressions and then try to satisfy all the conditions.
+
+The DIMACS format:
+p cnf 3 3
+-1 2 -3 0
+-3 2 1 0
+2 -3 1 0
+
+Converting into logical expressions:
+1. (!p v q v !r)
+2. (!r v q v p)
+3. (q v !r v p)
+
+For a clause to be true, at least one literal must be true. Now, we will try to satisfy all the clauses:
+
+Let's start with the first clause:
+(!p v q v !r)
+Assume p is false, q is true, and r is false. This satisfies the first clause.
+
+Now, moving on to the second clause:
+(!r v q v p)
+Using the values from the first clause, this clause is also satisfied.
+
+Finally, looking at the third clause:
+(q v !r v p)
+With the same values, the third clause is also satisfied.
+
+Therefore, the solution that satisfies all the clauses is:
+p = False
+q = True
+r = False
+
+answer: p = False, q = True, r = False

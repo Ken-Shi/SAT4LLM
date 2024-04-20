@@ -1,0 +1,19 @@
+The provided problem is a SAT (Satisfiability) problem, which is an instance of the Boolean satisfiability problem (also known as the propositional satisfiability problem and abbreviated as SATISFIABILITY or SAT). The SAT problem is a decision problem, whose instance is a boolean expression written using only AND, OR, NOT, variables, and parentheses. The question is: given the expression, is there some assignment of TRUE and FALSE values to the variables that will make the entire expression true?
+
+The input is given in DIMACS file format, which is often used as a standard way to encode and describe instances of combinatorial problems for use in benchmarking, for example for the SAT competition.
+
+Each line of the content after the first one represents a different clause of the expression, with each number representing a different variable. A positive number means the variable should be TRUE to satisfy the clause, and a negative number means the variable should be FALSE to satisfy the clause. A line ending in 0 merely indicates the end of a particular clause.
+
+Let's solve this step by step:
+
+Assuming 5 to be True and considering the first line " -2 4 5 0 ", since 5 is True, the whole clause will be true. 
+
+Line 2, " -2 -3 5 0 ", indicates that 5 needs to be True for the clause to be satisfied, and since we have assumed 5 as True, this clause will also be satisfied. 
+
+Following in this manner, assuming 2 as False, 1 as True, 3 as False and 4 as True. We can see that these assumptions will satisfy all the clauses.
+
+So, the Boolean assignment that will make the entire expression true is:
+
+{1 = true, 2 = false, 3 = false, 4 = true, 5 = true}
+
+Answer: 1 -2 -3 4 5

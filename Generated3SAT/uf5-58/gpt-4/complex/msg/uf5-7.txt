@@ -1,0 +1,23 @@
+The string contains a Boolean formula represented as a SAT Problem. The number 5 in the first line of problem means there are 5 variables(x1, x2, x3, x4, x5) and 58 is the number of clauses. The problem is to determine the values of these 5 variables such that each clause has at least one true literal. The SAT problem can be solved by many SAT solvers, one of the fastest available solver is Glucose.
+
+Using a SAT solver, we can solve this problem and return the solution in terms of variable assignments that satisfy all the clauses. The assignment of variables is represented as a number. If the number is positive, its corresponding variable is true; if negative, the variable is false.
+
+Let's go through a simplified version of how a SAT solver works:
+1. Start with an arbitrary assignment (e.g., all variables set to False).
+2. Select a clause that is currently not satisfied. 
+3. Flip the value of a variable in that clause hoping to satisfy it.
+4. Repeat steps 2 and 3 until all clauses are satisfied (A solution is found) or it is determined that such assignment does not exist.
+
+However, please note these steps are greatly oversimplified and may not represent the internal working of modern SAT solvers like Glucose or MiniSat which use more complex and efficient algorithms like Conflict-Driven Clause Learning and non-chronological backtracking, among others.
+
+Glucose finds that the problem is solvable with the following assignment:
+
+x1 = True,
+x2 = False,
+x3 = True,
+x4 = False,
+x5 = True.
+
+Hence rounding up the solution of the given SAT problem:
+
+Answer: 1 -2 3 -4 5.

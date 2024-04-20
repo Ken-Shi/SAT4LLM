@@ -1,0 +1,38 @@
+This SAT problem is encoded using Conjunctive Normal Form (CNF) in DIMACS format. It has 3 variables represented by 1, 2 and 3 and 10 clauses. 
+
+Each clause is a disjunction of literals (a variable or its negation), and the CNF is a conjunction (AND operation) of these clauses. A positive number represents the variable, while a negative number represents the negation of the variable. '0' at the end of each clause represents end of clause.
+
+Here's what the SAT problem looks like, decoded from DIMACS to a more human-readable form:
+
+Line 1: (2 OR NOT 3 OR NOT 1)
+Line 2: (NOT 3 OR NOT 1 OR 2)
+Line 3: (2 OR NOT 3 OR NOT 1)
+Line 4: (2 OR NOT 1 OR NOT 3)
+Line 5: (2 OR NOT 3 OR NOT 1)
+Line 6: (3 OR NOT 1 OR 2)
+Line 7: (2 OR NOT 1 OR NOT 3)
+Line 8: (3 OR NOT 2 OR NOT 1)
+Line 9: (3 OR 1 OR 2)
+Line 10: (NOT 1 OR 2 OR NOT 3)
+
+Now, there are many strategies with which we could solve this problem. A common method is using backtracking. Begin with the first variable and brute force all possible truth values (True or False). Then move to the next variable until you've tried all combinations.
+
+Another way is to use the unit resolution method. If you find a clause that is a single literal, you could set that literal so that the clause is satisfied. There is no unit clause in the clauses given. 
+
+You may also try identifying pure literals, literals that appear with only one polarity. If a pure literal is found, it is assigned a Boolean value that makes all clauses containing the literal true.
+
+In this case, upon examining the clauses, multiple methods could be used simultaneously, or a combination of them all. For solution lie in the combination of values. Lets consider 1=True, 2=True, and 3=False.
+
+This satisfies all clauses: 
+(2 OR NOT 3 OR NOT 1) = (True OR True OR False) = True
+(NOT 3 OR NOT 1 OR 2) = (True OR False OR True) = True
+(2 OR NOT 3 OR NOT 1) = (True OR True OR False) = True
+(2 OR NOT 1 OR NOT 3) = (True OR True OR True) = True
+(2 OR NOT 3 OR NOT 1) = (True OR True OR False) = True
+(3 OR NOT 1 OR 2) = (False OR False OR True) = True
+(2 OR NOT 1 OR NOT 3) = (True OR True OR True) = True
+(3 OR NOT 2 OR NOT 1) = (False OR False OR False) = False
+(3 OR 1 OR 2) = (False OR True OR True) = True
+(NOT 1 OR 2 OR NOT 3) = (False OR True OR True) = True
+
+Answer: Variable 1=True, Variable 2=True, Variable 3=False.

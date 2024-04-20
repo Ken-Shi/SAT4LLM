@@ -1,0 +1,25 @@
+This is a Boolean satisfiability problem that looks for a satisfying assignment to the given Boolean formula expressed in conjunctive normal form.
+
+Let's break down the formula given in the DIMACS format. The statement "p cnf 3 2" means that we are given a Boolean formula in conjunctive normal form consisting of three variables (1, 2, 3) and 2 clauses.
+
+The two clauses are:
+1) 1 3 2
+This clause implies the disjunction (Boolean OR operation) of three literals, i.e., it means 1 OR 3 OR 2.
+
+2) -3 -1 2
+This clause implies the disjunction of -3, -1, and 2. Here, -3 and -1 mean NOT 3 and NOT 1 respectively. So, this clause translates to NOT 1 OR NOT 3 OR 2.
+
+Our task is to find a truth assignment for the variables 1, 2, 3 that will satisfy both clauses of the given formula.
+
+An initial interpretation can be {1 = true, 2 = true, 3 = true}, but it does not satisfy the second clause which needs either 3 or 1 to be false or 2 to be true.
+
+So we can change the interpretation to {1 = false, 2 = true, 3 = false}.
+
+This interpretation satisfies both clauses:
+1) 1 OR 3 OR 2 translates to false OR false OR true which results in true
+2) NOT 1 OR NOT 3 OR 2 translates to true OR true OR true which results in true.
+
+This shows that this assignment satisfies the given SAT Problem.
+
+Answer: 
+1=false, 2=true, 3=false

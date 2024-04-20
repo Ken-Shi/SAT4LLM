@@ -1,0 +1,23 @@
+Approach:
+1. We need to find a solution such that every clause contains at-least one TRUE literal
+2. We must remember that literal 1 represents the variable and -1 represents the negation of that variable.
+
+Let's go clause by clause:
+
+1. 2 1 3 0 -> none is negated, we can make any one of them TRUE or all of them TRUE. Let's choose to make 2 TRUE and rest doesn't matter. But for simplicity, we can assume them as TRUE.
+
+2. 2 1 3 0 is same as above. No change required.
+
+3. 2 1 3 0 same as above.
+
+4. -3 1 2 0 -> 3 is negated, it means, it should be FALSE. But from 1-3 clauses we assumed 3 as TRUE. It's a contradiction. But here we have other literals, 1, 2 (already TRUE). So no problem with the clause. This clause is TRUE with any of 1, 2 being TRUE regardless of 3.
+
+5. 1 3 2 0 -> All are positive. All are already TRUE. So no problem here.
+
+6. 1 2 3 0 same as above. All are true.
+
+7. -2 3 1 0. 2 should be FALSE here. But from 1-3 clauses, we made 2 as TRUE. Thankfully we have 3 and 1 which are TRUE. Hence no problem.
+
+So, a possible assignment that can be derived from this procedure:
+
+answer: 1=T, 2=T, 3=T

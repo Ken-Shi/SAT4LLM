@@ -1,0 +1,9 @@
+To solve this SAT problem encoded in DIMACS format, we need to find a satisfying assignment that makes all the clauses true.
+
+We see that the formula has 10 variables (labeled from 1 to 10) and 100 clauses.
+
+Let's use a SAT solver to find a satisfying assignment.
+
+# SAT solver output will be the answer
+
+**Answer:** UNSATISFIABLE

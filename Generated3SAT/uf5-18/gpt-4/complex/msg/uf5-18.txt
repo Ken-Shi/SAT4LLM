@@ -1,0 +1,17 @@
+First, we have to understand that in DIMACS format, a positive integer represents a variable and a negative integer represents the negation of a variable. Here, we have 5 variables (since "p cnf 5 18" means we are dealing with 5 variables in the expressions) across 18 clauses.
+
+The first line of each expression represents "variable 5 OR variable 2 OR NOT variable 4". The SAT problem can be viewed as a logic problem where each clause (each line of expressions) needs to be true for the solution to hold.
+
+We start by making an assumption and then checking the results. From the units clause, I see that 5 appears many times. Therefore, I assume that 5 and -5 both are true. Then, we just need to ensure the clauses are all satisfied.
+
+From line 1 and line 2, we see that 5 AND -4 AND 2 is true. 
+
+Checking for clauses with 1, we see that from line 3, and line 4, (2 AND 1 AND -3) AND (-5 AND 1 AND -3) is also true. 
+
+The next few lines are bit tricky. Line 5 and line 6 say (-4 AND 2 AND -5) AND (2 AND 5 AND -4) which returns true. 
+
+Line 7 and line 8 present the clauses (5 AND 2 AND -1) AND (2 AND 1 AND 5). Checking with our previous assumptions, we see that these are true. 
+
+Finally, we ensure all variables appear. We already took into account variables 1, 2, 4, and 5. From line 12, we validate variable 3.
+
+Answer: 1=true, 2=true, 3=false, 4=false, 5=true

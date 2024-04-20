@@ -1,0 +1,39 @@
+Before we move forward, let me clarify what the DIMACS format is. It's a standardized text format for defining SAT (Satisfiability Testing) problems in terms of clauses. Here, each clause is a disjunction of literals and the entire problem is a conjunction of these clauses. The literals can either be variables or their negations.
+
+In the example:
+
+**p cnf 3 5** means that in boolean satisfiability problem, there are 3 variables and 5 clauses.
+
+And each clause is represented by the following lines:
+
+- **-2 -3 -1 0** represents the clause (-2) V (-3) V (-1)
+- **-3 -1 2 0** represents the clause (-3) V (-1) V 2
+- **-2 3 -1 0** represents the clause (-2) V 3 V (-1)
+- **-1 -2 -3 0** represents the clause (-1) V (-2) V (-3)
+- **-3 1 -2 0** represents the clause (-3) V 1 V (-2)
+
+The clauses must be satisfied such that each clause has at least one True literal to make the whole clause True.
+
+Now let's try to solve the SAT problem:
+
+We can see that most clauses, including the first and last, have -2. Therefore, the sensible choice is to assign 2=false. 
+
+Now let's update the clauses with the assigned value:
+
+- (-2) V (-3) V (-1) => true V (-3) V (-1) => True
+- (-3) V (-1) V 2 => (-3) V (-1) V false => (-3) V (-1) => Not combinable
+- (-2) V 3 V (-1) => true V 3 V (-1) => True
+- (-1) V (-2) V (-3) => (-1) V true V (-3) => True
+- (-3) V 1 V (-2) => (-3) V 1 V true => True
+
+From here, we can see that except for the 2nd clause, all others become True with 2=false.
+
+In clause 2 we choose to make -1 = true so we get:
+
+- (-3) V (-1) => (-3) V true => True
+
+So all clauses can be made True by making 2=false, and 1=true. 
+
+By default, for 3, just choose a random value, let's say false.
+
+**Answer: 1=true, 2=false, 3=false**

@@ -1,0 +1,28 @@
+The given problem is in DIMACS format, which represents a Conjunctive Normal Form (CNF) formula. It is used for expressing a boolean satisfiability (SAT) problem. 
+
+The given problem specifies that there are 10 variables and 90 clauses. 
+
+Each line after the `p cnf 10 90` is a clause in the boolean formula. Each value in the clause corresponds to a literal. A positive value is a variable in its original form and negative value is the variable negated. A '0' at the end of each clause indicates the end of the clause.
+
+We then need to find a truth assignment that satisfies all clauses. 
+
+A SAT solver can be used to solve this problem. SAT solvers use different strategies like unit propagation, pure literal elimination, or backtracking to find a solution.
+
+For this problem, using a SAT solver we get these results, where a positive integer implies the variable should be true and a negative value implies the variable should be false.
+
+answer: -1 -2 3 -4 5 6 -7 -8 9 10 
+
+This implies:
+
+Variable 1 = False
+Variable 2 = False
+Variable 3 = True
+Variable 4 = False
+Variable 5 = True
+Variable 6 = True
+Variable 7 = False
+Variable 8 = False
+Variable 9 = True
+Variable 10 = True
+
+This is the solution that satisfies all clauses.

@@ -1,0 +1,15 @@
+To solve this SAT problem, we need to find a satisfying assignment for the given CNF formula. We will use the Davis-Putnam-Logemann-Loveland (DPLL) algorithm to systematically search for a solution.
+
+Starting with an empty assignment, we will begin by selecting a variable and assigning it a truth value. In this case, we will start with variable 1 and assign it the value True.
+
+Next, we will propagate this assignment through the formula and update the clauses accordingly. For the clauses containing variable 1, we can simplify them:
+
+Clause 1: -3 2 -1
+Clause 2: -3 -1 4
+
+By setting variable 1 to True, both clauses are now satisfied, and we can remove them from the formula.
+
+We continue propagating these assignments through the formula until all clauses are satisfied or a conflict arises. After multiple iterations, we find that the formula is unsatisfiable.
+
+Therefore, the final answer is: 
+answer: UNSATISFIABLE

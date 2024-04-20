@@ -1,0 +1,18 @@
+To solve this SAT problem, we need to identify the variables and the clauses provided. 
+
+First, we note that there are 3 variables (1, 2, 3) and 2 clauses. 
+
+The clauses provided are: 
+1. ?2 ? ?3 ? ?1
+2. ?1 ? ?3 ? ?2
+
+For a clause to be satisfied, at least one literal within the clause must be true. Let's analyze the clauses: 
+
+1. If we let 1 be true, then the clause would be satisfied because ?1 would be false. 
+2. If we let 2 be true, then the clause would not be satisfied because ?2 would be false, making the whole clause false. 
+3. If we let 3 be true, then the clause would not be satisfied because ?3 would be false, making the whole clause false. 
+
+Based on our analysis, we can conclude that variable 1 being true satisfies both clauses. 
+
+Therefore, the solution to this SAT problem is: 
+answer: 1

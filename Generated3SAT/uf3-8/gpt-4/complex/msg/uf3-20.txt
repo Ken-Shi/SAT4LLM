@@ -1,0 +1,21 @@
+Let's understand the problem first. It's a simple standard propositional logic problem in conjunctive normal form (CNF). We are given three variables and need to find values for them that satisfy all the clauses.
+
+The three variables are 1, 2, and 3. And the eight clauses are:
+1. -1 V -2 V 3
+2. -2 V -1 V 3
+3. -1 V -2 V 3
+4. -2 V -1 V 3
+5. -2 V 3 V -1
+6. 3 V -2 V -1
+7. -2 V 3 V -1
+8. 3 V -1 V -2
+
+Where "V" represents "OR".
+
+In each clause, we only need one of the propositions to be TRUE to make the clause TRUE. So let's try to satisfy the clauses in as few TRUE propositions as possible. 
+
+Looking at the clauses we can infer that if we assign TRUE to the variable 3, half of the clauses are immediately satisfied. That leaves us four clauses to satisfy (-1 V -2), where we can actually make 1 and 2 FALSE. By making variable 1 and 2 FALSE, and by making variable 3 TRUE, we satisfy all the clauses. 
+
+Therefore, one possible solution is for variable 1 and 2 to be FALSE and variable 3 to be TRUE.
+
+Answer: 1=FALSE, 2=FALSE, 3=TRUE

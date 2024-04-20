@@ -1,0 +1,22 @@
+To solve this SAT problem encoded in DIMACS format, let's first denote the variables as follows:
+1 -> A
+2 -> B
+3 -> C
+
+The clauses given in DIMACS format are:
+Clause 1: (-A or C or B)
+Clause 2: (-A or B or C)
+
+We need to find an assignment of truth values to these variables that satisfies both clauses.
+
+Let's start by assigning truth values to variables:
+A = False
+B = False
+C = False
+
+Clause 1: (-False or False or False) is True
+Clause 2: (-False or False or False) is True
+
+Therefore, this assignment satisfies both clauses.
+
+Answer: This SAT problem is satisfiable.

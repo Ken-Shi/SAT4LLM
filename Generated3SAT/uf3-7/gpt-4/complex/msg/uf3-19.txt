@@ -1,0 +1,19 @@
+The problem given is an instance of the Boolean satisfiability problem (SAT problem). As the problem is expressed in conjunctive normal form (CNF), the task is to find if there is an assignment of truth values to the boolean variables that satisfies the formula. 
+
+Here are the steps to solve the problem:
+
+1. The given problem is in DIMACS format, we should draw the expressions:
+    - 1 AND 2 AND (NOT 3)
+    - (NOT 3) AND 2 AND 1
+    - 1 AND 3 AND 2
+    - 1 AND 2 AND (NOT 3)
+    - 1 AND (NOT 2) AND (NOT 3)
+    - 1 AND (NOT 2) AND 3
+    - (NOT 3) AND 2 AND 1
+
+2. Observe if an assignment can satisfy each clause:
+    - The 1st, 2nd, and 4th clause require 3 to be False as (NOT 3) is there.
+    - The 6th clause requires 3 to be True.
+    - Thus, there is a contradiction and no assignment can satisfy all clauses at the same time.
+
+Answer: No solution.

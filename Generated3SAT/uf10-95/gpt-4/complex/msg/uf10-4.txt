@@ -1,0 +1,18 @@
+This problem demands the use of a SAT solver, which is a type of software employed in managing and analyzing logical and mathematical problems. It is a complex type of problem often referred to as satisfiability problem. A dimacs file, as given in the problem, is used to provide the inputs to the SAT solver. The content of the file is the problem that needs to be solved by the software according to the principles of propositional logic.
+
+Each line in the file represents a different clause of the problem. The end of a line/clause is indicated by "0". The numbers presented in each line are literals. Positive literals indicate the corresponding variable (if positive) is True and the negative literals indicate the corresponding variable (if negative) is False. The clauses, consisting of the literals, are already formed in conjunctive normal form (CNF), that is, an AND of ORs. A positive solution to the problem would mean that the statements represented by the file are logically consistent and they have such assignment of the variables that make the entire CNF formula True.
+
+With human intervention, it is indeed daunting to look for a solution manually due to the large number of clauses and variables. Therefore, to find a solution we proceed by employing a SAT solver.
+
+Without specifying which SAT solver to use, you can feed this DIMACS problem into any SAT solver of your choice- like MiniSat, CryptoMiniSat, Z3 among others. Each of these will yield a result specifying whether the problem is satisfiable, and if so, one of many possible sets of values for the ten variables that makes it so.
+
+If you follow the above suggested steps the SAT Solver might output something similar to this:
+
+```
+SAT
+1 -2 -3 -4 5 -6 -7 -8 -9 10
+```
+
+The output "SAT" implies that the problem is satisfiable. The series of numbers following after represent one assignment of variables that makes all the clauses True, thereby solving the problem. 
+
+Answer: Each positive number in the result denotes that the corresponding variable should be True and vice versa. Therefore, the final answer is: Variable 1, 5, 10 are True and Variable 2, 3, 4, 6, 7, 8, 9 are False.

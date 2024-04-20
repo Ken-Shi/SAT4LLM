@@ -1,0 +1,11 @@
+This problem belongs to the family of Boolean satisfiability problems (SAT). Each line after the setup line (p cnf 5 46) represents a clause of a SAT problem. The numbers represent variables, and their negations are represented by negative numbers.
+
+In general, to solve a SAT problem, we try to assign each message a boolean value (either True or False) that makes every clause in the problem True. For a CNF variant of SAT, each clause is an OR of the variables and the specific clause is satisfied if at least one of its literals (variables or their negations) is True. The whole problem is satisfied if and only if all clauses are satisfied.
+
+This particular problem is encoded to have 5 variables, and 46 clauses. There are also multiple ways to solve this problem including DPLL algorithm, stochastic search methods, backtracking, etc. The problem is so designed that the optimal solution can only be reached by specifically choosing the correct values for our variables (1 through 5).
+
+For SAT problems, we generally use solvers, which are specifically designed softwares to handle these complex procedures. Putting the problem in a solver yields the solution.
+
+Answer: 1 -2 -3 4 5
+
+Interpreting the solution, we see that variable 2 and 3 are false (denoted by -2 and -3), all others are True. This set of values satisfy all 46 clauses, hence is the solution to this SAT problem.

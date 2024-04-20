@@ -1,0 +1,13 @@
+The given problem is a CNF-SAT (Conjunctive Normal Form- Satisfiability) problem. The first line in the problem represents 'p cnf 3 10' which means that there are 3 variables and 10 clauses. The rest lines till the end represent each clause. Each clause is a disjunction of literals (variables or negation of variables) and the whole problem is a conjunction of all these clauses. A solution of a SAT problem is an assignment to the variables that makes the whole formula evaluate to true.
+
+Let's try to solve the problem:
+
+1. The first clause is '-2 -1 3' meaning at least one of '-2', '-1' and '3' must be true for the clause to be true. 
+
+2. An optimal solution here is making '2' and '1' false ('2' and '1' become '-2' and '-1' respectively) and making '3' as true. This is because '3' appears in most of the disjunctions.
+
+3. Now with assignment '3' as true, the clauses '-1 2 3', '2 -1 3', '1 2 3', '3 -1 2', '3 1 2', '3 2 -1', '2 -1 3', '3 -1 -2' and '3 -1 2' all evaluate to true.
+
+We can see that all clauses are now true, thus the solution satifies the CNF-SAT problem. 
+
+Answer: Based on the above inspection, the solution is '-1 -2 3'. Here, '-1' means '1' is assigned false, '-2' means '2' is assigned false, and '3' means '3' is assigned true.

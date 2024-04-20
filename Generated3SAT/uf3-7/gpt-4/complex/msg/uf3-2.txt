@@ -1,0 +1,31 @@
+The problem provided is a Boolean satisfiability problem (SAT problem) written in the DIMACS format - a standard format used for encoding SAT problems. This problem specifically includes 3 variables (1, 2 and 3) and 7 clauses.
+
+The problem can be rewritten in a more human-readable way as:
+
+* Clause 1:  (x1 OR NOT x3 OR x2) 
+* Clause 2:  (x1 OR NOT x2 OR NOT x3) 
+* Clause 3:  (NOT x2 OR NOT x3 OR x1) 
+* Clause 4:  (NOT x3 OR NOT x2 OR x1) 
+* Clause 5:  (NOT x2 OR NOT x3 OR x1) 
+* Clause 6:  (NOT x2 OR x1 OR NOT x3)  
+* Clause 7:  (NOT x2 OR NOT x3 OR x1) 
+
+When a positive number (x) appears in a clause, it means that variable (x) is present. When a negative number (NOT x) appears in a clause, it signifies the negation of the variable.
+
+Each clause represents a disjunction (OR operation), and the entire problem is a conjunction (AND operation) of all the clauses - meaning, for the set of variables to satisfy the problem, it must satisfy all clauses simultaneously.
+
+To solve this problem manually, we will use the method of systematic trial and error.
+
+First, let's see what will happen if we set x1 = True, x2 = False, x3 = True:
+
+Clause 1: True OR False OR False = True
+Clause 2: True OR True OR False = True
+Clause 3: True OR False OR True = True
+Clause 4: True OR True OR True = True
+Clause 5: True OR False OR True = True
+Clause 6: True OR True OR False = True
+Clause 7: True OR False OR True = True 
+
+As all clauses return "true", this combination of variable values satisfies the given problem.
+
+Answer: x1 = True, x2 = False, x3 = True

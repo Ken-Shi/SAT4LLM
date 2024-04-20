@@ -1,0 +1,20 @@
+To solve this SAT problem encoded in DIMACS format, we can use the following CNF clauses:
+- Clause 1: (-1 v -2 v 3)
+- Clause 2: (1 v -2 v -3)
+- Clause 3: (3 v 2 v 1)
+
+Now, we can try to find a solution by assigning either TRUE or FALSE to each variable in the clauses and checking if the resulting values satisfy all the clauses. 
+
+Let's proceed with the following assignment:
+- Variable 1: TRUE
+- Variable 2: FALSE
+- Variable 3: TRUE
+
+Now, let's substitute these values into our clauses:
+- Clause 1: (-1 v -2 v 3) = (FALSE v TRUE v TRUE) = TRUE
+- Clause 2: (1 v -2 v -3) = (TRUE v TRUE v FALSE) = TRUE
+- Clause 3: (3 v 2 v 1) = (TRUE v FALSE v TRUE) = TRUE
+
+Since all clauses evaluate to TRUE, the assignment (1, FALSE, 1) satisfies the SAT problem encoded in DIMACS format.
+
+answer: Variable 1 = TRUE, Variable 2 = FALSE, Variable 3 = TRUE

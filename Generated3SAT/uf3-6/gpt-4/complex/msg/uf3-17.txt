@@ -1,0 +1,23 @@
+This is a propositional logic problem encoded in a conjunctive normal form (CNF). The CNF is given by a conjunction (AND) of several clauses, where each clause is a disjunction (OR) of literals (a variable or its negation).
+
+The first line (p cnf 3 6) is just a header, providing information that there are 3 variables (1, 2, 3) and 6 clauses.
+
+The following lines are the statements (clauses), with '0' marking the end of each clause:
+- (3 OR NOT 1 OR NOT 2)
+- (NOT 2 OR NOT 1 OR NOT 3)
+- (3 OR NOT 1 OR NOT 2)
+- (3 OR NOT 2 OR NOT 1)
+- (1 OR NOT 2 OR 3)
+- (1 OR 3 OR NOT 2)
+
+The problem is to find an assignment of TRUE/FALSE (or 1/0) to each variable such that all clauses are satisfied. This is a SAT (satisfiability) problem.
+
+We can start by trying a random assignment.
+
+Let's say 1=True, 2=False, 3=True. Checking all the clauses, we see that this assignment satisfies all of them. 
+
+For example, looking at the first clause: (3 OR NOT 1 OR NOT 2) = (True OR NOT True OR NOT False) = True. The rest can be checked in a similar way.
+
+So, the example assignment we tried is actually a solution to the problem.
+
+Answer: 1=True, 2=False, 3=True.

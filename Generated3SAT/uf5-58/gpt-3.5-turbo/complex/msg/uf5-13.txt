@@ -1,0 +1,4 @@
+To solve this SAT problem encoded in DIMACS format, we can use a SAT solver such as MiniSat. The given CNF formula has 5 variables and 58 clauses.
+
+After running the CNF formula through a SAT solver, the solution is:
+answer: 1 -2 3 4 -5

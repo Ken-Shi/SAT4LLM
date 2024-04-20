@@ -1,0 +1,21 @@
+This SAT problem is in Conjunctive Normal Form (CNF). Each line represents a clause, and each number a literal, where negation is represented by "-" and 0 marks the end of a clause.In this problem, there are 5 variables (1, 2, 3, 4, and 5) and 48 clauses. 
+
+The aim of any SAT problem is to find an assignment of these variables that makes the CNF formula true. If such an assignment doesn't exist, the formula is unsatisfiable; if it does exist, the formula is satisfiable.
+
+A typical approach to solve this problem is the Davis-Putnam-Logemann-Loveland (DPLL) algorithm. The algorithm works as follows:
+
+1. Unit propagation: If a clause is a unit clause, i.e., it contains only a single unassigned literal, this clause can only be satisfied by assigning the necessary value to make this literal true. Thus, no choice is necessary. In human terms, if a single option remains to fulfill a constraint, there is no choice but to take it.
+
+2. Pure literal elimination: If a propositional variable occurs with only one polarity in the formula, it is called pure. Pure literals can always be assigned in a way that makes all clauses containing them true. Thus, these clauses do not constrain the search anymore and can be deleted.
+
+3. Splitting: If the formula ? contains no unit clauses anymore, DPLL splits ? by picking some literal l, setting its Boolean value arbitrarily, say to true.
+
+In recursion, the DPLL algorithm is then applied again to the reduced formula. If this leads to a satisfying assignment, a satisfying assignment for the whole formula has been found. Otherwise, the same procedure is applied again but assuming that l is false.
+
+The DPLL algorithm can be improved with a good heuristic for making decisions, and the intelligent analysis of the reasons for conflicts if the assignments lead to an unsatisfiable formula. This variant is called "Conflict-Driven Clause Learning" (CDCL) and it's the most used procedure in modern SAT solvers.
+
+Applying the DPLL algorithm on the above problem, we get the solution:
+
+Answer: 1 -2 -3 4 5
+
+This means that the assignment of (1=True, 2=False, 3=False, 4=True, 5=True) will satisfy the whole formula.

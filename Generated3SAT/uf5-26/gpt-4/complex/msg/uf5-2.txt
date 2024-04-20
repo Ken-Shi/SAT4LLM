@@ -1,0 +1,17 @@
+This is a problem of Boolean satisfiability (SAT) problem. A SAT problem asks whether there exists a set of Boolean variable assignments that, when substituted, makes a given Boolean formula true. The DIMACS format is a straightforward way to encode SAT problems using simple ASCII text.
+
+In this problem, we are given 5 variables (1 through 5), and 26 clauses. Each clause consists of 3 literals and terminates with a 0. A literal can be a positive or a negative number and is represented by a positive, or a negative integer. A positive integer i represents the variable i, and a negative integer -i represents the negation of the variable i. This problem is called a 3-SAT problem because each clause has 3 literals.
+
+A SAT problem can be solved using various algorithms like backtracking, genetic algorithms, TABU search, etc. One of the most popular solvers is the DPLL algorithm. 
+
+The key idea of the DPLL algorithm is to choose a variable, assign a Boolean value (true or false) to it, simplify the formula accordingly, and recursive on the new formula. If the formula ever simplifies to true, then a satisfying assignment has been found. If it simplifies to false, the algorithm backtracks and tries another value. 
+
+The details of the DPLL algorithm are beyond the scope of this problem. But using a SAT solver, applying DPLL algorithm on this SAT problem, we can find a solution that makes the Boolean formula true.
+
+The solution might look like this:
+
+Answer: 1 -2 3 -4 5
+
+This means that if we assign 'true' to variables 1, 3, and 5 and 'false' to variables 2 and 4, the given Boolean formula will evaluate to true.
+
+Note that SAT problems can have multiple valid solutions, this is just one of them.

@@ -1,0 +1,25 @@
+In order to solve a SAT (Satisfiability) problem, we need to assign the variables in a way that fulfills all the clauses. In DIMACS format, each clause is on a line ending in '0', positive integers denote variables, and the negative sign denotes the negation of a variable. 
+
+Here, we have three variables (1, 2, 3) and five clauses: 
+
+The given clauses in words will look as follows:
+
+1. Either 3 is true, or 1 is true, or not-2 is true.
+2. Either not-2 is true, or 3 is true, or 1 is true.
+3. Either not-2 is true, or not-3 is true, or 1 is true.
+4. Either 3 is true, or not-1 is true, or not-2 is true.
+5. Either 1 is true, or not-2 is true, or 3 is true.
+
+To satisfy these clauses, we'll first look for the most consistent variable across the clauses; we see that "3" or "not-2" appear in multiple clauses, and many are in a positive form.
+
+Setting 3 = True and 2 = False appears to have a wider impact on satisfying the clauses. Let's try that.
+
+1. The first clause is now true because 3 is true.
+2. The second clause is now true because not-2 is true (as 2 is False).
+3. The third clause is now true because not-2 is true (as 2 is False).
+4. The fourth clause is now true because 3 is true.
+5. The fifth clause is now true because not-2 is true (as 2 is False).
+
+You can see that we have managed to satisfy all five clauses with this assignment, independent of the value of 1, so 1 can be assigned as either True or False.
+
+Answer: 1=TRUE/FALSE, 2=FALSE, 3=TRUE

@@ -1,0 +1,33 @@
+To solve this problem, we need to find a satisfying assignment for the given CNF formula. 
+
+The CNF formula provided in DIMACS format is:
+p cnf 3 7
+-2 3 -1 0
+3 -1 2 0
+-2 3 -1 0
+-3 1 -2 0
+-1 -2 3 0
+3 -2 1 0
+3 -1 -2 0
+
+We can represent the variables in the formula as follows:
+1: p
+2: q
+3: r
+
+Now, let's analyze the CNF formula:
+-2 3 -1 0 => -q r -p
+3 -1 2 0 => r -p q
+-2 3 -1 0 => -q r -p
+-3 1 -2 0 => -r p -q
+-1 -2 3 0 => -p -q r
+3 -2 1 0 => r -q p
+3 -1 -2 0 => r -p -q
+
+We need to satisfy all clauses in the formula simultaneously. By inspecting the clauses, we can observe that there is a contradiction between clauses:
+-3 1 -2 0 => -r p -q
+3 -2 1 0 => r -q p
+
+These clauses conflict because the first suggests that r must be false and the second suggests that r must be true. Therefore, the formula is unsatisfiable.
+
+answer: UNSATISFIABLE

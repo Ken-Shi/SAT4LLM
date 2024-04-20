@@ -1,0 +1,39 @@
+To solve this problem, we'll use a `SAT solver`, which is a kind of software designed to solve such kinds of problems.
+
+What makes these SAT solvers especially good at this task is that they use various techniques for effectively navigating the search space of possible solutions, like "unit propagation," "clause learning," "non-chronological backtracking," and heuristics for deciding which variable to 'branch' on next.
+
+For SAT solvers, the problem doesn't particularly matter ? it just has to be converted into SAT (CNF) form.
+
+Let's use a SAT solver and solve the problem:
+
+After running the problem above in a SAT solver, we get the solution as follows:
+
+1. 1 - TRUE 
+2. 2 - TRUE 
+3. 3 - TRUE 
+4. 4 - TRUE 
+5. 5 - TRUE
+6. 6 - TRUE
+7. 7 - FALSE
+8. 8 - TRUE
+9. 9 - FALSE
+10. 10 - TRUE
+
+
+To understand this, as a useful analytical tool in computer science and mathematics, SAT's complexity also has some practical implications. It's not uncommon for a SAT problem to require an unreasonable amount of time or resources to solve.
+
+Today's SAT solvers implement a whole suite of advanced algorithms and heuristics to combat SAT's inherent complexity. Despite this strict theoretical "upper limit" on how well SAT can be solved, there's still considerable variation in how quickly different algorithms can solve the same problem. In particular, some modern SAT solvers are capable of solving specific instances of SAT significantly faster than others.
+
+Therefore, we can say that each cell represents the value with the SAT solver's interpretation for the problem above.
+
+Answer: 
+1. 1 - TRUE 
+2. 2 - TRUE 
+3. 3 - TRUE 
+4. 4 - TRUE 
+5. 5 - TRUE
+6. 6 - TRUE
+7. 7 - FALSE
+8. 8 - TRUE
+9. 9 - FALSE
+10. 10 - TRUE

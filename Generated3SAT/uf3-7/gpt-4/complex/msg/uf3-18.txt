@@ -1,0 +1,29 @@
+In the given DIMACS format problem, each row (except the first one) represents a clause in a boolean formula. A positive integer is the index of a variable and a negative integer means the not form of the variable.
+
+Our goal is to find a truth setting of variables (either true or false) such that the whole formula is satisfied.
+
+Different variables in a clause are connected by the OR operator, and different clauses are connected by the AND operator. For example, the clause "3 2 1 0" can be translated to: "x3 OR x2 OR x1".
+
+Here is the translation of the whole problem:
+
+(p cnf 3 7) #N/A
+
+(x3 OR x2 OR x1) AND 
+(x1 OR NOT x2 OR x3) AND 
+(x3 OR x1 OR NOT x2) AND 
+(x1 OR NOT x2 OR x3) AND 
+(NOT x2 OR x1 OR x3) AND 
+(x3 OR x1 OR NOT x2) AND 
+(x3 OR x1 OR NOT x2)
+
+To start solving the given problem, let's consider all the clauses. We're looking for a set of values that satisfies every clause. Even in the situation where we've multiple options, it's not that complicated because we only have 3 variables. 
+
+To simplify the process, we want to find variables that appear most frequently in the same form. For instance, x3 appears 7 times with a positive sign and x1 appears 6 times with a positive sign. This gives us a hint that setting both x3 and x1 to true might give us a solution. 
+
+Applying these values to the clauses, we can see that every clause contains at least one true literal and thus is satisfied. The variable x2 doesn't matter because every clause that includes x2 also has either x1 or x3.
+
+So, a boolean assignment that satisfies the problem is x1 = True, x2 = either True or False, and x3 = True.
+
+Therefore.
+
+answer: 1 -2 3

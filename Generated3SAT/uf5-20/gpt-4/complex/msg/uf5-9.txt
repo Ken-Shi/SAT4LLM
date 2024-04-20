@@ -1,0 +1,11 @@
+This SAT problem has various clauses that contradicts each other, hence it cannot be solved. Such situations take place in real SAT problems as well. Now let's look at a few lines for example:
+
+2 -1 4 0
+4 -5 2 0
+-5 2 3 0
+
+We can observe that in the first line, 2 and 4 are stated as true but in the next line, -5 i.e. 5 should be false, is stated like it might be true as well as 2 is true which again in the third line contradicts with it being true or false. Hence, the truth values cannot be unequivocally established for these variables. 
+
+Therefore, there seems to be no logical or consistent way to get a solution. 
+
+Answer: UNSOLVABLE.

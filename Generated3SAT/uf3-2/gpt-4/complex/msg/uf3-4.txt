@@ -1,0 +1,16 @@
+The problem presented is a Boolean SAT (satisfiability) problem in conjunctive normal form (CNF), where 3 is the number of variable and 2 is the number of clauses.
+
+The two clauses are: 
+1) (x2 OR x3 OR x1)
+2) (NOT x3 OR x1 OR x2)
+
+Fetching the clauses, we can determine if the clauses can be satisfiable (T=True, F=False) through trying possible combinations of Boolean values for the SAT problem. The aim is to find a combination where both clauses are true. 
+
+We can start by assigning truth values arbitrarily.
+
+Let's start with trivial assignment:
+x1=T, x2=T, x3=T. This clearly satisfies both clauses. 
+
+Therefore, one plausible solution for the given SAT problem is:
+
+Answer: x1=T, x2=T, x3=T

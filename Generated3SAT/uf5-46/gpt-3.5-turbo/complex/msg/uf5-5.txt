@@ -1,0 +1,10 @@
+To solve this SAT problem encoded in DIMACS format, we will use the following clauses:
+
+1. We first go through all 46 clauses to see if any of them can be satisfied.
+
+2. We will start by looking at clause 1: 5 4 3 0. These clauses allow the variable 5 to be true, which would also satisfy clauses 2, 3, 4, 6, 7, 9, 10, 13, 14, 21, 28, 31. The variables 3, 4, and 5 need to be true.
+
+3. We then follow this process through the other clauses, looking for consistent truths.
+
+4. Using this method, we can find that the solution to this SAT problem is: 
+answer: 5 -4 3 -1 2

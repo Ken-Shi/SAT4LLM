@@ -1,0 +1,15 @@
+To solve this SAT problem, we can first identify the clauses given in DIMACS format:
+1. (-3 ? 2 ? 1)
+2. (2 ? 1 ? 3)
+3. (1 ? 2 ? 3)
+
+Next, we can try to find a combination of values for variables 1, 2, and 3 that satisfy all three clauses. Let's try out different combinations:
+
+1. Let's set variable 1 to True, variables 2 and 3 to False:
+   Clause 1: (-3 ? 2 ? 1) => True (-3) ? False (2) ? True (1) => True
+   Clause 2: (2 ? 1 ? 3) => False (2) ? True (1) ? False (3) => True
+   Clause 3: (1 ? 2 ? 3) => True (1) ? False (2) ? False (3) => True
+   This combination satisfies all three clauses.
+
+Therefore, the solution to this SAT problem is:
+answer: 1 0 0
